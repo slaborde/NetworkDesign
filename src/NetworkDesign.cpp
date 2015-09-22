@@ -31,22 +31,30 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 	string raiz, dir1, dir2, path1, path2;
 	
 	//Genero directorios para resultados
+	//mkdir(inputName.data());
 	mkdir(inputName.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 	raiz = inputName.data();
-	dir1 = ".\\";
+	//dir1 = ".\\";
+	dir1 = "./";
 	dir1.append(raiz);
-	dir1.append(".\\ND_Resultado");
+	//dir1.append(".\\ND_Resultado");
+	dir1.append("./ND_Resultado");
+	//mkdir(dir1.data());
 	mkdir(dir1.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-	dir2 = ".\\";
+	//dir2 = ".\\";
+	dir2 = "./";
 	dir2.append(raiz);
-	dir2.append(".\\Log_Iteraciones");
+	//dir2.append(".\\Log_Iteraciones");
+	dir2.append("./Log_Iteraciones");
+	//mkdir(dir2.data());
 	mkdir(dir2.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 	//Donde estan los resultados
 	path1 = dir1;
-	path1.append("\\result.txt");
+	//path1.append("\\result.txt");
+	path1.append("/result.txt");
 	//Donde esta el log
 	path2 = dir2;
-	path2.append("\\log.txt");
+	//path2.append("\\log.txt");
 	path2.append("/log.txt");
 	
 	
