@@ -135,7 +135,9 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 		char * s = new char[4];
 		sprintf(s,"%i",i);
 		fileName.append("/");
-		fileName.append(inputName);
+		int pos = inputName.find_last_of('/', input.length());
+		string graphName = inputName.substr(pos+1,input.length());
+		fileName.append(graphName);
 		fileName.append("-");
 		fileName.append(s);
 		fileName.append(".xml");
@@ -168,19 +170,25 @@ void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k){
 	string raiz, dir2, path2;
 	
 	//Genero directorios para resultados
-	mkdir(inputName.data());
-	//mkdir(inputName.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	#if defined(_WIN32)
+		mkdir(inputName.data());
+	#else
+		mkdir(inputName.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	#endif
+
 	raiz = inputName.data();
-	dir2 = ".\\";
-	dir2 = "/";
 	dir2.append(raiz);
-	dir2.append(".\\Log_Iteraciones");
 	dir2.append("/Log_Iteraciones");
-	mkdir(dir2.data());
-	//mkdir(dir2.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+
+	#if defined(_WIN32)
+		mkdir(dir2.data());
+	#else
+		mkdir(dir2.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	#endif
+
 	//Donde esta el log
 	path2 = dir2;
-	path2.append("\\log.txt");
+	path2.append("/log.txt");
 	
 	//cargo el grafo
 	g1 = Graph::LoadGraph(input);
