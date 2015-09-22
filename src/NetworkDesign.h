@@ -5,7 +5,8 @@
 #include "Greedy.h"
 #include "RVR.h"
 #include "KeyTreeLocalSearch.h"
-#include "direct.h"
+//#include "direct.h"
+#include "unistd.h"
 #include "time.h"
 
 class Result
