@@ -129,6 +129,7 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 		char * s = new char[4];
 		sprintf(s,"%i",i);
 		fileName.append("\\");
+		fileName.append("/");
 		fileName.append(inputName);
 		fileName.append("-");
 		fileName.append(s);
