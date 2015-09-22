@@ -8,6 +8,14 @@ NetworkDesign::~NetworkDesign(){
 	
 }
 
+void NetworkDesign::make_directory(const char* name) {
+   #ifdef __linux__
+       mkdir(name, 777);
+   #else
+       _mkdir(name);
+   #endif
+}
+
 //Algoritmo principal para el disenio de topologias de red confiables
 //***Parametros***
 //input: 		String que indica el grafo a procesar
@@ -34,7 +42,6 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 	#if defined(_WIN32)
 		mkdir(inputName.data());
 	#else
-		//mkdir(strPath.c_str(), 0777); // notice that 777 is different than 0777
 		mkdir(inputName.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 	#endif
 
@@ -82,7 +89,15 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 	
 	for(int i=0; i < cantiter; i++){	
 		cout << "Ejecutando Iteracion: " << i << " de: "<< cantiter << endl;
-		start = clock();
+
+		#if defined(_WIN32)
+			start = clock();
+		#else
+			struct timeval timeStart;
+			gettimeofday(&timeStart,NULL);
+			start = (long)timeStart.tv_sec;
+		#endif
+
 		//Construyo el grafo hasta obtener una solucion factible
 		do {
 		if (ok != 0) {
@@ -99,8 +114,17 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 		r = new RVR();
 		r->SetForRk(g2);
 		ResultRVR r2 = r->ConfMethod((unsigned)time(0),simiter,g2);
-		end = clock();
-		tiempo = ((end - start)/(double)CLK_TCK);
+
+		#if defined(_WIN32)
+			end = clock();
+			tiempo = ((end - start)/(double)CLK_TCK);
+		#else
+			struct timeval timeEnd;
+			gettimeofday(&timeEnd,NULL);
+			end = (long)timeEnd.tv_sec;
+			tiempo = ((end - start)/(double)CLK_TCK);
+		#endif
+
 		//Agrego los datos al log de la iteracion
 		FILE * f3 = fopen(path2.data(), "a");
 		char * iter = new char[4];
@@ -135,7 +159,7 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 		char * s = new char[4];
 		sprintf(s,"%i",i);
 		fileName.append("/");
-		int pos = inputName.find_last_of('/', input.length());
+		int pos = inputName.find_last_of('/', inputName.length());
 		string graphName = inputName.substr(pos+1,input.length());
 		fileName.append(graphName);
 		fileName.append("-");

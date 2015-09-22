@@ -12,6 +12,7 @@
 	#else
 		#include <sys/stat.h>
 		#include <sys/types.h>
+		#include <unistd.h>
 	#endif
 
 class Result
@@ -46,6 +47,7 @@ public:
 	static void NetworkDesignAlgorithm2(string input,int cantiter,int k);
 private:
 	static void AddResult(Collection * c, Result * r);
+	static void make_directory(const char* name);
 };
 
 #endif /*NETWORKDESIGN_H_*/
