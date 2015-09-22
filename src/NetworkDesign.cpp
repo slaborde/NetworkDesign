@@ -47,6 +47,7 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 	//Donde esta el log
 	path2 = dir2;
 	path2.append("\\log.txt");
+	path2.append("/log.txt");
 	
 	
 	//cargo el grafo
@@ -153,11 +154,15 @@ void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k){
 	string raiz, dir2, path2;
 	
 	//Genero directorios para resultados
+	//mkdir(inputName.data());
 	mkdir(inputName.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 	raiz = inputName.data();
 	dir2 = ".\\";
+	dir2 = "/";
 	dir2.append(raiz);
 	dir2.append(".\\Log_Iteraciones");
+	dir2.append("/Log_Iteraciones");
+	//mkdir(dir2.data());
 	mkdir(dir2.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 	//Donde esta el log
 	path2 = dir2;
