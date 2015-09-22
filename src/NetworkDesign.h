@@ -37,7 +37,8 @@ public:
 	//umbral:		Umbral para el calculo de confiabilidad
 	//confiter:		Numero de replicaciones a realizar por RVR 	
 	static void NetworkDesignAlgorithm(string input,int cantiter,int k,double umbral,int simiter);
-	static void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k);
+	//static void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k);
+	static void NetworkDesignAlgorithm2(string input,int cantiter,int k);
 private:
 	static void AddResult(Collection * c, Result * r);
 };
