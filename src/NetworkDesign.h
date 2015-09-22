@@ -6,8 +6,9 @@
 #include "RVR.h"
 #include "KeyTreeLocalSearch.h"
 //#include "direct.h"
-#include "unistd.h"
-#include "sys/stat.h"
+//#include "unistd.h"
+#include <sys/stat.h>
+#include <sys/types.h>
 #include "time.h"
 
 class Result
