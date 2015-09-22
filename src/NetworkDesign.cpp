@@ -31,32 +31,39 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 	string raiz, dir1, dir2, path1, path2;
 	
 	//Genero directorios para resultados
-	//mkdir(inputName.data());
-	mkdir(inputName.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	#if defined(_WIN32)
+		mkdir(inputName.data());
+	#else
+		//mkdir(strPath.c_str(), 0777); // notice that 777 is different than 0777
+		mkdir(inputName.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	#endif
+
 	raiz = inputName.data();
-	//dir1 = ".\\";
-	//dir1 = "/";
 	dir1.append(raiz);
-	//dir1.append(".\\ND_Resultado");
 	dir1.append("/ND_Resultado");
-	//mkdir(dir1.data());
-	mkdir(dir1.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-	//dir2 = ".\\";
-	//dir2 = "/";
+
+	#if defined(_WIN32)
+		mkdir(dir1.data());
+	#else
+		mkdir(dir1.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	#endif
+
+
 	dir2.append(raiz);
-	//dir2.append(".\\Log_Iteraciones");
 	dir2.append("/Log_Iteraciones");
-	//mkdir(dir2.data());
-	mkdir(dir2.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+
+	#if defined(_WIN32)
+		mkdir(dir2.data());
+	#else
+		mkdir(dir2.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	#endif
+
 	//Donde estan los resultados
 	path1 = dir1;
-	//path1.append("\\result.txt");
 	path1.append("/result.txt");
 	//Donde esta el log
 	path2 = dir2;
-	//path2.append("\\log.txt");
 	path2.append("/log.txt");
-	
 	
 	//cargo el grafo
 	g1 = Graph::LoadGraph(input);
@@ -118,7 +125,6 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 	cout << "RESULTADOS NETWORKDESIGN" << endl;
 	cout << "COSTO	MEDIA"<< endl;
 	
-	
 	for(int i=0; i < results->Size(); i++){
 		Result * r = (Result *)results->GetItem(i);
 		r->Show();
@@ -128,7 +134,6 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 		fileName.append(dir1.data());
 		char * s = new char[4];
 		sprintf(s,"%i",i);
-		//fileName.append("\\");
 		fileName.append("/");
 		fileName.append(inputName);
 		fileName.append("-");
@@ -163,16 +168,16 @@ void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k){
 	string raiz, dir2, path2;
 	
 	//Genero directorios para resultados
-	//mkdir(inputName.data());
-	mkdir(inputName.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	mkdir(inputName.data());
+	//mkdir(inputName.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 	raiz = inputName.data();
 	dir2 = ".\\";
 	dir2 = "/";
 	dir2.append(raiz);
 	dir2.append(".\\Log_Iteraciones");
 	dir2.append("/Log_Iteraciones");
-	//mkdir(dir2.data());
-	mkdir(dir2.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	mkdir(dir2.data());
+	//mkdir(dir2.data(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 	//Donde esta el log
 	path2 = dir2;
 	path2.append("\\log.txt");
