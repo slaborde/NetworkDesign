@@ -19,10 +19,10 @@ string graph;
 			umbral = atof(args[4]);
 			simiter = atoi(args[5]);
 			rp = atoi(args[6]);
-			cout << "NetworkDesignAlgorithm se ejecutará con los siguientes parametros: " << graph << "|" << cantiter << "|" << k << "|" << umbral << "|" << simiter << "|" << rp << endl;
+			cout << "NetworkDesignAlgorithm se ejecutara con los siguientes parametros: " << graph << "|" << cantiter << "|" << k << "|" << umbral << "|" << simiter << "|" << rp << endl;
 			if (rp == 1) NetworkDesign::NetworkDesignAlgorithm(graph,cantiter,k,umbral,simiter);
 			else NetworkDesign::NetworkDesignAlgorithm2(graph,cantiter,k);
-			cout << "NetworkDesignAlgorithm ha finalizado su ejecución: "; 
+			cout << "NetworkDesignAlgorithm ha finalizado su ejecucion: ";
 		}
 		else cout << "El nombre del archivo no es correcto \n";
 	}
