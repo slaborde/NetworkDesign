@@ -1,4 +1,4 @@
-#include "Keytree.h"
+#include "KeyTree.h"
 
 KeyTree::KeyTree(Graph * pgraph)
 {
