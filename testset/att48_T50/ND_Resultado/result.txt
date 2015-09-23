@@ -1,0 +1,4 @@
+testset/att48_T50/ND_Resultado/att48_T50-0.xml	36463.592150	0.911070
+testset/att48_T50/ND_Resultado/att48_T50-1.xml	39024.077943	0.915984
+testset/att48_T50/ND_Resultado/att48_T50-2.xml	39529.585953	0.935886
+testset/att48_T50/ND_Resultado/att48_T50-3.xml	39877.403726	0.957976
