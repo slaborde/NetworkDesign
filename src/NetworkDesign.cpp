@@ -9,11 +9,11 @@ NetworkDesign::~NetworkDesign(){
 }
 
 void NetworkDesign::make_directory(const char* name) {
-   #ifdef __linux__
-       mkdir(name, 777);
-   #else
-       _mkdir(name);
-   #endif
+//   #ifdef __linux__
+//       mkdir(name, 777);
+//   #else
+//       _mkdir(name);
+//   #endif
 }
 
 //Algoritmo principal para el disenio de topologias de red confiables
