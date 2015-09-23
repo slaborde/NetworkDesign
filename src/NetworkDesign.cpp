@@ -121,10 +121,8 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 		#else
 			struct timeval timeEnd;
 			gettimeofday(&timeEnd,NULL);
-
 			long seconds = timeEnd.tv_sec  - timeStart.tv_sec;
 			long useconds = timeEnd.tv_usec - timeStart.tv_usec;
-
 			tiempo = (((seconds) * 1000 + useconds/1000.0) + 0.5)/1000;
 		#endif
 
@@ -264,10 +262,8 @@ void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k){
 		#else
 			struct timeval timeEnd;
 			gettimeofday(&timeEnd,NULL);
-
 			long seconds = timeEnd.tv_sec  - timeStart.tv_sec;
 			long useconds = timeEnd.tv_usec - timeStart.tv_usec;
-
 			tiempo = (((seconds) * 1000 + useconds/1000.0) + 0.5)/1000;
 		#endif
 
