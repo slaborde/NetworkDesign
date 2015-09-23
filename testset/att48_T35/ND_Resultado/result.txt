@@ -1,0 +1,6 @@
+testset/att48_T35/ND_Resultado/att48_T35-0.xml	26100.661603	0.870163
+testset/att48_T35/ND_Resultado/att48_T35-1.xml	27700.191919	0.933291
+testset/att48_T35/ND_Resultado/att48_T35-2.xml	28103.115895	0.941455
+testset/att48_T35/ND_Resultado/att48_T35-3.xml	28659.334242	0.946224
+testset/att48_T35/ND_Resultado/att48_T35-4.xml	29127.158156	0.949220
+testset/att48_T35/ND_Resultado/att48_T35-5.xml	33618.401126	0.959497
