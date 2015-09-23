@@ -271,7 +271,6 @@ void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k){
 			tiempo = (((seconds) * 1000 + useconds/1000.0) + 0.5)/1000;
 		#endif
 
-		tiempo = ((end - start)/(double)CLK_TCK);
 		//Agrego los datos al log de la iteracion
 		FILE * f3 = fopen(path2.data(), "a");
 		char * iter = new char[4];
