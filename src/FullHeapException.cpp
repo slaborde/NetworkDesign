@@ -1,4 +1,4 @@
-#include "Fullheapexception.h"
+#include "FullHeapException.h"
 
 FullHeapException::FullHeapException(void)
 {

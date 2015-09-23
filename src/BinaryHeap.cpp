@@ -1,4 +1,4 @@
-#include "Binaryheap.h"
+#include "BinaryHeap.h"
 
 BinaryHeap::BinaryHeap(int psize)
 {
