@@ -1,4 +1,4 @@
-#include "Emptyheapexception.h"
+#include "EmptyHeapException.h"
 
 EmptyHeapException::EmptyHeapException(void)
 {
