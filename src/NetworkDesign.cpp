@@ -123,7 +123,8 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 			struct timeval timeEnd;
 			gettimeofday(&timeEnd,NULL);
 			end = (long)timeEnd.tv_sec;
-			tiempo = (end - start);
+			long useconds = end.tv_usec - start.tv_usec;
+			timepo = ((seconds) * 1000 + useconds/1000.0) + 0.5;
 		#endif
 
 		//Agrego los datos al log de la iteracion
