@@ -96,7 +96,6 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 		#else
 			struct timeval timeStart;
 			gettimeofday(&timeStart,NULL);
-			start = (long)timeStart.tv_sec;
 		#endif
 
 		//Construyo el grafo hasta obtener una solucion factible
@@ -234,7 +233,14 @@ void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k){
 	
 	for(int i = 0; i < cantiter; i++){	
 		cout << "Iteracion: " << i << endl;
-		start = clock();
+
+		#if defined(_WIN32)
+			start = clock();
+		#else
+			struct timeval timeStart;
+			gettimeofday(&timeStart,NULL);
+		#endif
+
 		//Construyo el grafo
 		cout << "Iniciando Greedy..." << endl;
 		do {
@@ -251,7 +257,20 @@ void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k){
 		g2 = vns->Optim(g2,cls,p);
 		cout << "VNS terminado..." << endl;
 		costo3 = g2->GetCost();
-		end = clock();
+
+		#if defined(_WIN32)
+			end = clock();
+			tiempo = ((end - start)/(double)CLK_TCK);
+		#else
+			struct timeval timeEnd;
+			gettimeofday(&timeEnd,NULL);
+
+			long seconds = timeEnd.tv_sec  - timeStart.tv_sec;
+			long useconds = timeEnd.tv_usec - timeStart.tv_usec;
+
+			tiempo = (((seconds) * 1000 + useconds/1000.0) + 0.5)/1000;
+		#endif
+
 		tiempo = ((end - start)/(double)CLK_TCK);
 		//Agrego los datos al log de la iteracion
 		FILE * f3 = fopen(path2.data(), "a");
