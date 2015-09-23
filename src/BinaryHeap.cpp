@@ -6,14 +6,14 @@ BinaryHeap::BinaryHeap(int psize)
 	count = 0;
 	param = 100;
 	isMinHeap = true;
-	array = new (INumerable (*[psize + 1]));
+	array = new (INumerable*[psize + 1]);
 }
 BinaryHeap::BinaryHeap(int psize, bool pisMinHeap)
 {
 	size = psize;
 	count = 0;
 	isMinHeap = pisMinHeap;
-	array = new (INumerable (*[psize + 1]));
+	array = new (INumerable*[psize + 1]);
 }
 
 BinaryHeap::~BinaryHeap(void)
@@ -41,7 +41,7 @@ void BinaryHeap::Enqueue(INumerable * obj)
 
 	if (count == size)
 	{
-		INumerable ** temp = new (INumerable (*[size * 2 +1]));
+		INumerable ** temp = new (INumerable*[size * 2 +1]);
 		for(int m= 1; m <= size; m++)
 		{
 			temp[m]=array[m];

@@ -6,6 +6,6 @@
 class INumerable
 {
 public:
-	virtual double GetValue()=0;
+	virtual double GetValue() = 0;
 };
 #endif
