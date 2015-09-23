@@ -9,11 +9,12 @@ NetworkDesign::~NetworkDesign(){
 }
 
 void NetworkDesign::make_directory(const char* name) {
-//   #ifdef __linux__
-//       mkdir(name, 777);
-//   #else
-//       _mkdir(name);
-//   #endif
+		/*__linux__*/
+   #ifdef _WIN32
+		_mkdir(name);
+   #else
+		mkdir(name, 777);
+   #endif
 }
 
 //Algoritmo principal para el disenio de topologias de red confiables
@@ -122,7 +123,7 @@ void NetworkDesign::NetworkDesignAlgorithm(string input,int cantiter,int k,doubl
 			struct timeval timeEnd;
 			gettimeofday(&timeEnd,NULL);
 			end = (long)timeEnd.tv_sec;
-			tiempo = ((end - start)/(double)CLK_TCK);
+			tiempo = (end - start);
 		#endif
 
 		//Agrego los datos al log de la iteracion
