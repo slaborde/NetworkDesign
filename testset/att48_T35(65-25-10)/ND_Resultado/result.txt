@@ -1,0 +1,2 @@
+testset/att48_T35(65-25-10)/ND_Resultado/att48_T35(65-25-10)-0.xml	55519.640996	0.995862
+testset/att48_T35(65-25-10)/ND_Resultado/att48_T35(65-25-10)-1.xml	65938.498523	0.996572
