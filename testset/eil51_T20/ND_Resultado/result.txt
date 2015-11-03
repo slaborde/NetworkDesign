@@ -1,3 +1,0 @@
-testset/eil51_T20/ND_Resultado/eil51_T20-0.xml	140.353333	0.968663
-testset/eil51_T20/ND_Resultado/eil51_T20-1.xml	169.031721	0.977442
-testset/eil51_T20/ND_Resultado/eil51_T20-2.xml	171.594314	0.977952

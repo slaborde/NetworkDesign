@@ -1,2 +1,0 @@
-testset/att48_T20/ND_Resultado/att48_T20-0.xml	16331.877154	0.978051
-testset/att48_T20/ND_Resultado/att48_T20-1.xml	20426.519173	0.988404

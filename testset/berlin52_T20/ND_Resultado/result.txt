@@ -1,4 +1,0 @@
-testset/berlin52_T20/ND_Resultado/berlin52_T20-0.xml	4332.819834	0.843323
-testset/berlin52_T20/ND_Resultado/berlin52_T20-1.xml	4830.107649	0.902248
-testset/berlin52_T20/ND_Resultado/berlin52_T20-2.xml	5088.004555	0.938397
-testset/berlin52_T20/ND_Resultado/berlin52_T20-3.xml	5276.049708	0.944961
