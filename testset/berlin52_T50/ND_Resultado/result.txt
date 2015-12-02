@@ -1,0 +1,5 @@
+testset/berlin52_T50/ND_Resultado/berlin52_T50-0.xml	9143.704444	0.875774
+testset/berlin52_T50/ND_Resultado/berlin52_T50-1.xml	9166.227733	0.888753
+testset/berlin52_T50/ND_Resultado/berlin52_T50-2.xml	9331.201796	0.893202
+testset/berlin52_T50/ND_Resultado/berlin52_T50-3.xml	9444.515731	0.903221
+testset/berlin52_T50/ND_Resultado/berlin52_T50-4.xml	9485.430938	0.920577

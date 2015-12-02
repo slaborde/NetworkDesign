@@ -1,0 +1,2 @@
+testset/brazil58_T35/ND_Resultado/brazil58_T35-0.xml	12175.000000	0.762956
+testset/brazil58_T35/ND_Resultado/brazil58_T35-1.xml	14869.000000	0.809699
