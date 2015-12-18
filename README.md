@@ -8,4 +8,4 @@ Ejecutar: make compile
 Ejecutar: make dist
 
 ## Correr el programa
-Ejecutar Ejemplo: ./NetworkDesign testset/att48_T20.xml 10 5 0.6 10000 1 
+Ejecutar Ejemplo: ./NetworkDesign testset/att48_T20.xml 100 5 0.6 10000 1 
