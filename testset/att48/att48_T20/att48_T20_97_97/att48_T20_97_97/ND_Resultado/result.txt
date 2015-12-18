@@ -1,0 +1,3 @@
+testset/att48/att48_T20/att48_T20_97_97/att48_T20_97_97/ND_Resultado/att48_T20_97_97-0.xml	16331.877154	0.991786
+testset/att48/att48_T20/att48_T20_97_97/att48_T20_97_97/ND_Resultado/att48_T20_97_97-1.xml	16683.012554	0.991798
+testset/att48/att48_T20/att48_T20_97_97/att48_T20_97_97/ND_Resultado/att48_T20_97_97-2.xml	20637.537641	0.995661

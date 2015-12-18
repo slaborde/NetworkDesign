@@ -1,0 +1,3 @@
+testset/ch150_T20/ND_Resultado/ch150_T20-0.xml	5701.384728	0.903988
+testset/ch150_T20/ND_Resultado/ch150_T20-1.xml	5704.851302	0.906102
+testset/ch150_T20/ND_Resultado/ch150_T20-2.xml	6128.676506	0.909714

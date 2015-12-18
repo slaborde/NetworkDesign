@@ -1,0 +1,3 @@
+testset/d198_T50/ND_Resultado/d198_T50-0.xml	21995.197665	0.872126
+testset/d198_T50/ND_Resultado/d198_T50-1.xml	23795.870739	0.875723
+testset/d198_T50/ND_Resultado/d198_T50-2.xml	24761.581422	0.910547
