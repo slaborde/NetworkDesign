@@ -1,5 +1,0 @@
-testset/brazil58_T20/ND_Resultado/brazil58_T20-0.xml	21157.000000	0.809209
-testset/brazil58_T20/ND_Resultado/brazil58_T20-1.xml	21536.000000	0.832203
-testset/brazil58_T20/ND_Resultado/brazil58_T20-2.xml	21676.000000	0.898555
-testset/brazil58_T20/ND_Resultado/brazil58_T20-3.xml	24349.000000	0.900469
-testset/brazil58_T20/ND_Resultado/brazil58_T20-4.xml	25202.000000	0.901865

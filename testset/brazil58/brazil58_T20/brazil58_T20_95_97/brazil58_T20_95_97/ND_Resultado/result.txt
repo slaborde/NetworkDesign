@@ -1,0 +1,4 @@
+testset/brazil58/brazil58_T20/brazil58_T20_95_97/brazil58_T20_95_97/ND_Resultado/brazil58_T20_95_97-0.xml	21715.000000	0.834406
+testset/brazil58/brazil58_T20/brazil58_T20_95_97/brazil58_T20_95_97/ND_Resultado/brazil58_T20_95_97-1.xml	22925.000000	0.872835
+testset/brazil58/brazil58_T20/brazil58_T20_95_97/brazil58_T20_95_97/ND_Resultado/brazil58_T20_95_97-2.xml	23296.000000	0.873798
+testset/brazil58/brazil58_T20/brazil58_T20_95_97/brazil58_T20_95_97/ND_Resultado/brazil58_T20_95_97-3.xml	23499.000000	0.910879
