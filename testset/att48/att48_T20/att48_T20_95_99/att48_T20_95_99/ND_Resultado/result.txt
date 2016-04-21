@@ -1,1 +1,0 @@
-testset/att48/att48_T20/att48_T20_95_99/att48_T20_95_99/ND_Resultado/att48_T20_95_99-0.xml	16331.877154	0.999059
