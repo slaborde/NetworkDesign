@@ -285,18 +285,20 @@ void NetworkDesign::NetworkDesignAlgorithm3(string input,int cantiter,int k,doub
 		g2->SetEnabledEdgesProb(0.95);
 		ResultRVR r4 = r->ConfMethod((unsigned)time(0),simiter,g2);
 
-		//Prob Nodo 0.97 - Aristas 0.95
+		//Prob Nodo 0.97 - Aristas 0.99
 		g2->SetSteinerNodesProb(0.97);
+		g2->SetEnabledEdgesProb(0.99);
 		ResultRVR r5 = r->ConfMethod((unsigned)time(0),simiter,g2);
 		//Prob Nodo 0.97 - Aristas 0.97
 		g2->SetEnabledEdgesProb(0.97);
 		ResultRVR r6 = r->ConfMethod((unsigned)time(0),simiter,g2);
-		//Prob Nodo 0.97 - Aristas 0.99
-		g2->SetEnabledEdgesProb(0.99);
+		//Prob Nodo 0.97 - Aristas 0.95
+		g2->SetEnabledEdgesProb(0.95);
 		ResultRVR r7 = r->ConfMethod((unsigned)time(0),simiter,g2);
 
 		//Prob Nodo 0.95 - Aristas 0.99
 		g2->SetSteinerNodesProb(0.95);
+		g2->SetEnabledEdgesProb(0.99);
 		ResultRVR r8 = r->ConfMethod((unsigned)time(0),simiter,g2);
 		//Prob Nodo 0.95 - Aristas 0.97
 		g2->SetEnabledEdgesProb(0.97);
