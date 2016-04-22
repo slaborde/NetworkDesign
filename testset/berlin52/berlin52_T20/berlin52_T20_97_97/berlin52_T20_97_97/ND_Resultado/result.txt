@@ -1,4 +1,0 @@
-testset/berlin52/berlin52_T20/berlin52_T20_97_97/berlin52_T20_97_97/ND_Resultado/berlin52_T20_97_97-0.xml	4358.632929	0.914817
-testset/berlin52/berlin52_T20/berlin52_T20_97_97/berlin52_T20_97_97/ND_Resultado/berlin52_T20_97_97-1.xml	4887.221967	0.972163
-testset/berlin52/berlin52_T20/berlin52_T20_97_97/berlin52_T20_97_97/ND_Resultado/berlin52_T20_97_97-2.xml	4965.129149	0.976678
-testset/berlin52/berlin52_T20/berlin52_T20_97_97/berlin52_T20_97_97/ND_Resultado/berlin52_T20_97_97-3.xml	5213.479814	0.981026
