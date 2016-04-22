@@ -8,7 +8,7 @@ Graph::Graph(){
 
 Graph::Graph(int cant){
 	nodes = new (Node(*[cant]));
-	connectionReqs = new (int(*[cant]));
+	connectionReqs = new (int*[cant]);
 	
 	for(int i=0; i< cant; i++)
 	{
@@ -28,7 +28,7 @@ Graph::Graph(int cant){
 Graph * Graph::Copy()
 {
 	Graph * temp = new Graph();
-	temp->nodes = new (Node(*[nodesCount]));
+	temp->nodes = new (Node*[nodesCount]);
 	for(int i=0; i< nodesCount; i++)
 	{
 		temp->nodes[i]= this->nodes[i]->Copy();
@@ -39,7 +39,7 @@ Graph * Graph::Copy()
 	temp->terminalsCount = terminalsCount;
 	
 	// Agrego copia de la Matriz de Reqs
-	temp->connectionReqs = new (int(*[nodesCount]));
+	temp->connectionReqs = new (int*[nodesCount]);
 	for (int i = 0; i < nodesCount; i++) {
 		temp->connectionReqs[i] = new (int[nodesCount]);
 		for (int j = 0; j < nodesCount; j++) {
@@ -164,7 +164,7 @@ bool Graph::IsTerminal(int x) {
 	return (nodes[x]->IsTerminal());
 }
 
-//Retorna una colección de nodos representados por Integers.
+//Retorna una colecciï¿½n de nodos representados por Integers.
 Collection * Graph::GetAdyacents(int i) { 
 	int j;
 	Collection * result = new Collection();
@@ -212,7 +212,7 @@ int Graph::GetTerminal() {
 	return -1;
 }
 
-//Obtiene la colleción de los nodos de stiner
+//Obtiene la colleciï¿½n de los nodos de stiner
 Collection * Graph::GetSteinerNodes()
 {
 	Collection * result = new Collection();
@@ -225,6 +225,19 @@ Collection * Graph::GetSteinerNodes()
 	}
 	return (result);
 }
+
+//Setea la confiabilidad de los nodos de Steiner
+void Graph::SetSteinerNodesProb(double r)
+{
+	for (int i=0; i<nodesCount; i++) {
+		if (! IsTerminal(i))
+			if (IsNodeEnabled(i))
+			{
+				SetNodeProbability(i,r);
+			}
+	}
+}
+
 
 bool Graph::ExistEdge(int i, int j) {
 	if (i != j)
@@ -327,6 +340,16 @@ Collection * Graph::GetEnabledNodes() {
 	return result;
 }
 
+//void Graph::SetAllNonTerminalNodesProbability(){
+//	Collection * nodes = GetEnabledNodes();
+//	for (int i=0; i<nodes->Size(); i++) {
+//		if(!IsTerminal(nodes->GetItem(i))){
+//
+//		}
+//	}
+//}
+
+
 Collection * Graph::GetEnabledEdges() {
 	int i, j;
 	Collection * result = new Collection();
@@ -341,8 +364,21 @@ Collection * Graph::GetEnabledEdges() {
 	return result;
 }
 
-//Obtiene el grafo resultado de aplicar la opración \ entre un grafo y un conjunto de nodos
-//PRE: los elementos de la colección son de tipo "Integer"
+void Graph::SetEnabledEdgesProb(double r) {
+	int i, j;
+	for (i=0; i<nodesCount; i++) {
+		for (j=i+1; j<nodesCount; j++) {
+			if (ExistEdge(i,j))
+				if (IsEdgeEnabled(i, j))
+					//result->Add((Object*)new EdgeType(i,j));
+					SetEdgeProbability(i, j, r);
+		}
+
+	}
+}
+
+//Obtiene el grafo resultado de aplicar la opraciï¿½n \ entre un grafo y un conjunto de nodos
+//PRE: los elementos de la colecciï¿½n son de tipo "Integer"
 void Graph::Rest(Collection * nodes)
 {
 	for(int i=0 ; i < nodes->Size(); i++)

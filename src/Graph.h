@@ -66,7 +66,7 @@ class Graph {
 		void MarkNoTerminal(int);
 		//Pregunta si un nodo es terminal
 		bool IsTerminal(int);
-		//Obtiene la coleccion de nodos adyacentes al que se le pasa como parámetro
+		//Obtiene la coleccion de nodos adyacentes al que se le pasa como parï¿½metro
 		//No se tiene en cuenta los nodos inacivos
 		//El resultado es una coleccion de Objetos de tipo "Integer"
 		Collection * GetAdyacents(int);
@@ -77,9 +77,11 @@ class Graph {
 		int GetTerminalsCount();
 		//Obtiene un nodo terminal
 		int GetTerminal();
-		//Obtiene la colleción de los nodos de steiner
+		//Obtiene la colleciï¿½n de los nodos de steiner
 		Collection * GetSteinerNodes();
-		//Pregunta se existe una arista entre un par de nodos especificados como parámetros
+		//Setea la confiabilidad de los nodos de Steiner
+		void SetSteinerNodesProb(double r);
+		//Pregunta se existe una arista entre un par de nodos especificados como parï¿½metros
 		bool ExistEdge(int, int);
 		//Pregunta si un nodo se encuentra activado
 		bool IsNodeEnabled(int);
@@ -100,11 +102,13 @@ class Graph {
 		//Obtiene los nodos activos
 		Collection * GetEnabledNodes();
 		//Obtiene las aristas activas
-		//Retorna una collección de "EdgeTypes"
+		//Retorna una collecciï¿½n de "EdgeTypes"
 		Collection * GetEnabledEdges();
+		//Setea la probabilidad de las aristas habilitadas
+		void SetEnabledEdgesProb(double r);
 		
-		//Obtiene el grafo resultado de aplicar la opración \ entre un grafo y un conjunto de nodos
-		//PRE: los elementos de la colección son de tipo "Integer"
+		//Obtiene el grafo resultado de aplicar la opraciï¿½n \ entre un grafo y un conjunto de nodos
+		//PRE: los elementos de la colecciï¿½n son de tipo "Integer"
 		void Rest(Collection *);
 		//Agrega un keyTree al grafo
 		void Union(KeyTree * T);
@@ -113,7 +117,7 @@ class Graph {
 		// devueve true si el nodo es un keynode, false en caso contrario
 		bool IsKeyNode(int);		
 		//Obtiene los key nodes
-		//Retorna una colección de "Integers"
+		//Retorna una colecciï¿½n de "Integers"
 		Collection * GetKeyNodes();
 		Collection * GetKeyNodes(bool);
 		//Elimina los costos del camino en el grafo, pero no lo desactiva
@@ -153,7 +157,7 @@ class Graph {
 		/*****************/
 		
 	private:
-		Node ** nodes;//dos asteriscos porque es un array de punteros a nodos, tambien se podría haber hecho como un arreglo de nodos
+		Node ** nodes;//dos asteriscos porque es un array de punteros a nodos, tambien se podrï¿½a haber hecho como un arreglo de nodos
 		Adyacence  * edges;
 		int nodesCount, edgesCount;
 		int ** connectionReqs;

@@ -9,10 +9,10 @@ Adyacence::Adyacence(void){
 
 Adyacence::Adyacence(int cantNodes) {
 	dimension = cantNodes;
-	edges = new (Edge(**[dimension]));
+	edges = new (Edge**[dimension]);
 	for(int j=0; j <dimension; j++)
 	{
-		edges[j] = new (Edge(*[dimension]));
+		edges[j] = new (Edge*[dimension]);
 		for(int k=0; k <dimension ;k++)
 		{
 			edges[j][k]= NULL;

@@ -45,6 +45,7 @@ public:
 	static void NetworkDesignAlgorithm(string input,int cantiter,int k,double umbral,int simiter);
 	//static void NetworkDesign::NetworkDesignAlgorithm2(string input,int cantiter,int k);
 	static void NetworkDesignAlgorithm2(string input,int cantiter,int k);
+	static void NetworkDesignAlgorithm3(string input,int cantiter,int k,double umbral,int simiter);
 private:
 	static void AddResult(Collection * c, Result * r);
 	static void make_directory(const char* name);

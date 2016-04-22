@@ -8,10 +8,10 @@ MatrixP::MatrixP()
 MatrixP::MatrixP(Graph * g)
 {
 	size = g->GetNodesCount();
-	p = new (Collection(**[size]));
+	p = new (Collection**[size]);
 	for(int i=0; i <size; i++)
 	{
-		p[i] = new (Collection(*[size]));
+		p[i] = new (Collection*[size]);
 		for(int j=i+1; j <size ;j++)
 		{
 			if (g->IsTerminal(i) && g->IsTerminal(j))
@@ -46,7 +46,7 @@ MatrixP * MatrixP::Copy()
 {
 	MatrixP * temp = new MatrixP();
 	temp->size = this->size;
-	temp->p = new (Collection(**[temp->size]));
+	temp->p = new (Collection**[temp->size]);
 	
 	for(int i=0; i <temp->size; i++)
 	{

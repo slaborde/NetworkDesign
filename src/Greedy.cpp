@@ -10,10 +10,10 @@ using namespace std;
 MatrixM::MatrixM(Graph * g)
 {
 	size = g->GetNodesCount();
-	m = new (int(*[size]));
+	m = new (int*[size]);
 	for(int i=0; i <size; i++)
 	{
-		m[i] = new (int([size]));
+		m[i] = new (int[size]);
 		for(int j=i+1; j <size ;j++)
 		{
 			if (g->IsTerminal(i) && g->IsTerminal(j))
@@ -99,10 +99,10 @@ void MatrixM::Show()
 MatrixA::MatrixA(Graph * g)
 {
 	size = g->GetNodesCount();
-	a = new (int(*[size]));
+	a = new (int*[size]);
 	for(int i=0; i <size; i++)
 	{
-		a[i] = new (int([size]));
+		a[i] = new (int[size]);
 		for(int j=i+1; j <size ;j++)
 		{
 			if (g->IsTerminal(i) && g->IsTerminal(j))

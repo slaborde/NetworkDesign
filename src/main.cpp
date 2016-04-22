@@ -20,8 +20,11 @@ string graph;
 			simiter = atoi(args[5]);
 			rp = atoi(args[6]);
 			cout << "NetworkDesignAlgorithm se ejecutara con los siguientes parametros: " << graph << "|" << cantiter << "|" << k << "|" << umbral << "|" << simiter << "|" << rp << endl;
+
 			if (rp == 1) NetworkDesign::NetworkDesignAlgorithm(graph,cantiter,k,umbral,simiter);
-			else NetworkDesign::NetworkDesignAlgorithm2(graph,cantiter,k);
+			else if (rp == 2) NetworkDesign::NetworkDesignAlgorithm2(graph,cantiter,k);
+			else NetworkDesign::NetworkDesignAlgorithm3(graph,cantiter,k,umbral,simiter);
+
 			cout << "NetworkDesignAlgorithm ha finalizado su ejecucion: ";
 		}
 		else cout << "El nombre del archivo no es correcto \n";
