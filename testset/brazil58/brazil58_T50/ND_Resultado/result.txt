@@ -1,3 +1,0 @@
-testset/brazil58_T50/ND_Resultado/brazil58_T50-0.xml	24957.000000	0.851857
-testset/brazil58_T50/ND_Resultado/brazil58_T50-1.xml	25345.000000	0.878917
-testset/brazil58_T50/ND_Resultado/brazil58_T50-2.xml	26120.000000	0.901103
