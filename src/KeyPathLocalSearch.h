@@ -4,6 +4,7 @@
 #include "Algorithms.h"
 #include "Boolean.h"
 #include "LocalSearch.h"
+#include "time.h"
 
 class KeyPathLocalSearch : public LocalSearch {
 

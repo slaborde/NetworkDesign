@@ -1,4 +1,0 @@
-testset/ch150_T50/ND_Resultado/ch150_T50-0.xml	7414.095857	0.861984
-testset/ch150_T50/ND_Resultado/ch150_T50-1.xml	7613.438412	0.886444
-testset/ch150_T50/ND_Resultado/ch150_T50-2.xml	7786.374370	0.887387
-testset/ch150_T50/ND_Resultado/ch150_T50-3.xml	7995.398424	0.888490

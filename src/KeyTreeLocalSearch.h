@@ -3,6 +3,7 @@
 
 #include "Algorithms.h"
 #include "LocalSearch.h"
+#include "time.h"
 
 class KeyTreeLocalSearch : public LocalSearch
 {

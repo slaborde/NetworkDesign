@@ -2,6 +2,7 @@
 #define UTILITIES_H_
 
 #include "Graph.h"
+#include "time.h"
 
 class Utilities
 {
