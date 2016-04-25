@@ -1,0 +1,4 @@
+testset/berlin52/berlin52_T20(65-25-10)/berlin52_T20(65-25-10)/ND_Resultado/berlin52_T20(65-25-10)-0.xml	8154.483138	0.999997
+testset/berlin52/berlin52_T20(65-25-10)/berlin52_T20(65-25-10)/ND_Resultado/berlin52_T20(65-25-10)-1.xml	8342.170286	1.000000
+testset/berlin52/berlin52_T20(65-25-10)/berlin52_T20(65-25-10)/ND_Resultado/berlin52_T20(65-25-10)-2.xml	8369.486359	1.000000
+testset/berlin52/berlin52_T20(65-25-10)/berlin52_T20(65-25-10)/ND_Resultado/berlin52_T20(65-25-10)-3.xml	8762.398559	1.000000

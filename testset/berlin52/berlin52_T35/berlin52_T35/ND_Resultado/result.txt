@@ -1,0 +1,2 @@
+testset/berlin52/berlin52_T35/berlin52_T35/ND_Resultado/berlin52_T35-0.xml	4101.668048	0.992326
+testset/berlin52/berlin52_T35/berlin52_T35/ND_Resultado/berlin52_T35-1.xml	4125.889607	0.996306
