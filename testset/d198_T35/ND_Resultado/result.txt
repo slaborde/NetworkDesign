@@ -1,3 +1,0 @@
-testset/d198_T35/ND_Resultado/d198_T35-0.xml	16031.701930	0.832393
-testset/d198_T35/ND_Resultado/d198_T35-1.xml	16850.180769	0.880569
-testset/d198_T35/ND_Resultado/d198_T35-2.xml	17447.850159	0.904071

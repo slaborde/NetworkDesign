@@ -1,5 +1,0 @@
-testset/eil51_T35/ND_Resultado/eil51_T35-0.xml	336.492794	0.817227
-testset/eil51_T35/ND_Resultado/eil51_T35-1.xml	339.297416	0.911820
-testset/eil51_T35/ND_Resultado/eil51_T35-2.xml	355.534026	0.922921
-testset/eil51_T35/ND_Resultado/eil51_T35-3.xml	357.586458	0.941125
-testset/eil51_T35/ND_Resultado/eil51_T35-4.xml	385.502613	0.963275
