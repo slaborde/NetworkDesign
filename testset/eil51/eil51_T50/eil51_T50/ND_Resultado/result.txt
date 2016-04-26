@@ -1,0 +1,4 @@
+testset/eil51/eil51_T50/eil51_T50/ND_Resultado/eil51_T50-0.xml	327.578195	0.997531
+testset/eil51/eil51_T50/eil51_T50/ND_Resultado/eil51_T50-1.xml	341.395913	0.998387
+testset/eil51/eil51_T50/eil51_T50/ND_Resultado/eil51_T50-2.xml	347.902003	0.998400
+testset/eil51/eil51_T50/eil51_T50/ND_Resultado/eil51_T50-3.xml	383.020531	0.998961

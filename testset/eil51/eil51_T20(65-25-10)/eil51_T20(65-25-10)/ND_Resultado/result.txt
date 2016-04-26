@@ -1,0 +1,3 @@
+testset/eil51/eil51_T20(65-25-10)/eil51_T20(65-25-10)/ND_Resultado/eil51_T20(65-25-10)-0.xml	397.280164	0.999994
+testset/eil51/eil51_T20(65-25-10)/eil51_T20(65-25-10)/ND_Resultado/eil51_T20(65-25-10)-1.xml	402.685747	1.000000
+testset/eil51/eil51_T20(65-25-10)/eil51_T20(65-25-10)/ND_Resultado/eil51_T20(65-25-10)-2.xml	405.947377	1.000000
