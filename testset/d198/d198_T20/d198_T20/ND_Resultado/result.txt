@@ -1,0 +1,2 @@
+testset/d198/d198_T20/d198_T20/ND_Resultado/d198_T20-0.xml	11187.833435	0.995419
+testset/d198/d198_T20/d198_T20/ND_Resultado/d198_T20-1.xml	12172.756172	0.995478

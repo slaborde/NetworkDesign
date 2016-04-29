@@ -1,0 +1,2 @@
+testset/gr137/gr137_T35/gr137_T35/ND_Resultado/gr137_T35-0.xml	740.625063	0.995036
+testset/gr137/gr137_T35/gr137_T35/ND_Resultado/gr137_T35-1.xml	787.947327	0.995736
