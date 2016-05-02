@@ -1,0 +1,2 @@
+testset/ch150/ch150_T50/ch150_T50/ND_Resultado/ch150_T50-0.xml	7390.866657	0.992229
+testset/ch150/ch150_T50/ch150_T50/ND_Resultado/ch150_T50-1.xml	7714.006985	0.994497

@@ -1,0 +1,4 @@
+testset/ch150/ch150_T35/ch150_T35/ND_Resultado/ch150_T35-0.xml	6549.131881	0.992349
+testset/ch150/ch150_T35/ch150_T35/ND_Resultado/ch150_T35-1.xml	6840.869660	0.993409
+testset/ch150/ch150_T35/ch150_T35/ND_Resultado/ch150_T35-2.xml	6903.074245	0.993665
+testset/ch150/ch150_T35/ch150_T35/ND_Resultado/ch150_T35-3.xml	7224.097431	0.993861
