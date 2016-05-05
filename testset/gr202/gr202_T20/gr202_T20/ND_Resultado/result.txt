@@ -1,0 +1,2 @@
+testset/gr202/gr202_T20/gr202_T20/ND_Resultado/gr202_T20-0.xml	222.585676	0.991008
+testset/gr202/gr202_T20/gr202_T20/ND_Resultado/gr202_T20-1.xml	238.202962	0.991226
