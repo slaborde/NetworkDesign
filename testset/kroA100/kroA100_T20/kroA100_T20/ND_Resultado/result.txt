@@ -1,0 +1,4 @@
+testset/kroA100/kroA100_T20/kroA100_T20/ND_Resultado/kroA100_T20-0.xml	17234.536031	0.992551
+testset/kroA100/kroA100_T20/kroA100_T20/ND_Resultado/kroA100_T20-1.xml	18374.180337	0.994236
+testset/kroA100/kroA100_T20/kroA100_T20/ND_Resultado/kroA100_T20-2.xml	19416.063797	0.995127
+testset/kroA100/kroA100_T20/kroA100_T20/ND_Resultado/kroA100_T20-3.xml	23102.838975	0.996265

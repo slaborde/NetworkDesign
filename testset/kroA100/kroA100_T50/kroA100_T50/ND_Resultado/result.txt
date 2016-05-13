@@ -1,0 +1,6 @@
+testset/kroA100/kroA100_T50/kroA100_T50/ND_Resultado/kroA100_T50-0.xml	27216.254851	0.991409
+testset/kroA100/kroA100_T50/kroA100_T50/ND_Resultado/kroA100_T50-1.xml	27483.076596	0.992239
+testset/kroA100/kroA100_T50/kroA100_T50/ND_Resultado/kroA100_T50-2.xml	27909.153703	0.993114
+testset/kroA100/kroA100_T50/kroA100_T50/ND_Resultado/kroA100_T50-3.xml	28038.036762	0.993475
+testset/kroA100/kroA100_T50/kroA100_T50/ND_Resultado/kroA100_T50-4.xml	29897.943296	0.994465
+testset/kroA100/kroA100_T50/kroA100_T50/ND_Resultado/kroA100_T50-5.xml	30012.699857	0.994673
