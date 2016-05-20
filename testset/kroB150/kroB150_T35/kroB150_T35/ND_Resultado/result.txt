@@ -1,0 +1,4 @@
+testset/kroB150/kroB150_T35/kroB150_T35/ND_Resultado/kroB150_T35-0.xml	25742.840588	0.995068
+testset/kroB150/kroB150_T35/kroB150_T35/ND_Resultado/kroB150_T35-1.xml	26483.531251	0.995258
+testset/kroB150/kroB150_T35/kroB150_T35/ND_Resultado/kroB150_T35-2.xml	27064.040566	0.996194
+testset/kroB150/kroB150_T35/kroB150_T35/ND_Resultado/kroB150_T35-3.xml	31708.543929	0.996584

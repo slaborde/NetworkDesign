@@ -1,0 +1,4 @@
+testset/kroB150/kroB150_T20/kroB150_T20/ND_Resultado/kroB150_T20-0.xml	15528.900334	0.992436
+testset/kroB150/kroB150_T20/kroB150_T20/ND_Resultado/kroB150_T20-1.xml	17185.406121	0.995514
+testset/kroB150/kroB150_T20/kroB150_T20/ND_Resultado/kroB150_T20-2.xml	18151.268505	0.996105
+testset/kroB150/kroB150_T20/kroB150_T20/ND_Resultado/kroB150_T20-3.xml	18495.221937	0.996642

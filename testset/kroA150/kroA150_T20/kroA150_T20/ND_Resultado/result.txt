@@ -1,0 +1,6 @@
+testset/kroA150/kroA150_T20/kroA150_T20/ND_Resultado/kroA150_T20-0.xml	17180.294833	0.990828
+testset/kroA150/kroA150_T20/kroA150_T20/ND_Resultado/kroA150_T20-1.xml	18092.543043	0.993804
+testset/kroA150/kroA150_T20/kroA150_T20/ND_Resultado/kroA150_T20-2.xml	18843.249378	0.993829
+testset/kroA150/kroA150_T20/kroA150_T20/ND_Resultado/kroA150_T20-3.xml	18871.500929	0.994163
+testset/kroA150/kroA150_T20/kroA150_T20/ND_Resultado/kroA150_T20-4.xml	19137.735274	0.994779
+testset/kroA150/kroA150_T20/kroA150_T20/ND_Resultado/kroA150_T20-5.xml	19399.831681	0.996308

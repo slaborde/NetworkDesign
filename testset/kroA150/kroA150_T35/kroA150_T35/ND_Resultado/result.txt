@@ -1,0 +1,2 @@
+testset/kroA150/kroA150_T35/kroA150_T35/ND_Resultado/kroA150_T35-0.xml	27405.004037	0.997773
+testset/kroA150/kroA150_T35/kroA150_T35/ND_Resultado/kroA150_T35-1.xml	28842.873750	0.998607
