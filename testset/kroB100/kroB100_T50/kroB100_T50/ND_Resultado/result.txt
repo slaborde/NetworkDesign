@@ -1,0 +1,4 @@
+testset/kroB100/kroB100_T50/kroB100_T50/ND_Resultado/kroB100_T50-0.xml	24039.017442	0.993839
+testset/kroB100/kroB100_T50/kroB100_T50/ND_Resultado/kroB100_T50-1.xml	25135.531289	0.994450
+testset/kroB100/kroB100_T50/kroB100_T50/ND_Resultado/kroB100_T50-2.xml	25887.231437	0.995002
+testset/kroB100/kroB100_T50/kroB100_T50/ND_Resultado/kroB100_T50-3.xml	26539.405438	0.995585

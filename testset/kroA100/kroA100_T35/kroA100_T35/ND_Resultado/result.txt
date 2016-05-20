@@ -1,0 +1,2 @@
+testset/kroA100/kroA100_T35/kroA100_T35/ND_Resultado/kroA100_T35-0.xml	22565.166252	0.990738
+testset/kroA100/kroA100_T35/kroA100_T35/ND_Resultado/kroA100_T35-1.xml	24501.461025	0.995365
