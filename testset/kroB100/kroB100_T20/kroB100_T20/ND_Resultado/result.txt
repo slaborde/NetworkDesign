@@ -1,0 +1,1 @@
+testset/kroB100/kroB100_T20/kroB100_T20/ND_Resultado/kroB100_T20-0.xml	13042.332075	0.990010
