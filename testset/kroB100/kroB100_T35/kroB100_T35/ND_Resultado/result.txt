@@ -1,0 +1,6 @@
+testset/kroB100/kroB100_T35/kroB100_T35/ND_Resultado/kroB100_T35-0.xml	18734.280180	0.991686
+testset/kroB100/kroB100_T35/kroB100_T35/ND_Resultado/kroB100_T35-1.xml	19024.523148	0.993208
+testset/kroB100/kroB100_T35/kroB100_T35/ND_Resultado/kroB100_T35-2.xml	19703.636378	0.994732
+testset/kroB100/kroB100_T35/kroB100_T35/ND_Resultado/kroB100_T35-3.xml	20031.670117	0.995023
+testset/kroB100/kroB100_T35/kroB100_T35/ND_Resultado/kroB100_T35-4.xml	21031.745843	0.995462
+testset/kroB100/kroB100_T35/kroB100_T35/ND_Resultado/kroB100_T35-5.xml	23753.003745	0.996482
