@@ -1,0 +1,3 @@
+testset/kroB200/kroB200_T35/kroB200_T35/ND_Resultado/kroB200_T35-0.xml	30749.458815	0.994547
+testset/kroB200/kroB200_T35/kroB200_T35/ND_Resultado/kroB200_T35-1.xml	33072.996439	0.994555
+testset/kroB200/kroB200_T35/kroB200_T35/ND_Resultado/kroB200_T35-2.xml	36100.953090	0.996769

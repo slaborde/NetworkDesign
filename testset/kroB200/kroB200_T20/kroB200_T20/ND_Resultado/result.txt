@@ -1,0 +1,3 @@
+testset/kroB200/kroB200_T20/kroB200_T20/ND_Resultado/kroB200_T20-0.xml	19314.903974	0.993477
+testset/kroB200/kroB200_T20/kroB200_T20/ND_Resultado/kroB200_T20-1.xml	19879.449146	0.995534
+testset/kroB200/kroB200_T20/kroB200_T20/ND_Resultado/kroB200_T20-2.xml	21011.486134	0.996672
