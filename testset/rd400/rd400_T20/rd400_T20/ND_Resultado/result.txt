@@ -1,0 +1,1 @@
+testset/rd400/rd400_T20/rd400_T20/ND_Resultado/rd400_T20-0.xml	12801.771042	0.990318
