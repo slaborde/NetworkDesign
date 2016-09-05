@@ -1,0 +1,3 @@
+testset/tsp225/tsp225_T20/tsp225_T20/ND_Resultado/tsp225_T20-0.xml	3071.075697	0.990275
+testset/tsp225/tsp225_T20/tsp225_T20/ND_Resultado/tsp225_T20-1.xml	3143.985149	0.990455
+testset/tsp225/tsp225_T20/tsp225_T20/ND_Resultado/tsp225_T20-2.xml	3205.058778	0.991728
