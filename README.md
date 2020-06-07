@@ -25,6 +25,3 @@ Under /testset tsp lib graphs instances and their results.
 
 ## Note
 This should compile in all platforms Win, Linux y Mac OS, but some compilers have trouble with parenthesis in some special code line declarations for example: Adyacence.cpp line 12. For this reason maybe quit parenthesis should be needed in order to compile in some platforms.
-
-El código está escrito para que compile en Win, Linux y Mac OS, de todas formas algunos compiladores tienen problemas con los parentisis en algunas sentencias
-de algunos métodos (por ejemplo en Adyacence.cpp linea 12), por está razón es posible que haya que quitar o agregar estos parentesis para que el código compile en alguna de las plataformas.
