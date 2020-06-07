@@ -1,6 +1,7 @@
 # NetworkDesign
 
-## MSc Thesis: A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability
+## MSc Thesis
+### A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability
 
 ## Compile
 Execute: make compile
