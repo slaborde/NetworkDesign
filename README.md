@@ -10,8 +10,10 @@ Execute: make compile
 Execute: make dist
 
 ## Run
-Execute for Example: ./NetworkDesign testset/att48/att48_T20/att48_T20.xml 100 5 0.99 10000 3
+Execute for Example: ./NetworkDesign testset/att48/att48_T20/att48_T20.xml 100 5 0.99 10000 3 
+
 where:
+
 * 100 =  number of network design itertions
 * 5 = k shortest paths
 * 0.99 = reliability threshold
