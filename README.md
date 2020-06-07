@@ -23,7 +23,7 @@ where:
 ## Test Set
 Under /testset tsp lib graphs instances and their results.
 
-## Nota
+## Note
 This should compile in all platforms Win, Linux y Mac OS, but some compilers have trouble with parenthesis in some special code line declarations for example: Adyacence.cpp line 12. For this reason maybe quit parenthesis should be needed in order to compile in some platforms.
 
 El código está escrito para que compile en Win, Linux y Mac OS, de todas formas algunos compiladores tienen problemas con los parentisis en algunas sentencias
