@@ -18,7 +18,7 @@ where:
 * 5 = k shortest paths
 * 0.99 = reliability threshold
 * 10000 = reliability simulations iterations
-* 3 = kind of network design algorithm (1: for optimization and reliability, 2: 1: for optimization only, 3: for optimization and reliability with nine node-link failure probability combinations ranging between 0.90-0.99)
+* 3 = kind of network design algorithm (1: for optimization and reliability, 2: for optimization only, 3: for optimization and reliability with nine node-link failure probability combinations ranging between 0.90-0.99)
 
 ## Test Set
 Under "/testset" folder, TSPLIB graphs instances and their results.
