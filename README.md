@@ -1,6 +1,9 @@
 # NetworkDesign
 
 ## MSc Thesis
+### Topological Optimization of Fault-Tolerant Networks meeting Reliability Constraints
+
+## Article
 ### A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability
 
 ## Compile
