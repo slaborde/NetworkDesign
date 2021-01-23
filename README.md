@@ -27,4 +27,4 @@ where:
 Under "/testset" folder, TSPLIB graphs instances and their results.
 
 ## Note
-This code, should compile in all platforms, ie: Win, Linux y Mac OS, etc, but some compilers have trouble with parenthesis in some special code line declarations for example: in Adyacence.cpp file, line 12. For this reason, in order to compile in a particular platform, may need to quit or add those parenthesis.
+This code, should compile in all platforms, ie: Win, Linux y Mac OS, etc, but for some platforms C++ compilers have trouble with parenthesis in some special code line declarations for example: in Adyacence.cpp file, line 12. For this reason, in order to compile in a particular platform, may need to quit or add those parenthesis.

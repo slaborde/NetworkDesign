@@ -1,42 +1,6 @@
-%\section{Motivación}
-%\begin{frame}\frametitle{Motivación}
-%
-%    \begin{center}
-%        \includegraphics[scale=0.30]{figuras/martinsMCC}
-%    \end{center}
-%    \begin{tiny}    
-%    \begin{block}{Observaciones}
-%        \begin{itemize} 
-%            \item Densidad de la estructura de vecindad de los cliques
-%            \item Componente altamente relacionada con el resto del grafo.           
-%            \item Gran cantidad de cliques máximo.            
-%        \end{itemize}
-%    \end{block}
-%    \end{tiny}
-%\end{frame}
-
 \section{Problema}
-
 %$\mathcal{G}$
 %\emph{Clique} $\mathcal{C}$ 
-%Currently, the backbone of the Internet infrastructure is supported by
-%ber-optics communication. Fiber-To-The-Home (FTTH) services have a large
-%penetration throughout the world, and provides high data rates to the nal
-%customers. However, there are several shortcomings that should be addressed
-%urgently. The physical design of FTTH is not suitable for large-scale natural
-%disasters and/or malicious attacks [16]. The monitoring and detection of
-%failures are sometimes slow, and a service disruption of hours is extremely
-%harmful for business models. Furthermore, FTTH services are suering the
-%capacity crunch problem, and elastic optical networks (EON) combined with
-%smart trac engineering and additional redundancy is currently in order.
-%Consequently, a smart augmentation of the physical network is mandatory.
-%Since the deployment of ber-optics is an important economical investment,
-%Reliability analysis deals with probabilistic failures on the components of a
-%system. The reliability is precisely the probability of correct operation of the
-%whole system, subject to random failures. Here, we consider a realistic hostile
-%model, where both nodes and links could fail. Our goal is to understand the cost-
-%reliability trade-off, and how the reliability is naturally increased adding levels
-%of redundancy between distinguished terminals.
 \subsection{Motivación}
 \begin{frame}%\frametitle{Motivación}
 %Generalized Steiner Problem with Node-Connectivity Constraints and
@@ -46,7 +10,7 @@
     	\item Los servicios de fibra al hogar (Fiber-To-The-Home - FTTH) tienen una gran penetración mundial brindando a los clientes finales transferencias de datos a altas velocidades.
     	\item La cantidad de aplicaciones y servicios sobre internet ha crecido exponencialmente.
     	\item Es mandatorio escalar de forma inteligente la infraestructura de red.
-    	\item Dado que el despligue de la fibra optica es una importante inversión económica, el diseño topologico de las redes FTTH debe continuar considerandose.
+    	\item Dado que el despligue de la fibra optica es una importante inversión económica, el diseño topológico de las redes FTTH debe continuar considerandose.
 	\end{itemize} 
     \end{block}
     %\begin{center}
@@ -78,12 +42,23 @@ de sistemas, con restricciones de confiabilidad.
     \end{block}
 \end{frame}
 
-%Our goal is to find a minimum-cost solution,
-%meeting a reliability threshold, where both nodes and links may fail
-%with given probabilities.
 \subsection{Definición}
 \begin{frame}\frametitle{Generalized Steiner Problem with Node-Connectivity Constraints and
 Hostile Reliability (GSPNCHR)}
+%    \begin{block}{}
+    \begin{definition}[GSPNCHR]
+Consider a simple undirected graph $G=(V,E)$, terminal-set $T \subseteq V$, link-costs $\{c_{i,j}\}_{(i,j) \in E}$ 
+and connectivity requirements $R=\{r_{i,j}\}_{i,j \in T}$. Further, we assume that both links and non-terminal (Steiner) nodes 
+fail with respective probabilities $P_E=\{p_e\}_{e\in E}$ and $P_{V-T}=\{p_v\}_{v\in V-T}$. 
+Given a reliability threshold $p_{min}$, the goal is to build 
+a minimum-cost topology $G_S \subseteq G$ meeting both the connectivity requirements 
+$R$ and the reliability threshold: $R_{K}(G_S) \geq p_{min}$, being $K=T$ the terminal-set.
+\end{definition}
+ %   \end{block}
+\end{frame}
+
+\subsection{Formulación}
+\begin{frame}\frametitle{GSPNCHR}
 %    \begin{block}{}
     \begin{definition}[GSPNCHR]
 Consider a simple undirected graph $G=(V,E)$, terminal-set $T \subseteq V$, link-costs $\{c_{i,j}\}_{(i,j) \in E}$ 
@@ -101,7 +76,6 @@ $R$ and the reliability threshold: $R_{K}(G_S) \geq p_{min}$, being $K=T$ the te
 \begin{frame}\frametitle{Publicaciones}
 \begin{block}{Publicaciones}
 	\begin{enumerate}
-	
 	 \begin{small}
 	\item Martins, P.(2012). \textbf{Cliques with maximum/minimum edge neighborhood and neighborhood density}. Computers And Operations Research, 39(3):594-608.	
 	\item Martins, P., Ladrón, A. and Ramalhinho, H. (2014). \textbf{Maximun cut-clique problem: ILS heuristics and a data analysis application}. International Transactions in Operational Research, 22(5):775-809.	
@@ -178,14 +152,6 @@ Por la complejidad inherente al problema, se presenta una solución basada en Al
 	%\end{algorithm}
     \end{block}
 \end{frame}
-
-%\subsection{Inicializacion de Soluciones y Criterio de Parada}
-%\begin{frame}\frametitle{Inicialización y Criterio de Parada}
-%	\begin{itemize}
-%		\item Inicialización de soluciones, mediante proceso aleatorio de forma de otorgar diversidad.
-%		\item Criterio de Parada, que la población evolucione durante 1000 generaciones.
-%	\end{itemize}	    
-%\end{frame}
 
 \subsection{Diseño}
 \begin{frame}\frametitle{Diseño de la solución}
