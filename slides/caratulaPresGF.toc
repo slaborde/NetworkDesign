@@ -1,0 +1,14 @@
+\babel@toc {spanish}{}
+\beamer@sectionintoc {1}{Motivaci\IeC {\'o}n}{3}{0}{1}
+\beamer@sectionintoc {2}{Estado del arte}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Publicaciones Externas}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Publicaciones Locales}{5}{0}{2}
+\beamer@sectionintoc {3}{Problema}{6}{0}{3}
+\beamer@subsectionintoc {3}{1}{Definici\IeC {\'o}n}{6}{0}{3}
+\beamer@subsectionintoc {3}{2}{Complejidad}{7}{0}{3}
+\beamer@sectionintoc {4}{Soluci\IeC {\'o}n}{8}{0}{4}
+\beamer@subsectionintoc {4}{1}{Algoritmo B\IeC {\'a}sico}{8}{0}{4}
+\beamer@subsectionintoc {4}{2}{Representaci\IeC {\'o}n}{9}{0}{4}
+\beamer@subsectionintoc {4}{3}{Funci\IeC {\'o}n de Fitness}{10}{0}{4}
+\beamer@subsectionintoc {4}{4}{Operadores Evolutivos}{11}{0}{4}
+\beamer@subsectionintoc {4}{5}{Inicializacion de Soluciones y Criterio de Parada}{14}{0}{4}

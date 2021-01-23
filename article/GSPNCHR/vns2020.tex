@@ -1,15 +1,12 @@
 \documentclass{llncs}
 %\pdfoutput=1
 
-\DeclareUnicodeCharacter{2009}{\,}
-
 \usepackage{makeidx}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{algorithmic}
 \usepackage{algorithm}
-%\usepackage{algorithmicx,algpseudocode}
 \usepackage[makeroom]{cancel}
 \usepackage{pdflscape}
 \usepackage{tabularx}
@@ -42,8 +39,6 @@
 \newcommand{\G} {\mathcal{G}}
 \newtheorem{Prop}{Proposition}
 
-%\algrenewcommand{\algorithmiccomment}[1]{\hfill$\blacktriangleright$ #1}
-
 \begin{document}
 %
 
@@ -56,7 +51,7 @@
 \author{Sebasti\'an Laborde \and Franco Robledo \and\\
   Pablo Romero \and Omar Viera}
 %
-\authorrunning{Sebasti\'an Laborde et al.} % abbreviated author list (for running head)
+\authorrunning{Sebasti\'an Laborde et. al.} % abbreviated author list (for running head)
 
 %
 \institute{Instituto de Computaci\'on, INCO\\
@@ -81,7 +76,7 @@ the effectiveness of our proposal. The results suggest that our heuristic is cos
 \section{Motivation}\label{sect:intro}
 Currently, the backbone of the Internet infrastructure is supported by fiber-optics communication. Fiber-To-The-Home (FTTH) services have a large penetration throughout the world, and provides high data rates to the final customers. 
 However, there are several shortcomings that should be addressed urgently. The physical design of FTTH is not suitable for 
-large-scale natural disasters and/or malicious attacks~\cite{116}. The monitoring and detection of failures are sometimes slow, and a service disruption of hours is extremely harmful for business models. Furthermore, FTTH services are suffering the capacity crunch problem, and elastic optical networks combined with smart traffic engineering and additional redundancy is currently in order.
+large-scale natural disasters and/or malicious attacks~\cite{116}. The monitoring and detection of failures are sometimes slow, and a service disruption of hours is extremely harmful for business models. Furthermore, FTTH services are suffering the capacity crunch problem, and elastic optical networks (EON) combined with smart traffic engineering and additional redundancy is currently in order.
 
 Consequently, a smart augmentation of the physical network is mandatory. Since the deployment of fiber-optics is an important economical investment, the topological network design of FTTH networks should be revisited. The goal is to interconnect 
 distinguished nodes, called terminals, using large level of redundancy, and simultaneously, meeting large reliable constraints.
@@ -107,11 +102,11 @@ Section~\ref{conclusions} contains concluding remarks and trends for future work
 Here, we extend the Generalized Steiner Problem (GSP), adding node-connectivity requirements and a hostile network reliability model with probabilistic failures on its components. We cover the main body of related works in the 
 fields of network reliability analysis, topological network design and joint problems from the scientific literature. 
 
-Scarce works jointly deal with a topological network optimization under reliability constraints. Javiera Barrera et al. proposed a topological network optimization, trying to minimize costs subject to $K$-terminal reliability constraints~\cite{106}. The authors consider Sample Average Approximation (SAA) method, which is a powerful tool for  stochastic optimization and for the resolution of $\mathcal{NP}$-Hard combinatorial problems with a target probability maximization~\cite{112}. They conclude that suboptimal solutions could be found if dependent failures are ignored in the model. The scientific literature also offers topological optimization problems meeting reliability constraints, or reliability maximization under budget constraints, which is known as network synthesis. 
+Scarce works jointly deal with a topological network optimization under reliability constraints. Javiera Barrera et. al. proposed a topological network optimization, trying to minimize costs subject to $K$-terminal reliability constraints~\cite{106}. The authors consider Sample Average Approximation (SAA) method, which is a powerful tool for  stochastic optimization and for the resolution of $\mathcal{NP}$-Hard combinatorial problems with a target probability maximization~\cite{112}. They conclude that suboptimal solutions could be found if dependent failures are ignored in the model. The scientific literature also offers topological optimization problems meeting reliability constraints, or reliability maximization under budget constraints, which is known as network synthesis. 
 The reader can find a survey on the synthesis in network reliability in~\cite{113}. 
 More recent works propose a reliability optimization in general stochastic binary systems~\cite{107}, even under the introduction of Sample Average Approximation~\cite{114}. Building uniformly most-reliable graphs is an active and challenging research field, where the goal is to find graphs with fixed nodes and links with maximum reliability evaluation in a uniform sense. 
 %There are pairs of nodes and links where such uniformly most-reliable graphs do not exist~\cite{108}. 
-The interested reader can consult~\cite{115} for conjectures in this field. A close problem to ours is to consider topological transformations (i.e., moving links or path/tree replacements) in order to increase the reliability measure. This problem is not mature, and a recent work propose a novel reliability-increasing network transformation~\cite{110}. There, E. Canale et al. show that any graph with a cut-point can be transformed into a biconnected graph with greater reliability. Using this remarkable property, our design does not include cut-points. 
+The interested reader can consult~\cite{115} for conjectures in this field. A close problem to ours is to consider topological transformations (i.e., moving links or path/tree replacements) in order to increase the reliability measure. This problem is not mature, and a recent work propose a novel reliability-increasing network transformation~\cite{110}. There, E. Canale et. al. show that any graph with a cut-point can be transformed into a biconnected graph with greater reliability. Using this remarkable property, our design does not include cut-points. 
 
 
 Most works in the field of network reliability analysis deal with its evaluation rather than its maximization. The literature on network reliability evaluation is abundant, and here we can mention distinguished works on this field. A trade-off between accuracy and computational feasibility is met by simulations, 
@@ -119,7 +114,7 @@ given the hardness of the classical network reliability models~\cite{9}. Macrosc
 consider independent replications of a complex system, and by means of statistical laws find pointwise 
 estimations, in order to make decisions on the system. The reader is invited to consult an excellent book on 
 Monte Carlo methods authored by Fishman~\cite{105}, which was inspirational for network reliability, numerical integration, statistics and other fields of knowledge. In our particular case we deal with the 
-hostile network reliability model, where both links and non-terminal nodes fail independently. Its reliability evaluation belongs to the class of $\mathcal{NP}$-Hard problems as well~\cite{9}. Recursive Variance Reduction (RVR) is an outstanding technique for the reliability estimation~\cite{85}. This formulation allows a meaningful variance reduction, and the product between time and variance is also reduced when compared to Crude Monte Carlo (CMC). Furthermore, the variance is mathematically proved to be always better in RVR than in CMC. More recently, the applicability of RVR is extended to Stochastic Monotone Binary Systems (SMBS)~\cite{82}. Since the hostile model is a SMBS, in this work we consider RVR for the network reliability estimation.
+hostile network reliability model, where both links and non-terminal nodes fail independently. Its reliability evaluation belongs to the class of $\mathcal{NP}$-Hard problems as well~\cite{9}. Recursive Variance Reduction (RVR) is an outstanding technique for the reliability estimation~\cite{85}. This formulation allows a meaningful variance reduction, and the product between time and variance is also reduced when compared to Crude Monte Carlo. Furthermore, the variance is mathematically proved to be always better in RVR than in CMC. More recently, the applicability of RVR is extended to Stochastic Monotone Binary Systems~\cite{82}. Since the hostile model is an SMBS, in this work we consider RVR for the network reliability estimation.
   
 In the Generalized Steiner Problem (GSP), the goal is to communicate a given subset of terminal-nodes at the minimum cost, 
 meeting connectivity requirements either by link-disjoint (GSP-EC) or node-disjoint (GSP-NC) paths. 
@@ -214,11 +209,11 @@ In order to tackle the GSPNCHR, first we provide full solution for the relaxed v
 this is, without Constraint~\ref{6}. Then, we count the number of feasible solutions that meet that constraint. We use this approach, since we want to determine if the topological robustness has an impact in the resulting network reliability. 
 
 
-\section{Algorithmic Proposal}\label{solution}
+\section{Solution}\label{solution}
 GRASP and VND are well known metaheuristics that have been successfully used to solve many hard combinatorial optimization problems. GRASP is a powerful multi-start process which operates in two phases~\cite{51}. A feasible solution is built 
 in a first phase, whose neighborhood is then explored in the Local Search Phase~\cite{51}. The second phase is usually enriched by means of different variable neighborhood structures. For instance, VND explores several neighborhood structures in a deterministic order. Its success is based on the simple fact that different neighborhood structures do not usually have the same local minimum. Thus,  the resulting solution is simultaneously a locally optimum solution under all the neighborhood structures. The reader is invited to consult the comprehensive Handbook of Heuristics for further information~\cite{50}. Here, we develop a GRASP/VND methodology.
 
-\subsection{General Scheme}
+\subsection{NetworkDesign}
 A pseudocode of our full proposal is presented in Figure~\ref{MainAlgorithm}. 
 It receives the ground graph $G_B$, a number of iterations $iter$ and a positive integer 
 $k$ to find the $k$ shortest paths during the Construction Phase, a reliability threshold $p_{min}$, 
@@ -235,7 +230,7 @@ $p_{min}$).
 \STATE $i \leftarrow 0; \, P \leftarrow \emptyset; \, sol \leftarrow \emptyset$
 \WHILE {$i < iter$}
 \STATE $\overline{g} \leftarrow Construction(G_B,P,k)$
-\STATE $g_{sol} \leftarrow VND(\overline{g},P)$
+\STATE $\overline{g} \leftarrow VND(\overline{g},P)$
 \STATE $reliability \leftarrow RVR(g_{sol},P_E,P_{V-T},simiter)$
 \IF{$reliability > p_{min}$}
 \STATE $sol \leftarrow sol \cup \{g_{sol}\}$
@@ -266,7 +261,7 @@ between $i,j$ is initialized correspondingly: $A_{i,j}=0\, \forall i, j \in S_{D
 \caption{$(sol,P) = Construction(G_B,C,R,k)$}
 \begin{algorithmic}[1]
 \STATE $g_{sol} \leftarrow (S_D^{(I)},\emptyset)$; $m_{i,j}\leftarrow r_{i,j}$; $P_{i,j}\leftarrow \emptyset, \forall i,j \in S_{D}^{(I)}$; $A_{i,j}\leftarrow 0, \forall i,j \in S_{D}^{(I)}$
-\WHILE {$\exists \, m_{i,j}>0: A_{i,j}<MAXATTEMPTS$}
+\WHILE {$\exists \, m_{i,j}>0: A_{i,j}<MAX\_ATTEMPTS$}
 \STATE $(i,j) \leftarrow ChooseRandom(S_{D}^{(I)}: m_{i,j}>0)$
 \STATE $\overline{G} \leftarrow G_B \setminus P_{i,j}$
 \FORALL {$(u,v)\in E(\overline{G})$}
@@ -276,9 +271,9 @@ between $i,j$ is initialized correspondingly: $A_{i,j}=0\, \forall i, j \in S_{D
 \IF{$L_p=\emptyset$}
 \STATE $A_{i,j} \leftarrow A_{i,j}+1$; $P_{i,j} \leftarrow \emptyset$; $m_{i,j}\leftarrow r_{i,j}$ 
 \ELSE 
-\STATE $p \leftarrow SelectRandom(L_p)$; $g_{sol} \leftarrow g_{sol} \cup \{p\}$
+\STATE $p \leftarrow Select\_Random(L_p)$; $g_{sol} \leftarrow g_{sol} \cup \{p\}$
 \STATE $P_{i,j} \leftarrow P_{i,j} \cup \{p\}$; $m_{i,j} \leftarrow m_{i,j}-1$
-\STATE $(P,M) \leftarrow GeneralUpdateMatrix(g_{sol},P,M,p,i,j)$
+\STATE $(P,M) \leftarrow General\_Update\_Matrix(g_{sol},P,M,p,i,j)$
 \ENDIF
 \ENDWHILE
 \RETURN $(g_{sol},P)$
@@ -293,15 +288,15 @@ our GRASP proposal for diversification purposes.
 A pair of terminals $(i,j)$ is uniformly picked at random from the set $S_{D}^{(I)}$, provided 
 that $m_{i,j}>0$ (Line 3). The graph $\overline{G}$ defined in Line~4 discards the nodes 
 that were already visited in the previous paths. Therefore, if we find some path between $i$ and 
-$j$ in $\overline{G}$, it will be included. In the \textit{for-loop} of Lines~5-7, an auxiliary matrix with the costs $\overline{C}=\overline{c_{i,j}}$ allows to use already existent links from $g_{sol}$ without additional cost, and add them to build a new node-disjoint path. The KSP from $i$ to $j$ are computed in Line~8 using Yen algorithm~\cite{14}, that finds the $k$-Shortest Paths between two fixed nodes in a graph. In Line~9, we test if the list $L_p$ is empty. In this case we re-initialize $P_{i,j}$, $m_{i,j}$, and add a unit to $A_{i,j}$, since $i$ and $j$ belong to different connected components. If the list $L_p$ is not empty, a path $p$ is uniformly picked from the list $L_p$, 
+$j$ in $\overline{G}$, it will be included. In the \textit{for-loop} of Lines~5-7, an auxiliary matrix with the costs $\overline{C}=\overline{c_{i,j}}$ allows to use already existent links from $g_{sol}$ without additional cost, and add them to build a new node-disjoint path. The $k$-Shortest Paths from $i$ to $j$ are computed in Line~8 using Yen algorithm~\cite{14}, that finds the $k$-Shortest Paths between two fixed nodes in a graph. In Line~9, we test if the list $L_p$ is empty. In this case we re-initialize $P_{i,j}$, $m_{i,j}$, and add a unit to $A_{i,j}$, since $i$ and $j$ belong to different connected components. If the list $L_p$ is not empty, a path $p$ is uniformly picked from the list $L_p$, 
 and it is included in the solution (Line~12). The path $p$ is added to $P_{i,j}$, and the 
 requirement $m_{i,j}$ is decreased a unit (Line~13). The addition of the path $p$ could 
-build node-disjoint paths from different terminals. Consequently, the function $GeneralUpdateMatrix$ finds these new paths. $Construction$ returns a feasible solution $g_{sol}$ equipped with all the 
+build node-disjoint paths from different terminals. Consequently, the function $General\_Update\_Matrix$ finds these new paths. $Construction$ returns a feasible solution $g_{sol}$ equipped with all the 
 sets $P=\{P_{i,j}\}_{i,j \in S_{D}^{(I)}}$ of node-disjoint pairs between the different terminals 
 (Line~17). The reader can observe that $Construction$ returns a feasible solution for the GSPNC, which is the 
 relaxed version of the GSPNCHR. 
 
-\subsection{Local Search Phase - VND}
+\subsection{Local Search Phase - $VND$}
 The goal is to combine a rich diversity of neighborhoods in order to obtain an output that is locally optimum solution for every feasible neighborhood. Here, we consider three neighborhood structures to build a VND~\cite{50}.  
 First, the concept of key-nodes, key-paths and key-trees are in order: 
 \begin{definition}[key-node]
@@ -316,7 +311,7 @@ and the extremes are either terminals or key-nodes.
 
 A feasible solution $g_{sol}$ accepts a decomposition into key-paths: $K_{g_{sol}}=\{p_1,\ldots,p_h\}$. 
  
-\begin{definition}[key-tree]
+\begin{definition}[Key-tree]
 Let $v \in g_{sol}$ be a key-node belonging to a feasible solution $g_{sol}$. 
 The key-tree associated to $v$, denoted by $T_v$, is the tree composed by all the 
 key-paths that meet in the common end-point (i.e., the key-node $v$).
@@ -356,12 +351,14 @@ is the most simple. The respective pseudocodes for the different local searches 
 called during these searches are here explained, in terms of inputs and outputs. 
 We invite the reader to consult~\cite{117} for implementation details:
 \begin{itemize}
-\item $GeneralRecConnect$: receives the ground graph $G_B$, cost-matrix $C$, current solution $g_{sol}$ and a 
+\item $General\_RecConnect$: receives the ground graph $G_B$, cost-matrix $C$, current solution $g_{sol}$ and a 
 key-node $v$. It tries to replace the key-tree $T_v$ with a better key-tree $T$ spanning the same leaf-nodes, preserving feasibility. It returns another solution and a boolean $improve$ (if $improve=0$, an identical solution is returned).
 \item $FindSubstituteKeyPath$: receives the current solution $g_{sol}$, the key-path $p$ and a matrix $P$ with the 
 collection of disjoint path between the terminals. It replaces the current path $p$ by $\hat{p}$, exploiting the information given by $P$ in order to reconstruct a new feasible solution. If this solution is cheaper, it returns $improve=1$ 
 and the resulting solution (otherwise, an identical solution is returned). 
 \end{itemize}
+
+In the last step, RVR is introduced in order to determine if Constraint~\ref{6} is met. The reader is invited to consult authoritative works on RVR and cites therein~\cite{85}.  
 
 %%% PROCEDURE KeyPathLocalSearch
 \begin{figure}[H]
@@ -372,11 +369,10 @@ and the resulting solution (otherwise, an identical solution is returned).
 \STATE $improve \leftarrow TRUE$
 \WHILE {$improve$}
 \STATE $improve \leftarrow FALSE$
-\STATE $K(g_{sol}) \leftarrow \{p_1,\ldots,p_h\}$ /* Key-path decomposition of $g_{sol}$ */
-%\COMMENT{Key-path decomposition of $g_{sol}$}
+\STATE $K(g_{sol}) \leftarrow \{p_1,\ldots,p_h\}$ \COMMENT{Key-path decomposition of $g_{sol}$}
 \WHILE{\textbf{not} $improve$ \textbf{and} $\exists$ \textbf{key-paths not analyzed}}
-\STATE $p \leftarrow(K(g_{sol}))$ /* Path not analyzed yet, with extremes $u$ and $v$ */
-\STATE $\hat{\mu} \leftarrow <NODES(p) \cup S_D\setminus NODES(g_{sol}) > $ /* Induced subgraph $\hat{\mu}$ */
+\STATE $p \leftarrow(K(g_{sol}))$ \COMMENT{Path not analyzed yet, with extremes $u$ and $v$}
+\STATE $\hat{\mu} \leftarrow <NODES(p) \cup S_D\setminus NODES(g_{sol}) > $ \COMMENT{Induced subgraph $\hat{\mu}$}
 \STATE $\hat{p} \leftarrow Dijkstra(u,v,\hat{\mu})$
 \IF{$COST(\hat{p}) < COST(p)$}
 \STATE $g_{sol} \leftarrow \{ g_{sol}\setminus p \} \cup \{\hat{p}\}$
@@ -389,6 +385,9 @@ and the resulting solution (otherwise, an identical solution is returned).
 \end{algorithm}
 \caption{Pseudocode for Local Search 1: $KeyPathLocalSearch$.\label{alg-kpls}}
 \end{figure}
+
+
+
 
 %
 %
@@ -437,11 +436,11 @@ and the resulting solution (otherwise, an identical solution is returned).
 \STATE $improve \leftarrow TRUE$
 \WHILE {$improve$}
 \STATE $improve \leftarrow FALSE$
-\STATE $ X \leftarrow KeyNodes(g_{sol})$ /* Key-nodes from $g_{sol}$ */
+\STATE $ X \leftarrow KeyNodes(g_{sol})$ \COMMENT{Key-nodes from $g_{sol}$}
 \STATE $\overline{S} \leftarrow S_D \setminus NODES(g_{sol})$
 \WHILE{\textbf{not} $improve$ \textbf{and} $\exists$ \textbf{key-nodes not analyzed}}
-\STATE $v \leftarrow X$ /* Key-node not analyzed yet */
-\STATE $[g_{sol},improve] \leftarrow GeneralRecConnect(G_B,C,g_{sol},v,\overline{S})$
+\STATE $v \leftarrow X$ \COMMENT{Key-node not analyzed yet}
+\STATE $[g_{sol},improve] \leftarrow General\_RecConnect(G_B,C,g_{sol},v,\overline{S})$
 \ENDWHILE
 \ENDWHILE
 \RETURN $g_{sol}$
@@ -514,9 +513,9 @@ and the resulting solution (otherwise, an identical solution is returned).
 \STATE $improve \leftarrow TRUE$
 \WHILE {$improve$}
 \STATE $improve \leftarrow FALSE$
-\STATE $K(g_{sol}) \leftarrow \{p_1,\ldots,p_h\}$ /* Key-path decomposition of $g_{sol}$ */
+\STATE $K(g_{sol}) \leftarrow \{p_1,\ldots,p_h\}$ \COMMENT{Key-path decomposition of $g_{sol}$}
 \WHILE{\textbf{not} $improve$ \textbf{and} $\exists$ \textbf{key-paths not analyzed}}
-\STATE $p \leftarrow(K(g_{sol}))$ /* Path not analyzed yet */
+\STATE $p \leftarrow(K(g_{sol}))$ \COMMENT{Path not analyzed yet}
 \STATE $(g_{sol},improve) \leftarrow FindSubstituteKeyPath(g_{sol},p,P)$
 \ENDWHILE
 \ENDWHILE
@@ -526,9 +525,6 @@ and the resulting solution (otherwise, an identical solution is returned).
 \caption{Pseudocode for Local Search 3: $SwapKeyPathLocalSearch$.\label{alg-kpls2}}
 \end{figure}
 
-\subsection{Reliability Phase - RVR}
-In the last step, RVR is introduced in order to determine if Constraint~\ref{6} is met. The reader is invited to consult authoritative works on RVR and cites therein~\cite{85}.  
-
 %\clearpage
 
 \section{Numerical Results}\label{results}
@@ -537,11 +533,11 @@ In order to understand the effectiveness of this proposal, an extensive computat
 
 We want to understand the sensibility of the solution to perturbations in the elementary reliabilities. 
 Therefore, different values for the elementary reliabilities for both Steiner nodes and links were used. Table~\ref{res} shows the results for each adapted TSPLIB instance. Each column contains, respectively, name of the TSPLIB instance, percentage of terminal nodes (\% $T$), 
-relative improvements of $Construction$  (\% $IC$) and $VND$ phases (\%$IVND$), in relation to the cost of the corresponding input graphs, CPU-time per iteration of $NetworkDesign$, 
+relative improvements of $Construction$  (\%$IC$) and $VND$ phases (\%$IVND$), in relation to the cost of the corresponding input graphs, CPU-time per iteration of $NetworkDesign$, 
 reliability estimation $\overline{R}$ and estimated variance $\overline{Var}$. 
 From Table~\ref{res}, we can appreciate that the cost of the resulting graph after the $Construction$ is practically one-half the cost of its input. The improvement of $VND$ is consistently bounded between 30.55\% and 39.45\%, according to the instance and its characteristics on the test-set. The minimum threshold $p_{min}=0.8$ is widely exceeded in all the instances under study, considering the RVR 
 estimation $\overline{R}$. The elementary reliabilities were established in $p_v=0.99$ and $p_e=0.95$ respectively for nodes and links, and the range of reliabilities is bounded between $0.8231$ and $0.967$, meeting the reliability constraint. The estimated variance 
-$\overline{Var}$ is reduced in average in all the instances under study. These facts highlight the activity of the $VND$ phase, the accuracy of RVR and the global effectiveness of our proposal. Furthermore, the CPU times are acceptable, even under large-sized graphs with 400 nodes.
+$\overline{Var}$ is reduced in average in all the instances under study. These facts highlight the activity of the VND phase, the accuracy of RVR and the global effectiveness of our proposal. Furthermore, the CPU times are acceptable, even under large-sized graphs with 400 nodes.
 
 Tables~\ref{answer2a}~and~\ref{answer2b} illustrate the number of feasible solutions 
 obtained when we fix the elementary node-reliability and modify the link-reliabilities, and vice-versa. The suffix $TXY$ in each instance indicates the percentage $XY$\% of 
@@ -557,7 +553,7 @@ This effect is not pronounced when the node-reliabilities are reduced, as we can
 %\centering  % used for centering table
 
 \hline \multicolumn{1}{|c|}{Instance} & \multicolumn{1}{c|}{\% $T$} & 
-\multicolumn{1}{c|}{\% $IC$} & \multicolumn{1}{c|}{\% $IVND$}  &
+\multicolumn{1}{c|}{\%$IC$} & \multicolumn{1}{c|}{\% $IVND$}  &
 \multicolumn{1}{c|}{\textbf{$CPU\, (s)$}} & \multicolumn{1}{c|}{$\overline{R}$}  &
 \multicolumn{1}{c|}{$\overline{Var}$} \\ \hline 
 \endfirsthead
@@ -566,7 +562,7 @@ This effect is not pronounced when the node-reliabilities are reduced, as we can
 \multicolumn{7}{c}%
 {{\bfseries \tablename\ \thetable{}-- GRASP/VND Effectiveness (cont.)}} \\
 \hline \multicolumn{1}{|c|}{Instance} & \multicolumn{1}{c|}{\% $T$} & 
-\multicolumn{1}{c|}{\% $IC$} & \multicolumn{1}{c|}{\% $IVND$}  &
+\multicolumn{1}{c|}{\%$IC$} & \multicolumn{1}{c|}{\% $IVND$}  &
 \multicolumn{1}{c|}{\textbf{$CPU\, (s)$}} & \multicolumn{1}{c|}{$\overline{R}$}  &
 \multicolumn{1}{c|}{$\overline{Var}$} \\ \hline 
 \endhead
@@ -574,7 +570,7 @@ This effect is not pronounced when the node-reliabilities are reduced, as we can
 \multicolumn{7}{c}%
 {{\bfseries \tablename\ \thetable{} -- Numerical Results (cont.)}} \\
 \hline \multicolumn{1}{|c|}{Instance} & \multicolumn{1}{c|}{\% $T$} & 
-\multicolumn{1}{c|}{\% $IC$} & \multicolumn{1}{c|}{\% $IVND$}  &
+\multicolumn{1}{c|}{\%$IC$} & \multicolumn{1}{c|}{\% $IVND$}  &
 \multicolumn{1}{c|}{\textbf{$CPU\, (s)$}} & \multicolumn{1}{c|}{$\overline{R}$}  &
 \multicolumn{1}{c|}{$\overline{Var}$} \\ \hline 
 \endhead
@@ -597,7 +593,7 @@ This effect is not pronounced when the node-reliabilities are reduced, as we can
 \hline	brazil58	&	35	&	99.25	&	39.45	&	68.891	&	0.86	&	8.347E-06	\\
 \hline	brazil58	&	50	&	98.75	&	35.26	&	103.553	&	0.91	&	7.093E-06	\\
 \hline	ch150	&	20	&	99.76	&	37.51	&	222.552	&	0.8559	&	1.029E-05	\\
-\hline	ch150	&	35	&	99.72	&	36.65	&	546.652	&	0.8803	&	9.033E-05	\\
+\hline	ch150	&	35	&	99.72	&	36.65	&	546.652	&	0.88.03	&	9.033E-05	\\
 %\hline	ch150	&	50	&	99.69	&	34.42	&	1203.054	&	88.8	&	8.974E-05	\\
 %\hline	d198	&	20	&	99.9	&	32.22	&	320.142	&	NA	&	NA	\\
 %\hline	d198	&	35	&	99.86	&	34.12	&	2086.376	&	NA	&	NA	\\
@@ -660,7 +656,7 @@ This effect is not pronounced when the node-reliabilities are reduced, as we can
 %\hline	lin105(E)	&	20	&	99.33	&	31.95	&	64.409	&	NA	&	NA	\\
 %\hline	kroA100(E)	&	35	&	98.99	&	35.88	&	225.505	&	99.81	&	1.828E-06	\\
 %\hline	rd100(E)	&	35	&	99.15	&	35.3	&	130.008	&	NA	&	NA	\\
-\hline Average     & NA    &   99.28   &  34.72   &    964.744 &  0.884 & 3.28E-05 \\
+%\hline Average     & NA    &   99.39   &  35.03   &    1026.003 &  91.38 & 2.33E-05 \\
 \hline
 \end{longtable}
 \end{center}
@@ -691,7 +687,6 @@ $p_v=0.99$ fixed and variable link reliability} % title of Table
 \hline	rd400 T20	&	100	&	0	&	0	\\
 \hline	rd400 T35	&	100	&	0	&	0	\\
 \hline	rd400 T50	&	100	&	0	&	0	\\
-\hline  Average     & 99.72    &   15.28   &  0.67 \\
 \hline
 \end{tabular}
 \label{answer2a} % is used to refer this table in the text
@@ -721,7 +716,6 @@ and variable node-reliability} % title of Table
 \hline	rd400 T20	&	100	&	16	&	2	\\
 \hline	rd400 T35	&	100	&	98	&	80	\\
 \hline	rd400 T50	&	100	&	100	&	100	\\
-\hline  Average     &   99.72    &   84.39   &  66.39 \\
 \hline
 \end{tabular}
 \label{answer2b} % is used to refer this table in the text

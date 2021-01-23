@@ -1,0 +1,86 @@
+\documentclass[11pt,hyperref={pdftex}]{beamer}
+
+\usetheme{Darmstadt}
+%usecolortheme{crane}
+\usepackage{times}
+\usefonttheme{structurebold}
+
+%\definecolor{themeblue}{rgb}{.125,.5,.25}
+%\definecolor{themeyellow}{rgb}{.125,.5,.25}
+%\usecolortheme[named=themeblue]{structure}
+
+\definecolor{bluenavy}{RGB}{0,0,128}
+
+\usepackage[spanish]{babel}
+\setcounter{tocdepth}{3}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows,decorations.pathmorphing,shapes}
+
+\usepackage{bbm}
+
+%\newtheorem{question}{Questions}
+%\newtheorem{motivation}{Main Motivation}
+\newtheorem{proposition}{Proposition}
+\newcommand{\autor}{\author}
+%\newcommand{\txtbfit}[1]{\textbf{\textit{#1}}}
+%\newtheorem{conjecture}{Conjecture}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+
+\mode<presentation>
+{
+	\usetheme{Darmstadt}
+	\setbeamercovered{dynamic}
+}
+
+\usepackage{multicol}
+
+\newcommand{\resalt}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+
+\begin{document}
+\title{Topological Optimization \\ of Fault-Tolerant Networks \\
+meeting Reliability Constraints }
+
+\subtitle{\begin{small}
+Sebastián Laborde
+\end{small}} 
+
+\author[1]{\begin{tiny}
+Tutor de Tesis
+\end{tiny}\\ 
+\begin{small}
+Dr. Ing. Franco Robledo\\
+\end{small}
+\begin{tiny}
+Director Académico\\
+\end{tiny}
+\begin{small}
+Prof. Ing. Omar Viera
+\end{small}
+}
+
+%\autor{ Director Académico\\ \begin{small}
+%Prof. Ing. Omar Viera
+%\end{small}}
+\institute[Instituto de Computación]{Tesis de Maestría - Programa de Posgrado PEDECIBA Informática \\ Instituto de Computación - Facultad de Ingeniería\\Universidad de la República}
+
+\date[17 enero del 2021]{\today}
+
+\setcounter{tocdepth}{1}
+\setbeamertemplate{footline}[frame number]
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%\begin{frame}
+%    \frametitle{Agenda}
+%    \tableofcontents
+%   % You might wish to add the option [pausesections]
+%\end{frame}
+
+%\input{./mcc}
+\input{contenidoGF}
+
+\end{document}
