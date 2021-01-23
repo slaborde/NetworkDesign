@@ -1,0 +1,911 @@
+\chapter{Problem and Analysis} \label{problem} 
+In this chapter, the problem under study is formalized by means of a combinatorial optimization problem. Its hardness is established. Particular sub-problems are briefly discussed.  
+
+\section{Model}
+Given an instance $(G,C,R,T,P_E,P_{V-T},p_{min})$ for the GSP-NCHR, where $G$ is the ground graph, $C=\{c_{i,j}\}_{(i,j)\in E}$ 
+is the matrix with the link-costs, $R=\{r_{i,j}\}_{i,j\in T}$ is the matrix with connectivity requirements between terminal nodes 
+$T \subseteq V$, $P_E$ the elementary reliabilities of the links, $P_{V-T}$ the reliability of Steiner (optional) nodes and 
+$p_{min}$ is the reliability threshold. The goal is to find the minimum-cost subgraph $G_S \subseteq G$ meeting both the connectivity 
+requirements $R$ and the reliability threshold $R_K(G_S) \geq p_{min}$, being $K=T$ the terminal-set. 
+Consider three sets of decision variables:
+
+
+\[
+    y_{(i,j)}^{u,v}=\left\{
+                \begin{array}{ll}
+1 & \textit{if} (i,j)\in E \, \, \textit{is used in a path} \, \, u-i-j-v\\
+0 & \textit{otherwise}
+                \end{array}
+              \right.
+  \]
+\[
+    x_{(i,j)}=\left\{
+                \begin{array}{ll}
+1 & \textit{if}  (i,j)\in E \, \, \textit{is used in the solution}\\
+0 & \textit{otherwise} 
+                \end{array}
+              \right.
+  \]
+\[
+    \hat{x}_{i}=\left\{
+                \begin{array}{ll}
+1 & \textit{if the Steiner node} \, \, i \in V-T \, \, \textit{is used in the solution}\\
+0 & \textit{otherwise}
+                \end{array}
+              \right.
+  \]
+
+%Consider the variables related with the elementary reliabilities:
+%\[
+%    I_{E}^{(op)}(p_{i,j},x_{i,j})=\left\{
+%                \begin{array}{ll}
+%p_{i,j} \, \, \textit{if} \, \, x_{i,j}=1\\
+%1-p_{i,j} \, \, \textit{otherwise}
+%                \end{array}
+%              \right.
+%  \]
+%
+%\[
+%    I_{V-T}^{(op)}(p_{v},\hat{x}_{v})=\left\{
+%                \begin{array}{ll}
+%p_{v} \, \, \textit{if} \, \, \hat{x}_{v}=1\\
+%1-p_{v} \, \, \textit{otherwise}
+%                \end{array}
+%              \right.
+%  \]
+
+In this thesis, we introduce the GSP-NCHR as the following combinatorial optimization problem:
+
+\begin{align}
+\min &\sum_{(i,j)\in E} c_{i,j}x_{i,j} \notag \\
+s.t. \, \, x_{ij}&\geq y_{(i,j)}^{u,v}+y_{(j,i)}^{u,v} \, \, \forall \, (i,j)\in E, \, \forall u,v\in T, u\neq v \label{1}\\
+\sum_{(u,i)\in E}y_{(u,i)}^{u,v} &\geq r_{u,v} \, \, \forall \, u,v\in T, \, u\neq v \label{2}\\
+\sum_{(j,v)\in E}y_{(j,v)}^{u,v} &\geq r_{u,v} \, \, \forall \, u,v\in T, \, u\neq v \label{3}\\
+\sum_{(i,p)\in I(p)}y_{(i,p)}^{u,v}  - \sum_{(p,j)\in I(p)}y_{(p,j)}^{u,v}&\geq 0, \, \forall p\in V-\{u,v\}, \, \forall u,v\in T, \, u\neq v \label{4}\\
+\sum_{(s,i)\in E} x_{s,i} &\leq M \hat{x}_{s}, \, \forall s\in V-T \label{5}\\
+R_{K}(G_S(\{x_{ij}\})) &\geq p_{min} \label{6}\\
+x_{(i,j)} &\in \{0,1\} \, \forall (i,j)\in E \label{7}\\
+\hat{x}_{i} &\in \{0,1\} \, \forall i \in V-T  \label{8}\\
+ y_{(i,j)}^{u,v} &\in \{0,1\} \, \forall (i,j)\in E, \, \forall u,v \in T, \, u\neq v \label{9}
+\end{align}
+
+%&\prod_{(i,j)\in E} I_{E}^{(op)}(p_{ij},x_{ij}) \times \prod_{v\in V-T}I_{V-T}^{(op)}(p_v,\hat{x}_{v}) \geq p_{min} \label{6}\\
+
+The objective is to minimize the global cost of the solution. The set of Constraints (\ref{1}) state that links are one-way. 
+The connectivity requirements are expressed by means of Constraints (\ref{2}) and (\ref{3}). 
+Constraints (\ref{4}) represent Kirchhoff law, or flow conservation~\cite{23}. Constraints (\ref{5}) state that an incident link 
+to a Steiner node can be used only if the Steiner node is considered in the solution. Observe that $M$ is a large real number; $M=|E|$ can be used in the model without loss of generality. The minimum reliability threshold is established with Constraint (\ref{6}) which denotes the subgraph induced by decision variables $\{x_{ij}\}_{(i,j)\in E}$. Finally, the set of constraints (\ref{7}-\ref{9}) state that all the decision variables belong to the binary set $\{0,1\}$. All these constraints are important because we want robust networks where reliability exceeds a pre-established minimum threshold, not only want robustness by guaranteeing disjoint paths between pairs of terminal nodes.
+
+%Taking logarithm on both sides, Constraint~\ref{6} can be written in the following manner:
+
+%\begin{equation}
+%\sum_{(i,j)\in E} log(I_{E}^{(op)}(p_{ij},x_{ij})) + \sum_{v\in V-T} log(I_{V-T}^{(op)}(p_v,\hat{x}_{v})) \geq log(p_{min})
+%\end{equation}
+
+\section{Hardness}
+In this section, we show that the GSP-NCHR belongs to the class of~$\mathcal{NP}$-Complete problems. Recall that the Generalized Steiner Problem (GSP) already belongs to this class:
+
+\begin{definition}[Generalized Steiner Problem]
+Given an undirected graph $G=(V,E)$ and a matrix with link-costs $C=\{c_{i,j}\}_{(i,j)\in E}$, a terminal-set $T \subseteq V$ and 
+a matrix with requirements $R=\{r_{i,j}\}_{i,j\in T}$, the goal is to find the minimum-cost subgraph $G_S \subseteq G$ 
+such that every pair of terminals $i,j \in T$ is connected by at least $r_{i,j}$ disjoint paths.
+\end{definition}
+
+If we consider the GSP with $T=V$ and $r_{i,j}=2$ for all $i,j \in V$, the minimum-cost is not greater than $n=|V|$ if and only 
+if $G$ has a Hamiltonian Tour. Since Hamiltonian tour belongs to Karp list of $\mathcal{NP}$-Complete problems~\cite{104}, then GSP is $\mathcal{NP}$-Hard. 
+Further, the GSP also belongs to the $\mathcal{NP}$ set~\cite{27}, since both the feasibility can be accomplished by Menger theorem~\cite{121}, and 
+the cost of a feasible solution is found in an additive manner. Therefore, the GSP belongs to the class of $\mathcal{NP}$-Complete problems.   
+
+\begin{theorem}\label{hard-problem}
+The GSP-NCHR belongs to the class of $\mathcal{NP}$-Hard problems.
+\end{theorem}
+\begin{proof}
+Consider an arbitrary instance $(G,C,R,T)$ of the GSP. Consider the instance $(G,C,R,T,P_E,P_{V-T},p_{min})$, where 
+the probabilities are trivially selected as $p_e=0, \forall e\in E$, $p_v = 1, \forall v\in V-T$, and $p_{min}=1$. 
+It is straight to see that the mapping $\pi: (G,C,R,T) \to  (G,C,R,T,P_E,P_{V-T},p_{min})$ can be accomplished in polynomial-time, 
+and, by inclusion, the GSP-NCHR is at least as hard as the GSP. Therefore, the GSP-NCHR is $\mathcal{NP}$-Hard. 
+\end{proof}
+
+The same result holds if we consider edge-disjoint requirements instead, and the GSP-ECHR is also $\mathcal{NP}$-Hard. 
+Theorem~\ref{hard-problem} can be strengthened considering strong inapproximability results of special sub-problems~\cite{49}. 
+%It is still an open problem to determine whether the $K$-terminal reliability belongs to the $\mathcal{NP}$-Class or not. As a corollary, 
+%it is not known if the GSP-NCHRM or GSP-ECHRM belong to the class of $\mathcal{NP}$-Decision problems. 
+
+\section{Special Sub-Problems}
+In the first phase of this thesis, we will tackle a relaxation of the GSP-NCHR:
+
+\begin{definition}[GSP-NC]
+This is the relaxation of GSP-NCHR, without Constraint~\ref{6}.  
+Specifically, given a simple undirected graph $G=(V,E)$, a set of distinguished nodes 
+$T \subseteq V$ (called terminals), a matrix with link-costs $\{c_{i,j}\}_{(i,j) \in E}$ 
+and a matrix with connectivity requirements $R=\{r_{i,j}\}_{i,j \in T}$, 
+build a minimum-cost topology $G_S \subseteq G$ meeting the connectivity requirements.
+\end{definition}
+
+In this thesis we develop a full algorithm for the GSP-NC. 
+Then, we study the number of feasible solutions for the GSP-NC that also meet the reliability threshold. 
+The key-questions of this thesis are strictly related with the number of feasible solutions for the GSP-NC that are also feasible for the GSP-NCHR. In this way, we study the interplay between topological network design and reliability analysis. Furthermore, a sensibility on the reliability parameters and connectivity constraints is also discussed. 
+
+
+%In this section we consider the source-terminal and all-terminal scenarios, either under identical link-costs or single-path requirements 
+%between the terminals.
+
+\subsection*{Source-Terminal Reliability}
+Let $T=\{s,t\}$ be the terminal-set (known as  \emph{source-terminal} model) with $r_{s,t}=1$.  
+If $l$ denotes the length of the shortest path $P_{s,t}$ between $s$ and $t$: 
+
+\begin{lemma}\label{pmin}
+The threshold $p_{min}$ is met with the shortest path if and only if $p^l \geq p_{min}$.
+\end{lemma}
+
+Observe that a globally optimum solution is met with the shortest path $G_S=P_{opt}$ 
+under identical costs if $l$ satisfies the previous inequality. The shortest path $P_{opt}$ is found using Dijkstra algorithm~\cite{20}.
+%
+%\begin{equation}\label{st}
+%R_{s,t}(G)= p^{l}(1-p)^{|E|-l} = \left(\frac{p}{1-p}\right)^l (1-p)^{|E|} \geq p_{min}. 
+%\end{equation}
+%Therefore, we obtain the following
+%
+%\begin{proof}
+%Taking logarithm on both sides of Expression~\eqref{st} yields:
+%\begin{equation}\label{st2}
+%l\times log(\frac{p}{1-p}) \geq log(p_{min})-|E|log(1-p).
+%\end{equation}
+%Observe that $log(\frac{p}{1-p})$ is negative if and only if $p<1-p$, or equivalent, if $p<1/2$. The statement is retrieved finding $l$ from 
+%Equation~\eqref{st2}.
+%\end{proof}
+
+\begin{proposition}
+If there exists a feasible single path $P_{s,t}$ for the source-terminal scenario with identical probabilities $p_{i,j}=p$, then the globally optimum solution for GSP-NCHR can be found.  
+\end{proposition}
+\begin{proof}
+By hypothesis, there exists a feasible path $P_{s,t}$ that meets the reliability threshold $p_{min}$. In particular, the threshold is 
+met by the shortest path. By Lemma~\ref{pmin}, $p^l \geq p_{min}$. Consider the greatest integer $h$ such that $p^h \geq p_{min}$:
+\begin{equation}
+h = \lfloor \frac{log(p_{min})}{log(p)} \rfloor
+\end{equation}
+The globally optimum solution for GSP-NCHR is obtained applying Cheng-Ansari algorithm~\cite{102}, finding the minimum cost among all the paths with lengths $i\in \{l,\ldots,h\}$.  
+\end{proof}
+
+\subsection*{All-Terminal Reliability}
+Under the all-terminal reliability model, all the nodes are terminal, i.e., $T=V$, and there are no Steiner (optional) nodes. 
+Consider the cheapest or Minimum Spanning Tree $G_S=T$. If $T$ respects the reliability threshold, then the globally optimum solution is met.
+
+\begin{proposition}
+Under the all-terminal reliability model, a Minimum Spanning Tree $T$ achieves the globally optimum solution if and only if 
+$\prod_{e\in T}p_e \geq p_{min}$.
+\end{proposition}
+
+\begin{proposition} For the case source-terminal: $T=\{s,t\}$, $P_{E}=\{p_{ij}\}_{(i,j)\in
+E}$, $P_{V\setminus T}=\{1\}_{v\in V\setminus T}$, $r_{st}=1$,
+$c_{ij}=c,\,\forall (i,j)\in E$, and a given $p_{min}$, the global
+optimal solution of the $GSP-NCHR$ can be computed in polynomial
+time.
+\end{proposition}
+\begin{proof} Given a path $p$ communicating $s$ and $t$ in $G$, the
+reliability condition for this path is: \[\prod_{(i,j)\in p}
+p_{ij}\geq p_{min}.
+\]
+
+This constraint can be established by the following equation by
+applying logarithm to both sides of the inequality.
+
+\[\sum_{(i,j)\in p} (-\log(p_{ij}))\leq -\log(p_{min}). \]
+
+Let us consider the matrix $\hat{P}=\{-\log(p_{ij})\}_{(i,j)\in
+E}$. The length-bounded Dijsktra Algorithm is applied until the
+first path that satisfies the reliability condition is found. The
+length-bounded Dijsktra Algorithm computes the shortest path
+between two nodes with the condition that this path has no more
+than $l$ edges (hops), being $l$ a pre-established parameter.
+
+\begin{figure}[H]
+\begin{center}
+\fbox{\parbox{11.5cm}{\scriptsize{
+{\sf ~\\
+\textbf{Algorithm GSP-NCHR\_Source\_Terminal;\\
+Input: $G=(V,E)$, $T=\{s,t\}$, $\hat{P}$, $c$, $p_{min}$; \\
+~\\
+1\TABH{2} $l\leftarrow 1$;\\
+2\TABH{2} $found\_solution\leftarrow \mathrm{FALSE}$;\\
+3\TABH{2} while ($l\leq |E|-1$) and $not(found\_solution)$ do\\
+4\TABH{6}  $[\hat{p},cost]\leftarrow
+\mathrm{Restricted\_Dijkstra}(G,\hat{P},s,t,l)$;\\
+\TABH{3}    /* It is computed the bounded shortest path from $s$ to $t$ based in the matrix $\hat{P}$  */ \\
+\TABH{3}    /* the path found $\hat{p}$ has no more than $l$ hops */ \\
+5\TABH{6}  if $cost\leq -\log(p_{min})$ then\\
+6\TABH{9}    $found\_solution\leftarrow \mathrm{TRUE}$;\\
+7\TABH{9}    $optimal\_solution\leftarrow \hat{p}$;\\
+8\TABH{9}    $optimal\_cost\leftarrow l\cdot c$;\\
+9\TABH{6}  else $l\leftarrow l+1$;\\
+11\TABH{2} end\_while;\\
+12\TABH{1} if ($found\_solution$) return
+($optimal\_solution$,$optimal\_cost$); }}}}}
+\end{center}
+\caption{GSP-NCHR Source-Terminal Pseudo-code.}
+\label{GSP-NCHR_fig}
+\end{figure}
+
+%~\ref{GSP-NCHR_fig}
+If the GSP-NCHR instance has a feasible solution, 
+algorithm~\ref{GSP-NCHR_fig} returns the global optimum for this
+particular case.
+
+\end{proof}
+
+%Begin Agregado
+\noindent Let us analyze the following particular case:
+$T=\{s,t\}$, $r_{s,t}=k>1$. In the case that the costs and the
+probabilities (in edges or nodes) are not uniform, the problem is
+NP-Hard.\\
+
+\noindent We will analyze the following sub-cases:
+\begin{enumerate}
+    \item[i)] Non-uniform costs in the edges, uniform edge
+    probabilities, uniform node probabilities (i.e. $P_{V\setminus T}=\{1\}_{v\in V\setminus T}$).
+    \item[ii)] Uniform costs in the edges, non-uniform edge
+    probabilities, uniform node probabilities.
+\end{enumerate}
+
+\noindent In any case, to know if there are feasible solutions, it
+is enough to use the Suurballe Algorithm \cite{119} in the following way.\\
+
+\noindent \textbf{Note:} The Suurballe Algorithm \cite{119}\cite{118} computes in polynomial time the
+$k$-node-disjoint paths (or the $k$-edge-disjoint paths) from $s$
+to $t$ of minimum total edge cost, for a given integer $k$.\\
+
+\noindent We denote by $\hat{G}$ the graph equal to $G$ but such
+that each edge $e\in E$ is weighted by $-\log(p_{e})$. We will
+denote
+$\hat{C}=\{-\log(p_{e})\}_{e\in E}$.\\
+
+\begin{proposition}[Existence of Feasible Solutions for $(i)$ and $(ii)$.]
+Let $L=\{l_{i}\}_{i\in 1..k}$ be the $k$-node-disjoint paths
+(resp. $k$-edge-disjoint paths) with minimum sum of costs over
+$\hat{G}$ between $s$ and $t$ considering $\hat{C}$. Then there
+will be feasible solution if;
+\[\sum^{k}_{i=1} \sum_{e\in l_{i}} -\log(p_{e})\leq -\log(p_{min}).\]
+\end{proposition}
+\begin{proof} If $L=\{l_{i}\}_{i\in 1..k}$ were not feasible, we would
+have $\prod^{k}_{i=1}\prod_{e\in l_{i}} p_{e}<p_{min}$; which
+would imply $\sum^{k}_{i=1} \sum_{e\in l_{i}} \log(p_{e})<
+\log(p_{min})$. \end{proof}
+
+\begin{description}
+    \item[Analysis of (i):] Suurballe Algorithm must be used with
+    the addition of using the Gr\"{o}tschel Algorithm when
+    calculating a path that interlinks the remaining $r$ paths.
+    \item[Analysis of (ii):] Since the costs of the edges are
+    uniform, say equal to $c_{0}$, then the maximum possible cost
+    is bounded by $m\cdot c_{0}$, where $m$ is the number of the
+    edges in the graph. It is enough to find the $k$ minimum
+    logprob path ($\sum_{e\in L_{k}} \log(p_{e})>\log(p_{min})$) with lower cost than $i\cdot
+    c_{0}$, with $i=1..m$. The algorithm is presented below.
+\end{description}
+
+\noindent \textbf{Note:} The Gr\"{o}tschel Algorithm \cite{120} computes in polynomial time the shortest
+path between a pair of nodes of a simple graph with the
+restriction that the length of the computed path (in terms of
+number of edges) does not exceed a given number of edges. This
+number is a parameter of the algorithm.\\
+
+\begin{figure}[htb]
+\begin{center}
+\fbox{\parbox{11.5cm}{\scriptsize{
+{\sf ~\\
+\textbf{Algorithm GSP-NCHR\_Source\_Terminal\_k\_Connectivity;\\
+Input: $\hat{G}$, $\hat{C}$,$T=\{s,t\}$, $P_{E}$, $m$, $p_{min}$; \\
+~\\
+1\TABH{2} $i\leftarrow 0$; $optimum\leftarrow \mathrm{FALSE}$;\\
+2\TABH{2} repeat\\
+3\TABH{6}  $i\leftarrow i+1$;\\
+4\TABH{6}  $L_{k}\leftarrow$ the $k$ paths given by $Suurballe(\hat{G},\hat{C},k,s,t,i)$ using $Alg\_Grotschel$;\\
+5\TABH{6}  if $costo(L_{k})\leq -\log(p_{min})$ then $optimum\leftarrow \mathrm{TRUE}$;\\
+6\TABH{2} until $optimum$ or $i=m$;\\
+7\TABH{2} if $optimum$ return $L_{k}$;\\
+8\TABH{2} else return $\mbox{``\textsc{There is no solution}"}$
+}}}}}
+\end{center}
+\caption{GSP-NCHR Source-Terminal Pseudo-code with $r_{s,t}=k>1$,
+and edges with uniform costs.} \label{GSP-NCHR_figure_ST_K}
+\newpage
+\end{figure}
+%Fin Agregado
+
+\begin{lemma} For the case All Terminal: $T=V$, $C=\{c_{ij}\}_{(i,j)\in E}$, $P_{E}=\{p_{ij}\}_{(i,j)\in
+E}$, and a given $p_{min}$, the $GSP-NCHR$ can be formulated as the
+following Integer Linear Programming Problem:
+
+\begin{align}
+ (GSP-NCHR\_All\_Terminal)~ \mathrm{min} &  \sum_{i,j\in E} c_{ij}\cdot x_{ij}   \label{objFun}\\
+ \mathrm{s.a.} & \nonumber\\
+ &      /*~\mbox{\small Connectivity constraints}~*/& \nonumber\\
+ &                  \sum_{(i,j)\in E} x_{ij}= n-1, & \label{r1} &\\
+ &      /*~\mbox{\small Reliability restriction}~*/& \nonumber\\
+ &                   \sum_{(i,j)\in E} (-\log(p_{ij}))\cdot x_{ij}\leq -\log(p_{min}),  & \label{r2} &\\
+ &      /*~\mbox{\small Binary decision variables}~*/ \nonumber\\
+ &                 x_{ij}\in \{0,1\},\, \forall (i,j)\in E.   & \label{r3}  &
+\end{align}~\\
+\end{lemma}
+\begin{proof} Equation~\ref{objFun} minimizes the global
+connectivity cost. Equation~\ref{r1} indicates that the
+spanning subgraph must have $n-1$ edges, where $n=|V|$. This
+condition forces that the topology to be a spanning tree of $V$.
+Equation~\ref{r2} is the reliability condition for a feasible
+solution. Finally (equation~\ref{r3}), the decision variable
+$x_{ij}\in \{0,1\}$ indicates whether or not an edge $(i,j)\in E$
+will be part of the solution.  \end{proof}
+Let us consider the following Linear Programming Problem:
+\begin{align}
+ \textsc{(\^{P})}:~ \mathrm{min} &  \sum_{i,j\in E} c_{ij}\cdot x_{ij}   \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                  \sum_{(i,j)\in E} x_{ij}\geq n-1, & \nonumber &\\
+ &                   \sum_{(i,j)\in E} (-\log(p_{ij}))\cdot x_{ij}\leq -\log(p_{min}),  & \nonumber &\\
+ &                 x_{ij}\geq 0,\, \forall (i,j)\in E.   & \nonumber &
+\end{align}  ~\\
+
+The $\mathrm{\hat{P}}$ formulation is a lineal relaxation of the
+problem $\mathrm{GSP-NCHR\_All\_Terminal}$. The Lagrangean
+relaxation of $\mathrm{\hat{P}}$ is given by the following
+formulation:
+
+\begin{align}
+\mathrm{\hat{P}}_{\lambda_{1},\lambda_{2}}:~ \mathrm{min} &  \sum_{i,j\in E} c_{ij}\cdot x_{ij}+\lambda_{1}\cdot \left((n-1)-\sum_{(i,j)\in E} x_{ij}\right)+\lambda_{2}\cdot \left(-\log(p_{min})+\sum_{(i,j)\in E} (\log(p_{ij}))\right)  \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                 x_{ij}\geq 0,\, \forall (i,j)\in E.   & \nonumber &
+~\\
+\end{align}  
+
+Regrouping terms we have:
+\begin{align}
+  \mathrm{\hat{P}}_{\lambda_{1},\lambda_{2}}:~ \mathrm{min} &  \sum_{i,j\in E} (c_{ij}-\lambda_{1}+\lambda_{2}\cdot \log(p_{ij}))\cdot x_{ij} + \lambda_{1}\cdot (n-1)-\lambda_{2}\cdot \log(p_{min}) \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                 x_{ij}\geq 0,\, \forall (i,j)\in E.   & \nonumber &
+\end{align}  ~\\
+
+If $\exists (\hat{i},\hat{j})\in E$ such that
+$(c_{\hat{i}\hat{j}}-\lambda_{1}+\lambda_{2}\cdot
+\log(p_{\hat{i}\hat{j}}))<0$, then we set all variables $x_{ij}$
+to zero except $x_{\hat{i}\hat{j}}$. In this way, if
+$x_{\hat{i}\hat{j}}\rightarrow +\infty$ the feasibility is
+preserved and the objective function tends to $-\infty$. In order
+to avoid this, we impose that:
+\[(c_{ij}-\lambda_{1}+\lambda_{2}\cdot \log(p_{ij}))\geq 0,\, \forall (i,j)\in E. \]
+
+Since we are minimizing, the optimum of
+$\mathrm{\hat{P}}_{\lambda_{1},\lambda_{2}}$ with positive
+coefficients is obtained with $x_{ij}=0$ $\forall (i,j)\in E$. The
+objective function of the Dual Problem $\mathrm{D}$ of the primal
+problem $\mathrm{\hat{P}}$ is given by:
+
+\[\Phi(\vec{\lambda})=\Phi(\lambda_{1},\lambda_{2})=\lambda_{1}\cdot (n-1)-\lambda_{2}\cdot \log(p_{min}). \]
+
+The complete formulation of $\mathrm{D}$ dual problem of
+$\mathrm{\hat{P}}$ is:
+
+\begin{align}
+  \mathrm{D}:~ \mathrm{max} &~  \lambda_{1}\cdot (n-1)-\lambda_{2}\cdot \log(p_{min}) \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+  &                 c_{ij}\geq \lambda_{1}-\lambda_{2}\cdot \log(p_{ij}),\, \forall (i,j)\in E.   & \nonumber &\\
+  &                 \lambda_{1},\lambda_{2}\geq 0.   & \nonumber &
+\end{align}
+
+The feasible region of $\mathrm{D}$ is:
+\[F_{D}=\left\{(\lambda_{1},\lambda_{2})|c_{ij}\geq
+\lambda_{1}-\lambda_{2}\cdot \log(p_{ij}),\, (i,j)\in E;
+\lambda_{1},\lambda_{2}\geq 0 \right\}.\]
+
+Let us consider a system of equations given by two lines $r$ y
+$\hat{r}$:
+\begin{align*}
+  r:~        &~  \lambda_{1}-\lambda_{2}\cdot \log(p_{ij})=c_{ij}, \\
+  \hat{r}:~  &~  \lambda_{1}-\lambda_{2}\cdot \log(p_{uv})=c_{uv}.
+\end{align*}
+
+Assuming that $r$ and $\hat{r}$ are not parallel, the resolution
+of this system is the point:
+\[\lambda_{1}=c_{ij}+\frac{(c_{uv}-c_{ij})}{\log(\frac{p_{ij}}{p_{uv}})}\cdot\log(p_{ij}).  \]
+\[\lambda_{2}=\frac{(c_{uv}-c_{ij})}{\log(\frac{p_{ij}}{p_{uv}})}.  \]
+
+Let $(\hat{\lambda_{1}},\hat{\lambda_{2}})$ be the point given by:
+
+\[(\hat{\lambda_{1}},\hat{\lambda_{2}})=\arg\max\left\{\Phi(\lambda_{1},\lambda_{2})|\lambda_{1}=c_{ij}+\frac{(c_{uv}-c_{ij})}{\log(\frac{p_{ij}}{p_{uv}})}\log(p_{ij}),\,\lambda_{2}=\frac{(c_{uv}-c_{ij})}{\log(\frac{p_{ij}}{p_{uv}})};\right\}\]
+%\\
+\[(u,v)\in E, (i,j)\in E. \]
+
+Let us define $\bar{\lambda}_{1}$ and $\bar{\lambda}_{2}$ by:
+\[\bar{\lambda}_{1}=\min\left\{c_{ij}|(i,j)\in E \right\}. \]
+\[\bar{\lambda}_{2}=\min\left\{\frac{c_{ij}}{-\log(p_{ij})}|(i,j)\in E \right\}. \]
+
+We consider the following points: $A=(\bar{\lambda}_{1},0)$,
+$B=(0,\bar{\lambda}_{2})$, and
+$C=(\hat{\lambda_{1}},\hat{\lambda_{2}})$.
+
+Let
+$\vec{\lambda}^{(opt)}=(\lambda^{(opt)}_{1},\lambda^{(opt)}_{2})$
+be given by:
+
+\[(\lambda^{(opt)}_{1},\lambda^{(opt)}_{2})=\arg\max\left\{\Phi(A),\Phi(B),\Phi(C)\right\}. \]
+\[(\lambda^{(opt)}_{1},\lambda^{(opt)}_{2})=\arg\max\left\{\bar{\lambda}_{1}(n-1),-\bar{\lambda}_{2}\log(p_{min}),\hat{\lambda_{1}}(n-1)-\hat{\lambda_{2}}\log(p_{min}) \right\}. \]
+
+The point $\vec{\lambda}^{(opt)}$ is the global optimum of
+$\mathrm{D}$ and the optimal value is:
+\[\Phi(\vec{\lambda}^{(opt)})=\lambda^{(opt)}_{1}(n-1)-\lambda^{(opt)}_{2}\log(p_{min}).\]
+
+Since the duality gap is zero between $\mathrm{\hat{P}}$ and
+$\mathrm{D}$, the value $\Phi(\vec{\lambda}^{(opt)})$ is also the
+global optimal value of $\mathrm{\hat{P}}$.
+
+\begin{lemma} The Integer Linear Programming Problem associated with $GSP-NCHR$
+for the All-Terminal case has as lower bound, the value:
+\[\lambda^{(opt)}_{1}(n-1)-\lambda^{(opt)}_{2}\log(p_{min}),\]
+being $\lambda^{(opt)}_{1}$ and $\lambda^{(opt)}_{2}$ the values
+computed above.
+\end{lemma}
+\begin{proof} We know that $\mathrm{\hat{P}}$ is a lineal relaxation of
+$\mathrm{GSP-NCHR\_All\_Terminal}$. Furthermore,
+$\Phi(\vec{\lambda}^{(opt)})$ is the optimal value of
+$\mathrm{\hat{P}}$, completing the proof.
+\end{proof}
+
+\begin{lemma} For the case All Terminal: $T=V$, $C=\{c_{ij}\}_{(i,j)\in E}$, $P_{E}=\{p_{ij}\}_{(i,j)\in
+E}$, and a given $p_{min}$, the following Integer Linear
+Programming Problem is a multi-objective formulation that provide
+an approximation to the optimal value of the $GSP-NCHR$.
+\begin{align}
+ \textsc{($\bar{\mathrm{P}}$)}:~ \mathrm{min} &  \sum_{i,j\in E} \alpha\cdot (c_{ij}\cdot x_{ij})+\beta\cdot \left(\sum_{(i,j)\in E} (-\log(p_{ij}))\cdot x_{ij}\right)   \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                  \sum_{(i,j)\in E} x_{ij}=n-1, & \nonumber &\\
+ &                 x_{ij}\in \{0,1\},\, \forall (i,j)\in E.   & \nonumber  &
+\end{align}~\\
+\end{lemma}
+\begin{proof} Fixed $\alpha\geq 0$ and $\beta\geq 0$ the objective have
+two components which are minimized:
+\begin{itemize}
+    \item $\sum_{i,j\in E} \alpha\cdot (c_{ij}\cdot x_{ij})$,
+    influencing directly in the minimization of the cost
+    associated with the spanning tree for $V$.
+    \item $\beta\cdot (\sum_{(i,j)\in E} (-\log(p_{ij}))\cdot x_{ij})$, linked
+    directly to the reliability maximization of the required
+    network topology (a spanning tree covering the set $V$).
+\end{itemize}
+The constraint $\sum_{(i,j)\in E} x_{ij}=n-1$ guarantees that the
+computed feasible solution is a spanning tree for $V$.
+\end{proof}
+ 
+ By relaxing the constraint $x_{ij}\in \{0,1\},\,\forall (i,j)\in
+E$ by $x_{ij}\geq 0,\, \forall (i,j)\in E$, we have the problem:
+
+\begin{align}
+ \textsc{($\bar{\mathrm{P}}_{L}$)}:~ \mathrm{min} &  \sum_{i,j\in E} \left(\alpha\cdot c_{ij}+\beta\cdot (-\log(p_{ij}))\right)\cdot x_{ij}   \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                  \sum_{(i,j)\in E} x_{ij}=n-1, & \nonumber &\\
+ &                 x_{ij}\geq 0,\, \forall (i,j)\in E.   & \nonumber  &
+\end{align}
+
+The Lagrangean relaxation of $\bar{\mathrm{P}}_{L}$ is given by
+the following formulation:
+
+\begin{align}
+ \textsc{($\bar{\mathrm{P}}^{(\lambda_{1})}_{L}$)}:~ \mathrm{min} &  \sum_{i,j\in E} \left(\alpha\cdot c_{ij}+\beta\cdot (-\log(p_{ij}))-\lambda_{1}\right)\cdot x_{ij}+\lambda_{1}\cdot(n-1)   \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                 x_{ij}\geq 0,\, \forall (i,j)\in E.   & \nonumber  &
+\end{align}
+
+If $\exists (\hat{i},\hat{j})\in E$ such that $(\alpha\cdot
+c_{\hat{i}\hat{j}}+\beta\cdot
+(-\log(p_{\hat{i}\hat{j}}))-\lambda_{1})<0$, then we set all
+variables $x_{ij}$ to zero except $x_{\hat{i}\hat{j}}$. In this
+way, if $x_{\hat{i}\hat{j}}\rightarrow +\infty$ the feasibility is
+preserved and the objective function tends to $-\infty$. In order
+to avoid this, we impose that:
+\[\alpha\cdot c_{ij}+\beta\cdot (-\log(p_{ij}))-\lambda_{1}\geq 0,\, \forall (i,j)\in
+ E. \]
+
+The global optimal solution for the problem
+$\bar{\mathrm{P}}^{(\lambda_{1})}_{L}$ satisfying that constraints
+is accomplished by setting $x_{ij}=0,\,\forall (i,j)\in E$. Under
+these conditions the value of the objective function is the
+objective function of the Dual problem of $\bar{\mathrm{P}}_{L}$
+(let us denote it by $\bar{D}$) which is given by:
+$\Phi(\lambda_{1})=\lambda_{1}\cdot (n-1)$.\\
+
+The Dual Problem $\bar{D}$ can then be formulated as:
+
+\begin{align}
+ \textsc{($\bar{D}$)}:~ \mathrm{max}~~ &  \lambda_{1}\cdot(n-1)   \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+  &                \alpha\cdot c_{ij}+\beta\cdot (-\log(p_{ij}))\geq \lambda_{1},\, \forall (i,j)\in E,   & \nonumber &\\
+ &                 \lambda_{1}\geq 0   & \nonumber  &
+\end{align}
+
+Let us consider:
+
+\[\gamma_{M}=\arg\max\left\{\alpha\cdot c_{ij}-\beta\cdot \log(p_{ij})|(i,j)\in E \right\}. \]
+
+Thus, $\gamma_{M}=\alpha\cdot c_{\hat{i}\hat{j}}-\beta\cdot
+\log(p_{\hat{i}\hat{j}})$ for a certain $(\hat{i},\hat{j})\in E$.
+The global optimal solution of the Dual problem $\bar{D}$ is
+$\lambda_{1}=\gamma_{M}$ and the optimum value is $\gamma_{M}\cdot
+(n-1)$.\\
+
+By the Duality Theorem for Linear Programming Problems we have
+that the duality gap is zero, and the optimum value of
+$\bar{\mathrm{P}}_{L}$ is also: \[ \gamma_{M}\cdot
+(n-1)=(\alpha\cdot c_{\hat{i}\hat{j}}-\beta\cdot
+\log(p_{\hat{i}\hat{j}}))\cdot (n-1). \]
+
+\begin{theorem} Fixed a $p_{min}$ value there exist $\hat{\alpha}$ and
+$\hat{\beta}$ for the problem $\bar{\mathrm{P}}$ such that if
+$\hat{E}\subseteq E$ is the solution edge set, it is fulfilled
+that:\\
+\[-\sum_{(i,j)\in \hat{E}} \log(p_{ij})\leq -\log(p_{min}).\]
+\end{theorem}
+\begin{proof} Let us consider the following values for $\hat{\alpha}$
+and $\hat{\beta}$: $\hat{\alpha}\geq 0$ arbitrary,
+\[\hat{\beta}=\left(\frac{\log(p_{min})}{\sum_{(i,j)\in E} \log(p_{ij})\cdot
+\hat{x}_{ij}}\right) ,\]
+
+where $\{\hat{x}_{ij}\}_{(i,j)\in E}$ are the values of the
+decision variables for the globally optimal solution of the
+following Linear Programming Problem:
+
+\begin{align}
+  (\mathrm{\hat{M}}):~ & \max~ -\sum_{i,j\in E} \log(p_{ij})\cdot x_{ij} \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+   & -\sum_{i,j\in E} \log(p_{ij})\cdot x_{ij}\leq -\log(p_{min})  & \nonumber &\\
+   &                 x_{ij}\geq 0,\, \forall (i,j)\in E.   & \nonumber &
+\end{align}  ~\\
+
+Since when solving $(\mathrm{\hat{M}})$ the set of values
+$\{\hat{x}_{ij}\}_{(i,j)\in E}$ fulfills the first constraint of
+the $(\mathrm{\hat{M}})$ model, we have that:
+
+\[-\sum_{i,j\in E} \log(p_{ij})\cdot \hat{x}_{ij}\leq -\log(p_{min}). \]
+
+By dividing this inequality by the left side we have that the
+$\hat{\beta}$ value satisfies:\\
+
+\[1 \leq \hat{\beta}=\frac{log(p_{pmin})}{\sum_{(i,j)\in E} \log(p_{ij})\cdot
+\hat{x}_{ij}}. \]
+
+Let us consider now:
+
+\[\sum_{(i,j)\in \hat{E}} (-\log(p_{ij}))\leq \hat{\beta}\cdot \sum_{(i,j)\in \hat{E}} (-\log(p_{ij}))=\left(\frac{log(p_{pmin})}{\sum_{(i,j)\in E} \log(p_{ij})\cdot
+\hat{x}_{ij}}\right)\cdot \sum_{(i,j)\in \hat{E}} (-\log(p_{ij}))=
+\]
+\[=(-\log(p_{min}))\cdot \left(\frac{\sum_{(i,j)\in \hat{E}} \log(p_{ij})}{\sum_{(i,j)\in E} \log(p_{ij})\cdot
+\hat{x}_{ij}}\right)\leq (-\log(p_{min})),
+\]
+
+where in the last inequality we use that it is fulfilled:
+$\left(\frac{\sum_{(i,j)\in \hat{E}} \log(p_{ij})}{\sum_{(i,j)\in
+E} \log(p_{ij})\cdot
+\hat{x}_{ij}}\right)\leq 1$.\\
+
+Then with $\hat{\beta}$ defined above it is satisfied:
+
+\[-\sum_{(i,j)\in \hat{E}} \log(p_{ij})\leq -\log(p_{min}), \]
+
+as required, and completing the proof.
+\end{proof}
+
+\section{Minimum-Weight k-Connected Spanning Networks with Reliability Constraints}
+In the work \cite{116} Bienstock
+introduce important theorems related to the ``\textit{Minimum-Weight k-Connected Spanning Networks}" (denoted
+by MWkCSN) Problem under the hypothesis of triangular inequality
+in edge costs. The MWkCSN is a particular case of the
+``\textit{Generalized Steiner Problem}" (GSP) taking $r_{ij}=k$
+$\forall i,j\in V$. We will denote by MWKECSNP the version of the
+MWkCSN with edge-connectivity requirements. In this section the
+MWkCSN problem is defined. Structural theorems for the MWkCSN are
+introduced which characterize global optimum solutions. Moreover,
+we formulate the MWKECSNP as an Integer Linear Programming Problem
+taking into account the characterization given by the Bienstock's
+Theorem for the edge-connectivity version. We extend the MWKECSNP
+problem by adding the reliability constraint used in the GSP-NCHR
+formulation. We denote this problem as MWKECSNP\_RC. We formulate
+the MWKECSNP\_RC problem as a Integer Linear Programming Model,
+and we make a study of relaxations and lower bounds by applying
+Lagrangean relaxations and Duality Theory.\\
+
+
+\begin{definition}[MWkCSN]
+$k$-connected network design with triangle inequality: given a
+complete graph with edge weights that satisfy the triangle
+inequality, and an integer $k$, find a minimum-weight $k$-edge (or
+$k$-vertex) connected spanning subgraph.
+\end{definition}
+
+
+\begin{theorem}[\cite{116}] %Bienstock et. al, 1990
+For any set of vertices $V$ with nonnegative symmetric weight
+function $d(\cdot,\cdot)$ satisfying the triangle inequality and
+any $k\geq 2$, there exist a minimum-weight $k$-edge connected
+subgraph $G=(V,E)$ satisfying the following conditions:
+\begin{enumerate}
+    \item[(I)] Every vertex of $G$ has degree $k$ or $k+1$;
+    \item[(II)] Removing any 1,2,...., or $k$ edges of $G$ does not
+    leave all the resultant connected components all $k$-edge
+    connected.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\cite{116}]
+For any set of vertices $V$ with nonnegative symmetric weight
+function $d(\cdot,\cdot)$ satisfying the triangle inequality and
+any $k\geq 2$, there exist a minimum-weight $k$-vertex connected
+subgraph $G=(V,E)$ satisfying the following conditions:
+\begin{enumerate}
+    \item[(I')] If $|V|\geq 2k$ every vertex of $G$ has degree $k$ or $k+1$;
+    \item[(II)] Removing any 1,2,...., or $k$ edges of $G$ does not
+    leave all the resultant connected components all $k$-edge
+    connected.
+\end{enumerate}
+\end{theorem}
+
+\noindent In \cite{116} the authors
+prove that for $k\geq 3$ a minimum weight $k$-edge connected
+subgraph can have a value strictly less than a minimum-weight
+$k$-vertex connected subgraph. In the case $k=2$ \cite{117} Monma prove that the class of
+minimum-weight $2$-edge (respectively $2$-vertex) connected
+subgraphs can be restricted to the class of $2$-edge
+(respectively, vertex) connected subgraph $G=(V,E)$ satisfying
+conditions $(I)$ and $(II)$ defined above. Furthermore, they prove
+that the global optimal values of MW2ECSNP (edge-connectivity) and
+MW2VCSNP (vertex-connectivity) for the same instance are equal.\\
+
+\subsection{MWKECSNP ILP Formulation based on Bienstock Theorem}
+In this point we introduce an exact formulation for the
+$\mathrm{MWKECSNP}$ when the triangular inequality is satisfied by
+the costs of the edges.
+
+Decision variables:
+
+\[
+   y_{(i,j)}^{u,v}=\left\{\begin{array}{ll}
+                         1, & \hbox{if the directed edge $(i,j)$ is used in a path communicationg $u$ with $v$} \\
+                            &  \hbox{in the sense $u-i-j-v$; $u,v\in V$;} \\
+                         0, & \hbox{otherwise.}
+                       \end{array}
+                     \right.
+\]
+
+\[
+x_{ij}=\left\{
+                       \begin{array}{ll}
+                         1, & \hbox{if the edge $(i,j)\in E$ is used in the solution} \\
+                         0, & \hbox{otherwise.}
+                       \end{array}
+                     \right.
+\]
+
+Binary-Integer Linear Programming Model for the MWKECSNP:
+\begin{align}
+ P_{MWKECSNP}:~ \mathrm{min} &  \sum_{(i,j)\in E} c_{ij}\cdot x_{ij}   \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                  \sum_{(u,i)\in E} y_{(u,i)}^{u,v}\geq k,\, \forall u,v\in V, & \nonumber &\\
+ &                  \sum_{(j,v)\in E} y_{(j,v)}^{u,v}\geq k,\, \forall u,v\in V, & \nonumber &\\
+ &                  \sum_{(i,p)\in I^{-}(p)} y_{(i,p)}^{u,v}-\sum_{(p,j)\in I^{+}(p)} y_{(p,j)}^{u,v} \geq 0,\, \forall u,v\in V; \forall p\in V\setminus \{u,v\},  & \nonumber &\\
+ &                   y_{(i,j)}^{u,v}+y_{(j,i)}^{u,v}\leq x_{ij},\, \forall u,v\in V,\, \forall (i,j)\in E,  & \nonumber &\\
+ &                  \sum_{(v,i)\in E} x_{vi}\leq k+1,\, \forall v\in V,  & \nonumber &\\
+ &                  x_{ij}\in \{0,1\},\, \forall (i,j)\in E; y_{(i,j)}^{u,v}\in \{0,1\},\, \forall (i,j)\in E, \forall u,v\in V.   & \nonumber &
+\end{align}
+
+Next, we introduce an exact model for solving the MWKECSNP with
+Reliability Constraints. The formulation is also a Binary-Integer Linear Programming Model:
+\begin{align}
+ P_{MWKECSNP\_RC}:~ \mathrm{min} &  \sum_{(i,j)\in E} c_{ij}\cdot x_{ij}   \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                  \sum_{(u,i)\in E} y_{(u,i)}^{u,v}\geq k,\, \forall u,v\in V, & \nonumber &\\
+ &                  \sum_{(j,v)\in E} y_{(j,v)}^{u,v}\geq k,\, \forall u,v\in V, & \nonumber &\\
+ &                  \sum_{(i,p)\in I^{-}(p)} y_{(i,p)}^{u,v}-\sum_{(p,j)\in I^{+}(p)} y_{(p,j)}^{u,v} \geq 0,\, \forall u,v\in V; \forall p\in V\setminus \{u,v\},  & \nonumber &\\
+ &                   y_{(i,j)}^{u,v}+y_{(j,i)}^{u,v}\leq x_{ij},\, \forall u,v\in V,\, \forall (i,j)\in E,  & \nonumber &\\
+ &                  \sum_{(v,i)\in E} x_{vi}\leq k+1,\, \forall v\in V,  & \nonumber &\\
+ &                  \sum_{(i,j)\in E} -\log(p_{ij})\cdot x_{ij}\leq -\log(p_{min}),\, \forall (i,j)\in E,  & \nonumber &\\
+ &                  x_{ij}\in \{0,1\},\, \forall (i,j)\in E; y_{(i,j)}^{u,v}\in \{0,1\},\, \forall (i,j)\in E, \forall u,v\in V.   & \nonumber &
+\end{align}
+
+Let $\hat{P}_{MWKECSNP\_RC}$ be the following model resulting of
+the linear relaxation in $[0,1]$ of the $x_{ij}$ and $y_{(i,j)}^{u,v}$ variables:
+\begin{align}
+ \hat{P}_{MWKECSNP\_RC}:~ \mathrm{min} &  \sum_{(i,j)\in E} c_{ij}\cdot x_{ij}   \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                  \sum_{(u,i)\in E} y_{(u,i)}^{u,v}\geq k,\, \forall u,v\in V, & \nonumber &\\
+ &                  \sum_{(j,v)\in E} y_{(j,v)}^{u,v}\geq k,\, \forall u,v\in V, & \nonumber &\\
+ &                  \sum_{(i,p)\in I^{-}(p)} y_{(i,p)}^{u,v}-\sum_{(p,j)\in I^{+}(p)} y_{(p,j)}^{u,v} \geq 0,\, \forall u,v\in V; \forall p\in V\setminus \{u,v\},  & \nonumber &\\
+ &                   y_{(i,j)}^{u,v}+y_{(j,i)}^{u,v}\leq x_{ij},\, \forall u,v\in V,\, \forall (i,j)\in E,  & \nonumber &\\
+ &                  \sum_{(v,i)\in E} x_{vi}\leq k+1,\, \forall v\in V,  & \nonumber &\\
+ &                  \sum_{(i,j)\in E} -\log(p_{ij})\cdot x_{ij}\leq -\log(p_{min}),\, \forall (i,j)\in E,  & \nonumber &\\
+ &                  0\leq x_{ij}\leq 1 ,\, \forall (i,j)\in E; 0\leq y_{(i,j)}^{u,v}\leq 1,\, \forall (i,j)\in E, \forall u,v\in V.   & \nonumber &
+\end{align}
+Now, let $\hat{P}^{(L)}_{MWKECSNP\_RC}$ be a Lagrangian relaxation
+of $\hat{P}_{MWKECSNP\_RC}$ formulated as follows:
+\begin{align}
+ \hat{P}^{(L)}_{MWKECSNP\_RC}:~ \mathrm{min} &  \sum_{(i,j)\in E} c_{ij}\cdot x_{ij}   \nonumber\\
+ &                  + \sum_{u,v\in V} \lambda^{u,v}_{1}\cdot \left(k-\sum_{(u,i)\in E} y_{(u,i)}^{u,v}\right) & \nonumber &\\
+ &                  + \sum_{u,v\in V} \lambda^{u,v}_{2}\cdot \left(k-\sum_{(j,v)\in E} y_{(j,v)}^{u,v}\right) & \nonumber &\\
+ &                  + \sum_{u,v\in V} \sum_{p\in V\setminus \{u,v\}} \lambda^{u,v,p}_{3}\cdot \left(\sum_{(p,j)\in I^{+}(p)} y_{(p,j)}^{u,v}-\sum_{(i,p)\in I^{-}(p)} y_{(i,p)}^{u,v}\right) & \nonumber &\\
+ &                  + \sum_{u,v\in V} \sum_{(i,j)\in E} \lambda^{u,v}_{4,(i,j)}\cdot \left(y_{(i,j)}^{u,v}+y_{(j,i)}^{u,v}-x_{ij}\right) & \nonumber &\\
+ &                  + \sum_{v\in V} \lambda^{v}_{5}\cdot \left(\sum_{(v,i)\in E} x_{vi}-k-1\right)  & \nonumber &\\
+ &                  + \lambda_{6}\cdot \left(\sum_{(i,j)\in E} -\log(p_{ij})\cdot x_{ij}+\log(p_{min})\right)  & \nonumber &\\
+ &                  + \sum_{(i,j)\in E} \lambda^{(i,j)}_{7}\cdot \left(x_{ij}-1\right)  & \nonumber &\\
+ &                  x_{ij}\geq 0,\, \forall (i,j)\in E; 0\leq y_{(i,j)}^{u,v}\leq 1,\, \forall (i,j)\in E, \forall u,v\in V.   & \nonumber &
+\end{align}
+
+Let us denote: $\lambda^{(i,j)}_{4}=\sum_{u,v\in V}
+\lambda^{u,v}_{4,(i,j)}$. Notice that the following points are
+satisfied for the $\hat{P}^{(L)}_{MWKECSNP\_RC}$ formulation:
+\begin{itemize}
+    \item $\left(k-\sum_{(u,i)\in E} y_{(u,i)}^{u,v}\right)$ is
+    minimum when $\sum_{(u,i)\in E} y_{(u,i)}^{u,v}=g^{+}(u)$,
+    where $g^{+}(u)$ is the degree of node $u$.
+    \item $\left(k-\sum_{(j,v)\in E} y_{(j,v)}^{u,v}\right)$ is
+    minimum when $\sum_{(j,v)\in E} y_{(j,v)}^{u,v}=g^{-}(v)$,
+    where $g^{-}(v)$ is the degree of node $v$.
+    \item $(\sum_{(p,j)\in I^{+}(p)} y_{(p,j)}^{u,v}-\sum_{(i,p)\in I^{-}(p)}
+    y_{(i,p)}^{u,v})$ is minimum when $\sum_{(p,j)\in I^{+}(p)}
+    y_{(p,j)}^{u,v}=0$ and $\sum_{(i,p)\in I^{-}(p)}
+    y_{(i,p)}^{u,v})=g^{-}(p)$ where $g^{-}(p)$ is the degree of node
+    $p$.
+    \item Fixed $x_{ij}$, the expression $(y_{(i,j)}^{u,v}+y_{(j,i)}^{u,v}-x_{ij})$ is minimum
+    when $y_{(i,j)}^{u,v}=y_{(j,i)}^{u,v}=0$.
+    \item $\sum_{v\in V} \lambda^{v}_{5}\cdot \left(\sum_{(v,i)\in E}
+    x_{vi}-k-1\right)=\sum_{(i,j)\in E} \lambda^{i}_{5}\cdot x_{ij}-(k+1)\cdot \sum_{v\in V}
+    \lambda^{v}_{5}$.
+\end{itemize}
+
+By considering these points we provide the following formulation
+for the $\hat{P}^{(L)}_{MWKECSNP\_RC}$ which considers only the
+$\{x_{ij}\}$ variables.
+\begin{align}
+ \hat{P}^{(L)}_{MWKECSNP\_RC}:~ \mathrm{min} &  \sum_{(i,j)\in E} c_{ij}\cdot x_{ij}   \nonumber\\
+ &                  + \sum_{u,v\in V} \lambda^{u,v}_{1}\cdot (k-g^{+}(u)) & \nonumber &\\
+ &                  + \sum_{u,v\in V} \lambda^{u,v}_{2}\cdot (k-g^{-}(v)) & \nonumber &\\
+ &                  + \sum_{u,v\in V} \sum_{p\in V\setminus \{u,v\}} \lambda^{u,v,p}_{3}\cdot (-g^{-}(p)) & \nonumber &\\
+ &                  + \sum_{(i,j)\in E} \lambda^{(i,j)}_{4}\cdot (-x_{ij}) & \nonumber &\\
+ &                  + \sum_{(i,j)\in E} \lambda^{i}_{5}\cdot x_{ij}-(k+1)\cdot \sum_{v\in V} \lambda^{v}_{5}  & \nonumber &\\
+ &                  + \lambda_{6}\cdot \left(\sum_{(i,j)\in E} -\log(p_{ij})\cdot x_{ij}+\log(p_{min})\right)  & \nonumber &\\
+ &                  + \sum_{(i,j)\in E} \lambda^{(i,j)}_{7}\cdot \left(x_{ij}-1\right)  & \nonumber &\\
+ &                  x_{ij}\geq 0,\, \forall (i,j)\in E.   & \nonumber &
+\end{align}
+\begin{lemma} If the lambda parameters satisfy: $\lambda^{u,v}_{1}\geq 0$, $\lambda^{u,v}_{2}\geq
+0$, $\lambda^{u,v,p}_{3}\geq 0$, $\lambda^{(i,j)}_{4}\geq 0$,
+$\lambda^{v}_{5}\geq 0$, $\lambda_{6}\geq 0$, and
+$\lambda^{(i,j)}_{7}\geq 0$, then $\hat{P}^{(L)}_{MWKECSNP\_RC}$
+is a relaxation of $\hat{P}_{MWKECSNP\_RC}$.
+\end{lemma}
+By regrouping terms we can formulate $\hat{P}^{(L)}_{MWKECSNP\_RC}$ as follows:
+\begin{align}
+ \hat{P}^{(L)}_{MWKECSNP\_RC}:~ \mathrm{min} &  \sum_{(i,j)\in E} \left(c_{ij}-\lambda^{(i,j)}_{4}+\lambda^{i}_{5}-\lambda_{6}\cdot \log(p_{ij})+\lambda^{(i,j)}_{7}\right)\cdot x_{ij}   \nonumber\\
+ &                  + \sum_{u,v\in V} \lambda^{u,v}_{1}\cdot (k-g^{+}(u)) & \nonumber &\\
+ &                  + \sum_{u,v\in V} \lambda^{u,v}_{2}\cdot (k-g^{-}(v)) & \nonumber &\\
+ &                  + \sum_{u,v\in V} \sum_{p\in V\setminus \{u,v\}} \lambda^{u,v,p}_{3}\cdot (-g^{-}(p)) & \nonumber &\\
+ &                  -(k+1)\cdot \sum_{v\in V} \lambda^{v}_{5}  & \nonumber &\\
+ &                  + \lambda_{6}\cdot \log(p_{min})  & \nonumber &\\
+ &                  - \sum_{(i,j)\in E} \lambda^{(i,j)}_{7}  & \nonumber &\\
+ &                  x_{ij}\geq 0,\, \forall (i,j)\in E.   & \nonumber &
+\end{align}
+
+If $\exists (\hat{i},\hat{j})\in E$ such that
+$(c_{\hat{i}\hat{j}}-\lambda^{(\hat{i},\hat{j})}_{4}+\lambda^{\hat{i}}_{5}-\lambda_{6}\cdot
+\log(p_{\hat{i}\hat{j}})+\lambda^{(\hat{i},\hat{j})}_{7})<0$, then
+we set all variables $x_{ij}$ to zero except $x_{\hat{i}\hat{j}}$.
+In this way, if $x_{\hat{i}\hat{j}}\rightarrow +\infty$ the
+feasibility is preserved and the objective function tends to
+$-\infty$. In order to avoid this, we impose that:
+\[c_{ij}-\lambda^{(i,j)}_{4}+\lambda^{i}_{5}-\lambda_{6}\cdot \log(p_{ij})+\lambda^{(i,j)}_{7}\geq 0,\, \forall (i,j)\in
+ E. \]
+
+The global optimal solution for the problem
+$\hat{P}^{(L)}_{MWKECSNP\_RC}$ satisfying that constraints is
+accomplished by setting $x_{ij}=0,\,\forall (i,j)\in E$. Under
+these conditions the value of the objective function is the
+objective function of the Dual problem of $\hat{P}_{MWKECSNP\_RC}$
+(let us denote it by $\hat{D}_{MWKECSNP\_RC}$) which is given by:
+\[\hat{\Phi}(\vec{\lambda})=\sum_{u,v\in V} \left(\lambda^{u,v}_{1}\cdot (k-g^{+}(u))+\lambda^{u,v}_{2}\cdot (k-g^{-}(v))-\sum_{p\in V\setminus \{u,v\}} \lambda^{u,v,p}_{3}\cdot (g^{-}(p))\right) \]
+\[-(k+1)\cdot \sum_{v\in V} \lambda^{v}_{5}+\lambda_{6}\cdot \log(p_{min})- \sum_{(i,j)\in E} \lambda^{(i,j)}_{7}. \]
+
+The Dual Problem $\hat{D}_{MWKECSNP\_RC}$ can then be formulated
+as:
+\begin{align}
+ \hat{D}_{MWKECSNP\_RC}:~ \mathrm{max}~~ & \hat{\Phi}(\vec{\lambda})    \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                  c_{ij}-\lambda^{(i,j)}_{4}+\lambda^{i}_{5}-\lambda_{6}\cdot \log(p_{ij})+\lambda^{(i,j)}_{7}\geq 0,\, \forall (i,j)\in E & \nonumber &\\
+ &                  \lambda^{u,v}_{1},\lambda^{u,v}_{2}\geq 0,\, \forall u,v\in V & \nonumber &\\
+ &                   \lambda^{u,v,p}_{3}\geq 0,\, \forall u,v\in V,\, \forall p\in V\setminus \{u,v\}  & \nonumber &\\
+ &                   \lambda^{(i,j)}_{4}\geq 0,\, \forall (i,j)\in E  & \nonumber &\\
+ &                   \lambda^{v}_{5}\geq 0,\, \forall v\in V  & \nonumber &\\
+ &                   \lambda_{6}\geq 0  & \nonumber &\\
+ &                   \lambda^{(i,j)}_{7}\geq 0,\, \forall (i,j)\in E.  & \nonumber &
+\end{align}
+\begin{theorem} Let $\hat{d}_{opt}=\hat{\Phi}(\vec{\lambda}_{opt})$ be the
+global optimal value of $\hat{D}_{MWKECSNP\_RC}$. Then,
+$\hat{d}_{opt}$ is a lower bound for the globally optimal value of
+$P_{MWKECSNP\_RC}$.
+\end{theorem}
+\begin{proof} We know that $\hat{P}_{MWKECSNP\_RC}$ is a lineal
+relaxation of $P_{MWKECSNP\_RC}$. Moreover, de duality gap between
+$\hat{P}_{MWKECSNP\_RC}$ and $\hat{D}_{MWKECSNP\_RC}$ is zero
+since they are Linear Programming Models, thus completing the
+proof.\end{proof}
+
+\subsection{Particular case $k=2$}
+For the particular case $k=2$ we have the problems MW2ECSNP and
+MW2VCSNP, formally expressed by:
+\begin{description}
+    \item[MW2ECSNP:] $2$-edge-connected network design with triangle inequality: given a
+complete graph with edge weights that satisfy the triangle
+inequality, find a minimum-weight $2$-edge-connected spanning
+subgraph.
+    \item[MW2VCSNP:] $2$-vertex-connected network design with triangle inequality: given a
+complete graph with edge weights that satisfy the triangle
+inequality, find a minimum-weight $2$-vertex-connected spanning
+subgraph.
+\end{description}
+
+In~\cite{117} Monma prove that the
+optimal value of both problems under the same instance coincide.
+For this reason they denote both problems indistinctly as MWTCSNP
+(\textit{Minimum weight two-connected spanning network problem}).
+The MWTCSNP belongs to the class of NP-Complete problems
+~\cite{117}.\\
+
+Monma introduce an important theorem which characterizes
+global optimum solutions of the MWTCSNP. We will provide the
+statement of the Monma Theorem below; the details of the
+demonstration the reader can find it in ~\cite{117}.\\
+
+\begin{theorem}[~\cite{117}] %Monma et al., 1990
+For any set of vertices $V$ with distance function
+$d(\cdot,\cdot)$, there exists a minimum-weight two-connected
+graph $G=(V,E)$ satisfying the following conditions:
+\begin{enumerate}
+    \item[(a)] Every vertex in $G$ has degree 2 or 3.
+    \item[(b)] Deleting any edge or pair of edges in $G$ leaves a
+    bridge in one of the resulting connected components of $G$.
+\end{enumerate}
+\end{theorem}
+
+
+\noindent Let us denote by:\\
+
+\[\hat{\Psi}(\vec{\lambda})=\sum_{u,v\in V} \left(\lambda^{u,v}_{1}\cdot (2-g^{+}(u))+\lambda^{u,v}_{2}\cdot (2-g^{-}(v))-\sum_{p\in V\setminus \{u,v\}} \lambda^{u,v,p}_{3}\cdot (g^{-}(p))\right) \]
+\[-3\cdot \sum_{v\in V} \lambda^{v}_{5}+\lambda_{6}\cdot \log(p_{min})- \sum_{(i,j)\in E} \lambda^{(i,j)}_{7}. \]
+
+\noindent Let us consider the following problem:\\
+
+\begin{align}
+ \hat{D}_{MWTCSNP\_RC}:~ \mathrm{max}~~ & \hat{\Psi}(\vec{\lambda})    \nonumber\\
+ \mathrm{s.a.} & \nonumber\\
+ &                  c_{ij}-\lambda^{(i,j)}_{4}+\lambda^{i}_{5}-\lambda_{6}\cdot \log(p_{ij})+\lambda^{(i,j)}_{7}\geq 0,\, \forall (i,j)\in E & \nonumber &\\
+ &                  \lambda^{u,v}_{1},\lambda^{u,v}_{2}\geq 0,\, \forall u,v\in V & \nonumber &\\
+ &                   \lambda^{u,v,p}_{3}\geq 0,\, \forall u,v\in V,\, \forall p\in V\setminus \{u,v\}  & \nonumber &\\
+ &                   \lambda^{(i,j)}_{4}\geq 0,\, \forall (i,j)\in E  & \nonumber &\\
+ &                   \lambda^{v}_{5}\geq 0,\, \forall v\in V  & \nonumber &\\
+ &                   \lambda_{6}\geq 0  & \nonumber &\\
+ &                   \lambda^{(i,j)}_{7}\geq 0,\, \forall (i,j)\in E.  & \nonumber &
+\end{align}~\\
+
+
+\noindent We introduce the following theorem.
+
+\begin{theorem} Let $\hat{d}^{(opt)}_{Monma}=\hat{\Psi}(\vec{\lambda}_{opt})$ be the
+global optimal value of $\hat{D}_{MWTCSNP\_RC}$. Then,
+$\hat{d}^{(opt)}_{Monma}$ is a lower bound for the globally
+optimal value of the $P_{MWTCSNP\_RC}$ problem.
+\end{theorem}
+\begin{proof} We know that $\hat{P}_{MWTCSNP\_RC}$ will be a lineal
+relaxation of $P_{MWTCSNP\_RC}$. Furthermore, de duality gap
+between $\hat{P}_{MWTCSNP\_RC}$ and $\hat{D}_{MWTCSNP\_RC}$ is
+zero since they are Linear Programming Models, thus completing the
+proof. \end{proof}
+
+
+\noindent Notice that $\hat{d}^{(opt)}_{Monma}$ is a lower bound
+for both the edge-connectivity version of MWTCSNP (i.e. MW2ECSNP)
+and the vertex-connectivity version of MWTCSNP (i.e. MW2VCSNP)
+since both problem coincide in global optimality.\\
+
+\newpage
+\newpage

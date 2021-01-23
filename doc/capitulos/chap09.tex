@@ -1,0 +1,20 @@
+\chapter{Future Work}\label{future}
+The interplay between topological network design and network reliability is not well understood yet. 
+In this thesis some local searches were proposed, essentially using key-path and key-tree replacements, in order to reduce costs preserving feasibility. A current research line is to develop strong reliability-increasing transformations, that  replace links and/or paths in order to increase the reliability of the resulting network. The development of local searches that increase reliability and reduce costs would enrich the current solution, and it is part of future work. In terms of implementation of the algorithms and experimental analysis, the following elements 
+are relevant for the author of this thesis:  
+\begin{itemize}
+\item Variable neighborhood search is both simple and powerful. The possibility to introduce VNS in another 
+metaheuristic in a hybrid manner~\cite{16,17} is an interesting development to empower the solution of our network optimization problem. Tabu Search or TS~\cite{5,15,59} generally considers a neighborhood search, exploiting different 
+memory-types and movements. At first, there are two ways to combine VNS with TS: using some memory-type to 
+guide the search during VNS, or to include VNS in TS. GRASP methodology~\cite{2,3,5,6,51,11} could be also used 
+together with VNS, and it results a hybrid metaheuristic attractive for future work.
+\item VNS is based on a systematic modification of the neighborhood during the search, and 
+it requires a finite set of neighborhood structures. Here, we considered three local searches: 
+$KeyPathLocalSearch$, $KeyTreeLocalSearch$ and $SwapKeyPathLocalSearch$. Another local search in order to 
+enrich our VNS proposal is also a hint for future work.
+\item Several proposals extend VNS, providing new characteristics. For the resolution of large-sized 
+instances, we can find Variable Neighborhood Decomposition Search (VNDS), Biased VNS (BVNS) and Parallel 
+Variable Neighborhood Search (PVNS). The study of applicability to the current problem will empower the optimization algorithm. 
+\item A fair comparison with another metaheuristic, such as GRASP, using an identical test-set is desirable.  
+\item An optimization of the algorithms developed in this thesis using parallel computing would achieve better CPU-times and find exact solutions for large-sized instances.
+\end{itemize}

@@ -1,0 +1,70 @@
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces GSPNCHR Source-Terminal Pseudo-code.\relax }}{23}{figure.caption.6}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Pseudocode for the main algorithm: $NetworkDesign$.\relax }}{50}{figure.caption.7}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Pseudocode for the Construction Phase: $Greedy$. \relax }}{51}{figure.caption.8}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Pseudocode for Local Search 1: $KeyPathLocalSearch$.\relax }}{54}{figure.caption.9}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Pseudocode for Local Search 2: $KeyTreeLocalSearch$.\relax }}{55}{figure.caption.10}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Pseudocode for Local Search 3: $SwapKeyPathLocalSearch$.\relax }}{58}{figure.caption.11}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces General Template for VND. \relax }}{59}{figure.caption.12}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Pseudocode for our specific VNS proposal. \relax }}{60}{figure.caption.13}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Pseudocode for RVR method. \relax }}{64}{figure.caption.14}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Implementation - Graph Class for Reliability evaluation. \relax }}{65}{figure.caption.15}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Pseudocode for the RVR implementation. \relax }}{66}{figure.caption.16}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Pseudocode for the Structure Evaluation $\phi $. \relax }}{66}{figure.caption.17}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Brazil58: ground graph $G_B$.\relax }}{76}{figure.caption.21}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Brazil58: resulting topology.\relax }}{76}{figure.caption.22}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Berlin52: ground graph $G_B$.\relax }}{77}{figure.caption.24}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Berlin52: resulting topology.\relax }}{77}{figure.caption.25}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Pseudocode for $General\_RecConnect$. \relax }}{100}{figure.caption.32}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Pseudocode for $FindSubstituteKeyPath$. \relax }}{103}{figure.caption.34}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Pseudocode for $General\_Update\_Matrix$.\relax }}{104}{figure.caption.35}%
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Pseudocode for $KSP$. \relax }}{106}{figure.caption.36}%
+\contentsline {figure}{\numberline {10.5}{\ignorespaces GraphViewer interface.\relax }}{108}{figure.caption.37}%
+\contentsline {figure}{\numberline {10.6}{\ignorespaces XML Structure.\relax }}{110}{figure.caption.38}%
+\contentsline {figure}{\numberline {10.7}{\ignorespaces GraphViewer Application.\relax }}{110}{figure.caption.39}%
+\contentsline {figure}{\numberline {10.8}{\ignorespaces Adding New Node (spanish dialogue).\relax }}{111}{figure.caption.40}%
+\contentsline {figure}{\numberline {10.9}{\ignorespaces Intuitive way to create edges.\relax }}{111}{figure.caption.41}%
+\contentsline {figure}{\numberline {10.10}{\ignorespaces Connectivity Matrix.\relax }}{112}{figure.caption.42}%
+\contentsline {figure}{\numberline {10.11}{\ignorespaces Validation of Greedy Construction: ground graph $G_B$.\relax }}{113}{figure.caption.43}%
+\contentsline {figure}{\numberline {10.12}{\ignorespaces Validation of Greedy Construction.\relax }}{114}{figure.caption.44}%
+\contentsline {figure}{\numberline {10.13}{\ignorespaces Validation of Greedy Construction.\relax }}{114}{figure.caption.45}%
+\contentsline {figure}{\numberline {10.14}{\ignorespaces Validation of Greedy Construction. \relax }}{115}{figure.caption.46}%
+\contentsline {figure}{\numberline {10.15}{\ignorespaces Validation of Greedy Construction.\relax }}{115}{figure.caption.47}%
+\contentsline {figure}{\numberline {10.16}{\ignorespaces Validation of $KeyTreeLocalSearch$: ground graph $G_B$.\relax }}{116}{figure.caption.49}%
+\contentsline {figure}{\numberline {10.17}{\ignorespaces Validation of $KeyTreeLocalSearch$: Key-Tree\relax }}{117}{figure.caption.50}%
+\contentsline {figure}{\numberline {10.18}{\ignorespaces Validation of $KeyTreeLocalSearch$: Replacement\relax }}{117}{figure.caption.51}%
+\contentsline {figure}{\numberline {10.19}{\ignorespaces Validation of $KeyTreeLocalSearch$: Key-Tree rooted at node 5.\relax }}{118}{figure.caption.52}%
+\contentsline {figure}{\numberline {10.20}{\ignorespaces Validation of $KeyTreeLocalSearch$: result after the elimination of node 5.\relax }}{118}{figure.caption.53}%
+\contentsline {figure}{\numberline {10.21}{\ignorespaces Validation of $KeyPathLocalSearch$: ground graph $G_B$.\relax }}{119}{figure.caption.55}%
+\contentsline {figure}{\numberline {10.22}{\ignorespaces Validation of $KeyPathLocalSearch$: after the replacement of the key-path.\relax }}{119}{figure.caption.56}%
+\contentsline {figure}{\numberline {10.23}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: ground graph $G_B$.\relax }}{120}{figure.caption.58}%
+\contentsline {figure}{\numberline {10.24}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: connectivity matrix $R$.\relax }}{121}{figure.caption.59}%
+\contentsline {figure}{\numberline {10.25}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: key-path to replace.\relax }}{121}{figure.caption.60}%
+\contentsline {figure}{\numberline {10.26}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: link replacement.\relax }}{122}{figure.caption.61}%
+\contentsline {figure}{\numberline {10.27}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: resulting key-path.\relax }}{122}{figure.caption.62}%
+\contentsline {figure}{\numberline {10.28}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: resulting graph.\relax }}{123}{figure.caption.63}%
+\contentsline {figure}{\numberline {10.29}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: key-path to replace.\relax }}{123}{figure.caption.64}%
+\contentsline {figure}{\numberline {10.30}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: link replacement.\relax }}{124}{figure.caption.65}%
+\contentsline {figure}{\numberline {10.31}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: redundant key-path.\relax }}{124}{figure.caption.66}%
+\contentsline {figure}{\numberline {10.32}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: resulting graph.\relax }}{125}{figure.caption.67}%
+\contentsline {figure}{\numberline {10.33}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: key-path to replace.\relax }}{125}{figure.caption.68}%
+\contentsline {figure}{\numberline {10.34}{\ignorespaces Validation of $SwapKeyPathLocalSearch$: link replacement.\relax }}{126}{figure.caption.69}%
+\contentsline {figure}{\numberline {10.35}{\ignorespaces Single link with simultaneous node/link failures. \relax }}{127}{figure.caption.71}%
+\contentsline {figure}{\numberline {10.36}{\ignorespaces Elementary path with simultaneous node/link failures. \relax }}{127}{figure.caption.74}%
+\contentsline {figure}{\numberline {10.37}{\ignorespaces Triangle with link failures. \relax }}{128}{figure.caption.77}%
+\contentsline {figure}{\numberline {10.38}{\ignorespaces Triangle with pending link. Potential failure in central node. \relax }}{129}{figure.caption.80}%
+\contentsline {figure}{\numberline {10.39}{\ignorespaces Tree with failures in links and non-leaf nodes. \relax }}{130}{figure.caption.83}%
+\contentsline {figure}{\numberline {10.40}{\ignorespaces Wheatstone Bridge with failures in links and a couple of nodes. \relax }}{131}{figure.caption.86}%
+\contentsfinish 

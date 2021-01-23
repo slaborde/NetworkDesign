@@ -1,0 +1,122 @@
+\chapter{Related Work}\label{related}
+In this chapter we revisit the related work, as well as some works where GRASP and/or VNS methodologies 
+were provided for specific combinatorial optimization problems. Previous works on the Recursive Variance Reduction (RVR) method under different contexts are also cited.
+
+
+\section{Topological Network Design}
+Robledo and Canale~\cite{29} develop a GRASP methodology for the backbone design of telecommunication networks. 
+Robledo considers GRASP for the design of a WAN topology~\cite{11}, using local searches based on 
+Random Neural Networks (RNN). Risso also develops a GRASP combined with evolutionary algorithms 
+for the design of IP/MPLS networks~\cite{36}.
+
+Resende covers a wide spectrum of GRASP algorithms for several hard combinatorial optimization problems~\cite{51,94}, combining Greedy notion with randomization, local searches and even post-optimization methods such as 
+path-relinking as well as parallel continuous GRASP. In~\cite{52}, different ways to implement 
+GRASP for a multi-objective problem are suggested, specially using path-relinking. In~\cite{54}, 
+GRASP combined with external path-relinking is considered to minimize the differential dispersion. In~\cite{55}, GRASP is developed to tackle the graph coloring of convex graphs. In~\cite{56}, a GRASP algorithm 
+is defined for solving a large-scale single row facility layout problems. In the $p$-next center problem, we must assign users in the centers in order to minimize the worst distance between a user and its closest center. 
+A GRASP and VNS for solving the p-next center problem was proposed in~\cite{60}.
+
+In~\cite{48}, a fully deterministic algorithm of time complexity $O(k^3log(n))$ was presented 
+for the Vertex Connectivity Survivable Network Design Problem (VCSNDP), being $k$ the maximum connectivity requirement for the problem. This work outperforms previously randomized algorithms. 
+In~\cite{39}, an enhancement in the computational order with polynomial time 
+for the first proposal authored by Williamson~\cite{49} is proposed. The key concept is a combinatorial characterization of \emph{redundant links}. The order is reduced from $O(k^3n^4)$ to $O(k^2n^2+kn^2\sqrt{log(log(n))})$.
+
+Agrawal, Klein and Ravi~\cite{32} developed an approximation algorithm with logarithmic factor 
+for the Generalized Steiner Problem with Edge Connectivity (GSP-EC). More recently, Jain~\cite{33} presented 
+a factor-2 approximation algorithm for the GSP-EC, where a feasible solution of a linear programming relaxation of the problem is first found, and the solution is iteratively built. Sartor and Robledo proposed a 
+GRASP/VNS heuristic for the GSP-EC~\cite{26}. Kortsarz, Krauthgamer and Lee~\cite{34} introduced the first inapproximability result for the Generalized Steiner Problem with Node Connectivity (GSP-NC) when there are no Steiner nodes. 
+
+There are several works that develop approximation algorithms for the GSP and sub-problems. 
+In~\cite{35}, the authors develop approximations for the 2-node connectivity versions stated in~\cite{37}.  Subsequent articles~\cite{38, 39, 40} extend those methods to give approximation algorithms 
+for the GSP-EC without multiple links.
+
+An important particular case for the GSP-NC occurs in the minimum-cost $k$-node connected spanning graph. 
+In~\cite{41,42,43} the authors propose approximation algorithms. The reader is invited to consult the 
+references~\cite{44,45,46,47}. These articles offer different approximation algorithms and their 
+respective approximation ratios. Some works study the particular case of identical costs, usually known as the 
+minimum cardinality augmentation. Sartor and Robledo solved the GSP-EC~\cite{62} and GSP-NC~\cite{63,65} with a GRASP proposal. In~\cite{64} E. Paolini explores a generalized formulation that extends the original GSP 
+to infinite sets in metric spaces. In~\cite{66}, the GSP is addressed in Halin graphs (obtained connecting the leaf-nodes of a tree in a cycle). In~\cite{30}, Mahjoub and Pesneau study the particular 2-edge connected Steiner subgraph polytope. The authors find polynomial-time cutting-plane solutions for particular cases, where 
+the terminals have special dispositions. As a consequence, they generalize the previous analysis for 
+Halin graphs presented in~\cite{66}. In~\cite{53} authors propose an hybrid Lagrangean heuristic with GRASP and path-relinking for set k-covering, the hybrid GRASP Lagrangean heuristic employs the GRASP with path-relinking heuristic using modified costs to obtain approximate solutions for the original problem. Computational experiments carried out test instances show experimentally that the Lagrangean heuristics performed consistently better than GRASP as well as GRASP with path-relinking. In ~\cite{58} Fuzzy GRASP hybridized with path relinking is implemented for solving a variant of the vehicle routing problem with additional risk constraints, namely the Risk-constrained Cash-in-Transit Vehicle Routing Problem (RCTVRP), authors conclude that proposed algorithm outperforms all existing methods from the literature for solving RCTVRP.
+
+In~\cite{67,28}, S. Nesmachnow presents an empirical evaluation of several simple metaheuristics (VNS is among them) to address the GSP, with promising results. In~\cite{68}, M. Pedemonte and H. Cancela developed an Ant Colony Optimization (ACO) to solve the GSP using parallel computing in order 
+to reduce the CPU-time. In~\cite{71}, another proposal of ACO for the GSP is presented to tackle the GSP 
+in general graphs, outperforming previous heuristics.
+
+In~\cite{69,77}, an integer linear programming formulation was solved using branch-and-cut for 
+the Generalized Network Design Problem (GNDP), applied to two-types of survivability structured: rings and 
+2-edge connected topologies. In~\cite{73}, the same formulation is considered in order to solve the 
+ $\{0,1,2\}$ Survivable Network Design Problem or $\{0,1,2\}$-GSNDP, that extends the GNDP and 
+ has a direct application for the design of backbone networks.
+
+In~\cite{70}, the Generalized SNDP or GSNDP with hop-constraints is discussed, studying 
+the static problem (given link-reliabilities) and dynamic problem with an \emph{upgrading}, 
+where the elementary reliabilities can be increased, with an associated cost. In~\cite{72}, a compilation of 
+several techniques is performed, showing a comparison for the GSP, SNDP and the minimal connected subgraph problem (MCSP).
+
+In~\cite{74}, an experimental study is carried out using exact algorithms over 2-node connected graph with 
+more than one-hundred nodes, showing the computational feasibility of this solution. In~\cite{75}, 
+the Survivable Network with Minimum Steiner nodes Problem (SN-MSP) is addressed, by means of a natural transformation from SN-MSP into SNDP, such that a factor $\alpha$ for SNDP implies a 
+factor $\alpha O(k^2)$ for SN-MSP. In~\cite{76} the SNDP is tackled using stochastic models. 
+Several algorithms are proposed, in particular a branch and cut to solve the SNDP with an acceptable optimization which shows to speed-up the CPU time. A fast and easy-to-implement technique to strengthen cuts is also suggested.
+In~\cite{99} the SNDP is addressed. In practice, the approximate solution is far from optimal. Then, in this work, 
+an enumeration of optimal solutions is carried out with a compact data structure, called 
+Zero-Suppressed Binary Decision Diagrams (ZDD). The authors show that this method works for several real-world 
+instances.
+
+In~\cite{100}, the SNDP with mixed node and link requirements is considered. The authors propose a 
+cutting plane algorithm for an integer linear programming formulation. 
+In~\cite{101}, the GSNDP for Wireless networks is considered, where the link-activity depends on some parameters and the cost is a function of them. The model proposed is a generalization of several connectivity problems 
+previously addressed in the literature, such as Node-Weighted Steiner Network, Power Optimization and Minimum Connected Dominating Set.
+
+In~\cite{88} several heuristics such as VNS, Tabu Search and Relocation Heuristic (RL) are developed 
+to solve the Partitioning signed networks problem. The authors shows that the combination of multi-step relocation heuristics with Tabu Search and VNS produce a fast node-partition algorithm for signed networks that 
+is competitive with existent metaheuristics. 
+VNS is considered in~\cite{89} to solved the well-known Steiner Minimal Tree Problem (SMT) in sparse graphs. The authors obtained better results than previous heuristics. 
+
+In~\cite{90}, VNS is adapted to solve a network clustering problem with similar results obtained 
+by machine learning approaches such as clustering $k$-Means. This work 
+also solves the sum-square of the distance between all the node-pairs, using a novel VNS approach. 
+A modified VNS heuristic is considered in~\cite{96} for a $k$-Means Clustering problem. There, the authors compare $k$-VNS versus traditional $k$-means and $j$-means algorithms. It is worth to remark that VNS outperformed the traditional approaches, specially in large datasets. 
+A hybrid VNS/GA proposal is proposed in~\cite{91} to solve the Multicriteria route planning in public transit networks. The hybrid proposal outperforms pure VNS and GA solutions, in both quality and CPU-time. In~\cite{92}, VNS is developed to solve the $k$-labelled spanning forest problem, with a strong impact in multi-modal transportation networks. The goal is to build a spanning forest of the ground graph, having the least number of connected components and an upper-bound in the number of labels to use. In~\cite{93}, the authors consider on one hand VNS, and GRASP on the other, to solve the 
+Capacitated Connected Facility Location problem, that combines locations with Steiner trees. This problem 
+gains relevance for its applications in the last-mile in Fiber-To-The-Home (FTTH) services. Both heuristics  obtain solutions with high quality in reduced times. 
+In~\cite{95}, the same heuristics were employed for the Three-Layer Hierarchical Ring Network Design problem, 
+that is widely used in large telecommunication networks. Better results were obtained using VNS. 
+
+In~\cite{97}, VNS is considered to solve a relay design problem. Given a set of products that will be routed through the network, the relay problem implies to select a route for each product and determine the locations for the relays were the product should be re-processed at certain distance intervals. A VNS is proposed, were different local searches look for the routes for each product and the optimal place for retransmission for a given set of routes, that are found with an implicit enumeration that by means of a dynamic programming algorithm. 
+The experiments confirm that VNS with optimal retransmission assignment outperforms all the existent algorithms from the literature. Several implementations of VNS has been developed for the Traveling Salesman Problem as well,  showing that VNS is competitive~\cite{98}. Exact solutions for the TSP and extensions can be found in~\cite{61}. 
+The reader can appreciate that the CPU-times provided by the exact solutions are longer than the heuristics, and 
+in particular VNS proposal for the TSP.
+
+
+%% --------------------------------------------------------------------------------------
+\section{Network Reliability}
+It is worth to remark that there are scarce works that jointly deal with a topological network optimization 
+under reliability constraints. Javiera Barrera et. al. proposed a topological network optimization, trying to minimize costs subject to $K$-terminal reliability constraints~\cite{106}. The authors consider Sample Average Approximation (SAA) method, which is a powerful tool for $\mathcal{NP}$-Hard combinatorial problems and  stochastic optimization~\cite{112}. They conclude that suboptimal solutions could be found if dependent failures are ignored in the model. The scientific literature also offers topological optimization problems meeting reliability constraints, or reliability maximization under budget constraints, which is known as network synthesis. The reader can find a survey on the synthesis in network reliability in~\cite{113}. More recent works 
+propose a reliability optimization in general stochastic binary systems~\cite{107}, even under the introduction of Sample Average Approximation~\cite{114}. Building uniformly most-reliable graphs is an active and challenging research field, where the goal is to find graphs with fixed nodes and links with maximum reliability evaluation in a uniform sense, for the whole compact set of elementary reliabilities $p\in [0,1]$. 
+There are pairs of nodes and links where such uniformly most-reliable graphs do not exist~\cite{108}. 
+The interested reader can consult~\cite{115} for conjectures in this field. A strictly related problem to ours is to consider topological modifications (i.e., moving links, or path replacements, among many others) in order to increase the reliability measure. This problem is not mature, and a recent work propose a novel reliability-increasing network transformation~\cite{110}. There, E. Canale et. al. show that any graph with a cut-point can be transformed into a biconnected graph with greater reliability. The reader can find alternative measure such as 
+the average reliability and its hardness in~\cite{109}.\\ 
+
+Most works in the field of network reliability analysis deal with its evaluation rather than its maximization. The literature on network reliability evaluation is abundant, and here we can mention distinguished works on this field. A trade-off between accuracy and computational feasibility is met by simulations, 
+given the hardness of the classical network reliability models~\cite{111}. Macroscopically, Monte Carlo methods 
+consider independent replications of a complex system, and by means of statistical laws find pointwise 
+estimations, in order to make decisions on the system. The reader is invited to consult an excellent book on 
+Monte Carlo methods authored by Fishman~\cite{105}, which was inspirational for network reliability, numerical integration, statistics and other fields of knowledge. In our particular case we deal with the 
+hostile network reliability model, where both links and non-terminal nodes fail independently. Its reliability evaluation belongs to the class of $\mathcal{NP}$-Hard problems as well~\cite{107}.
+
+H. Cancela y El Khadiri propose a Monte Carlo-based algorithm for a variance reduction, 
+called Recursive Variance Reduction method, or RVR~\cite{80}. This formulation allows a meaningful reduction in variance, and the product between time and variance is also reduced when compared to Crude Monte Carlo. Furthermore, the variance is mathematically proved to be always better in RVR than in CMC. A novel Monte Carlo-based method is proposed in~\cite{79}, based on a dynamic importance sampling. 
+The goal is to recursively approximate a variance-zero importance sampling estimation, which is adequate 
+for rare event scenarios (i.e., highly-reliable networks in particular). The approximation is based on 
+properties of mincuts. It is worth to remark that this approximate zero-variance proposal achieves the 
+bounded relative error property, meaning that asymptotically, when the rarity of the individual failures 
+tends to zero, the relative error is bounded. Furthermore, it converges to zero under special conditions stated in the article. 
+
+In~\cite{78}~and~\cite{84}, RVR is combined with Importance Sampling (IS) for static network reliability models. 
+The authors present two estimators: Balanced RVR (considers a uniform distribution to choose the first operational link of a cutset) and Zero-Variance Aproximation RVR tries to imitate the zero-variance estimator~\cite{79}. In~\cite{81,83}, RVR is extended to a large variety of models,  and its variance is again smaller than the one obtained using CMC. In~\cite{82}, the applicability of RVR is extended to Stochastic Monotone Binary Systems (SMBS), and approximative methods are discuss for the reliability evaluation of SMBS in general. First, two variants of Monte Carlo are presented, and RVR is finally generalized for SMBS. In~\cite{85} a novel method RVR-MonteCarlo is presented. This method is based on series-parallel reductions and partitions that consider both pathsets and cutsets to recursively reduce the original problem to an equivalent problem with smaller networks. Good results were obtained for rare events, with a meaningful improvement with respect to state-of-the-art variance reduction methods. In~\cite{86}, the traditional RVR is combined with integer-programming algorithms to find better cutsets. The accuracy of RVR is improved using this special selection of cutsets. In~\cite{12} shows that the well-known series-parallel reductions can be incorporated in the recursive variance reduction simulation method, leading to a more efficient estimator.
+%
+%In~\cite{87} a stochastic RVR method for an efficient smooth non-convex compositional optimization is presented. 
+%The authors propose a novel variance reduction algorithm, and they formally prove that an upper-bound for the 
+%incremental first-order complexity is provided. 

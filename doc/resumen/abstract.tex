@@ -1,0 +1,33 @@
+\begin{abstract}
+The relevant entities in a network are its nodes, and the links between them. In general, the goal is to 
+achieve a reliable communication between different pairs of nodes. Examples of applications are telephonic services, data communication, transportation systems, computer systems, electric networks and control systems. 
+
+The predominant criterion for the design of a reliable and survivable system is the minimum-cost in most contexts. 
+An attractive topic for research is to consider a minimum-cost topological optimization design meeting a  reliability threshold. Even though the cost has been the primary factor in the network design, recently, the network reliability has grown in relevance. With the progress of Fiber-To-the-Home (FTTH) 
+services for the backbone design in most current networks, combined with the rapid development of network 
+communication technologies, and the explosive increase of applications over the Internet infrastructure, the network reliability has supreme importance, for traditional communication systems but for the defense, business and energy, and emergent fields such as trusted computing, cloud computing, Internet of Things (IoT) and Next Generation Networks (NGN), the fault tolerance is critical.  
+
+We can distinguish two main problems to address in the analysis and design of network topologies. First, the robustness is usually met under multi-path generation. Therefore, we require certain number of node-disjoint paths between distinguished nodes, called terminals. The second problem is to meet a minimum-reliability requirement in a hostile environment, using the fact that both nodes and links may fail. Both problems are strongly related, 
+where sometimes the minimum-cost topology already meets the reliability threshold, or it should be discarded, and 
+the design is challenging. 
+ 
+This thesis deals with a topological optimization problem meeting reliability constraints. The 
+Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability (GSP-NCHR) 
+is introduced, and it is an extension of the well-known Generalized Steiner Problem (GSP). Since GSP-NCHR  
+subsumes the GSP, it belongs to the class of $\mathcal{NP}$-Hard problems. A full chapter is dedicated to the hardness of the GSP-NCHR, and an analysis of particular sub-problems. Here, the GSP-NCHR is addressed approximately. Our goal is to meet the topological requirements intrinsically considered in the GSP-NCHR, and then test if the resulting topology meets a minimum reliability constraint. 
+
+As a consequence a hybrid heuristic is proposed, that considers a Greedy Randomized construction phase followed by a Variable Neighborhood Search (VNS) in a second phase. VNS is a powerful method that combines local searches 
+that consider different neighborhood structures, and it was used to provide good solutions in several hard combinatorial optimization problems. Since the reliability evaluation in the hostile model belongs to 
+the class of $\mathcal{NP}$-Hard problems, a pointwise reliability estimation was adopted. Here we considered 
+Recursive Variance Reduction method (RVR), since an exact reliability evaluation is prohibitive for large-sized networks. 
+
+The experimental analysis was carried out on a wide family of instances adapted from travel salesman problem library (TSPLIB), for heterogeneous networks with different characteristics and topologies, including up to 400 nodes. The numerical results show acceptable CPU-times and locally-optimum solutions with good quality, meeting network reliability constraints as well.\\\\
+
+\textbf{Keywords}:
+\end{abstract}
+\\
+\\
+\\
+\begin{normalsize}
+As product of this thesis, the following publication has been achieved: "A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability" to be published in the     \textit{"Proceedings of the 8th International Conference on Variable Neighborhood Search (ICVNS March 2021). Khalifa University, Abu Dhabi, U.A.E. The article will be published by Springer in the Lecture Notes in Computer Science (LNCS) series."}
+\end{normalsize}

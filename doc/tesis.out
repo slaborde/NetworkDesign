@@ -1,0 +1,56 @@
+\BOOKMARK [0][-]{chapter*.1}{Acronyms}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Context}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Problem}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Goals}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.3.1}{General Goal}{section.1.3}% 6
+\BOOKMARK [2][-]{subsection.1.3.2}{Specific Goals}{section.1.3}% 7
+\BOOKMARK [1][-]{section.1.4}{Expected Results}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.5}{Methodology}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.6}{Conclusions}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.7}{Structure of this Thesis}{chapter.1}% 11
+\BOOKMARK [0][-]{chapter.2}{Background}{}% 12
+\BOOKMARK [1][-]{section.2.1}{Concepts on Network Optimization}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{Graph-Theoretic Terminology}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{Problem Definition}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Motivation}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.2}{Choosing a Metaheuristic}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{Choosing a Reliability Evaluation Method}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.4}{Problem Formulation}{chapter.3}% 19
+\BOOKMARK [0][-]{chapter.4}{Problem and Analysis}{}% 20
+\BOOKMARK [1][-]{section.4.1}{Model}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.2}{Hardness}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.3}{Special Sub-Problems}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.4}{Minimum-Weight k-Connected Spanning Networks with Reliability Constraints}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.4.1}{MWKECSNP ILP Formulation based on Bienstock Theorem}{section.4.4}% 25
+\BOOKMARK [2][-]{subsection.4.4.2}{Particular case k=2}{section.4.4}% 26
+\BOOKMARK [0][-]{chapter.5}{Related Work}{}% 27
+\BOOKMARK [1][-]{section.5.1}{Topological Network Design}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.2}{Network Reliability}{chapter.5}% 29
+\BOOKMARK [0][-]{chapter.6}{Algorithms}{}% 30
+\BOOKMARK [1][-]{section.6.1}{Network-Design}{chapter.6}% 31
+\BOOKMARK [1][-]{section.6.2}{Construction}{chapter.6}% 32
+\BOOKMARK [1][-]{section.6.3}{Local Search}{chapter.6}% 33
+\BOOKMARK [2][-]{subsection.6.3.1}{Local Search 1: KeyPathLocalSearch}{section.6.3}% 34
+\BOOKMARK [2][-]{subsection.6.3.2}{Local Search 2: KeyTreeLocalSearch}{section.6.3}% 35
+\BOOKMARK [2][-]{subsection.6.3.3}{Local Search 3: SwapKeyPathLocalSearch}{section.6.3}% 36
+\BOOKMARK [1][-]{section.6.4}{Variable Neighborhood Search \(VNS\)}{chapter.6}% 37
+\BOOKMARK [1][-]{section.6.5}{Recursive Variance Reduction \(RVR\)}{chapter.6}% 38
+\BOOKMARK [0][-]{chapter.7}{Results}{}% 39
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 40
+\BOOKMARK [1][-]{section.7.2}{Description of the Test-Set}{chapter.7}% 41
+\BOOKMARK [1][-]{section.7.3}{Numerical Results}{chapter.7}% 42
+\BOOKMARK [2][-]{subsection.7.3.1}{Resulting Topologies}{section.7.3}% 43
+\BOOKMARK [1][-]{section.7.4}{Key Questions}{chapter.7}% 44
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 45
+\BOOKMARK [0][-]{chapter.9}{Future Work}{}% 46
+\BOOKMARK [0][-]{chapter*.31}{Bibliography}{}% 47
+\BOOKMARK [0][-]{chapter.10}{Appendix}{}% 48
+\BOOKMARK [1][-]{section.10.1}{Feasibility - Local Search Phase}{chapter.10}% 49
+\BOOKMARK [1][-]{section.10.2}{Feasibility - Construction Phase}{chapter.10}% 50
+\BOOKMARK [1][-]{section.10.3}{Graphical Tools}{chapter.10}% 51
+\BOOKMARK [1][-]{section.10.4}{Validation Tests}{chapter.10}% 52
+\BOOKMARK [2][-]{subsection.10.4.1}{Greedy Construction}{section.10.4}% 53
+\BOOKMARK [2][-]{subsection.10.4.2}{Local Search}{section.10.4}% 54
+\BOOKMARK [2][-]{subsection.10.4.3}{RVR}{section.10.4}% 55
+\BOOKMARK [0][-]{chapter*.90}{List of Figures}{}% 56

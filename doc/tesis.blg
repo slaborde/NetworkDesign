@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: tesis.aux
+Reallocating 'name_of_file' (item size: 1) to 42 items.
+The style file: estilos_bibliograficos/natbib/numbers/acm.bst
+Reallocating 'name_of_file' (item size: 1) to 27 items.
+A level-1 auxiliary file: ded_agr_epi/dedicacion.aux
+Reallocating 'name_of_file' (item size: 1) to 32 items.
+A level-1 auxiliary file: ded_agr_epi/agradecimientos.aux
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+A level-1 auxiliary file: resumen/resumen.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: resumen/abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: capitulos/glossary.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitulos/chap01.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitulos/chap02.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitulos/chap03.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitulos/chap04.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitulos/chap05.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitulos/chap06.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitulos/chap07.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitulos/chap08.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: capitulos/chap09.aux
+Reallocating 'name_of_file' (item size: 1) to 13 items.
+Database file #1: bibliografia.bib
+Warning--empty journal in 120
+You've used 118 entries,
+            2253 wiz_defined-function locations,
+            1149 strings with 23448 characters,
+and the built_in function-call counts, 39681 in all, are:
+= -- 3846
+> -- 1683
+< -- 0
++ -- 725
+- -- 576
+* -- 2987
+:= -- 6267
+add.period$ -- 352
+call.type$ -- 118
+change.case$ -- 630
+chr.to.int$ -- 0
+cite$ -- 119
+duplicate$ -- 1536
+empty$ -- 3306
+format.name$ -- 576
+if$ -- 8501
+int.to.chr$ -- 0
+int.to.str$ -- 118
+missing$ -- 112
+newline$ -- 590
+num.names$ -- 240
+pop$ -- 658
+preamble$ -- 1
+purify$ -- 521
+quote$ -- 0
+skip$ -- 1058
+stack$ -- 0
+substring$ -- 2521
+swap$ -- 497
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 452
+warning$ -- 1
+while$ -- 357
+width$ -- 121
+write$ -- 1212
+(There was 1 warning)

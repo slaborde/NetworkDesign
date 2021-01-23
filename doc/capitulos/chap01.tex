@@ -1,0 +1,91 @@
+\chapter{Introduction}\label{intro}
+\section{Context}
+This thesis is developed for the Master in Informatics, under the Program for the Development of Basic Sciences (PEDECIBA), and Universidad de la Rep\'ublica (UdelaR). This work is developed under the framework of a more general network planning project for modern communication networks. This is generally a complex and demanding task, which is accomplished by optimization as a main tool, and combines a quantitative analysis and evaluation as a primary element in the cycle of optimization. In this thesis, we wish to develop a research activity that includes the design of highly-reliable massive telecommunication networks. Given the previous experience in this field, it is essential to assist on decision-making, which is extremely useful for the design of fiber-optics communications. 
+
+The information revolution shocked the world during the XX and XXI centuries, and it represents one of the most relevant revolutions in history. The impact was even greater when sharing digital information, allowing  cooperation and convergence between both technologies and people. At the beginning, telephonic 
+networks\footnote{Network: it can be considered as a set of nodes and a set of links between them.} were 
+considered to satisfy the data communication needs. Currently, the situation is much different, and data networks were adapted to pursue different goals, normally by means of service integration and traffic needs. 
+The data networks allow the multiple convergence of different communication technologies permanently, even when the original deployment has more than a century. The interconnection allows hub, storage and centrality of information that is sparse among distinct continents. As a result, jobs, e-commerce, business and other routine activities are speed-up, and a great variety of on-line services are available anytime and anywhere, with anything at hand (i.e., a cell-phone). The network design task, combining different traffic and services, among many other factors, is not easy at all, but the contrary. This task is complex, and the design, network dimensioning and optimization\footnote{Optimization: a field of mathematics that assists on decision making, by means of a minimization/maximization of a quantity, using a specific criterion.} represents hard decisions to make. 
+This complex task must be simultaneously accomplished with the development of a network topology\footnote{Network Topology: physical configuration in which nodes are interconnected in a network.} that meets a specific reliability threshold\footnote{Reliability: the probability of correct operation of a system on given conditions during a specific period of time.} suitable for the context. A large number of sites with different characteristics are interconnected during the network design, in order to meet a pre-established reliability bound at the minimum cost. 
+
+The goal in every topological design\footnote{Topological design: stage of the network planning process  which consists in the physical location of the network components and their interconnections.} is to adapt the technological requirements from the context as much as possible, meeting the budget constraints 
+imposed by the project (which implies the cost of infrastructure but also factors related with an expected quality of service). In this work we address a topological design of highly-reliable networks\footnote{Structural Reliability: probability of correct operation of a system, given the occurrence of failures on the network components.}, adding different optimization phases by means of quantitative evaluations in order to determine if the desired reliability parameter is achieved.
+
+\section{Problem}
+During the first phase of this thesis, a literature review was performed. As a result, we defined the problem under study with the following two items:
+\begin{itemize}
+    \item Given a network where the potential link-costs are known, design a minimum-cost network meeting predetermined connectivity and reliability constraints (inputs of the problem).
+    \item Perform a quantitative analysis of the results, in terms of cost.
+\end{itemize}
+In this context, it is relevant to dispose of methods for the topological network design meeting certain 
+connectivity requirements (i.e., two node-disjoint paths between nodes) and simultaneously, some 
+network reliability requirement (measured in probabilistic terms) exceeding a predefined threshold (problem data). The problem involves a mixture of structural reliability and topological survivability\footnote{Topological survivability: is to accomplish certain network connectivity levels.} of a network. 
+In a first phase, a literature review is performed and, in a second phase, different solutions to the problem are proposed. The third phase is the implementation of the selected methodology. Finally, in the fourth phase, 
+an experimental analysis is carried out to measure quantitatively the quality of the solution obtained following the designed methodology, and to determine, if possible, \emph{how good} are the returned solutions.  
+
+\section{Goals}
+\subsection{General Goal}
+Develop a heuristic\footnote{Heuristic: method and exploratory algorithms for the resolution of problems, where the solutions are discovered as a result of the progress achieved during a  search.} whose result is the design of a network topology (i.e., associated graph) meeting 
+connectivity requirements between pairs of nodes (problem data) and a minimum reliability threshold 
+(problem data). Answer key-questions, in order to understand the interplay 
+between topological survivability and structural network reliability.
+
+\subsection{Specific Goals}
+The author of this thesis is proposed to perform an in-depth study of the concepts of 
+\emph{Structural Reliability} and \emph{Topological Survivability}. 
+A specific goal is to get skills in network reliability and planning, particularly on the topological design 
+of strategic complex networks with critical/relevant applications~\cite{31}. Learn network planning tools and how to 
+implement efficient algorithms to tackle $\mathcal{NP}$-Hard problems\footnote{$\mathcal{NP}$-Hard: so far, these problems cannot be solved efficiently (in polynomial-time with respect to the size of the input).}, such as the problem addressed in this thesis.
+
+\section{Expected Results}
+Macroscopically, it is expected to offer a methodology that serves as a base-step for decision-making 
+in the development of fault-tolerant telecommunication networks. This is typically the case of a backbone network 
+design\footnote{Backbone: is the skeleton or main core of a network.} of a Wide Area Network (WAN),  
+    (i.e., Internet). In order to meet these objectives, the following tasks should be performed:
+\begin{itemize}
+    \item Understand the mathematical model associated to the problem to solve.
+    \item Perform a literature review.
+    \item Get a better insight of the following concepts:
+           \begin{itemize}
+               \item Topological network survivability.
+               \item Structural network reliability.
+           \end{itemize}
+    \item Explore different approaches to propose an approximate solution.
+    \item Select and implement a solution.
+    \item Measure the quality of the results obtained.
+\end{itemize}
+
+\section{Methodology}
+In a previous stage to the development of a solution for the problem, the author performed a literature review, understanding the main concepts and related fields of knowledge. 
+As far as I know, the object under study in this thesis is novel. I can find a scarce number of close  problems from the scientific literature. In fact, the closest works from the literature either deal with 
+network reliability, or network optimization independently, but not both. The first stage of this project is focused on understanding the problem and propose a formal (mathematical programming) definition. Given that, the problem under study belongs to the $\mathcal{NP}$-Hard class, an exact evaluation algorithm is prohibitive for large networks. As a consequence, a metaheuristic is adopted. In terms of the optimization problem, several metaheuristics were studied to potentially address the problem\footnote{Metaheuristic: particular heuristics that serve as a template to solve a very large class of computational problems.}. Among those metaheuristics we can find GRASP~\cite{5,6,51} and its particular version for 
+GSPNC~\cite{2,11}, Genetic Algorithms~\cite{1,5},  Tabu Search~\cite{5,15}, Variable Neighborhood Search or VNS~\cite{16,17,18} and Iterated Local Search, or ILS~\cite{5,19,60}. The selection of a metaheuristic provides opportunities to use a powerful and flexible tool, that can be easily combined with 
+hybrid method or specific heuristics suitable for the problem. Once analyzed and understood a variety of potential metaheuristics for our network optimization problem (the construction phase of our topological network design), 
+the decision was to adopt VNS. This metaheuristic is 
+based on a simple principle: a systematic variation of neighborhood structures during the search. 
+The accuracy to switch neighborhood structures is essential. VNS has shown its effectiveness by means of several experiments showing equal or better results than most metaheuristics for a great variety of combinatorial optimization problems, which makes this selection attractive.
+
+Analogously, for the stage of network reliability analysis, different evaluation techniques were studied. 
+An exact network reliability evaluation belongs to the 
+class of $\mathcal{NP}$-Hard problems, for our hostile model of simultaneous links and node-failures. 
+Therefore, simulation methods were considered\footnote{Simulation: is to perform repetitions of a model under a fixed assumption.}, such as Crude Monte Carlo, or CMC~\cite{4} and 
+Recursive Variance Reduction or RVR~\cite{85,2,78}. Even though Crude Monte Carlo proposed an unbiased reliability estimation, this technique is not suitable for highly reliable scenarios, since it does not satisfy the property of bounded relative error. An outstanding method for variance reduction is RVR, which was selected in this thesis. 
+The implementation is not trivial, but there is both, practical and theoretical evidence that RVR presents much reduced variance than CMC~\cite{80}. In practice, RVR is suitable for the reliability estimation on large networks,  
+even under highly reliable scenarios~\cite{79}.
+
+\section{Conclusions}
+In this thesis we study the topological design of highly-reliable networks, tackling two sub-problems clearly identified: the network optimization problem and the minimum network reliability requirements. The network optimization problem is here addressed using metaheuristics, since it is an $\mathcal{NP}$-Hard problem~\cite{9,27,29}, and therefore, the application of exact methods is prohibitive in terms of computational time, even for networks with small and moderate size. For that reason, we decided to adopt Variable Neighborhood Search, 
+(VNS). The reasons to support this decision will be exposed in Chapter~\ref{prob-def}. In terms of the 
+network reliability evaluation method, simulation methods are used, since exact reliability evaluation methods are also prohibitive. The Recursive Variance Reduction (RVR) method was selected for the pointwise reliability estimation in our hostile environment of simultaneous link/node failures. The reasons to select RVR are also discussed in Chapter~\ref{prob-def}. We do not have access to public benchmark data for our network optimization problem\footnote{Benchmark: technique used to measure the performance of a system or part of it, commonly in relation with a parameter of reference.} in order to compare the quality of the results, having to simulate network test instances. Nevertheless, 
+the CPU-times are acceptable, and the returned solutions are locally-optimal, with good quality in terms of costs reduction.  
+It is worth to note that the related literature from the scientific community is scarce, and the problem under study is novel. 
+
+\section{Structure of this Thesis}
+This thesis is organized in the following manner. Chapter~\ref{intro} serves as an introduction, and contains the motivation of this thesis, some elements of the problem under study and comments on the selected methodology for its resolution. Chapter~\ref{background} presents the terminology that will be used throughout this thesis. A 
+description of the problem and reasons to select VNS and RVR as the building-blocks of our resolution is provided in Chapter~\ref{prob-def}. Chapter~\ref{problem} formally presents the 
+Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability (GSP-NCHR) 
+with a mathematical programming formulation. Its $\mathcal{NP}$-Hardness is established, and particular cases are also discussed. The related work for the selected resolution methods is covered in Chapter~\ref{related}. 
+Full details of the algorithmic resolution is presented in Chapter~\ref{algorithms}. The experimental tests  
+together with a quantitative analysis of the results is included in Chapter~\ref{results}. 
+Chapter~\ref{conclusions} presents Concluding remarks, and Chapter~\ref{future} points out trends for future work and possible research fields that extend or complement this thesis. An Appendix is devoted to validation tests, some special procedures involved in the algorithmic design and a visualization tool for graphs that is also a product of this thesis.
+In order to experimental reproducibility the source code, data testset and other materials are available at \url{https://github.com/slaborde/NetworkDesign}

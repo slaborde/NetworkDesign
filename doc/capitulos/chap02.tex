@@ -1,0 +1,124 @@
+\chapter{Background}\label{background}
+This chapter includes the basic terminology from Network Optimization, Complexity and 
+Graph Theory that will be used throughout this thesis. The reader is invited 
+to consult the books~\cite{25,3,4,7} for additional terminology.
+
+
+\section{Concepts on Network Optimization}
+\begin{enumerate}
+	 \item \emph{Graph}: a set of nodes and links between them. The links could be directed; in that case we have a \emph{directed graph}. 
+    \item \emph{Network}: a weighted graph, where the weight is a function on the nodes and/or links that represent either costs, capacities or probabilities. 
+    \item \emph{Backbone}: is the skeleton or main core of a network. A fixed network could have more than 
+    one backbone (i.e., Internet). 
+    \item \emph{Reliability}: is the probability of correct operation of a system.
+%    \item \emph{Structural Reliability}: is the probability that the network is operational, 
+%    even under network failures (i.e., connectedness). The reliability is a function of the elementary 
+%    reliabilities of the network components.
+%    \item \emph{Network Topology}: is a set composed by the links that connect nodes from the network. The topology is uniquely determined by the configuration of the connections between the nodes 
+%    (i.e., Ring, Mesh, Star, Fully Connected, Line, Tree, Bus).
+    \item \emph{Topological Design}: stage of the network planning process, which consists of 
+    the location of the network components and their interconnections.
+    \item \emph{Survivability}: is the ability of a system, sub-system, equipment, process or procedure of 
+    its correct functioning during and after an alteration.
+    \item \emph{Topological Survivability}: is to meet certain network connectivity levels of the network. 
+It is precisely the existence of a pre-established number of node-disjoint (or link-disjoint) 
+paths between every pair of terminal nodes.
+    \item \emph{Heuristic}: exploration methods or algorithms to solve problems, where the solutions are 
+    discovered by the evaluation of the progress achieved during the search of a final result. Even though the 
+    exploration is algorithmic, an evaluation is empirical. They are normally employed to address hard combinatorial optimization problems, and trade optimality for computational feasibility. 
+    \item \emph{Metaheuristic}: particular heuristics that serve as a template to solve a very large class of computational problems. %Metaheuristics are generally applied to problems where there are no specific exact algorithms to solve it.
+    \item \emph{Optimization}: maximization of an objective function (e.g., gains, velocity, efficiency, others),  or minimization (e.g., cost, time, risk, error, others) subject to a feasible set of one or multiple constraints. 
+The constraints mean that not every decision (solution) is feasible. In systems engineering, an optimization process implies the enhancement of a system, with the available resources (bandwidth, CPU, memory, etc.). 
+    \item \emph{Combinatorial Optimization}: an optimization problem where the feasible set is finite. 
+%    This is a field of optimization in applied mathematics and computer science, related with operations research, algorithmic theory and complexity theory, that is supported by the intersection of several fields of knowledge such us artificial intelligence, mathematics and software engineering. The algorithms efficiently explore the finite space of feasible solutions with large cardinality. 
+    \item Locally-optimum solution: best solution in a set of neighbor solutions.
+    \item Globally-optimum solution: best solution in the solution feasible set~\footnote{Is the set of all possible points (sets of values of the choice variables) of an optimization problem that satisfy the problem's constraints, potentially including inequalities, equalities, and integer constraints.}.
+    \item $\mathcal{NP}$: is the set of decision problems that can be solved in polynomial-time by a non-deterministic Turing machine. 
+    \item $\mathcal{NP}$-Hard: the set of problems $H$ such that every problem $L \in \mathcal{NP}$ can be 
+    reduced to $H$ in polynomial-time. An~$\mathcal{NP}$-Hard problem is at least as hard as any problem in the 
+    class $\mathcal{NP}$. In fact, if we solve a problem from the class~$\mathcal{NP}$-Hard, then we can 
+    solve all the problems from the $\mathcal{NP}$ class. 
+    \item $\mathcal{NP}$-Complete: the set of $\mathcal{NP}$ decision problems that belong to the 
+    $\mathcal{NP}$-Hard class. 
+    This class represents the hardest decision problems belonging to the $\mathcal{NP}$-class.   
+    \item \emph{Simulation}: repetitive experimentation with a model with a fixed hypothesis.
+   \item \emph{Greedy Algorithm}: iteratively picks the cheapest item, in order to build the best solution of a combinatorial optimization problem. In most cases, Greedy does not find the globally-optimum solution, but a good approximation.
+   \item \emph{Neighborhood}: a set of solutions that include a specific member $x$. We can freely use these neighborhood, meeting the following clauses:
+   \begin{itemize}
+    \item $x$ belongs to all its neighborhoods. 
+    \item A set that contains a neighborhood of $x$ is also a neighborhood. 
+    \item The intersection of two neighborhoods of $x$ is also a neighborhood. 
+    \item For every neighborhood $V$ of $x$, there exists another neighborhood $U$ of $x$ such that $V$ 
+    is a neighborhood of all the points of $U$.  
+   \end{itemize}
+\end{enumerate}
+
+\section{Graph-Theoretic Terminology}
+In this section we present basic graph-theoretic terminology that will be used throughout this thesis~\cite{11}.
+
+\begin{enumerate}
+\item \emph{Adjacency}: two nodes $u$ and $v$ are adjacent if the link $\{u,v\}$ belongs to the graph. 
+In directed graphs the order matters, and we denote $(u,v)$ to the ordered pair. 
+We also say that the link $\{u,v\}$ is adjacent to both nodes $u$ and $v$.
+
+\item \emph{Degree}: the degree $d(v)$ of a node $v$ is the number of adjacent links to $v$.
+A node is isolated if it has degree 0. 
+
+\item \emph{Induced graph}: given a graph $G=(V,E)$ and a set $U \subseteq V$, 
+the induced graph $G(U)$ denotes the graph in the node-set $U$, with those links 
+from $G$ whose extremes are included in $U$.
+
+\item \emph{Path}: non-empty graph $P=(V,E)$ such that $V=\{v_1,\ldots,v_k\}$ and 
+$E=\{(v_1,v_2),(v_2,v_3),\ldots,(v_{k-1},v_k)\}$. The nodes $v_1$ and $v_k$ 
+are connected by $P$, and $v_1$ and $v_k$ are the extremes of $P$. The remaining nodes are internal nodes.
+
+\item \emph{Cycle}: given a path $P=\{v_1,\ldots,v_k\}$, the graph $C$ 
+obtained by the concatenation between $P$ and $\{v_k,v_1\}$ is a cycle. 
+
+\item \emph{Node-Disjoint Path}: two paths $p$ and $q$ are node-disjoint if $p \cap q = \{v_1,v_k\}$, 
+being $v_1$ and $v_k$ the extremes of both $p$ and $q$. A generalization for multiple disjoint paths is straight. 
+
+\item \emph{Independent Paths}: two paths $p_1$ and $p_k$ are independent if $p_1 \cap p_k = \emptyset$, 
+this is, $p_1$ and $p_k$ do not share nodes in common.
+
+%\item Caminos nodo-disjuntos (con los mismos extremos): Dados dos caminos incluidos en un grafo con los mismos extremos decimos que  son nodo-disjuntos si la intersecci\'on de sus conjuntos de nodos internos es vac\'ia.
+
+\item \emph{Subgraph}: given a graph $G=(V,E)$, $H=(V^{\prime},E^{\prime})$ is a subgraph of $G$ if $V^{\prime} \subseteq V$, $E^{\prime} \subseteq E$ and $\forall (u,v) \in E^{\prime}$, $u,v \in V^{\prime}$. 
+
+\item \emph{Connected Graph}: a graph $G=(V,E)$ is connected if for each pair of nodes 
+$u,v \in V$ there exists a path that connects $u$ and $v$ in $G$. 
+
+\item \emph{Tree}: a graph $G=(V,E)$ is a tree if it is connected and for all the links $e\in E$, 
+the graph $G^{\prime}=(V,E \setminus \{e\})$ is not connected.
+
+\item \emph{Spanning Tree}: given a connected graph $G=(V,E)$, a subgraph $H=(V,E^{\prime})$ is a 
+spanning tree if $H$ is connected and for all the links $e \in E^{\prime}$,   
+$H^{\prime} = (V,E^{\prime} \setminus \{e\})$ is not connected. 
+
+\item \emph{$k$-Node Connectivity}: a graph $G=(V,E)$ is $k$-node connected if for all $u,v \in V$, 
+there exist at least $k$ node-disjoint paths in $G$ that connect them.
+
+\item \emph{Terminal nodes}: a distinguished node-set $T$ that belongs to the backbone 
+are called terminal-nodes or fixed nodes. These nodes generally correspond to access points in the local networks.
+
+\item \emph{Matrix with the connectivity requirements}:  $R=\{r_{i,j}\}_{i,j\in T}$ 
+is a matrix that stores, for every pair of terminal nodes $i,j \in T$, a non-negative integer $r_{i,j}$. 
+The requirement $r_{i,j}$ means that we must construct $r_{i,j}$ node-disjoint paths 
+between the terminal nodes $i$ and $j$.  
+
+\item \emph{Backbone Network Design Problem (BNDP)}: given a network $G_B$ equipped with a terminal-set $T$, 
+find the minimum-cost network $H_B \subseteq G_B$ 
+that meets the connectivity requirements $R$ for the terminal-nodes $T$.
+
+\item \emph{Key-node}: consider a feasible solution $G_{sol}$ that meets the connectivity requirements $R$. 
+A key-node is a non-terminal node $v \in V$, whose degree $d(v)$ is three or greater. 
+
+\item \emph{Key-path}: consider a feasible solution $G_{sol}$ that meets the connectivity requirements $R$.  
+A  key-path is a path belonging to $G_{sol}$, such that the internal nodes are non-terminal nodes 
+with degree 2, and whose extremes are either terminals or key-nodes.
+
+\item \emph{Key-tree}: consider a feasible solution $G_{sol}$ that meets the connectivity requirements $R$, 
+and $v \in G_{sol}$ a key-node. The key-tree rooted at $v$ is the tree composed by all the 
+key-paths belonging to $G_{sol}$ where $v$ is one of the extremes. Topologically, this is a set of 
+key-paths that share a key-node as a common extreme.
+\end{enumerate}

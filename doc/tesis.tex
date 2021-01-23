@@ -1,0 +1,201 @@
+% ===== INICIO DEL PREÁMBULO =====
+
+\documentclass[msc,oneside,a4paper]{udelar} % Poner msc para Maestría, dsc para Doctorado.
+
+\usepackage[
+acronyms, 											 %utiliza el glosario de acronimos.
+nohypertypes={acronym,notacion,simbolos,glosario},   %quita los links en el texto al glosario.
+%nonumberlist,                                       %quita los links en los glosarios al texto.
+nogroupskip,                                         %quita los espacios entre diferentes grupos dentro de un glosario.
+nopostdot, 											 %quita el punto final en los acrónimos         .                           
+]{glossaries}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=5
+\hbadness=1
+
+
+%\usepackage[titles]{tocloft}
+%\setlength\cftbeforechapskip{100pt}
+%\renewcommand\cftfigafterpnum{\vskip5pt\par}
+%\renewcommand\cfttabafterpnum{\vskip5pt\par}
+%\renewcommand\cfttabafterpnum{\hskip1pt\par}
+
+\makeatletter
+     \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+\makeatother
+
+%Begin FR
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\tts}{\ensuremath(t_{1}t_{2})}
+\newcommand{\esp}{\mbox{\\}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\TABH}[1]{{\mbox~}\hspace{#1mm}}
+%\newcommand{\bproof}{\textbf{Proof.}~}
+%\newcommand{\eproof}{\begin{flushright}\textbf{QED}\end{flushright}}
+%\newcommand{\nada}[1]{}
+%\newcommand{\figref}[1]{Fig-\ref{#1}}
+%End FR
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\newtheorem{definition}{Definition}
+\newtheorem{question}{Question}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{property}{Property}
+\newtheorem{lemma}{Lemma}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,arrows,decorations.pathmorphing,shapes}
+\usepackage{bbm}
+
+\usepackage[T1]{fontenc}% TESTING
+\usepackage{float}
+
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=10000
+%\hbadness=10000
+
+\hypersetup{ colorlinks = true } % false para imprimir, true para ver.
+
+% Ver los documentos de estilos bibliográficos para editar estas siguientes 2 líneas.
+%\usepackage{natbib} % Para algunos estilos bibliográficos
+%bibliographystyle{estilos_bibliograficos/natbib/numbers/natbib_these}
+\bibliographystyle{estilos_bibliograficos/natbib/numbers/acm}
+\usepackage{longtable}
+
+
+
+\loadglossary
+
+% A su vez, la clase udelar.cls ya tiene los siguientes paquetes cargados automáticamente, que podrían ser de interés saber para el usuario:
+% 
+% {color},{hyphenat},{appendix},{lastpage},{babel},{inputenc},{amsmath,amssymb},{ifthen},{graphicx},{caption}
+% {setspace},{tabularx},{eqparbox},{ltxcmds},{titletoc},{xcolor},{lineno},{xwatermark}
+
+% Si se quieren agregar más paquetes, se recomienda colocarlos a partir de esta linea y antes de \begin{document}.
+
+
+
+% ===== FIN DEL PREÁMBULO =====
+
+% ===== INICIO DEL DOCUMENTO =====
+
+\begin{document}
+
+
+
+  %\title{Survivable Network Design with Reliability Constraints}
+  \title{Topological Optimization of Fault-Tolerant Networks meeting Reliability Constraints}
+%  \subtitle{TO BE DEFENDED}
+  \institutelogo{3} % Carga cantidad de logos seleccionados, con máximo de 3 logos.
+  \author{Nelson Sebasti\'an}{Laborde Castillo}
+  
+  \director{Ing.}{Franco}{Robledo}{Dr.}
+%  \codirector{Dr.}{Franco}{Robledo}{Director de Tesis}  % Comentar estas líneas si no son necesarias.
+%  \codirector{Prof.}{Nombre del 2do Codirector}{Apellido}{D.Sc.}
+%  \codirector{Prof.}{Nombre del 3er Codirector}{Apellido}{D.Sc.}
+  \directoracademico{Ing.}{Omar}{Viera}{Prof.}
+%  \codirector {Ing.}{Pablo}{Romero}{Dr.}
+  
+  \examiner{Dr.}{Sebasti\'an}{Basterrech (Professor VSB-Tech. University Ostrava CZ Rep. - Revisor)}{}
+  \examiner{Ing.}{Gerardo}{Rubino (Directeur de Recherche, INRIA/Rennes, Francia)}{Dr.}
+  \examiner{Ing.}{Ra\'ul}{Ruggia (PEDECIBA Inform\'atica - Presidente de Mesa)}{Dr.}
+%  \examiner{Prof.}{Nombre del 4to Examinador}{Apellido}{Ph.D.}
+%  \examiner{Prof.}{Nombre del 5to Examinador}{Apellido}{Ph.D.}
+  
+  \graduatename{Inform\'atica}
+  \institute{Facultad de Ingeniería}{Fing}  % La primer institución es la principal.
+  \institute{PEDECIBA - Inform\'atica}{PEDECIBA}  % Agregar copias de esta línea para agregar instituciones.
+  \graduatelocation{Montevideo}{Uruguay}
+  
+  
+  \date{20}{12}{2020} % Fecha del documento.
+  \foreignkeyword{Dise\~no Topol\'ogico de Redes}
+  \foreignkeyword{Confiabilidad de Redes}
+  \foreignkeyword{Simulaci\'on}
+  \foreignkeyword{Optimizaci\'on de Redes}
+  \foreignkeyword{Red Dorsal}
+  \foreignkeyword{RVR}
+  \foreignkeyword{Metaheur\'isticas}
+  \foreignkeyword{VNS}
+    
+  \keyword{Topological Network Design}
+  \keyword{Network Reliability}
+  \keyword{Simulation}
+  \keyword{Network Optimization}
+  \keyword{Backbone}
+  \keyword{RVR}
+  \keyword{Metaheuristics}
+  \keyword{VNS}
+
+        
+  \maketitle  % Comando que genera el título de la tesis.
+  
+  \frontmatter  % Comando que genera la portadilla, el catalogo y el tribunal de evaluación. NO COMENTAR
+  
+  \include{ded_agr_epi/dedicacion}
+  \include{ded_agr_epi/agradecimientos}
+%  \include{ded_agr_epi/epigrafe}
+  \include{resumen/resumen}
+  \include{resumen/abstract}
+  
+%  \listoffigures	         % Lista de figuras
+%  \listoftables	         % Lista de tablas
+  
+%  \listadesimbolos 		     % Lista de símbolos
+  %\listadenotaciones 	     % Lista de notaciones
+  \listadesiglas 		     % Lista de siglas
+
+  \tableofcontents           % Tabla de contenidos
+
+  \mainmatter % Comando que genera las listas y capítulos. NO COMENTAR
+  
+  \include{capitulos/glossary} % Se carga el glosario
+  \include{capitulos/chap01} % Se carga el capítulo 01
+  \include{capitulos/chap02} % Se carga el capítulo 02
+  \include{capitulos/chap03} % Se carga el capítulo 03
+  \include{capitulos/chap04} % Se carga el capítulo 04
+  \include{capitulos/chap05} % Se carga el capítulo 05
+  \include{capitulos/chap06} % Se carga el capítulo 06
+  \include{capitulos/chap07} % Se carga el capítulo 07
+  \include{capitulos/chap08} % Se carga el capítulo 08
+  \include{capitulos/chap09} % Se carga el capítulo 09
+
+  %Seguir copiando la linea de arriba para agregar más capítulos.
+
+
+
+  \backmatter % Comando que genera los apéndices, anexos y bibliografía. NO COMENTAR
+  
+  \bibliography{bibliografia}
+  \bibend
+  
+%  \glosario 		         % Glosario
+ 
+  
+%  \apenarabicnumbering
+%  \apenmatter
+  \input{apendice/apendice_A}
+%  \input{apendice/apendice_B}
+%  \input{apendice/apendice_C}
+  
+%  \anexarabicnumbering
+%  \anexmatter
+%  \input{anexo/anexo_A}
+\listoffigures	         % Lista de figuras
+  
+\end{document}
+
+% ===== FIN DEL DOCUMENTO =====

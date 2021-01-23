@@ -1,0 +1,28 @@
+\chapter{Conclusions}\label{conclusions}
+The object under study in this thesis is the topological design of highly reliable networks. Our goal is to combine purely deterministic aspects such as topological network design with probabilistic models coming 
+from network reliability. For that purpose, the Generalized Steiner Problem with Node-Connectivity Contraints and Hostile Reliability (GSP-NCHR) is here introduced. The GSP-NCHR belongs to the class of $\mathcal{NP}$-Hard problems~\cite{9}, since it subsumes the Generalized Steiner Problem (GSP). Therefore, the CPU-times are prohibitive, even for medium and small-sized networks. This promotes the development of approximative methods for its solution. For that reason, we considered a heuristic solution. Variable Neighborhood Search (VNS) was selected mostly because of its simplicity, flexibility and effectiveness (the reasons are detailed in Chapter~\ref{prob-def}). It is worth to remark that the network reliability evaluation under the hostile model also belongs to the 
+$\mathcal{NP}$-Hard class. Therefore, we adopted an outstanding pointwise reliability estimation, 
+known as Recursive Variance Reduction (RVR) method, which can be applied in general to arbitrary Stochastic Monotone Binary Systems. Since the hostile model is monotone, RVR is suitable for this model 
+(a more detailed justification is provided in Chapter~\ref{prob-def}). The object-oriented language C++ 
+was considered~\cite{13}  for the implementation of the whole developed algorithms in this thesis, which includes a representation of random graphs, validation, and testing different algorithms. 
+
+To the best of our knowledge, the GSP-NCHR is presented for the first time in this thesis. 
+In fact, the related work that simultaneously addresses a topological network optimization meeting 
+reliability constraints is scarce. Therefore, no benchmarks for this problem are available in the scientific literature. In order to study the effectiveness of our heuristic, we adapted instances taken from TSPLIB~\cite{24}. The improvement provided by the VNS phase after Greedy Construction ranges between 25.25\% and 39.84\%, 
+depending on the instance under study and its characteristics. This improvement is satisfactory, for 
+all the instances under study. In real-life scenarios, this means a notorious economical saving. The average reliability for all the networks range between 82.31\% and 99.87\%, depending on the elementary reliabilities 
+for Steiner-nodes and links, and the connectivity-requirements. The estimated variance was always small, 
+even under highly-reliable scenarios, showing the accuracy of RVR. In fact, the simple approach provided by CMC 
+fails to estimate the reliability for highly-reliable scenarios, providing the incorrect value of unit reliability and zero variance~\cite{4}. The networks here proposed meet the minimum reliability requirement, and 
+feasible solutions were always returned (the reader can find the numerical results in Chapter~\ref{results}). 
+The CPU-times per-iteration is acceptable, since the time is non-prohibitive, even for large-sized instances. 
+It is fair to remark here that the network reliability estimation using RVR is not considered in this time for some instances. 
+
+In order to answer the strategic questions of the thesis, several remarks are in order. 
+When the elementary reliability of both Steiner and links is high (99\%-99\%), the percentage of networks 
+that achieve the reliability threshold is high, being 100\% for most of the instances under study. 
+On one hand, when we fix the node-reliabilities but the elementary reliabilities are dropped, we can appreciate an important degradation of this percentage, meeting 0 in almost-all instances when the link-reliabilities are 95\%. A similar degradation occurs for large-sized instances when the elementary reliabilities are degraded (99\%-97\%).
+On the other hand, when only the elementary reliabilities of Steiner nodes are degraded, the percentage of resulting networks that fulfill the reliability threshold is not rapidly deteriorated. In summary, the network reliability is more sensible to link-reliabilities. 
+When the number of terminal-nodes is increased, the number of solutions that meet the reliability threshold is greater. This is coherent, since the number of perfect nodes is increased. A reduction in 
+the reliability can be observed for larger networks, since the number of Steiner nodes is increased. Finally, we can conclude that when the connectivity requirements are increased, the resulting networks 
+present greater reliability. 

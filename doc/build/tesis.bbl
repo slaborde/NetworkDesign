@@ -1,0 +1,715 @@
+\begin{thebibliography}{100}
+
+\bibitem{32}
+{\sc Agrawal, A., Klein, P., and Ravi, R.}
+\newblock When trees collide: An approximation algorithm for the generalized
+  steiner problem on networks.
+\newblock {\em SIAM Journal on Computing 24}, 3 (1995), 440--456.
+
+\bibitem{57}
+{\sc Alkaabneh, F., Diabat, A., and Elhedhli, S.}
+\newblock A lagrangian heuristic and grasp for the hub-and-spoke network system
+  with economies-of-scale and congestion.
+\newblock {\em Transportation Research Part C: Emerging Technologies 102\/}
+  (2019), 249 -- 273.
+
+\bibitem{115}
+{\sc Archer, K., Graves, C., and Milan, D.}
+\newblock Classes of uniformly most reliable graphs for all-terminal
+  reliability.
+\newblock {\em Discret. Appl. Math. 267\/} (2019), 12--29.
+
+\bibitem{1}
+{\sc Arraga, S., and Aroztegui, M.}
+\newblock {Algoritmos Gen\'eticos Paralelos para el Problema General de Steiner
+  en Grafos}, 2002.
+
+\bibitem{106}
+{\sc Barrera, J., Cancela, H., and Moreno, E.}
+\newblock Topological optimization of reliable networks under dependent
+  failures.
+\newblock {\em Oper. Res. Lett. 43}, 2 (2015), 132--136.
+
+\bibitem{116}
+{\sc Bienstock, Brickell, M.}
+\newblock On the structure of minimum-weight k-connected spanning network.
+\newblock {\em Society for industrial and applied mathematics 3}, 3 (1990),
+  320--329.
+
+\bibitem{113}
+{\sc Boesch, F., Satyanarayana, A., and Suffel, C.}
+\newblock A survey of some network reliability analysis and synthesis results.
+\newblock {\em Networks 54}, 2 (2009), 99--107.
+
+\bibitem{70}
+{\sc Botton, Q., Fortz, B., and Gouveia, L.}
+\newblock On the hop-constrained survivable network design problem with
+  reliable edges.
+\newblock {\em Computers and Operations Research 64\/} (2015), 159 -- 167.
+
+\bibitem{108}
+{\sc Brown, J.~I., and Cox, D.}
+\newblock Nonexistence of optimal graphs for all terminal reliability.
+\newblock {\em Networks 63}, 2 (2014), 146--153.
+
+\bibitem{109}
+{\sc Brown, J.~I., Cox, D., and Ehrenborg, R.}
+\newblock The average reliability of a graph.
+\newblock {\em Discret. Appl. Math. 177\/} (2014), 19--33.
+
+\bibitem{59}
+{\sc Bruni, M., Beraldi, P., and Khodaparasti, S.}
+\newblock A hybrid reactive grasp heuristic for the risk-averse k-traveling
+  repairman problem with profits.
+\newblock {\em Computers and Operations Research 115\/} (2020), 104854.
+
+\bibitem{88}
+{\sc Brusco, M.~J., and Doreian, P.}
+\newblock Partitioning signed networks using relocation heuristics, tabu
+  search, and variable neighborhood search.
+\newblock {\em Social Networks 56\/} (2019), 70 -- 80.
+
+\bibitem{83}
+{\sc Canale, E., Cancela, H., Romero, P., and Robledo, F.}
+\newblock Recursive variance reduction in reliability analysis.
+\newblock Tech. rep., Instituto de Computaci\'on., Facultad de Ingenier\'ia.
+  Universidad de la Rep\'ublica. Montevideo, Uruguay., 2014.
+\newblock Technical Report 14-15 UR.FI-INCO.
+
+\bibitem{82}
+{\sc Canale, E.~A., Cancela, H., Piccini, J., Robledo, F., Romero, P., Rubino,
+  G., and Sartor, P.}
+\newblock {Recursive Variance Reduction method in Stochastic Monotone Binary
+  Systems}.
+\newblock {\em Proceedings of the 7th International Workshop on Reliable
+  Networks Design and Modeling (RNDM)\/} (2015), 135--141.
+
+\bibitem{110}
+{\sc Canale, E.~A., Robledo, F., Romero, P., and Viera, J.}
+\newblock Building reliability-improving network transformations.
+\newblock In {\em Proceedings of the 15th International Conference on the
+  Design of Reliable Communication Networks\/} (2019), {IEEE}, pp.~107--113.
+
+\bibitem{10}
+{\sc Cancela, H.}
+\newblock Adapting rvr simulation techniques for general network reliability
+  models.
+\newblock Tech. rep., Investigaci\'on Operativa – InCo – Pedeciba
+  Inform\'atica, Facultad de Ingenier\'ia. Universidad de la Rep\'ublica.
+  Montevideo, Uruguay., 1999.
+\newblock Technical Report 00-02 INCO 99.05.
+
+\bibitem{80}
+{\sc {Cancela}, H., and {El Khadiri}, M.}
+\newblock The recursive variance-reduction simulation algorithm for network
+  reliability evaluation.
+\newblock {\em IEEE Transactions on Reliability 52}, 2 (2003), 207--212.
+
+\bibitem{81}
+{\sc Cancela, H., El~Khadiri, M., Rubino, G., and Tuffin, B.}
+\newblock {A Recursive Variance Reduction Technique with Bounded relative Error
+  for Communication Network Reliability Estimation}.
+\newblock In {\em {6th St Petersburg Workshop in Computer Simulation}\/} (Saint
+  Petersburg, Russia, 2009).
+
+\bibitem{78}
+{\sc Cancela, H., El~Khadiri, M., Rubino, G., and Tuffin, B.}
+\newblock {Recursive Variance Reduction Estimators for the Static Communication
+  Network Reliability Problem}.
+\newblock In {\em {8th International Workshop on Rare Event Simulation (RESIM
+  2010)}\/} (United Kingdom, 2010).
+
+\bibitem{107}
+{\sc Cancela, H., Guerberoff, G., Robledo, F., and Romero, P.}
+\newblock Reliability maximization in stochastic binary systems.
+\newblock In {\em Proceedings of the 21st Conference on Innovation in Clouds,
+  Internet and Networks and Workshops\/} (2018), {IEEE}, pp.~1--7.
+
+\bibitem{12}
+{\sc Cancela, H., and Khadiri, M.~E.}
+\newblock Series parallel reductions in rvr reliability evaluation.
+\newblock Tech. rep., Investigaci\'on Operativa – InCo – Pedeciba
+  Inform\'atica, Facultad de Ingenier\'ia. Universidad de la Rep\'ublica.
+  Montevideo, Uruguay., 1996.
+\newblock Technical Report INCO 96-01.
+
+\bibitem{85}
+{\sc Cancela, H., Khadiri, M.~E., and Rubino, G.}
+\newblock A new simulation method based on the {RVR} principle for the rare
+  event network reliability problem.
+\newblock {\em Annals of Operations Research 196}, 1 (2012), 111--136.
+
+\bibitem{84}
+{\sc Cancela, H., Khadiri, M.~E., Rubino, G., and Tuffin, B.}
+\newblock Balanced and approximate zero-variance recursive estimators for the
+  network reliability problem.
+\newblock {\em ACM Transactions on Modeling and Computer Simulation 25}, 1
+  (2014).
+
+\bibitem{2}
+{\sc Cancela, H., Robledo, F., and Rubino, G.}
+\newblock Network design with node connectivity constraints.
+\newblock In {\em Proceedings of the 2003 IFIP/ACM Latin America Conference on
+  Towards a Latin American Agenda for Network Research\/} (New York, NY, USA,
+  2003), Association for Computing Machinery, p.~13–20.
+
+\bibitem{90}
+{\sc Carrizosa, E., Mladenovi\'{c}, N., and Todosijevi\'{c}, R.}
+\newblock Variable neighborhood search for minimum sum-of-squares clustering on
+  networks.
+\newblock {\em European Journal of Operational Research 230}, 2 (2013), 356 --
+  363.
+
+\bibitem{44}
+{\sc Chen, Z.-Z.}
+\newblock Approximating unweighted connectivity problems in parallel.
+\newblock {\em Information and Computation 171}, 2 (2001), 125 -- 136.
+
+\bibitem{41}
+{\sc Cheriyan, J., Jordan, T., and Nutov, Z.}
+\newblock On rooted node-connectivity problems.
+\newblock {\em Algorithmica 30}, 3 (2001), 353--375.
+
+\bibitem{45}
+{\sc Cheriyan, J., Sebo, A., and Szigeti, Z.}
+\newblock Improving on the 1.5-approximation of a smallest 2-edge connected
+  spanning subgraph.
+\newblock {\em SIAM Journal on Discrete Mathematics 14}, 2 (2001), 170--180.
+
+\bibitem{74}
+{\sc Chimani, M., Kandyba, M., Ljubi\'{c}, I., and Mutzel, P.}
+\newblock Strong formulations for 2-node-connected steiner network problems.
+\newblock In {\em Proceedings of the 2nd International Conference on
+  Combinatorial Optimization and Applications\/} (Berlin, Heidelberg, 2008),
+  Springer-Verlag, p.~190–200.
+
+\bibitem{92}
+{\sc Consoli, S., and P\'erez, J. A.~M.}
+\newblock Variable neighbourhood search for the k-labelled spanning forest
+  problem.
+\newblock {\em Electronic Notes in Discrete Mathematics 47\/} (2015), 29 -- 36.
+\newblock The 3rd International Conference on Variable Neighborhood Search
+  (VNS'14).
+
+\bibitem{8}
+{\sc Cormen, T.~H., Leiserson, C.~E., Rivest, R.~L., and Stein, C.}
+\newblock {\em Introduction to Algorithms, Third Edition}, 3rd~ed.
+\newblock The MIT Press, 2009.
+\newblock Chapter 16, Greedy Algorithms.
+
+\bibitem{56}
+{\sc Cravo, G., and Amaral, A.}
+\newblock A grasp algorithm for solving large-scale single row facility layout
+  problems.
+\newblock {\em Computers and Operations Research 106\/} (2019), 49 -- 61.
+
+\bibitem{42}
+{\sc Czumaj, A., and Lingas, A.}
+\newblock On approximability of the minimum-cost k-connected spanning subgraph
+  problem.
+\newblock In {\em Proceedings of the Tenth Annual ACM-SIAM Symposium on
+  Discrete Algorithms\/} (USA, 1999), SODA ’99, Society for Industrial and
+  Applied Mathematics, p.~281–290.
+
+\bibitem{3}
+{\sc de~Kerebi, G. I.~F., Maneyero, M., Robledo, F., and Sabiguero, A.}
+\newblock {Modelo de Confiabilidad en Redes}, 1996.
+
+\bibitem{91}
+{\sc Dib, O., Moalic, L., Manier, M.-A., and Caminada, A.}
+\newblock An advanced ga–vns combination for multicriteria route planning in
+  public transit networks.
+\newblock {\em Expert Systems with Applications 72\/} (2017), 67 -- 82.
+
+\bibitem{20}
+{\sc Dijkstra, E.~W.}
+\newblock A note on two problems in connexion with graphs.
+\newblock {\em Numerical Mathematics 1}, 1 (1959), 269–271.
+
+\bibitem{55}
+{\sc dos Santos~Dantas, A.~P., [de Souza], C.~C., and Dias, Z.}
+\newblock A grasp for the convex recoloring problem in graphs.
+\newblock {\em Electronic Notes in Theoretical Computer Science 346\/} (2019),
+  379 -- 391.
+\newblock The proceedings of Lagos 2019, the tenth Latin and American
+  Algorithms, Graphs and Optimization Symposium (LAGOS 2019).
+
+\bibitem{54}
+{\sc Duarte, A., S\'anchez-Oro, J., Resende, M.~G., Glover, F., and Mart\'i,
+  R.}
+\newblock Greedy randomized adaptive search procedure with exterior path
+  relinking for differential dispersion minimization.
+\newblock {\em Information Sciences 296\/} (2015), 46 -- 60.
+
+\bibitem{46}
+{\sc Fernandes, C.~G.}
+\newblock A better approximation ratio for the minimum k-edge-connected
+  spanning subgraph problem.
+\newblock In {\em Proceedings of the Eighth Annual ACM-SIAM Symposium on
+  Discrete Algorithms\/} (USA, 1997), SODA ’97, Society for Industrial and
+  Applied Mathematics, p.~629–638.
+
+\bibitem{105}
+{\sc Fishman, G.}
+\newblock {\em Monte Carlo}.
+\newblock Springer Series in Operations Research and Financial Engineering.
+  Springer, 1996.
+
+\bibitem{23}
+{\sc Ford, D.~R., and Fulkerson, D.~R.}
+\newblock {\em Flows in Networks}.
+\newblock Princeton University Press, USA, 2010.
+
+\bibitem{49}
+{\sc Gabow, H.~N., Goemans, M.~X., and Williamson, D.~P.}
+\newblock An efficient approximation algorithm for the survivable network
+  design problem.
+\newblock {\em Mathematical Programming 82\/} (1998), 13--40.
+
+\bibitem{39}
+{\sc Gabow, H.~N., Goemans, M.~X., and Williamson, D.~P.}
+\newblock An efficient approximation algorithm for the survivable network
+  design problem.
+\newblock {\em Mathematical Programming 82\/} (1998), 13--40.
+
+\bibitem{47}
+{\sc Galluccio, and Proietti}.
+\newblock Polynomial time algorithms for 2-edge-connectivity augmentation
+  problems.
+\newblock {\em Algorithmica 36}, 4 (2003), 361–374.
+
+\bibitem{102}
+{\sc {Gang Cheng}, and {Ansari}, N.}
+\newblock Finding all hops k-shortest paths.
+\newblock In {\em Proceedings of the IEEE Pacific Rim Conference on
+  Communications Computers and Signal Processing\/} (2003), vol.~1,
+  pp.~474--477.
+
+\bibitem{9}
+{\sc Garey, M.~R., and Johnson, D.~S.}
+\newblock {\em Computers and Intractability; A Guide to the Theory of
+  NP-Completeness}.
+\newblock W. H. Freeman and Co., USA, 1990.
+
+\bibitem{38}
+{\sc Goemans, M.~X., Goldberg, A.~V., Plotkin, S., Shmoys, D.~B., Tardos, E.,
+  and Williamson, D.~P.}
+\newblock Improved approximation algorithms for network design problems.
+\newblock In {\em Proceedings of the Fifth Annual ACM-SIAM Symposium on
+  Discrete Algorithms\/} (USA, 1994), SODA ’94, Society for Industrial and
+  Applied Mathematics, p.~223–232.
+
+\bibitem{37}
+{\sc Goemans, M.~X., and Williamson, D.~P.}
+\newblock A general approximation technique for constrained forest problems.
+\newblock {\em SIAM Journal on Computing 24}, 2 (1995), 296–317.
+
+\bibitem{17}
+{\sc Gomes, L.~M., Diniz, V.~B., and Martinhon, C.~A.}
+\newblock {A Tutorial on Variable Neighborhood Search}, 1970.
+
+\bibitem{43}
+{\sc Hansen, P.}
+\newblock {\em Variable Neighborhood Search}.
+\newblock Springer International Publishing, Handbook of Heuristics, 2018.
+
+\bibitem{18}
+{\sc Hansen, P., and Mladenovic, N.}
+\newblock {An Hybrid GRASP+VNS Metaheuristic for the Prize-Collecting Traveling
+  Salesman Problem}, 1970.
+
+\bibitem{16}
+{\sc Hansen, P., Mladenovic, N., and P\'erez, J. A.~M.}
+\newblock Variable neighbourhood search.
+\newblock {\em Revista Iberoamericana de Inteligencia Artificial 7}, 19 (2003),
+  77--92.
+
+\bibitem{25}
+{\sc Harary, F.}
+\newblock The maximum connectivity of a graph.
+\newblock {\em Proceedings of the National Academy of Sciences 48}, 7 (1962),
+  1142--1146.
+
+\bibitem{98}
+{\sc Hore, S., Chatterjee, A., and Dewanji, A.}
+\newblock Improving variable neighborhood search to solve the traveling
+  salesman problem.
+\newblock {\em Applied Soft Computing 68\/} (2018), 83 -- 91.
+
+\bibitem{33}
+{\sc Jain, K.}
+\newblock A factor 2 approximation algorithm for the generalized steiner
+  network problem.
+\newblock In {\em Proceedings of the 39th Annual Symposium on Foundations of
+  Computer Science\/} (USA, 1998), FOCS ’98, IEEE Computer Society, p.~448.
+
+\bibitem{75}
+{\sc Kamma, L., and Nutov, Z.}
+\newblock Approximating survivable networks with minimum number of steiner
+  points.
+\newblock In {\em Proceedings of the 8th International Conference on
+  Approximation and Online Algorithms\/} (Berlin, Heidelberg, 2011),
+  Springer-Verlag, p.~154–165.
+
+\bibitem{104}
+{\sc Karp, R.~M.}
+\newblock {\em Reducibility among Combinatorial Problems}.
+\newblock Springer US, Boston, MA, 1972, pp.~85--103.
+
+\bibitem{31}
+{\sc Kerivin, H., and Mahjoub, A.~R.}
+\newblock Design of survivable networks: A survey.
+\newblock {\em Networks 46}, 1 (2005), 1–21.
+
+\bibitem{112}
+{\sc Kleywegt, A.~J., Shapiro, A., and Homem{-}de{-}Mello, T.}
+\newblock The sample average approximation method for stochastic discrete
+  optimization.
+\newblock {\em {SIAM} Journal on Optimization 12}, 2 (2002), 479--502.
+
+\bibitem{34}
+{\sc Kortsarz, G., Krauthgamer, R., and Lee, J.~R.}
+\newblock Hardness of approximation for vertex-connectivity network design
+  problems.
+\newblock {\em SIAM Journal on Computing 33}, 3 (2004), 704--720.
+
+\bibitem{13}
+{\sc Larman, C.}
+\newblock {\em {UML y Patrones. Introducci\'on al an\'alisis y dise\~no
+  orientado a objetos}}.
+\newblock Prentice Hall, Inc., USA, 2004.
+
+\bibitem{21}
+{\sc Lawler, E.~L.}
+\newblock A procedure for computing the k best solutions to discrete
+  optimization problems and its application to the shortest path problem.
+\newblock {\em Management Science 18}, 7 (1972), 401--405.
+
+\bibitem{79}
+{\sc {L'Ecuyer}, P., {Rubino}, G., {Saggadi}, S., and {Tuffin}, B.}
+\newblock Approximate zero-variance importance sampling for static network
+  reliability estimation.
+\newblock {\em IEEE Transactions on Reliability 60}, 3 (2011), 590--604.
+
+\bibitem{73}
+{\sc Leitner, M.}
+\newblock Integer programming models and branch-and-cut approaches to
+  generalized {0,1,2}-survivable network design problems.
+\newblock {\em Computational Optimization and Applications 65}, 1 (2016), 73.
+
+\bibitem{93}
+{\sc Leitner, M., and Raidl, G.~R.}
+\newblock Variable neighborhood and greedy randomized adaptive search for
+  capacitated connected facility location.
+\newblock In {\em Computer Aided Systems Theory -- EUROCAST 2011\/} (Berlin,
+  Heidelberg, 2012), R.~Moreno-D{\'i}az, F.~Pichler, and A.~Quesada-Arencibia,
+  Eds., Springer Berlin Heidelberg, pp.~295--302.
+
+\bibitem{103}
+{\sc Lena, D., Robledo, F., and Romero, P.}
+\newblock A hostile model for network reliability analysis.
+\newblock {\em J. Heuristics 8}, 2 (2017), 489--498.
+
+\bibitem{76}
+{\sc Ljubi\'{c}, I., Mutzel, P., and Zey, B.}
+\newblock Stochastic survivable network design problems.
+\newblock {\em Electronic Notes in Discrete Mathematics 41\/} (2013), 245 --
+  252.
+
+\bibitem{60}
+{\sc L\'opez-S\'anchez, A., S\'anchez-Oro, J., and Hern\'andez-D\'iaz, A.}
+\newblock Grasp and vns for solving the p-next center problem.
+\newblock {\em Computers and Operations Research 104\/} (2019), 295 -- 303.
+
+\bibitem{19}
+{\sc Lourenco, H.~R., Martin, O.~C., and Stutzle, T.}
+\newblock {Iterated Local Search}, 2001.
+
+\bibitem{30}
+{\sc Mahjoub, A., and Pesneau, P.}
+\newblock On the steiner 2-edge connected subgraph polytope.
+\newblock {\em RAIRO Operations Research 42}, 1 (2008), 259--283.
+
+\bibitem{52}
+{\sc Mart\'i, R., Campos, V., Resende, M.~G., and Duarte, A.}
+\newblock Multiobjective grasp with path relinking.
+\newblock {\em European Journal of Operational Research 240}, 1 (2015), 54 --
+  71.
+
+\bibitem{14}
+{\sc Martins, E., and Pascoal, M.}
+\newblock A new implementation of yen's ranking loopless paths algorithm.
+\newblock {\em Quarterly Journal of the Belgian, French and Italian Operations
+  Research Societies 1}, 2 (2003), 121--133.
+
+\bibitem{22}
+{\sc Martins, E. Q.~V., Pascoal, M. M.~B., and Santos, J. L.~E.}
+\newblock Deviation algorithms for ranking shortest paths.
+\newblock {\em International Journal of Foundations of Computer Science 10}, 3
+  (1999), 247--261.
+
+\bibitem{4}
+{\sc Mauttone, A.}
+\newblock {M\'etodo RVR en la simulaci\'on de medidas de confiabilidad en
+  redes}, 2000.
+
+\bibitem{15}
+{\sc Mejía, M., and Aguirre, P. E.~O.}
+\newblock {Network Topology Optimization using Tabu Search}, 2005.
+
+\bibitem{117}
+{\sc Monma, Munson, P.}
+\newblock Minimum-weight two-connected spanning networks.
+\newblock {\em Mathematical Programming 3}, 46 (1990), 153–171.
+
+\bibitem{5}
+{\sc Morales, E.}
+\newblock {B\'usqueda Optimizaci\'on y Aprendizaje}, 2004.
+
+\bibitem{67}
+{\sc Nesmachnow, S.}
+\newblock Evaluating simple metaheuristics for the generalized steiner problem.
+\newblock {\em Journal of Computer Science and Technology 5}, 4 (2005).
+
+\bibitem{28}
+{\sc Nesmachnow, S., and Pedemonte, M.}
+\newblock {Metaheur\'isticas basadas en adaptaci\'on social para el Problema de
+  Steiner Generalizado}.
+\newblock In {\em {Actas VI Congreso Espa\~nol de Metaheur\'isticas, Algoritmos
+  Evolutivos y Bioinspirados (MAEB 2009)}\/} (New York, NY, USA, 2009),
+  Association for Computing Machinery, p.~107–114.
+
+\bibitem{71}
+{\sc {Nguyen}, T., and {Do}, P.}
+\newblock An ant colony optimization algorithm for solving group steiner
+  problem.
+\newblock In {\em The 2013 RIVF International Conference on Computing
+  Communication Technologies - Research, Innovation, and Vision for Future
+  (RIVF)\/} (2013), pp.~163--168.
+
+\bibitem{96}
+{\sc {Orlov}, V.~I., {Kazakovtsev}, L.~A., {Rozhnov}, I.~P., {Popov}, N.~A.,
+  and {Fedosov}, V.~V.}
+\newblock {Variable neighborhood search algorithm for k-means clustering}.
+\newblock In {\em Materials Science and Engineering Conference Series\/}
+  (2018), vol.~450 of {\em Materials Science and Engineering Conference
+  Series}, pp.~22--35.
+
+\bibitem{101}
+{\sc Panigrahi, D.}
+\newblock Survivable network design problems in wireless networks.
+\newblock In {\em Proceedings of the Twenty-Second Annual ACM-SIAM Symposium on
+  Discrete Algorithms\/} (USA, 2011), Society for Industrial and Applied
+  Mathematics, p.~1014–1027.
+
+\bibitem{64}
+{\sc Paolini, E.}
+\newblock Minimal connections: the classical steiner problem and
+  generalizations.
+\newblock {\em Bruno Pini Mathematical Analysis Seminar 3}, 1 (2012), 72.
+
+\bibitem{68}
+{\sc Pedemonte, M., and Cancela, H.}
+\newblock A cellular ant colony optimisation for the generalised steiner
+  problem.
+\newblock {\em International Journal of Innovative Computing and Applications
+  2\/} (2010), 188--201.
+
+\bibitem{53}
+{\sc Pessoa, L.~S., Resende, M.~G., and Ribeiro, C.~C.}
+\newblock A hybrid lagrangean heuristic with grasp and path-relinking for set
+  k-covering.
+\newblock {\em Computers and Operations Research 40}, 12 (2013), 3132 -- 3146.
+
+\bibitem{114}
+{\sc Pulsipher, J., and Zavala, V.}
+\newblock Measuring and optimizing system reliability: a stochastic programming
+  approach.
+\newblock {\em TOP\/} (2020), 1 -- 20.
+
+\bibitem{58}
+{\sc Radojicic, N., Djenic, A., and Maric, M.}
+\newblock Fuzzy grasp with path relinking for the risk-constrained
+  cash-in-transit vehicle routing problem.
+\newblock {\em Applied Soft Computing 72\/} (2018), 486 -- 497.
+
+\bibitem{35}
+{\sc Ravi, R., and Klein, P.}
+\newblock When cycles collapse: A general approximation technique for
+  constrained two-connectivity problems.
+\newblock In {\em Proceedings of the 3rd Symposium on Integer Programming and
+  Combinatorial Optimization\/} (1993), pp.~39--55.
+
+\bibitem{24}
+{\sc Reinelt, G.}
+\newblock {TSPLIB}--a traveling salesman problem library.
+\newblock {\em ORSA Journal on Computing 3}, 4 (1991), 376--384.
+
+\bibitem{51}
+{\sc Resende, M., and Ribeiro, C.}
+\newblock {\em Optimization by GRASP}.
+\newblock Springer, 2016.
+
+\bibitem{6}
+{\sc Resende, M.~G., and Velarde, J. L.~G.}
+\newblock Grasp: Greedy randomized adaptative search procedures.
+\newblock {\em Revista Iberoamericana de Inteligencia Artificial 7}, 19 (2003),
+  61--76.
+
+\bibitem{94}
+{\sc Resende, M. G.~C., and Ribeiro, C.~C.}
+\newblock {\em GRASP: Greedy Randomized Adaptive Search Procedures}.
+\newblock Springer US, Boston, MA, 2014, pp.~287--312.
+
+\bibitem{36}
+{\sc Risso, C.}
+\newblock {\em Using GRASP and GA to design resilient and cost-effective
+  IP/MPLS networks}.
+\newblock PhD thesis, Universidad de la Rep\'ublica, 2014.
+
+\bibitem{7}
+{\sc Robledo, F.}
+\newblock {Dise\~no Topol\'ogico de Redes. Casos de Estudio: \emph{The
+  Generalized Steiner Problem} and \emph{The Steiner 2-Edge-Connected Subgraph
+  Problem}}.
+\newblock Master's thesis, Tesis de Maestr\'ia. Universidad de la Rep\'ublica,
+  2000.
+
+\bibitem{11}
+{\sc Robledo, F.}
+\newblock {\em GRASP heuristics for Wide Area Network design}.
+\newblock PhD thesis, Rennes University, Rennes, France, 2005.
+
+\bibitem{29}
+{\sc Robledo, F., and Canale, E.}
+\newblock {Designing backbone networks using the Generalized Steiner Problem}.
+\newblock In {\em Proceedings of the 7th International Workshop on Design of
+  Reliable Communication Networks\/} (2009), pp.~327--334.
+
+\bibitem{77}
+{\sc Rodríguez-Martín, I., Salazar-González, J.-J., and Yaman, H.}
+\newblock A branch-and-cut algorithm for two-level survivable network design
+  problems.
+\newblock {\em Computers and Operations Research 67\/} (2016), 102 -- 112.
+
+\bibitem{69}
+{\sc Rodr\'iguez-Mart\'in, I., Salazar-Gonz\'alez, J.-J., and Yaman, H.}
+\newblock Hierarchical survivable network design problems.
+\newblock {\em Electronic Notes in Discrete Mathematics 52\/} (2016), 229 --
+  236.
+\newblock Proceedings of the 7th International Network Optimization Conference.
+
+\bibitem{61}
+{\sc Rodr\'iguez-Pereira, J., Fern\'andez, E., Laporte, G., Benavent, E., and
+  Mart\'inez-Sykora, A.}
+\newblock The steiner traveling salesman problem and its extensions.
+\newblock {\em European Journal of Operational Research 278}, 2 (2019), 615 --
+  628.
+
+\bibitem{111}
+{\sc Rosenthal, A.}
+\newblock Computing the reliability of complex networks.
+\newblock {\em SIAM Journal on Applied Mathematics 32}, 2 (1977), 384--393.
+
+\bibitem{100}
+{\sc Sadeghi, E., and Fan, N.}
+\newblock On the survivable network design problem with mixed connectivity
+  requirements.
+\newblock {\em Annals of Operations Research\/} (2019).
+
+\bibitem{26}
+{\sc Sartor, P.}
+\newblock {Problema General de Steiner en Grafos: Resultados y Algoritmos GRASP
+  para la versi\'on Arista-Disjunta}.
+\newblock Master's thesis, Tesis de Maestr\'ia. Universidad de la Rep\'ublica,
+  2011.
+
+\bibitem{63}
+{\sc Sartor, P., and Robledo, F.}
+\newblock A heuristic for the edge-survivable general steiner problem.
+\newblock In {\em Control and Automation, and Energy System Engineering\/}
+  (Berlin, Heidelberg, 2011), Springer Berlin Heidelberg, pp.~7--16.
+
+\bibitem{62}
+{\sc Sartor, P., and Robledo, F.}
+\newblock Solving the generalized steiner problem in edge-survivable networks.
+\newblock In {\em Control and Automation, and Energy System Engineering\/}
+  (Berlin, Heidelberg, 2011), Springer Berlin Heidelberg, pp.~7--16.
+
+\bibitem{65}
+{\sc Sartor, P., and Robledo, F.}
+\newblock Grasp algorithms for the edge-survivable generalized steiner problem.
+\newblock {\em International Journal of Control and Automation 5\/} (2012),
+  27--44.
+
+\bibitem{95}
+{\sc Schauer, C., and Raidl, G.~R.}
+\newblock Variable neighborhood search and grasp for three-layer hierarchical
+  ring network design.
+\newblock In {\em Proceedings of the 12th International Conference on Parallel
+  Problem Solving from Nature - Volume Part I\/} (Berlin, Heidelberg, 2012),
+  Springer-Verlag, p.~458–467.
+
+\bibitem{72}
+{\sc {Shen}, H.}
+\newblock Approximate algorithms for survivable network design.
+\newblock In {\em 2012 Third International Conference on Networking and
+  Computing\/} (2012), pp.~9--18.
+
+\bibitem{99}
+{\sc Suzuki, H., Ishihata, M., and Minato, S.-i.}
+\newblock Designing survivable networks with zero-suppressed binary decision
+  diagrams.
+\newblock In {\em WALCOM: Algorithms and Computation\/} (Cham, 2020), M.~S.
+  Rahman, K.~Sadakane, and W.-K. Sung, Eds., Springer International Publishing,
+  pp.~273--285.
+
+\bibitem{89}
+{\sc Tran, C.~V., and Ha, N.~H.}
+\newblock A variable neighborhood search algorithm for solving the steiner
+  minimal tree problem in sparse graphs.
+\newblock {\em EAI Endorsed Transactions on Context-aware Systems and
+  Applications 5}, 15 (12 2018).
+
+\bibitem{48}
+{\sc Tripathi, P.}
+\newblock {A Deterministic Algorithm for the Vertex Connectivity Survivable
+  Network Design Problem}, 2010.
+\newblock Arxiv:1004.1208v1.
+
+\bibitem{86}
+{\sc {Vijayaraghavan}, V., {Kianfar}, K., {Ding}, Y., and {Parsaei}, H.}
+\newblock A mixed integer programming based recursive variance reduction method
+  for reliability evaluation of linear sensor systems.
+\newblock In {\em 2018 IEEE 14th International Conference on Automation Science
+  and Engineering (CASE)\/} (2018), pp.~836--842.
+
+\bibitem{40}
+{\sc Williamson, D.~P., Goemans, M.~X., Mihail, M., and Vazirani, V.~V.}
+\newblock A primal-dual approximation algorithm for generalized steiner network
+  problems.
+\newblock {\em Combinatorica 15}, 3 (1995), 435--454.
+
+\bibitem{27}
+{\sc Winter, P.}
+\newblock Steiner problem in networks: A survey.
+\newblock {\em Networks 17}, 2 (1987), 129–167.
+
+\bibitem{66}
+{\sc Woods, B.}
+\newblock {Generalized Steiner Problem in Halin Graphs}.
+\newblock Master's thesis, University of Waterloo, 2010.
+
+\bibitem{97}
+{\sc Xiao, Y., and Konak, A.}
+\newblock A variable neighborhood search for the network design problem with
+  relays.
+\newblock {\em J. Heuristics 23}, 2-3 (2017), 137--164.
+
+\bibitem{87}
+{\sc Yuan, H., Lian, X., and Liu, J.}
+\newblock Stochastic recursive variance reduction for efficient smooth
+  non-convex compositional optimization.
+\newblock {\em CoRR abs/1912.13515\/} (2019).
+
+\end{thebibliography}

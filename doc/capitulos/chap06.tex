@@ -1,0 +1,722 @@
+\chapter{Algorithms}\label{algorithms}
+A literature review of the potential algorithms to implement was carried out, considering 
+scientific literature and documents provided by the Computer Science institute (InCO) 
+provided by the advisors. The proposal is driven by the following criteria:
+\begin{enumerate}
+    \item Simplicity: it must be simple.
+    \item Efficiency: it must assume reasonable (non-prohibitive) time on a PC.
+    \item Reproducibility: it should be specified clearly.
+    \item Effectiveness: it must find globally optimum solutions in most of the instances under study.
+\end{enumerate}
+
+It is hard to determine the correct metaheuristic, since the available information is scarce, and the problem addressed in this thesis is novel. A possible approach is to determine simple heuristics 
+that comply the previous criteria in previous problems, related with topological network design. 
+VNS~\cite{16,17,18} has shown to be efficient in multiple problems (see Chapter~\ref{related} for further details). Its effectiveness has been tested over several datasets with 
+optimal or near-optimal solutions, in moderate or at least reasonable times for small and medium-sized instances. A valuable element is its simplicity. This metaheuristics is modern, and it has a lower 
+number of related work in contrast with other metaheuristics. Another valuable fact is that VNS is capable of hybridization or extensions, combining other metaheuristics.\\
+
+Additionally, the algorithm should be selected in an ad-hoc manner specifically for our problem. 
+The network reliability evaluation under the hostile model belongs to the class of $\mathcal{NP}$-Hard problems. Consequently, an exact reliability evaluation for large networks is currently prohibitive. 
+A valuable alternative is to consider Monte Carlo-based methods for simulation, 
+such as RVR~\cite{4,85,2,78}. 
+Usually, Crude Monte Carlo is the most simple estimation approach for network reliability. 
+However, its variance is large for highly reliable systems, which is our focus. It 
+presents large variance and, consequently, its accuracy does not meet our requirements. 
+This is the reason why we selected RVR~\cite{4,85,2,78}. Furthermore, 
+this celebrated method had success in terms of reliability estimation under a large variety of 
+scenarios. 
+Section~\ref{sec-rvr} presents outstanding properties of RVR method (see Chapter~\ref{related} for further details on its potential applicability to other scenarios). It is worth to mention 
+that RVR works in general for monotone systems, and our hostile network reliability model 
+is monotone. Our main algorithm is presented in Section~\ref{nd}. A greedy construction is followed 
+by multiple local searches in a VNS, and the reliability estimation is carried out using RVR.
+
+\section{Network-Design}\label{nd}
+$NetworkDesign$ executes different phases that solve the problem of this thesis. 
+Essentially, we can identify three phases:  
+\begin{enumerate}
+\item[1.] Construction Phase
+\item[2.] Survivability Phase
+\item[3.] Reliability Phase
+\end{enumerate}
+
+Construction Phase receives the ground graph and returns a feasible solution for the GSP-NC\footnote{During this chapter, the feasibility is always related to the relaxed problem with no reliability constraint, this is, the GSP-NC.}, 
+which will be introduced in a Survivability phase. This second phase considers a metaheuristic to address the problem, trying to provide an improvement of the received solution in terms of cost, and preserving feasibility. Finally, the Reliability phase is in charge of the reliability estimation.  
+Figure~\ref{MainAlgorithm} presents a pseudocode for $NetworkDesign$. 
+It receives the ground graph $G_B$, a number of iterations $iter$ and a positive integer 
+$k$ to find the $k$ shortest paths during the Construction Phase, a reliability threshold $p_{min}$ 
+and number of iterations $simiter$ during the simulations carried out in the Reliability Phase.
+
+%%% PROCEDURE NETWORKDESIGN
+
+\begin{figure}[H]
+\begin{algorithm}[H]
+%\floatname{algorithm}{Algoritmo}
+\caption{$sol = NetworkDesign(G_B,iter,k,p_{min},simiter)$}
+\begin{algorithmic}[1]
+\STATE $i \leftarrow 0; \, P \leftarrow \emptyset; \, sol \leftarrow \emptyset$
+\WHILE {$i < iter$}
+\STATE $\overline{g} \leftarrow ConstructionPhase(G_B,P,k)$
+\STATE $g_{sol} \leftarrow SurvivabilityPhase(\overline{g},P)$
+\STATE $rel \leftarrow ReliabilityPhase(g_{sol},simiter)$
+\IF{$rel > p_{min}$}
+\STATE $sol \leftarrow sol \cup \{g_{sol}\}$
+\ENDIF
+\ENDWHILE
+\RETURN $sol$
+\end{algorithmic}
+\end{algorithm}
+\caption{Pseudocode for the main algorithm: $NetworkDesign$.\label{MainAlgorithm}}
+\end{figure}
+
+$NetworkDesign$ will collect all the feasible solutions found in a set $sol$. In Line~1, $sol$ 
+is initially the empty set, a counter of iterations is $i=0$ and a set of paths between the different terminals is also empty.  
+During the \textit{while-loop} of Lines~2-9, the three phases are called in order (Lines~3-5), 
+and a feasibility test takes effect (Lines~6-8). The algorithm returns $sol$, that contains 
+all the feasible solutions obtained during the execution (Line~10). 
+
+
+\section{Construction}
+In a trade-off between simplicity and effectiveness, a Greedy Randomized solution has been 
+developed~\cite{8,11}. This algorithm builds a feasible solution based on paths, trying to combine 
+speed and optimality in terms of cost. It builds a graph meeting the 
+connectivity constraints between the terminals $R= \{r_{i,j}\}_{i,j\in T}$. 
+Specifically, given $i,j \in S_{D}^{I}$ there exist $r_{i,j}$ node-disjoint paths 
+that connect $i$ and $j$ in the graph. From now on, $S_{D}^{(I)}$ is the set of 
+terminal nodes, following the terminology of the backbone design from Wide Area Networks. 
+Figure~\ref{const} receives the ground graph $G_B$, the matrix with link-costs $C$, 
+the connectivity matrix $R$, and the parameter $k$.
+
+%%% PROCEDURE GREEDY
+\begin{figure}[H]
+\begin{algorithm}[H]
+%\floatname{algorithm}{Algoritmo}
+\caption{$(sol,P) = Greedy(G_B,C,R,k)$}
+\begin{algorithmic}[1]
+\STATE $g_{sol} \leftarrow (S_D^{(I)},\emptyset)$; $m_{i,j}\leftarrow r_{i,j}$; $P_{i,j}\leftarrow \emptyset, \forall i,j \in S_{D}^{(I)}$; $A_{i,j}\leftarrow 0, \forall i,j \in S_{D}^{(I)}$
+\WHILE {$\exists \, m_{i,j}>0: A_{i,j}<MAX\_ATTEMPTS$}
+\STATE $(i,j) \leftarrow ChooseRandom(S_{D}^{(I)}: m_{i,j}>0)$
+\STATE $\overline{G} \leftarrow G_B \setminus P_{i,j}$
+\FORALL {$(u,v)\in E(\overline{G})$}
+\STATE $\overline{c}_{u,v} \leftarrow c_{u,v} \times 1_{\{(u,v) \notin g_{sol}\}}$
+\ENDFOR
+\STATE $L_p \leftarrow KSP(k,i,j,\overline{G},\overline{C})$
+\IF{$L_p=\emptyset$}
+\STATE $A_{i,j} \leftarrow A_{i,j}+1$; $P_{i,j} \leftarrow \emptyset$; $m_{i,j}\leftarrow r_{i,j}$ 
+\ELSE 
+\STATE $p \leftarrow Select\_Random(L_p)$; $g_{sol} \leftarrow g_{sol} \cup \{p\}$
+\STATE $P_{i,j} \leftarrow P_{i,j} \cup \{p\}$; $m_{i,j} \leftarrow m_{i,j}-1$
+\STATE $(P,M) \leftarrow General\_Update\_Matrix(g_{sol},P,M,p,i,j)$
+\ENDIF
+\ENDWHILE
+\RETURN $(g_{sol},P)$
+\end{algorithmic}
+\end{algorithm}
+\caption{Pseudocode for the Construction Phase: $Greedy$. \label{const}}
+\end{figure}
+
+In Line~1, the solution $g_{sol}$ is initialized only with the terminal nodes $S_{D}^{I}$ 
+without links, $M=\{m_{i,j}\}_{i,j\in T}$ stores the unsatisfied requirements, 
+so initially $m_{i,j}=r_{i,}$ for all $i,j\in S_{D}^{(I)}$, and 
+the matrix $P=\{P_{i,j}\}_{i,j\in S_{D}^{(I)}}$ that represents the collection of 
+node-disjoint paths is empty for all $P_{i,j}$. 
+Additionally, the matrix $A=\{A_{i,j}\}_{i,j\in S_{D}^{(I)}}$  that controls 
+the number of attempts that the algorithm fails to find $r_{i,j}$ node-disjoint paths 
+between $i,j$ is initialized correspondingly: $A_{i,j}=0\, \forall i, j \in S_{D}^{(I)}$. 
+
+The purpose of the \textit{while-loop} (Lines~2-13) is to fulfill all the connectivity 
+requirements, or detect all the pair of terminals $i, j \in S_{D}^{(I)}$ that could 
+not fulfill the connectivity requirements during $MAX\_ATTEMPTS$. Each iteration works as follows. 
+A pair of terminals $(i,j)$ is uniformly picked at random from the set $S_{D}^{(I)}$, provided 
+that $m_{i,j}>0$ (Line 3). The graph $\overline{G}$ is defined in Line~4 discards the nodes 
+that were already visited in the previous paths. Therefore, if we find some path between $i$ and 
+$j$ in $\overline{G}$, it will be included. 
+
+In the \textit{for-loop} of Lines~5-7, an auxiliary matrix with the costs $\overline{C}=\overline{c_{i,j}}$ is defined, where the links belonging to $g_{sol}$ have null cost. 
+This allows to use already existent links from $g_{sol}$ without additional cost, and add them to build a new node-disjoint path. The $k$-Shortest Paths from $i$ to $j$ are computed in Line~8 using the 
+costs from the matrix $\overline{C}$. These paths are stored in a list $L_p$. The function $KSP$ 
+is implemented efficiently using Yen algorithm~\cite{14}, that finds the $k$-Shortest Paths between two fixed nodes in a graph. In Line~9, we test if the list $L_p$ is empty. In this case we re-initialize 
+$P_{i,j}$, $m_{i,j}$, and add a unit to $A_{i,j}$, since $i$ and $j$ belong to different connected components. If the list $L_p$ is not empty, a path $p$ is uniformly picked at random from the list $L_p$, 
+and it is included in the solution (Line~12). The path $p$ is added to $P_{i,j}$, and the 
+requirement $m_{i,j}$ is decreased a unit (Line~13). The addition of the path $p$ could 
+build node-disjoint paths from different terminals. Consequently, the method $General\_Update\_Matrix$ 
+finds these new paths. $Greedy$ returns a feasible solution $g_{sol}$ equipped with all the 
+sets $P=\{P_{i,j}\}_{i,j \in S_{D}^{(I)}}$ of node-disjoint pairs between the different terminals 
+(Line~17).\\
+
+The reader can find a proof of feasibility for $Greeedy$, as well as details of the auxiliary functions $KSP$ and $General\_Update\_Matrix$ in the Appendix.
+
+\section{Local Search}
+The construction phase does not return even a locally-optimum solution. Therefore, 
+VNS combines different local searches in order to systematically modify the neighborhoods and 
+find a better solution~\cite{5,18,88}. Here, three different 
+local searches are proposed, each one based on different neighborhood structures. 
+It is worth to mention that only one of them, called $SwapKeyPathLocalSearch$, updates the 
+set of paths $P$. This seems a subtlety, but it means in fact a major implementation decision. 
+
+If we decide to update the set $P$ during a local search, in successive iterations we can either use this set or not, but the risk is to loose the updated version of $P$ in a different local search that considers $P$. As a consequence, the execution of $SwapKeyPathLocalSearch$ is independent 
+of the iterations which $KeyPathLocalSearch$ and $KeyTreeLocalSearch$ are implied. This is properly  illustrated in the following sections. 
+
+
+\subsection{Local Search 1: KeyPathLocalSearch}
+Before the detailed description of this local search, some auxiliary concepts and a neighborhood structure are in order. First, recall the concepts of key-node and key-path:
+
+\begin{definition}[key-node]
+A key-node in a feasible solution $v \in g_{sol}$ is a Steiner (non-terminal) node with degree three or  greater.
+\end{definition}
+
+\begin{definition}[key-path]
+A key-path in a feasible solution $p \subseteq g_{sol}$ is an elementary path 
+where all the intermediate nodes are non-terminal with degree 2 in $g_{sol}$, 
+and the extremes are either terminals or key-nodes.
+\end{definition}
+
+\begin{definition}[Neighborhood Structure for key-paths]
+Given a key-path in a feasible solution $p \in g_{sol}$, a neighbor-solution is 
+${\hat{g}}_{sol} = \{g_{sol} \setminus p \} \cup \{\hat{p}\}$, 
+where $\hat{p}$ is other path that connects the extremes from $p$, and preserves feasibility. 
+The neighborhood of key-paths from $g_{sol}$ is composed by the previous operation 
+to the distinct key-paths belonging to $K_{g_{sol}}=\{p_1,\ldots,p_h\}$, the decomposition of 
+$g_{sol}$ into key-paths. 
+\end{definition}
+
+$KeyPathLocalSearch$ builds neighbor solutions with an iterative replacement of key-paths with 
+the same key-nodes, preserving feasibility. The process is repeated until no additional improvements are feasible, and a locally-optimum solution is met for this neighborhood system. 
+A pseudocode for $KeyPathLocalSearch$ is presented in Figure~\ref{alg-kpls}. 
+It receives the ground graph $G_B$, link-costs $C$ and a feasible solution $g_{sol}$. 
+The variable $improve$ is set to TRUE in Line~1. This variable is useful to determine whether there exists 
+an improvement or not during the replacement of key-paths of the algorithm. The \textit{while-loop} 
+of Lines~2-14 looks for neighbor solutions, studying each key-path from the solution $g_{sol}$ and 
+replacing by new key-paths in order to reduce the cost of the global solution, preserving feasibility. 
+Each iteration works as follows. The variable $improve$ is set to $FALSE$ in Line~3. The decomposition of $g_{sol}$ 
+into key-paths is found in Line~4. The internal \textit{while-loop} of Lines~5-13 studies the key-paths from 
+$K(g_{sol})$ one-by-one, looking for a cheaper and feasible replacement. A key-path that 
+was not previously studied $p\in K (g_{sol})$ is uniformly picked at random in Line~6. 
+The network $\hat{\mu}$ induced by the nodes $NODES(p) \cup S_D\setminus NODES(g_{sol})$ 
+is computed in Line~7 (recall that $S_D$ is the set of terminal nodes following the traditional terminology from WAN network design). The set on the right, $\overline{S}=S_D\setminus NODES(g_{sol})$, is precisely the 
+terminal nodes not belonging to $g_{sol}$.  
+
+Observe that $\hat{\mu}$ does not possess nodes from $g_{sol}\setminus p$, except for $u$ and $v$. 
+Then, all the paths connecting $u$ and $v$ belonging to $\hat{\mu}$ re-establish the feasibility of 
+$g_{sol}\setminus p$. Consequently, the shortest path from $u$ to $v$ in $\hat{\mu}$ is found in Line~8. 
+The cost between $\hat{p}$ and the original path $p$ is compared in Line~9. If $\hat{p}$ is cheaper than $p$, 
+the key-path $p$ is correspondingly replaced by $\hat{p}$ in $g_{sol}$ (Line~10), and 
+the variable $improve$ is set to $TRUE$ (Line~11), in order to re-start the local search from Line~2. On the other hand, if $\hat{p}$ is not cheaper than $p$, the \textit{while-loop} of Lines~5-13 picks another 
+key-path not studied before, until all key-paths are studied. The process is finished as soon as there are 
+no possible improvements, or there are no key-paths to study. 
+The best neighbor solution $g_{sol}$ is returned in Line~15. A proof that $KeyPathLocalSearch$ preserved feasibility is provided in the Appendix.
+ 
+%%% PROCEDURE KeyPathLocalSearch
+\begin{figure}[H]
+\begin{algorithm}[H]
+%\floatname{algorithm}{Algoritmo}
+\caption{$g_{sol} = KeyPathLocalSearch(G_B,C,g_{sol})$}
+\begin{algorithmic}[1]
+\STATE $improve \leftarrow TRUE$
+\WHILE {$improve$}
+\STATE $improve \leftarrow FALSE$
+\STATE $K(g_{sol}) \leftarrow \{p_1,\ldots,p_h\}$ \COMMENT{Key-path decomposition of $g_{sol}$}
+\WHILE{\textbf{not} $improve$ \textbf{and} $\exists$ \textbf{key-paths not analyzed}}
+\STATE $p \leftarrow(K(g_{sol}))$ \COMMENT{Path not analyzed yet, with extremes $u$ and $v$}
+\STATE $\hat{\mu} \leftarrow <NODES(p) \cup S_D\setminus NODES(g_{sol}) > $ \COMMENT{Induced subgraph $\hat{\mu}$}
+\STATE $\hat{p} \leftarrow Dijkstra(u,v,\hat{\mu})$
+\IF{$COST(\hat{p}) < COST(p)$}
+\STATE $g_{sol} \leftarrow \{ g_{sol}\setminus p \} \cup \{\hat{p}\}$
+\STATE $improve \leftarrow TRUE$
+\ENDIF
+\ENDWHILE
+\ENDWHILE
+\RETURN $g_{sol}$
+\end{algorithmic}
+\end{algorithm}
+\caption{Pseudocode for Local Search 1: $KeyPathLocalSearch$ \cite{11}.\label{alg-kpls}}
+\end{figure}
+
+\clearpage
+
+
+\subsection{Local Search 2: KeyTreeLocalSearch}
+First, a neighborhood structure is in order. Recall the concept of key-tree:
+
+\begin{definition}[Key-tree]
+Let $v \in g_{sol}$ be a key-node belonging to a feasible solution $g_{sol}$. 
+The key-tree associated to $v$, denoted by $T_v$, is the tree composed by all the 
+key-paths that meet in the common end-point (i.e., the key-node $v$).
+\end{definition}
+
+\begin{definition}[Neighborhood Structure for key-tree]
+Consider the key-tree $T_v \in g_{sol}$ rooted at the key-node $v$, where $g_{sol}$ is a feasible solution. 
+A neighbor of $g_{sol}$ is $\hat{g}_{sol} = \{ g_{sol}\setminus T_v \} \cup \{T\}$, being 
+$T$ another tree that replaces $T_v$, with identical leaf-nodes, and preserving feasibility. 
+The neighborhood of $g_{sol}$ is composed by all the neighbor solutions obtained 
+with an iterative application of the previous operations, for the different key-trees belonging to $g_{sol}$.
+\end{definition}
+
+Based on this neighborhood structure, we define a second local search that replaces key-trees 
+(note that the previous local search was a replacement of key-paths). 
+
+
+%%% Procedure KeyTreeLocalSearch
+\begin{figure}[H]
+\begin{algorithm}[H]
+%\floatname{algorithm}{Algoritmo}
+\caption{$g_{sol} = KeyTreeLocalSearch(G_B,C,g_{sol})$}
+\begin{algorithmic}[1]
+\STATE $improve \leftarrow TRUE$
+\WHILE {$improve$}
+\STATE $improve \leftarrow FALSE$
+\STATE $ X \leftarrow KeyNodes(g_{sol})$ \COMMENT{Key-nodes from $g_{sol}$}
+\STATE $\overline{S} \leftarrow S_D \setminus NODES(g_{sol})$
+\WHILE{\textbf{not} $improve$ \textbf{and} $\exists$ \textbf{key-nodes not analyzed}}
+\STATE $v \leftarrow X$ \COMMENT{Key-node not analyzed yet}
+\STATE $[g_{sol},improve] \leftarrow General\_RecConnect(G_B,C,g_{sol},v,\overline{S})$
+\ENDWHILE
+\ENDWHILE
+\RETURN $g_{sol}$
+\end{algorithmic}
+\end{algorithm}
+\caption{Pseudocode for Local Search 2: $KeyTreeLocalSearch$ \cite{11}.\label{alg-ktls}}
+\end{figure}
+
+Figure~\ref{alg-ktls} presents a pseudocode for $KeyTreeLocalSearch$. 
+The rationale is to iteratively build neighbor solutions using a replacement of key-trees, preserving 
+feasibility. The process is repeated until no possible improvement exists. 
+It receives the ground graph $G_B$, link-costs $C$ and the feasible solution $g_{sol}$. 
+The variable $improve$ is set to $TRUE$ (Line~1). The \textit{while-loop} of Lines~2-10 looks 
+for better neighbors solutions, studying each key-node from the current solution $g_{sol}$, and 
+a replacement takes place if corresponds. The \textit{while-loop} is repeated whenever an improvement is 
+found. Each iteration works in the following manner. The variable $improve$ is set to $FALSE$ in Line~3. 
+The set $X$ of all the key-nodes from $g_{sol}$ are obtained in Line~4. In Line~5, 
+the set of Steiner nodes $\overline{S}$ not belonging to $g_{sol}$ are computed. 
+The internal \textit{while-loop} of Lines~6-9 studies every key-node belonging to $X$, together with 
+its associated key-tree, trying to find a cheaper key-tree for replacement. 
+A key-node $v \in X$ is uniformly picked at random in Line~7. The algorithm 
+called $General\_RecConnect$ is called in Line~8, to find a replacement that is both feasible and cheaper than $T_v$. The description of $General\_RecConnect$, and a proof of feasibility are found in the Appendix. 
+
+If this search is successful, this algorithm returns an improved neighbor solution in Line~8, and the solution is 
+updated in the same line. Additionally, the variable $improve$ is set to $TRUE$, 
+and the local searches proceeds in Line~2. If $General\_RecConnect$ fails to find a replacement, the internal 
+\textit{while-loop} considers an alternative key-node not previously studied, 
+or this loop is finished if all the key-nodes were studied. 
+
+The process is finished as soon as there are no possible improvements, or there are no key-trees to study. 
+The best neighbor solution $g_{sol}$ is returned in Line~11. 
+
+\subsection{Local Search 3: SwapKeyPathLocalSearch}
+The following neighborhood structured will be useful:
+
+\begin{definition}[Neighborhood Structure for key-path replacement]
+Given a key-path $p \subseteq g_{sol}$ from a feasible solution $g_{sol}$, 
+a neighbor solution for $g_{sol}$ is $\hat{g}_{sol} = \{ g_{sol}\setminus p \}\cup \{m\}$, 
+being $m$ the set of nodes and links that will be added to preserve the feasibility of the 
+solution ${\hat{g}}_{sol}$.  
+The set $m$ could be empty, if the deletion of a key-path from $g_{sol}$ is already feasible. 
+The neighbor of key-paths from $g_{sol}$ is composed by the previous neighbor solutions 
+to each of the different key-paths belonging to the $K(g_{sol}) = \{p_1,\ldots,p_h\}$, 
+the decomposition of $g_{sol}$ into key-paths. 
+\end{definition}
+
+$SwapKeyPathLocalSearch$ iteratively builds neighbor solutions, removing 
+key-paths and reconstructing a feasible solution using the information stored in the 
+matrix $P$ (of node-disjoint paths), generated by $Greedy$ algorithm during the Construction phase. The process 
+is finished only when no feasible improvements are possible. Figure~\ref{alg-kpls2} shows a pseudocode for $SwapKeyPathLocalSearch$. It receives 
+the ground graph $G_B$, the link-costs $C$, a feasible solution $g_{sol}$ and the matrix with the node-disjoint paths $P$ obtained by the Greedy randomized construction.
+
+The variable $improve$ is set to TRUE in Line~1. This variable is useful to determine whether there exists 
+an improvement or not during the replacement of key-paths by paths. The \textit{while-loop} 
+of Lines~2-9 looks for neighbor solutions, studying each key-path from the solution $g_{sol}$ and 
+replacing by nodes and links, or simply deleting the key-path improving the cost, whenever the resulting network 
+is feasible. Each iteration works as follows. The variable $improve$ is set to $FALSE$ in Line~3. The decomposition 
+$K(g_{sol})$  of $g_{sol}$ into key-paths is found in Line~4. 
+
+The internal \textit{while-loop} of Lines~5-8 studies the key-paths from 
+$K(g_{sol})$ one-by-one, looking for a cheaper and feasible replacement with nodes and links. A key-path that 
+was not previously studied $p\in K (g_{sol})$ is uniformly picked at random in Line~6. 
+The routine $FindSubstituteKeyPath$ is called in Line~7. It deletes the key-path from the current solution and tries to re-connect the extremes by nodes and links, preserving feasibility. If, in addition, 
+the resulting solution is cheaper, the variable $improve$ is set to $TRUE$, and the solution is effectively replaced. Otherwise,  the following key-path is studied. 
+The process is finished as soon as there are no possible improvements, by replacements from key-paths 
+to nodes and links , or there are no key-paths to study. 
+The best neighbor solution $g_{sol}$ is returned in Line~10. 
+A proof of feasibility for $SwapKeyPathLocalSearch$ and the auxiliary algorithm 
+$FindSubstituteKeyPath$ are found in the Appendix. The diversity (in terms of neighborhoods structures) of the three local searches 
+explains the effectiveness of our VNS, as we will see in the Results (Chapter~\ref{results}).
+
+%%% Procedure SwapKeyPathLocalSearch
+\begin{figure}[H]
+\begin{algorithm}[H]
+%\floatname{algorithm}{Algoritmo}
+\caption{$g_{sol} = SwapKeyPathLocalSearch(G_B,C,g_{sol},P)$}
+\begin{algorithmic}[1]
+\STATE $improve \leftarrow TRUE$
+\WHILE {$improve$}
+\STATE $improve \leftarrow FALSE$
+\STATE $K(g_{sol}) \leftarrow \{p_1,\ldots,p_h\}$ \COMMENT{Key-path decomposition of $g_{sol}$}
+\WHILE{\textbf{not} $improve$ \textbf{and} $\exists$ \textbf{key-paths not analyzed}}
+\STATE $p \leftarrow(K(g_{sol}))$ \COMMENT{Path not analyzed yet}
+\STATE $(g_{sol},improve) \leftarrow FindSubstituteKeyPath(g_{sol},p,P)$
+\ENDWHILE
+\ENDWHILE
+\RETURN $g_{sol}$
+\end{algorithmic}
+\end{algorithm}
+\caption{Pseudocode for Local Search 3: $SwapKeyPathLocalSearch$ \cite{11}.\label{alg-kpls2}}
+\end{figure}
+
+\section{Variable Neighborhood Search (VNS)}
+VNS~\cite{5,16,17,18} is supported by a systematic modification of 
+neighborhood structures, hence it requires a finite set of predefined neighborhoods. This represents 
+a major difference with respect to most local search algorithms that use a fixed neighborhood structure.  
+VNS is based on three simple facts~\cite{5}:
+\begin{enumerate}
+\item A locally-optimum solution for one neighborhood structure is not necessarily for another one.
+\item A globally-optimum solution is locally-optimum under all neighborhood structures.
+\item In most problems, a locally optimum solution with respect to one or many neighborhood structures are relatively close.
+\end{enumerate}
+
+The last observation is empirical, and it implies that a locally-optima provides information about the globally-optimum solution. Sometimes they share common features. Nevertheless, those features are usually not known. 
+Therefore, it is natural to perform an organized exploration of the vicinities of a local optima, 
+until an improvement is met. The facts 1-3 suggest that several neighborhood structures should be employed to 
+address a combinatorial optimization problem. The change of neighborhood structures can be performed either in a  deterministic or a stochastic way, or even in a hybrid manner. Here, we considered a purely deterministic 
+change of local searches, called Variable Neighborhood Descent or VND~\cite{16}, 
+which consists of an iterative replacement to the current solution for a better one, whenever an improvement is feasible. If a change of neighborhood structure takes place whenever a locally-optimum solution is met for 
+some structure, a VND is obtained~\cite{16}. 
+
+A general template for VND is presented in Figure~\ref{vnd}.
+It receives an objective function $f$ for the combinatorial problem, a feasible solution $x$ and 
+ a collection of neighborhood structures $\mathcal{NS}$. Observe that the resulting solution provided by VNS is a locally-optimum solution with respect to all the $k_{max}=|\mathcal{NS}|$ neighborhood structures, and the possibility to reach a globally optimum solution is greater than using 
+a single structure~\cite{16}. In the following paragraphs, we detail our VNS implementation. 
+
+
+
+%%% AQUI VA PSEUDO DE VND
+\begin{figure}[H]
+\begin{algorithm}[H]
+%\floatname{algorithm}{Algoritmo}
+\caption{$x = VND(f,x,\mathcal{NS})$}
+\begin{algorithmic}[1]
+\STATE $improve \leftarrow TRUE$
+\WHILE {$improve$}
+\STATE $localsearch \leftarrow 1$
+\WHILE{$localsearch \leq |\mathcal{NS}|$}
+\STATE $x^{\prime} \leftarrow BestNeighbor(localsearch,x)$
+\IF{$f(x^{\prime}) < f(x)$}
+\STATE $x \leftarrow x^{\prime}$; $localsearch \leftarrow 1$
+\ELSE 
+\STATE $localsearch \leftarrow localsearch + 1$
+\ENDIF
+\IF {$localsearch > |\mathcal{NS}|$}
+\STATE $improve \leftarrow FALSE$
+\ENDIF
+\ENDWHILE
+\ENDWHILE
+\RETURN $x$
+\end{algorithmic}
+\end{algorithm}
+\caption{General Template for VND. \label{vnd}}
+\end{figure}
+
+
+Our implementation follows a VNS with minor variations; see Figure~\ref{vns2} for a pseudocode. 
+It receives the current solution $G$ and the matrix $P$ with node-disjoint paths from $G$, 
+previously obtained by our Greedy Randomized construction phase, and a collection of local searches $cls$. 
+
+%%% PONER Procedure VNS
+\begin{figure}[H]
+\begin{algorithm}[H]
+%\floatname{algorithm}{Algoritmo}
+\caption{$G = VNS(G,cls,P)$}
+\begin{algorithmic}[1]
+\STATE $k \leftarrow 0$; $k_{max} \leftarrow size(cls)$;
+\STATE $G \leftarrow SwapKeyPathLocalSearch (G,P)$
+\STATE $notimprove \leftarrow 0$
+\WHILE {$notimprove < k_{max}$}
+\STATE $\overline{G} \leftarrow LocalSearch(cls[k],G)$
+\STATE $cost \leftarrow GetCost(G)$
+\STATE $newcost \leftarrow GetCost(\overline{G})$
+\IF {$newcost < cost$}
+\STATE $cost \leftarrow newcost $
+\STATE $notimprove \leftarrow 0$
+\STATE $G \leftarrow \overline{G}$
+\ELSE
+\STATE $notimprove \leftarrow notimprove + 1$
+\ENDIF
+\STATE $k \leftarrow (k+1) \, mod \, k_{max}$
+\ENDWHILE
+\RETURN $G$
+\end{algorithmic}
+\end{algorithm}
+\caption{Pseudocode for our specific VNS proposal. \label{vns2}}
+\end{figure}
+
+
+In Line~1, the number of local searches $k_{max}$ and a pointer of current local search are initialized. 
+$SwapKeyPathLocalSearch$ is introduced in Line~2, which considers the matrix $P$ 
+as an input. Recall that $SwapKeyPathLocalSearch$ is not compatible with the other 
+local searches. For that reason, it is executed at the beginning of the algorithm only once and it is 
+not considered further as a part of the previously mentioned neighborhood structures. Nevertheless, it 
+is included in our VNS implementation, and it is essential to achieve considerable improvements in 
+the initial solutions coming from the Construction phase. 
+In Line~3, the variable $notimprove$ is set to 0. In the \textit{while-loop} of Lines~4-15, 
+the local search $k$ takes effect, until there is no feasible improvement (Line~5). If an improvement 
+is achieved, both the cost and the solution are updated (Lines~6-11). Otherwise, the variable $notimprove$ 
+is increased a unit (Line~13). In all cases, the following structure is visited in a cyclic-way (Line~15). 
+Here there is a difference with respect to the general template from Figure~\ref{vnd}, since 
+we proceed with the following structure in a cyclic order, instead of returning to the first structure. This is 
+to avoid the hierarchy imposed by a traditional VNS scheme, since our local searches are equally relevant. 
+Finally, the resulting solution is returned in Line~17. It is worth to remark that this algorithm 
+can be configured for $N$ arbitrary local searches, that can be parameterized by the collection $cls$. 
+
+
+
+
+
+\section{Recursive Variance Reduction (RVR)}\label{sec-rvr}
+The rational behind RVR~\cite{4,85,2,78,10} is to reduce the 
+original problem to a problem with a smaller network that is derived or built from the original. 
+The method is recursive, building several (smaller) networks successively, and it stops when we find a 
+network that is always connected or disconnected, no matter the states of its components. The target is 
+a pointwise estimation for the unreliability $Q_K$ for a given terminal-set $K$. However, it can be extended 
+to a larger family of stochastic monotone binary systems. The definitions pseudocodes and properties presented in this section are extracted from~\cite{4}. The reader can consult~Chapter~\ref{related} %\cite{4,10,12,78,79,80,81,82,83,84,85,86,87} 
+for further information. Consider a network $G=(V,E)$ equipped with a terminal set $K \subseteq V$, $v \in V$ and $e \in E$. 
+The following terminology will be used:
+\begin{itemize}
+\item  The network is $K$-connected when for every $u \in K$ and every $v \in K$, there exists a path that connects $u$ and $v$ (operational state). 
+\item $R(G)$ denotes the reliability (the probability that the network is $K$-connected).
+\item $Q(G)=1-R(G)$ denotes the unreliability.
+\item $D \subseteq V \cup E$ is an extended $K$-cut if $G^{\prime}=(V-D, E-D)$ is not $K$-connected.
+\item $G-\{e\}$ is the network whose node-set is $V$, link-set is $E-\{e\}$ and terminal-set $K$.
+\item $G-\{v\}$ is the network whose node-set is $V - \{v\}$, the link-set consists of $E$ minus all the links incident to $v$, and the terminal-set is now $K - \{v\}$.
+\item If $d$ is a component (node or link), $G | d$ denotes the derived network, setting 
+the operational probability of $d$ to $1$ ($d$ is a perfect component).
+\item  $G*d$ denotes the reduced network, setting the operational probability of $d$ to $1$. 
+If $d=e=\{u,v\}$, $G*e$ denotes a link-contraction. If the nodes $u$ and $v$ are identified with the node $w$, 
+the terminal-set is $K^{\prime}=K-\{v_1,v_2\}\cup \{w\}$, if $v_1 \in K$ or $v_2 \in K$, 
+or simply $K^{\prime}=K$ otherwise. 
+\end{itemize}
+
+The goal is to build an unbiased pointwise reliability estimator with smaller variance than 
+Crude Monte Carlo~\cite{4}. For that purpose, the following properties are considered:
+
+\begin{property}\label{p1}
+Let $G=(V,E)$ the network equipped with the terminal-set $K=\{v_1,\ldots,v_{|K|}\}$. 
+The following relations hold for the reliability $R(G)$ and unreliability $Q(G)$: 
+\begin{align}
+R(G) &= \left(\prod_{v\in K}r_v\right) R(G|v_1|v_2|\ldots|v_{|K|})\\
+Q(G) &= 1-\left(\prod_{v\in K}r_v\right)+\left(\prod_{v\in K}r_v\right)Q(G|v_1|v_2|\ldots|v_{|K|})
+\end{align}
+\end{property}
+
+Property~\ref{p1} means that the reliability $R(G)$ can be found setting perfect terminal nodes, 
+and multiplying the result of the resulting network by the products of the elementary reliabilities for the 
+terminal nodes. 
+
+\begin{property}\label{p2}
+Let $G=(V,E)$ the network equipped with the terminal-set $K$, and consider an arbitrary component $d$. 
+Then: $R(G|d)=R(G*d)$.
+\end{property}
+
+Property~\ref{p2} means that we can contract perfect components, and the reliability is preserved. 
+The RVR method considers this property in order to successively reduce the size of the network. 
+Consider the structure function $\phi:G \to \{0,1\}$. For every state of the system, the 
+function $\phi$ equals $1$ if and only if the system is $K$-operational, or $0$ otherwise. 
+
+Consider $N$ independent replicas of the system, and the averaging provided by CMC for the 
+unreliability evaluation:
+\begin{equation}
+\overline{Y}= \frac{1}{N}\sum_{i=1}^{N}(1-\phi(X-i))
+\end{equation}
+Clearly, if we denote $Y=1-\phi(G)$, then $E(\overline{Y}) =E(Y)=Q(G)$, and CMC is unbiased for the reliability.
+The goal of RVR is to build an unbiased random variable $Z(G)$ for the unreliability, with smaller 
+variance than CMC (see Property~\ref{p3}). Such random variable is built using extended 
+$K$-cuts, and it is expressed as a function of $|D|$ random variables $Y(G_i)$ that corresponds to the 
+states of the original network.
+
+\begin{property}\label{p3}
+Consider a network $G=(V,E)$ equipped with perfect terminal-set $K$ ($r_v=1$ for all $v\in K$). 
+Further, consider the following notation:
+\begin{itemize}
+\item $D = \{d_1,d_2,\ldots,d_{|D|}\}$ an extended $K$-cut from $G$. 
+\item $A_D$ the event \emph{all the components from $D$ fail}.
+\item $Q(D) = Pr(A_D) = \prod_{i=1}^{|D|}(1-r_{d_i})$: the probability of the event $A_D$.
+\item $B_i$ the event: \emph{the components from $D_i=\{d_1,\ldots,d_{i-1}\}$ fail but $d_i$ works}.
+\item $G_i = (G - d_1-\ldots - d_{i-1})*d_i$.
+\item $V$ a random variable independent of $Y(G_i)$ ruled by the probabilities:
+\begin{equation*}
+Pr(V=v)=Pr(\{B_v\})/(1-Q_D) = r_{d_v} \prod_{i=1}^{v-1}(1-r_{d_i})/(1-Q_D),
+\end{equation*}
+for all $1\leq v\leq |D|$.
+\end{itemize}
+Then, the following random variable:
+\begin{equation*}
+Z(G) = Q_D + (1-Q_D)\sum_{i=1}^{|D|}1_{\{V=i\}}Y(G_i),
+\end{equation*} 
+is unbiased for the unreliability, and presents smaller variance than CMC:
+\begin{align*}
+E(Z(G))&=Q(G)\\
+Var(Z(G)) &= (Q(G)-Q_D)R(G)\leq Q(G)R(G)=Var(Y(G))
+\end{align*} 
+The summation $\sum_{i=1}^{|D|}1_{v=i}Y(G_i)$ corresponds to $Z(G_v)$, which is 
+constructed using an extended $K$-cut $D$, and it is expressed in terms of $|D|$ 
+random variables $Y(G_i)$ each corresponding to different states of the original network.
+\end{property}
+
+Property~\ref{p3} states that the random variable $Z$ is unbiased, and it presents smaller 
+variance than the original $Y$. Therefore, RVR always have smaller variance than CMC. 
+Observe that the collection of the events $B_i$ and $A_D$ is a partition of the possible network 
+states. If the event $A_D$ holds, a cutset is found; otherwise, we can study a derived smaller network. 
+Intuitively, this partition of a random variable into indicator random variables reduce the variance. 
+
+Based on the Properties~\ref{p1}-\ref{p3}, the following recursive random variable $F$ is considered:
+
+\[
+    F(G)=\left\{
+                \begin{array}{lll}
+1 \, \, \textit{if } \, \, G  \, \, \textit{is not} \, \, K-\textit{connected}\\
+0 \, \,  \textit{if } \, \, K  \, \, \textit{is a single node}\\
+Q_D+(1-Q_D)\sum_{i=1}^{|D|}1_{\{V=i\}}F(G_i) \, \, \textit{otherwise}
+                \end{array}
+              \right.
+  \]
+
+An independent sample of $F$ for a network $G$ is considered to develop $RVR$ method. The algorithm is detailed in Figure~\ref{rvr}
+\begin{figure}[H]
+\begin{algorithm}[H]
+\caption{$RVR(G,K,p_v,p_e)$} %\caption{$G = VNS(G,cls,P)$}
+%\textbf{Input:} $(G,K,p_v,p_e)$
+\begin{enumerate}
+\item \textbf{Test}: 
+             \begin{itemize}
+             \item If $G$ always $K$-connected, return 0.
+             \item If $G$ is never $K$-connected, return 1.
+             \end{itemize} 
+\item Find an extended $K$-cutset $D=\{d_1,\ldots,d_{|D|}\}$
+\item Find $Q_D$ (all the components from $D$ fail)
+\item Pick a sample $v$ of the discrete random variable $V$
+\item Build $G_v = G-\{d_1,\ldots,d_{v-1}\}*d_v$
+\item Recursive step: return $Q_D+(1-Q_D)RVR(G_v)$
+\end{enumerate}
+\end{algorithm}
+\caption{Pseudocode for RVR method. \label{rvr}}
+\end{figure}
+
+
+RVR can be implemented in a variety of network reliability models, such as \emph{all-terminal} $R_V$, \emph{source-terminal} $R_{s,t}$, and \emph{$K$-terminal} $R_{K}$, 
+among many others (the reader can find a validation of RVR in the Appendix). Further, it is suitable for 
+our hostile network reliability model, where both links and non-terminal (Steiner) nodes may fail. 
+The necessary functionalities for $Graph$ class were implemented in order to apply 
+ $RVR$ to the structure previously designed. Its implementation in blocks is described in Figure~\ref{rvr2}.
+ 
+%%% PONER FUNCTION CONF
+\begin{figure}[H]
+\begin{algorithm}[H]
+\caption{$R = Rel(G,seed,N,K,p_v,p_e)$}
+%\textbf{Input:} $(G,K,p_v,p_e)$
+\begin{enumerate}
+\item $s=0$ \textit{counter for the mean value}
+\item $ss=0$  \textit{counter for the variance}
+\item $Set(seed)$
+\item \textbf{for} $i=1$ \textbf{to} $N$ \textbf{do}
+\begin{itemize}
+\item $G^{\prime}=G$
+\item $x = 1-RVR(G^{\prime},K,p_v,p_e)$
+\item $s = s+x$
+\item $ss = ss + x^2$
+\end{itemize}
+\item \textbf{end for}
+\item $esp = s/N$
+\item $var = 1/N(N-1) (ss-s^2/N)$
+\item \textbf{return} $(esp,var)$
+\end{enumerate}
+\end{algorithm}
+\caption{Implementation - Graph Class for Reliability evaluation. \label{rvr2}}
+\end{figure}
+
+The class $RVR$ considers an algorithm to find the reliability estimation using the homonym 
+algorithm (see Figure~\ref{rvr3}). It receives the network, a $seed$ for the pseudo-random number 
+generator ($(unsigned)time(0)$ is used) and a number of iterations. 
+Figure~\ref{rvr3} shows the implementation of $RVR$, where the variable $terminals$ counts the number of 
+terminals in the network. This number is decreased, either by node-elimination or contraction. The function 
+$\phi$ states whether the terminal-set $K$ belongs to the same component or not (see Figure~\ref{fi}). 
+This is verified using  depth first  search (DFS) algorithm. The node-failure implies a non-operational state, so this test is part of our algorithm. The variable $boolean$ is returned accordingly. 
+
+%% PONER FUNCTION RVR
+\begin{figure}
+\begin{algorithm}[H]
+\caption{$RVR(G,K,p_v,p_e)$}
+%\textbf{Input:} $(G,K,p_v,p_e)$
+\begin{enumerate}
+\item \textbf{If} $terminals$=1, \textbf{return} $0$
+\item \textbf{Elseif} $\phi(G,K)=1$, \textbf{return} 1.
+\item \textbf{Else} 
+\item $D := GetKExtendedCut(G)$
+\item $Q_{D} := AllFailedProb(D)$
+\item $index := GetRandomItem(D)$
+\item $c := D[index]$
+\item $remove(G,D, index - 1)$
+\item $add(G, c)$
+\item $return \, \, Q_{D} + (1 - Q_{D})\times RVR(G)$
+\item \textbf{EndIf}
+\end{enumerate}
+\end{algorithm}
+\caption{Pseudocode for the RVR implementation. \label{rvr3}}
+\end{figure}
+
+%% PONER FUNCION FI
+%%% PONER Procedure VNS
+\begin{figure}
+\begin{algorithm}[H]
+%\floatname{algorithm}{Algoritmo}
+\caption{$boolean = \phi(G,K)$}
+\begin{algorithmic}[1]
+\FORALL{$v\in K$}
+\IF{$NonOperational(v)$}
+\STATE $boolean \leftarrow 0$
+\ENDIF
+\ENDFOR
+\STATE $reached \leftarrow 0$
+\STATE $v \leftarrow RandomTerminal(K)$
+\STATE $reached \leftarrow DFS(v)$
+\IF{ $ reached = |K|$}
+\STATE $boolean \leftarrow 1$
+\ELSE
+\STATE $boolean \leftarrow 0$
+\ENDIF
+\RETURN $boolean$
+\end{algorithmic}
+\end{algorithm}
+\caption{Pseudocode for the Structure Evaluation $\phi$. \label{fi}}
+\end{figure}
+
+The auxiliary functions used in Figure~\ref{rvr3} are briefly described:
+
+\begin{itemize}
+\item $GetKExtendedCut$: a terminal node $v \in K$ is picked and considers the set of adjacent nodes and incident links whose elementary reliabilities are strictly smaller than 1, adding those components to $D$.
+\item $AllFailedProb$: finds the product of the unreliabilities of all the components belonging to $D$.
+\item $GetRandomItem$: considers a uniformly distributed continuous variable in $[0,1]$ and picks a sample of the discrete random variable $V$. Then, it returns the corresponding $index$ for the 
+component selected from the extended cut $D$.
+\item $Remove$: deletes from $G$ all the components until the position $index-1$. If some terminal node is involved in the set, the variable $terminals$ is decreased.  
+\item $Add$: sets the elementary reliability of the component to $1$ and determines whether it is possible 
+to contract the component or not. If positive, the contraction takes effect. If a link is perfect and 
+some of the adjacent nodes belongs to the terminal-set $K$, then the identification $w$ belongs to the new 
+terminal-set $w$. If parallel links appear with elementary reliabilities $r_1$ and $r_2$, a single link 
+replaces both parallel links, with the elementary reliability $r = r_1 + r_2 - r_1 r_2$.
+\end{itemize}
+
+We can appreciate how the network is successively reduced step-by-step, since the number of components 
+is reduced in each step, either by eliminations or contractions. Therefore, the number of 
+recursive calls is not greater than $|V|+|E|$. Additionally, the most demanding operation is the rule-evaluation,  with order $O(|V|)$. Therefore, the computational order for $RVR$ method is $O(|V| \times (|V|+|E|))$. 
+In order to carry out several independent executions of this simulation, 
+an iterative implementation is considered, the mean value of 
+$F(G)$ is then estimated by an averaging over the sample: 
+\begin{equation*}
+E(F) = \frac{1}{N}\sum_{i=1}^{N}F_i,
+\end{equation*}
+
+and its variance using the following expression:
+\begin{equation*}
+Var(F) = \frac{1}{N(N-1)}\sum_{i=1}^{N} (F_i-E(F))^2
+\end{equation*}
+For convenience, it can be computed using unbiased estimations for the first and second moments:
+\begin{equation*}
+Var(F) = \frac{1}{N(N-1)} \left( \sum_{i=1}^{N}F_{i}^{2}- \frac{1}{N}\left(\sum_{i=1}^{N}F_{i}\right)^2\right)
+\end{equation*}
+The mathematical models were extracted from~\cite{4}.

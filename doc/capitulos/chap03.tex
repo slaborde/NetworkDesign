@@ -1,0 +1,104 @@
+\chapter{Problem Definition}\label{prob-def}
+\section{Motivation}
+Recently, the traditional design of copper lines, the redundancy and survivability~\footnote{Survivability: is the ability of a system, sub-system, equipment, process or procedure of 
+    its correct functioning during and after an alteration.} were not consider a relevant issue. This is due to the fact that multiple routes were mandatory, given the limited capacity of copper lines. For instance, several central sites were required, commonly called gateway~\footnote{Gateway: in a communication network, 
+    a gateway is a network element equipped in order to interact with other networks using different protocols.}.  As a consequence, the communication networks were not originally deployed in order to have enough robustness under single point of failures, or failures on the network sites. The arrival of fiber-optics communication and its 
+    high capacity brought sparse networks. The network design is more relevant, and requires a smart engineering. 
+In particular, it must be fault tolerant and highly reliable. In telephonic services, we are only interested in the network topology. In this case the network is a set of nodes or offices and fiber-optics that interconnect them. The survivability is the existence of a pre-established number of node-disjoint paths~\cite{98}. In practice, a low-cost network is first deployed, and an optimization process takes place, where the costs are considered (either routing or traffic costs). In a telephonic service, the offices are classified according 
+to their importance in the following way:
+\begin{itemize}
+    \item Special offices or \emph{terminals}, meeting a high survivability level.
+    \item Ordinary offices, that should be simply connected to the network, and
+    \item Optional offices, that could be included or not in the network.
+\end{itemize}
+It is known the pair of offices that accept a potential link, with a corresponding cost between them. 
+The problem can be summarized in the selection of potential fiber-optics links that should be deployed in order 
+to meet survivability aspects at the minimum cost, such that:
+\begin{itemize}
+    \item The elimination of a single link does not disconnect two terminals. 
+    \item The elimination of a single office does not disconnect two special offices or terminals.
+\end{itemize}
+Topologically, this is to build two node-disjoint paths between the terminal nodes. 
+A major refinement could establish three or more node-disjoint paths between some terminals, increasing the 
+level of survivability under potential disasters or multiple node failures and/or link-cuts. 
+This example can be easily extended to other context with similar characteristics, and summarizes the 
+basis for the first phase of the problem under study in this thesis. A metaheuristic serves as a template or a generic framework~\footnote{Framework: in software development a framework is a structure in which another software projects can be organized and developed.} to solve a wide variety of hard combinatorial problems. A construction algorithm is needed to address a minimum-cost network design meeting connectivity requirements. Here, a metaheuristic is also considered for optimization, that will be discussed in Section~\ref{mh}. 
+
+In the previous example of a telephonic service, let us assume that each network component (nodes and links) 
+have an associated elementary reliability (operational probability), which is known. We want to determine 
+the network reliability for the topology that results from the first optimization phase. The goal in 
+this second phase is that the resulting topology meets a certain reliability threshold established for 
+the network operator or user. For that purpose, it is necessary to consider an algorithm to find the reliability measure for a given network. This topic is discussed in Section~\ref{rm}. 
+
+The final solution simultaneously solve both phases, using a multi-start optimization process followed by 
+quantitative network reliability evaluations to determine if the networks meets the reliability threshold. 
+
+\section{Choosing a Metaheuristic}\label{mh}
+There is a large class of potentially useful metaheuristic to address the problem at hand. After an analysis 
+of possible metaheuristics, Variable Neighborhood Search (VNS) was selected. Why VNS?\\
+
+The decision is not only based on a variety of metaheuristics that are potentially applicable to solve 
+a specific problem, or if there is controversy for a particular context. This approach not only shortens the decision, but also makes it difficult, since commonly there is not available information to perform the correct decision. The first step is to consider the desirable qualities of a metaheuristic, and determine if these qualities are met. In this sense, VNS is based on a simple principle, not yet deeply explored, which is the 
+systematic variation of neighborhood structures during the search. The accuracy to switch the different structures is crucial. Its effectiveness has been tested over different combinatorial problems and experiments, showing equal or better results than most metaheuristics, and faster. VNS has reached optimality or almost optimality in several 
+datasets of a wide variety of problems, with moderate or reasonable CPU-times~\cite{98}. A possibility is to 
+find extensions to this metaheuristic~\cite{16,17,18}  or adding 
+VNS to other metaheuristics, obtaining a hybrid proposal. 
+Even though this is not the main goal of this thesis, a flexible algorithmic design is delivered in the 
+search of a solution, and it could enrich the possibilities of future work. GRASP and VNS are powerful methodologies that were widely used. These metaheuristics are very efficient, being 
+excellent methods to address $\mathcal{NP}$-Hard combinatorial problems related with telecommunications.
+
+\section{Choosing a Reliability Evaluation Method}\label{rm}
+An essential part of this thesis is to define a network reliability measure, given a topology and 
+the elementary reliabilities of its components. Here we consider the hostile network reliability model, 
+where both links and Steiner (optional) nodes~\footnote{Non terminal nodes belonging to V-T.} fail independently. The exact reliability evaluation 
+belongs to the class of $\mathcal{NP}$-Hard computational problems. As a consequence, there are exact methods that run in exponential time, or approximative methods. Given the hardness of the underlying model, an exact method is prohibitive for large-sized instances. Several Monte Carlo based simulation methods are available in the literature. The simplest approach is Crude Monte Carlo (CMC)\cite{105}, where the goal is to pick independent replicas of the system and take decisions on it, based on an averaging of observations. Even its simplicity, it is not suitable for highly-reliable systems, which is the target of this thesis. CMC is unbiased, but its mean square error (i.e., its variance) is large under rare-event scenarios. An alternative is Recursive Variance Reduction (RVR) method~\cite{4,85,78}. This method is selected since RVR is also unbiased, and presents smaller variance than CMC. This property has been proved experimentally and mathematically as well~\cite{85,2,78}. Furthermore, RVR is suitable for a large variety of models, such as Stochastic Monotone Binary Systems (SMBS)~\footnote{SMBS is a mathematical model of multi-component on-off  systems subject to random failures. This model is an extension of network reliability models (where  the  components are either nodes or links).}, and our hostile model belongs to this family\cite{82,107}. 
+
+
+\section{Problem Formulation}%% REVISAR DESDE EL PDF Y METER ECUACIONES O SIMBOLOS MATEMATICOS DENTRO DEL TEXTO
+The object under study in this thesis is a combinatorial optimization problem, that promotes an interplay between network reliability and topological network design. 
+The problem is called \emph{Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability}, and we will use the acronym GSP-NCHR for short: 
+
+\begin{definition}[GSP-NCHR]
+Given a simple undirected graph $G=(V,E)$, a set of distinguished nodes 
+$T \subseteq V$ (called terminals), a matrix with link-costs $\{c_{i,j}\}_{(i,j) \in E}$ 
+and a matrix with connectivity requirements $R=\{r_{i,j}\}_{i,j \in T}$. 
+Further, we assume that the links may fail, and 
+the elementary reliabilities are $P_E=\{p_e\}_{e\in E}$, 
+and Steiner nodes belonging to $V-T$ also have an elementary reliability 
+$P_{V-T}=\{p_v\}_{v\in V-T}$. 
+Given a reliability threshold $p_{min}$, the goal is to build 
+a minimum-cost topology $G_S \subseteq G$ meeting both the connectivity requirements 
+$R$ and the reliability threshold: $R_{K}(G_S) \geq p_{min}$, being $K=T$ the terminal-set.
+\end{definition}
+
+The following notation is used in the definition of the GSP-NCHR:
+\begin{itemize}
+\item  $\{c_{i,j}\}_{(i,j)\in E}$ is a matrix that returns the link-cost $c_{i,j}$ for all $(i,j)\in E$.
+\item  $R=\{r_{i,j}\}_{i,j \in T}$ is a matrix with the connectivity requirement 
+between different pairs of terminals. Specifically, the positive integer $r_{i,j}$ denotes the number of  
+node-disjoint paths between the terminals $i,j\in T$ that are required in the solution. 
+\item $R_{K}(G_S)$ denotes the probability that the random graph $G_S$ spans the 
+terminal set $K=T$, where both links and Steiner nodes may fail with respective probabilities $P_E$ and $P_{V-T}$. Throughout this thesis we will consider the terminal-set as $K=T$, unless stated otherwise. 
+This model is known in the literature as the hostile network reliability model.
+\end{itemize}
+It is worth to note that node-disjoint paths are required in the GSP-NCHR. If edge-disjoint paths are required  instead, we consider the alternative GSP-ECHR. The main goals of this thesis is to answer the following key-questions:
+\begin{enumerate}
+\item[1] How many feasible networks there exists given the full probabilistic model $(p_{min},P_E,P_{V-T})$? 
+%Given a specific reliability threshold (for instance $p_{min}=0.98$) and 
+%the full probabilistic model $P_{E}$ and $P_{V-T}$, 
+\item[2] What is the sensibility of the model with respect to the elementary reliabilities? 
+For instance, for any given threshold ($p_{min}=0.98$), what happens if we fix 
+$p_v=0.99$ but we pick different values for the elementary link reliabilities 
+$p_e \in \{0.99,0.97,0.95\}$? How many feasible networks survive? Analogously, if we 
+fix $p_e=0.99$ and $p_v \in \{0.99, 0.97, 0.95\}$. 
+\item[3] How many networks survive on average, for any given probabilistic model? 
+Understand the sensibility of the model with respect to the connectivity requirements 
+$r_{i,j} \in \{2,3,4\}$. 
+%Para una red dada, dado un alto umbral de confiabilidad de la red (ejemplo: $p_{min}=0.98$), y fijando la confiabilidad de nodos y aristas ¿Cu\'al es el porcentaje de sobrevivencia variando el grado de nodo conectividad entre terminales en 2,3 y 4? 
+\item[4] Is it better to  improve the elementary reliability of links, or the reliability of Steiner nodes, in order to meet a demanding reliability threshold? 
+\end{enumerate}
+
+Currently, there is no polynomial-time algorithm to test whether a given network meets a minimum reliability threshold. 
+Given the hardness of this decision problem, we will consider a relaxation for the GSP-NCHR without reliability constraint 
+during the first phase of this thesis. In fact, in order to answer the key-questions, we will produce a full-algorithm 
+to solve the relaxed GSP-NCHR, that is called GSP-NC. In a second phase of this thesis, we will count the number of feasible solutions returned by our algorithm for the general GSP-NCHR. This phase considers a pointwise reliability estimation method called Recursive Variance Reduction (RVR). Chapter~\ref{problem} provides a formal definition of both problems. 
