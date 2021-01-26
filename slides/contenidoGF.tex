@@ -318,20 +318,21 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 \subsection{Confiabilidad}
 \begin{frame}\frametitle{RVR}
 \begin{block}{}
-\begin{small}
+\begin{scriptsize}
 \begin{itemize}
  \item Metodo Recursivo de Reducción de Varianza.
- \item Sistema Binario Estocastico Monoto.
- \item Construye redes pequeñas de forma recursiva.
+ \item Objetivo reducir la red original en varias redes mas pequeñas de forma recursiva.
+ \item Construir estimador de confiabilidad insesgado con menos varianza que Monte Carlo Crudo.
+ %Sistema Binario Estocastico Monoto. 
 \end{itemize} 
-\end{small}
+\end{scriptsize}
 \end{block}
 \begin{block}{}
 \begin{algorithm}[H]
 \floatname{algorithm}{Alg}
 \caption{$RVR(G,K,p_v,p_e)$}
 \begin{algorithmic}[1]
-\begin{scriptsize}
+\begin{tiny}
 \STATE \textbf{If} $terminals$=1, \textbf{return} $0$
 \STATE \textbf{Elseif} $\phi(G,K)=1$, \textbf{return} 1.
 \STATE \textbf{Else} 
@@ -343,7 +344,7 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 \STATE $add(G, c)$
 \STATE $return \, \, Q_{D} + (1 - Q_{D})\times RVR(G)$
 \STATE \textbf{EndIf}
-\end{scriptsize}
+\end{tiny}
 \end{algorithmic}
 \end{algorithm}
 \end{block}

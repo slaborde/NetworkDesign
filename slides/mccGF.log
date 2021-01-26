@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.31)  25 JAN 2021 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.31)  26 JAN 2021 00:23
 entering extended mode
 **./mccGF.tex
 (mccGF.tex
@@ -1407,7 +1407,11 @@ Overfull \vbox (12.1536pt too high) detected at line 286
 
 ] [18
 
-] [19
+]
+Overfull \vbox (7.2736pt too high) detected at line 350
+ []
+
+[19
 
 ] [20
 
@@ -1441,10 +1445,10 @@ Package rerunfilecheck Info: File `mccGF.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26333 strings out of 480795
- 559711 string characters out of 2893695
- 850907 words of memory out of 3000000
- 41620 multiletter control sequences out of 15000+200000
+ 26340 strings out of 480795
+ 560020 string characters out of 2893695
+ 850905 words of memory out of 3000000
+ 41627 multiletter control sequences out of 15000+200000
  573444 words of font info for 93 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,20n,71p,774b,968s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1465,9 +1469,9 @@ sers/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 w/helvetic/uhvb8a.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mccGF.pdf (24 pages, 497261 bytes).
+Output written on mccGF.pdf (24 pages, 500972 bytes).
 PDF statistics:
- 1762 PDF objects out of 2073 (max. 8388607)
+ 1774 PDF objects out of 2073 (max. 8388607)
  77 named destinations out of 1000 (max. 500000)
- 937 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 973 words of extra memory for PDF output out of 10000 (max. 10000000)
 
