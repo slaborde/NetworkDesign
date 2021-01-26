@@ -1,13 +1,13 @@
 \begin{thebibliography}{10}
 
 \bibitem{32}
-Ajit Agrawal, Philip Klein, and R.~Ravi.
+A.~Agrawal, P.~Klein, and R.~Ravi.
 \newblock {When Trees Collide: An Approximation Algorithm for the Generalized
   Steiner Problem on Networks}.
 \newblock {\em SIAM Journal on Computing}, 24(3):440--456, 1995.
 
 \bibitem{115}
-Kassie Archer, Christina Graves, and David Milan.
+K.~Archer, C.~Graves, and D.~Milan.
 \newblock Classes of uniformly most reliable graphs for all-terminal
   reliability.
 \newblock {\em Discret. Appl. Math.}, 267:12--29, 2019.
@@ -23,19 +23,19 @@ F.T. Boesch, A.~Satyanarayana, and C.L. Suffel.
 \newblock A survey of some network reliability analysis and synthesis results.
 \newblock {\em Networks}, 54(2):99--107, 2009.
 
+\bibitem{82}
+E.~Canale, H.~Cancela, J.~Piccini, F.~Robledo, P.~Romero, G.~Rubino, and
+  P.~Sartor.
+\newblock {Recursive Variance Reduction method in Stochastic Monotone Binary
+  Systems}.
+\newblock {\em Proceedings of the 7th International Workshop on Reliable
+  Networks Design and Modeling}, pages 135--141, 2015.
+
 \bibitem{110}
 E.~Canale, F.~Robledo, P.~Romero, and J.~Viera.
 \newblock {Building Reliability-Improving Network Transformations}.
 \newblock In {\em Proceedings of the 15th International Conference on the
   Design of Reliable Communication Networks}, pages 107--113. {IEEE}, 2019.
-
-\bibitem{82}
-Eduardo~Alberto Canale, H{\'e}ctor Cancela, Juan Piccini, Franco Robledo, Pablo
-  Romero, Gerardo Rubino, and Pablo Sartor.
-\newblock {Recursive Variance Reduction method in Stochastic Monotone Binary
-  Systems}.
-\newblock {\em Proceedings of the 7th International Workshop on Reliable
-  Networks Design and Modeling}, pages 135--141, 2015.
 
 \bibitem{107}
 H.~Cancela, G.~Guerberoff, F.~Robledo, and P.~Romero.
@@ -44,7 +44,7 @@ H.~Cancela, G.~Guerberoff, F.~Robledo, and P.~Romero.
   Internet and Networks and Workshops}, pages 1--7. {IEEE}, 2018.
 
 \bibitem{85}
-H\'ector Cancela, Mohamed~El Khadiri, and Gerardo Rubino.
+H.~Cancela, M.~El Khadiri, and G.~Rubino.
 \newblock A new simulation method based on the {RVR} principle for the rare
   event network reliability problem.
 \newblock {\em Annals of Operations Research}, 196(1):111--136, 2012.
@@ -56,7 +56,7 @@ G.~Fishman.
   Springer, 1996.
 
 \bibitem{49}
-Harold~N. Gabow, Michel~X. Goemans, and David~P. Williamson.
+H.~Gabow, M.~Goemans, and D.~Williamson.
 \newblock An efficient approximation algorithm for the survivable network
   design problem.
 \newblock {\em Mathematical Programming}, 82:13--40, 1998.
@@ -68,14 +68,14 @@ M.~Garey and D.~Johnson.
 \newblock W. H. Freeman and Co., USA, 1990.
 
 \bibitem{33}
-Kamal Jain.
+J.~Kamal.
 \newblock {A Factor 2 Approximation Algorithm for the Generalized Steiner
   Network Problem}.
 \newblock In {\em Proceedings of the 39th Annual Symposium on Foundations of
   Computer Science}, FOCS ’98, page 448, USA, 1998. IEEE Computer Society.
 
 \bibitem{112}
-Anton~J. Kleywegt, Alexander Shapiro, and Tito Homem{-}de{-}Mello.
+A.~Kleywegt, A.~Shapiro, and T.~Homem{-}de{-}Mello.
 \newblock {The Sample Average Approximation Method for Stochastic Discrete
   Optimization}.
 \newblock {\em {SIAM} Journal on Optimization}, 12(2):479--502, 2002.
@@ -93,14 +93,13 @@ S.~Laborde.
 \newblock Master's thesis, Universidad de la Rep\'ublica, 2020.
 
 \bibitem{116}
-Rafael~B. R. Lourenço, Gustavo~B. Figueiredo, Massimo Tornatore, and
-  Biswanath Mukherjee.
+R.~Lourenço, G.~Figueiredo, M.~Tornatore, and B.~Mukherjee.
 \newblock Data evacuation from data centers in disaster-affected regions
   through software-defined satellite networks.
 \newblock {\em Computer Networks}, 148:88 -- 100, 2019.
 
 \bibitem{50}
-Rafael Mart, Panos~M. Pardalos, and Mauricio G.~C. Resende.
+R.~Mart, P.~Pardalos, and M.~Resende.
 \newblock {\em Handbook of Heuristics}.
 \newblock Springer Publishing Company, Incorporated, 1st edition, 2018.
 
@@ -111,7 +110,7 @@ E.~Martins and M.~Pascoal.
   Research Societies}, 1(2):121--133, 2003.
 
 \bibitem{67}
-Sergio Nesmachnow.
+S.~Nesmachnow.
 \newblock {Evaluating simple metaheuristics for the Generalized Steiner
   Problem}.
 \newblock {\em Journal of Computer Science and Technology}, 5(4), 2005.
@@ -123,26 +122,26 @@ J.L. Pulsipher and V.M. Zavala.
 \newblock {\em TOP}, pages 1 -- 20, 2020.
 
 \bibitem{51}
-Mauricio Resende and Celso Ribeiro.
+M.~Resende and C.~Ribeiro.
 \newblock {\em Optimization by GRASP}.
 \newblock Springer, 2016.
 
 \bibitem{61}
-Jessica Rodr\'iguez-Pereira, Elena Fern\'andez, Gilbert Laporte, Enrique
-  Benavent, and Antonio Mart\'inez-Sykora.
+J.~Rodr\'iguez-Pereira, E.~Fern\'andez, G.~Laporte, E.~Benavent, and
+  A.~Mart\'inez-Sykora.
 \newblock {The Steiner Traveling Salesman Problem and its extensions}.
 \newblock {\em European Journal of Operational Research}, 278(2):615 -- 628,
   2019.
 
 \bibitem{65}
-Pablo Sartor and Franco Robledo.
+P.~Sartor and F.~Robledo.
 \newblock {GRASP Algorithms for the edge-survivable Generalized Steiner
   Problem}.
 \newblock {\em International Journal of Control and Automation}, 5:27--44,
   2012.
 
 \bibitem{99}
-Hirofumi Suzuki, Masakazu Ishihata, and Shin-ichi Minato.
+H.~Suzuki, M.~Ishihata, and S.~Minato.
 \newblock {Designing Survivable Networks with Zero-Suppressed Binary Decision
   Diagrams}.
 \newblock In {\em WALCOM: Algorithms and Computation}, pages 273--285, Cham,

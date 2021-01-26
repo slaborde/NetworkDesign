@@ -1,16 +1,14 @@
 \section{Problema}
 %$\mathcal{G}$
-%\emph{Clique} $\mathcal{C}$ 
+%\emph{Clique}
 \subsection{Motivación}
 \begin{frame}%\frametitle{Motivación}
-%Generalized Steiner Problem with Node-Connectivity Constraints and
-%Hostile Reliability (GSPNCHR)
     \begin{block}{Motivación}
     \begin{itemize} 
-    	\item Los servicios de fibra al hogar (Fiber-To-The-Home - FTTH) tienen una gran penetración mundial brindando a los clientes finales transferencias de datos a altas velocidades.
+    	\item Los servicios de fibra al hogar \emph{(Fiber-To-The-Home - FTTH)} tienen una gran penetración mundial brindando a los clientes finales transferencias de datos a altas velocidades.
     	\item La cantidad de aplicaciones y servicios sobre internet ha crecido exponencialmente.
     	\item Es mandatorio escalar de forma inteligente la infraestructura de red.
-    	\item Dado que el despligue de la fibra optica es una importante inversión económica, el diseño topológico de las redes FTTH debe continuar considerandose.
+    	\item Dado que el despligue de la fibra optica es una importante inversión económica, el diseño topológico de las redes \emph{FTTH} debe continuar considerandose.
 	\end{itemize} 
     \end{block}
     %\begin{center}
@@ -18,26 +16,27 @@
     %\end{center}
 \end{frame}
 
-\subsection{Objetivos 1}
-\begin{frame}%\frametitle{Objetivos 1}
-    \begin{block}{Objetivos 1}
+\subsection{Objetivos I}
+\begin{frame}%\frametitle{Objetivos I}
+    \begin{block}{Objetivos I}
 	\begin{itemize} 
-    	\item Problema de optimización combinatoria motivado por el diseño topolóogico de redes de comunicaciones 
-de sistemas, con restricciones de confiabilidad.
+    	\item Problema de optimización combinatoria motivado por el diseño topológico de redes de comunicaciones 
+con restricciones de confiabilidad.
 		\item El objetivo es interconectar nodos distinguidos, llamados terminales, utilizando un nivel adecuado de redundancia y de forma simultanea, satisfacer las restricciones de confiabilidad.
-	\item En el análisis de confiabilidad nos enfrentamos a fallas aleatorias en los componentes del sistema. Es precisamente la probabilidad del correcto funcionamiento del sistema completo, sujeto a fallas aleatorias. Aquí se considera el modelo realista hostil, donde tanto nodos como aristas pueden fallar.
+	\item En el análisis de confiabilidad nos enfrentamos a fallas aleatorias en los componentes del sistema. Se considera el modelo como realista hostil, donde tanto nodos como aristas pueden fallar.
 	\end{itemize} 
     \end{block}
 \end{frame}
 
-\subsection{Objetivos 2}
-\begin{frame}%\frametitle{Objetivos 2}
-    \begin{block}{Objetivos 2}
+\subsection{Objetivos II}
+\begin{frame}%\frametitle{Objetivos II}
+    \begin{block}{Objetivos II}
 	\begin{itemize} 
-    	\item Find a minimum-cost solution, meeting a reliability threshold, where both nodes and links may fail with given probabilities.
+    	\item Encontrar una solución de costo mínimo que alcance un umbral de confiabilidad, donde tanto los nodos como los enlaces pueden fallar con probabilidades dadas.
 		\item Entender el trade-off entre costo-confiabilidad, y como la confiabilidad aumenta naturalmente agregando niveles de redundancia entre los nodos terminales.
-    	\item Pertenece a la clase de problemas NP-Hard.
-    	\item Como consecuencia, desarrolle una solución que resuelve de forma apróximada con una metodología GRASP/VNS la parte de optimización y para el análisis de la confiabilidad el método RVR.
+		\item Entender el impacto en la confiabilidad de las redes solución al aumentar o disminuir las probabilidades de falla elementales tanto en nodos como enlaces.
+    	\item Pertenece a la clase de problemas \emph{NP-Hard}.
+    	\item Se propone una solución que resuelve el problema de forma apróximada con una metodología \emph{GRASP/VND} para el problema de optimización y para el análisis de la confiabilidad el método \emph{RVR}.
 	\end{itemize} 
     \end{block}
 \end{frame}
@@ -45,7 +44,6 @@ de sistemas, con restricciones de confiabilidad.
 \subsection{Definición}
 \begin{frame}\frametitle{Generalized Steiner Problem with Node-Connectivity Constraints and
 Hostile Reliability (GSPNCHR)}
-%    \begin{block}{}
     \begin{definition}[GSPNCHR]
 Consider a simple undirected graph $G=(V,E)$, terminal-set $T \subseteq V$, link-costs $\{c_{i,j}\}_{(i,j) \in E}$ 
 and connectivity requirements $R=\{r_{i,j}\}_{i,j \in T}$. Further, we assume that both links and non-terminal (Steiner) nodes 
@@ -54,254 +52,317 @@ Given a reliability threshold $p_{min}$, the goal is to build
 a minimum-cost topology $G_S \subseteq G$ meeting both the connectivity requirements 
 $R$ and the reliability threshold: $R_{K}(G_S) \geq p_{min}$, being $K=T$ the terminal-set.
 \end{definition}
- %   \end{block}
 \end{frame}
 
-\subsection{Formulación}
+\subsection{Formulación como problema de programación matematica}
 \begin{frame}\frametitle{GSPNCHR}
-%    \begin{block}{}
-    \begin{definition}[GSPNCHR]
-Consider a simple undirected graph $G=(V,E)$, terminal-set $T \subseteq V$, link-costs $\{c_{i,j}\}_{(i,j) \in E}$ 
-and connectivity requirements $R=\{r_{i,j}\}_{i,j \in T}$. Further, we assume that both links and non-terminal (Steiner) nodes 
-fail with respective probabilities $P_E=\{p_e\}_{e\in E}$ and $P_{V-T}=\{p_v\}_{v\in V-T}$. 
-Given a reliability threshold $p_{min}$, the goal is to build 
-a minimum-cost topology $G_S \subseteq G$ meeting both the connectivity requirements 
-$R$ and the reliability threshold: $R_{K}(G_S) \geq p_{min}$, being $K=T$ the terminal-set.
-\end{definition}
- %   \end{block}
+\begin{align}
+\min &\sum_{(i,j)\in E} c_{i,j}x_{i,j} \notag \\
+s.t. x_{ij}&\geq y_{(i,j)}^{u,v}+y_{(j,i)}^{u,v} \forall (i,j)\in E,
+\forall u,v\in T, u \neq v \\
+\sum_{(u,i)\in E}y_{(u,i)}^{u,v} &\geq r_{u,v} \, \, \forall \, u,v\in T, \, u\neq v \\
+\sum_{(j,v)\in E}y_{(j,v)}^{u,v} &\geq r_{u,v} \, \, \forall \, u,v\in T, \, u\neq v \\
+\sum_{(i,p)\in I(p)}y_{(i,p)}^{u,v}  - \sum_{(p,j)\in I(p)}y_{(p,j)}^{u,v}&\geq 0, \, \forall p\in V-\{u,v\}, \, \forall u,v\in T, \, u \neq v \notag \\
+\end{align}
+\end{frame}
+
+\subsection{Formulación como problema de programación matematica}
+\begin{frame}\frametitle{GSPNCHR}
+\begin{align}
+\sum_{(s,i)\in E} x_{s,i} &\leq M \hat{x}_{s}, \, \forall s\in V-T \\
+R_{K}(G_S(\{x_{ij}\})) &\geq p_{min} \\
+x_{(i,j)} &\in \{0,1\} \, \forall (i,j)\in E \\
+\hat{x}_{i} &\in \{0,1\} \, \forall i \in V-T  \\
+ y_{(i,j)}^{u,v} &\in \{0,1\} \, \forall (i,j)\in E, \, \forall u,v \in T, \, u \neq v
+\end{align}
+\end{frame}
+
+\section{Resultados Teóricos}
+\subsection{Resultados Teóricos}
+\begin{frame}%\frametitle{}
+    \begin{block}{Resultados Teóricos}
+    \begin{small}
+		\begin{itemize} 
+    		\item Se demuestra la complejidad computacional del problema \emph{(NP-hardness)}.
+			\item Se modela el problema para instancias particulares con $r_{ij} = k, k \geq 2$, tanto para arista conectividad como para nodo conectividad.
+			\item Se encuentran cotas inferiores para las formulaciones anteriores aplicando teoría de dualidad y relajación lagrangiana.
+	    	\item Formulación de programación matemática del problema para las versiones $k$ nodo-conectividad y $k$ arista-conectividad aplicando los teoremas de BienStock y Monma.
+    		\item Se proponen algoritmos de orden polinomial para resolución del problema en forma exacta de casos particulares respecto a conectividad y topología de grafos.
+    	\end{itemize} 
+    			\end{small}
+    \end{block}
 \end{frame}
 
 \section{Estado del arte}
-\subsection{Publicaciones Externas}
-\begin{frame}\frametitle{Publicaciones}
-\begin{block}{Publicaciones}
+\subsection{Trabajos Relacionados}
+\begin{frame}\frametitle{}
+\begin{block}{Trabajos Relacionados}
+	\begin{itemize} 
+    	\item Se dedicó un capítulo entero donde se expone el relevamiento del estado del arte de la temática de esta tesis: Confiabilidad en redes, Diseño topologico de redes, GRASP, VNS, RVR y otras como Crude Monte Carlo.
+    	\item Son escasos los trabajos que abordan conjuntamente la optimización topológica de la red  bajo restricciones de confiabilidad.
+    	\item VNS y RVR han sido utilizados con gran éxito en problemas de optimización combinatoria.
+    \end{itemize} 
+\end{block}
+\end{frame}
+
+\subsection{Publicación}
+\begin{frame}\frametitle{}
+\begin{block}{Publicación}
 	\begin{enumerate}
-	 \begin{small}
-	\item Martins, P.(2012). \textbf{Cliques with maximum/minimum edge neighborhood and neighborhood density}. Computers And Operations Research, 39(3):594-608.	
-	\item Martins, P., Ladrón, A. and Ramalhinho, H. (2014). \textbf{Maximun cut-clique problem: ILS heuristics and a data analysis application}. International Transactions in Operational Research, 22(5):775-809.	
-	\item Gouveia, L. and Martins, P.(2015). \textbf{Solving the maximum edge-weigth clique problem in sparse graphs with compact formulation}. Journal on Computational Optimization, 3(1):1-30.		
-	\end{small}
+		\begin{small}
+			\item A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability to be published in the Proceedings of the 8th International Conference on Variable Neighborhood Search (ICVNS March 2021). Khalifa University, Abu Dhabi, U.A.E. The article will be published by Springer in the Lecture Notes in Computer Science (LNCS) series.	
+		\end{small}
 	\end{enumerate}
 \end{block}
-\end{frame}
-
-\subsection{Publicaciones Locales}
-\begin{frame}\frametitle{Publicaciones}
-\begin{block}{Publicaciones Locales}
-	\begin{enumerate} \begin{small}
-	\item Bourel, M., Canale, E., Robledo, F., Romero, P., and Stábile, L. (2018a). \textbf{Complexity and Heuristics for the Max Cut-Clique Problem}. In International Conference on Variable Neighborhood 			Search. ICVNS 2018. Lecture Notes in Computer Science, vol. 11328. Springer, pages 28-40.
-	\item Bourel, M., Canale, E., Robledo, F., Romero, P., and Stábile, L. (2018b). \textbf{A GRASP/VND 				Heuristic for the Max Cut-Clique problem}. In International Conference on Machine Learning, 					Optimization, and Data Science. Lecture Notes in Computer Science, vol. 11331. Springer, pages 357-367.
-	\item Bourel, M., Canale, E., Robledo, F., Romero, P., and Stábile, L. (2019). \textbf{Complexity and Heuristics for the Weighted Max Cut-Clique Problem}. International Transactions in Operational Research. Under revision to be published.
-	\end{small}
-	\end{enumerate}
-\end{block}
-\end{frame}
-
-
-\section{Complejidad}
-\begin{frame}\frametitle{Complejidad}
-\begin{proposition}
-El problema MCC pertenece al conjunto de problemas $\mathcal{NP}$-Completos.
-\end{proposition} 
-\begin{proof}
-Reducción desde $MAX$ -$CLIQUE$. 
-\end{proof}
-
-  \begin{center}
-        \includegraphics[scale=0.50]{figuras/Solucion/grafoHM}
- \end{center}
 \end{frame}
 
 \section{Solución}
-\subsection{Algoritmo Genético}
-\begin{frame}\frametitle{Algoritmo Genético}
+\subsection{Metodología}
+\begin{frame}\frametitle{GRASP/VND}
+\begin{block}{}
 \begin{small}
-Por la complejidad inherente al problema, se presenta una solución basada en Algoritmos Genéticos.
-\end{small}
-
-    \begin{block}{Algoritmos Genéticos}
-    \begin{small}
-    
-    $1$ - $Initialize(P_0)$;\\ 
-    $2$ - $generation = 0$;\\	
-    $3$ - $While$ $(not stopCriteria)$;\\		
-	$4$ - 	$\hspace{6mm} evaluate (P(generation))$;\\
-	$5$ - 	$\hspace{6mm} parents \gets selection (P(generation))$;\\
-	$6$ - 	$\hspace{6mm} offspring \gets evolutiveOperators (parents)$;\\
-	$7$ - 	$\hspace{6mm} newpop \gets replacement (offspring,P(generation))$;\\
-	$8$ - 	$\hspace{6mm} generation ++ $;\\
-	$9$ - 	$\hspace{6mm} P(generation) \gets newpop$;\\
-	 		$Return$ $Best Solution Ever Found$;\\
-	\end{small}
-	
-	%\begin{algorithm}[!h]
-	%\caption{\textsc{GA Algorithm}} \label{alg:GABasic}	
-%	\begin{algorithmic}[1]
-%		\State {$Initialize(P_0)$;}
-%		\State {$generation = 0$;}	
-%		\While {$(not stopCriteria)$}
-%		\State {$evaluate (P(generation))$;}
-%		\State {$parents \gets selection (P(generation))$;}
-%		\State {$offspring \gets evolutiveOperators (parents)$;}
-%		\State {$newpop \gets replacement (offspring,P(generation))$;}
-%		\State {$generation ++ $;}
-%		\State {$P(generation) \gets newpop$;}
-%		\EndWhile 		
-%		\Return	{$Best Solution Ever Found$;}	
-%	\end{algorithmic}
-	%\end{algorithm}
-    \end{block}
-\end{frame}
-
-\subsection{Diseño}
-\begin{frame}\frametitle{Diseño de la solución}
-\begin{center}
-        \includegraphics[scale=0.35]{figuras/Solucion/chap5_fig1}
-\end{center}
 \begin{itemize}
- \item Implementado en C++, biblioteca MALVA.
- \item Énfasis en la performance del algoritmo.
+ \item Utilizamos una metodología GRASP/VND.
+ \item GRASP y VND son metaheurísticas bien conocidas que se han utilizado con éxito para resolver muchos problemas difíciles de optimización combinatoria.
+ \item GRASP es un poderoso proceso de arranque múltiple que opera en dos fases. Se construye una solución factible en una primera fase, cuyo vecindario luego se explora en la fase de búsqueda local.
+ \item VND explora varias estructuras de vecindad en un orden determinista. Su éxito se basa en el simple hecho de que las diferentes estructuras de vecindad no suelen tener el mismo mínimo local. Así, la solución resultante es simultáneamente una solución localmente óptima en todas las estructuras vecinas.
 \end{itemize} 
+\end{small}
+\end{block}
 \end{frame}
 
-\subsection{Representación}
-\begin{frame}\frametitle{Representación de la solución}
-
-    %\begin{block}{Representación}
-    \begin{small}
-    Las soluciones factibles del problema, son todos los cliques que se encuentren en $\mathcal{G}= (V,E)$. \\
-    Para representar un clique se define una tupla binaria de largo $n = |V|$, como: 
-   
-	\begin{displaymath}
-    	X_{i} = 
-    	\begin{cases}
-      		1 & \text{si nodo } i \in \mathcal{C}\\
-      		0 & \text{en otro caso}
-    	\end{cases} \text{, } \forall i \in V 
-	\end{displaymath}
-    %\end{block}
-    \end{small}
-   	\begin{center}
-    		\includegraphics[scale=0.5]{figuras/Solucion/representacionSol}
-    \end{center}
-\end{frame}
-
-\subsection{Función de Fitness}
-\begin{frame}\frametitle{Función de Adecuación}
-\begin{itemize}
-\item Coincide con la función objetivo  
-\item Busca maximizar la cantidad de aristas en el corte generado por el clique $\mathcal{C}$
-\end{itemize}
-%Coincide con la función objetivo y busca maximizar la cantidad de aristas en el corte generado por el clique $\mathcal{C}$\\
-
-    \begin{block}{Función de Fitness} 
-	%\begin{equation}	
-	$	
-	|\delta(\mathcal{C})| = \sum_{v \epsilon \mathcal{C}} deg(v) - |\mathcal{C}|\times|\mathcal{C}-1|$  
-	%\end{equation}	\Delta
+\subsection{Esquema General}
+\begin{frame}\frametitle{Esquema General}
+    \begin{block}{Network Design}
+\begin{algorithm}[H]
+\floatname{algorithm}{Alg}
+\caption{$sol = NetworkDesign(G_B,iter,k,p_{min},P_E,P_{V-T},simiter)$}
+\begin{algorithmic}[1]
+\begin{small}    
+\STATE $i \leftarrow 0; \, P \leftarrow \emptyset; \, sol \leftarrow \emptyset$
+\WHILE {$i < iter$}
+\STATE $\overline{g} \leftarrow Construction(G_B,P,k)$
+\STATE $g_{sol} \leftarrow VND(\overline{g},P)$
+\STATE $reliability \leftarrow RVR(g_{sol},P_E,P_{V-T},simiter)$
+\IF{$reliability > p_{min}$}
+\STATE $sol \leftarrow sol \cup \{g_{sol}\}$
+\ENDIF
+\ENDWHILE
+\RETURN $sol$
+\end{small}
+\end{algorithmic}
+\end{algorithm}
     \end{block}
 \end{frame}
 
-\subsection{Operadores Evolutivos}
-\begin{frame}\frametitle{Cruzamiento}
-  
-	 Cruzamiento de 2 puntos
-		
-	\begin{center}
-    	\includegraphics[scale=0.35]{figuras/Solucion/cruza2xP3}
-    \end{center}     
+\subsection{GRASP - Fase Construcción}
+\begin{frame}\frametitle{}
+    \begin{block}{}
+\begin{algorithm}[H]
+\floatname{algorithm}{Alg}
+\caption{$(sol,P) = Construction(G_B,C,R,k)$}
+\begin{algorithmic}[1]
+\begin{scriptsize}
+\STATE $g_{sol} \leftarrow (S_D^{(I)},\emptyset)$; $m_{i,j}\leftarrow r_{i,j}$; $P_{i,j}\leftarrow \emptyset, \forall i,j \in S_{D}^{(I)}$; $A_{i,j}\leftarrow 0, \forall i,j \in S_{D}^{(I)}$
+\WHILE {$\exists \, m_{i,j}>0: A_{i,j}<MAXATTEMPTS$}
+\STATE $(i,j) \leftarrow ChooseRandom(S_{D}^{(I)}: m_{i,j}>0)$
+\STATE $\overline{G} \leftarrow G_B \setminus P_{i,j}$
+\FORALL {$(u,v)\in E(\overline{G})$}
+\STATE $\overline{c}_{u,v} \leftarrow c_{u,v} \times 1_{\{(u,v) \notin g_{sol}\}}$
+\ENDFOR
+\STATE $L_p \leftarrow KSP(k,i,j,\overline{G},\overline{C})$
+\IF{$L_p=\emptyset$}
+\STATE $A_{i,j} \leftarrow A_{i,j}+1$; $P_{i,j} \leftarrow \emptyset$; $m_{i,j}\leftarrow r_{i,j}$ 
+\ELSE 
+\STATE $p \leftarrow SelectRandom(L_p)$; $g_{sol} \leftarrow g_{sol} \cup \{p\}$
+\STATE $P_{i,j} \leftarrow P_{i,j} \cup \{p\}$; $m_{i,j} \leftarrow m_{i,j}-1$
+\STATE $(P,M) \leftarrow GeneralUpdateMatrix(g_{sol},P,M,p,i,j)$
+\ENDIF
+\ENDWHILE
+\RETURN $(g_{sol},P)$
+\end{scriptsize}    
+\end{algorithmic}
+\end{algorithm}
+\end{block}
 \end{frame}
 
-%\subsection{Operadores Evolutivos}
-\begin{frame}\frametitle{Mutación}
- 
-	Mutación Simple
-		
-	\begin{center}
-    	\includegraphics[scale=0.35]{figuras/Solucion/mutaSimple}
-    \end{center}       
-\end{frame}
-
-%\begin{frame}\frametitle{Selección}
-% 
-%	Selección por Torneo de tamaño 2		
-%	       
-%\end{frame}
-
-
-
-\subsection{Soluciones no factibles}
-\begin{frame}\frametitle{Tratamiento}
-  %Dada la naturaleza del problema y la representación elegida; las soluciones tienen alta probabilidad de ser NO FACTIBLES. 
-  %Algoritmo de corrección inspirado en la etapa de Construcción de las Metaheuristicas utilizadas.
-  %Tratamiento de soluciones no factibles.  
-  Se utiliza algoritmo de corrección basado en la etapa de construcción del GRASP/VND, luego de las siguiente etapas.\\
-%    \begin{center}
-%    	\includegraphics[scale=0.50]{figuras/Solucion/diagrama55}
-%    \end{center} 
-%\textbf{¿Cuándo?}\\
-  \begin{itemize}
-  \item inicialización la población
-  \item aplicación del operador de Cruzamiento
-  \item aplicación del operador de Mutación
-  \end{itemize}  
-\end{frame}
-
-\subsection{Calibración}
-\begin{frame}\frametitle{Ajuste de Parámetros}
+\subsection{Fase Búsqueda Local}
+\begin{frame}\frametitle{Fase Búsqueda Local}
+\begin{block}{VND}
+\begin{small}
+El objetivo es combinar una rica diversidad de vecindades para obtener una solución óptima local para cada vecindario. NetworkDesign considera una implementación clásica de VND, ordenando las respectivas búsquedas locales después de la fase de construcción. Se consideran tres estructuras de vecindad para construir VND.
 \begin{itemize}
-\item Algoritmos genéticos son NO deterministas
-\item Test estadísticos para reportar: calidad y eficiencia computacional.
-\end{itemize}
-
-\begin{small}
-\textbf{Instancias utilizadas}
+ \item SwapKeyPathLocalSearch
+ \item KeyPathLocalSearch
+ \item KeyTreeLocalSearch
+\end{itemize} 
 \end{small}
-\begin{table}[h!]
-\centering
-%\caption{Instancias para ajuste de parámetros.}
-%\label{tab:ajusteParam}
-\scalebox{0.7}{
-\begin{tabular}{|l|c|c|c|c|}
-  \hline
-  \textbf{Instancia} & \textbf{$|V|$} & \textbf{$|E|$} & \textbf{Densidad} & $|E(C)|$\\
-  \hline
-  p\_hat300-1 & 300 & 10933 & 0.244 & 789\\
-  MANN\_a9 & 45 & 918 & 0.9273 & 412\\
-  keller4 & 171 & 9435 &0.649 &1140\\ 
-  \hline
-\end{tabular}}
-\end{table}
-
-%\begin{small}
-%\begin{itemize}
-%\item obtener valores óptimos para todas las configuraciones 
-%\emph{$pop \times p_{cross} \times p_{mutex} \times$ instancia} $(3\times 3\times 3\times 3)\times 30= 2430!!!!$
-%\item para cada configuración rankear el resultado, compararlo con resultado de otras configuraciones
-%\item elegir la configuración que mejor rankee, por dimensión o comparando todas contra todas.
-%\end{itemize}
-%\end{small}
-
-\begin{small}
-\textbf{Resultado de la calibración}
-\end{small}
-
-\begin{table}[h!]
-\centering
-\label{tab:resultAjuste}
-\scalebox{0.7}{
-\begin{tabular}{|l|c|}
-  \hline
-  \textbf{Parámetro} & \textbf{Valor}\\
-  \hline
-  tamaño población  & 200 \\
-  prob. cruzamiento & 0.8 \\
-  prob. mutación	& 0.1 \\ 
-  \hline
-\end{tabular}}
-%\caption{Resultado de la calibración.}
-\end{table}
+\end{block}
 \end{frame}
+
+\subsection{Definiciones}
+\begin{frame}\frametitle{}
+\begin{definition}[key-node]
+Un key-node en una solución factible $v \in g_{sol}$ es un nodo de Steiner (no terminal) con grado mayor o igual a tres.
+\end{definition}
+\begin{definition}[key-path]
+Un key-path en una solución factible $p \subseteq g_{sol}$ es un camino elemental 
+donde todos los nodos intermedios no son terminales con grado dos en $g_{sol}$, 
+y los nodos extremos son terminales o key-nodes.
+\end{definition}
+\begin{definition}[key-tree]
+Sea $v \in g_{sol}$ un key-node perteneciente to a una solución factible $g_{sol}$. 
+El key-tree asociado a $v$, denotado como $T_v$, es un árbol compuesto por todos los 
+key-paths que se encuentran en un punto común (i.e., el key-node $v$).
+\end{definition}
+\end{frame}
+
+\subsection{SwapKeyPathLocalSearch}
+\begin{frame}\frametitle{}
+\begin{definition}[Estructura de Vecindad para Swap Key-Paths]
+Dado un key-path $p \subseteq g_{sol}$, una solución vecina para $g_{sol}$ es 
+$\hat{g}_{sol} = \{ g_{sol}\setminus p \}\cup \{m\}$, 
+siendo $m$ el conjunto de nodos y enlaces que serán añadidos preservando la factibilidad de ${\hat{g}}_{sol}$.  
+\end{definition}
+\begin{block}{}
+\begin{algorithm}[H]
+\floatname{algorithm}{Alg}
+\caption{$g_{sol} = SwapKeyPathLocalSearch(G_B,C,g_{sol},P)$}
+\begin{algorithmic}[1]
+\begin{scriptsize}
+\STATE $improve \leftarrow TRUE$
+\WHILE {$improve$}
+\STATE $improve \leftarrow FALSE$
+\STATE $K(g_{sol}) \leftarrow \{p_1,\ldots,p_h\}$ /* Key-path decomposition of $g_{sol}$ */
+\WHILE{\textbf{not} $improve$ \textbf{and} $\exists$ \textbf{key-paths not analyzed}}
+\STATE $p \leftarrow(K(g_{sol}))$ /* Path not analyzed yet */
+\STATE $(g_{sol},improve) \leftarrow FindSubstituteKeyPath(g_{sol},p,P)$
+\ENDWHILE
+\ENDWHILE
+\RETURN $g_{sol}$
+\end{scriptsize}
+\end{algorithmic}
+\end{algorithm}
+\end{block}
+\end{frame}
+
+\subsection{KeyPathLocalSearch}
+\begin{frame}\frametitle{}
+\begin{definition}[Estructura de Vecindad para Key-Paths]
+\begin{tiny}
+Dado un key-path $p \in g_{sol}$, una solución vecina es 
+${\hat{g}}_{sol} = \{g_{sol} \setminus p \} \cup \{\hat{p}\}$, 
+donde $\hat{p}$ es otro camino que conecta los extremos desde $p$.  
+La vecindad de key-paths desde $g_{sol}$ esta compuesta por la operación previa 
+a los posibles miembros pertenecientes a $K_{g_{sol}}$. 
+\end{tiny}
+\end{definition}
+\begin{block}{}
+\begin{algorithm}[H]
+\floatname{algorithm}{Alg}
+\caption{$g_{sol} = KeyPathLocalSearch(G_B,C,g_{sol})$}
+\begin{algorithmic}[1]
+\begin{tiny}
+\STATE $improve \leftarrow TRUE$
+\WHILE {$improve$}
+\STATE $improve \leftarrow FALSE$
+\STATE $K(g_{sol}) \leftarrow \{p_1,\ldots,p_h\}$ /* Key-path decomposition of $g_{sol}$ */
+%\COMMENT{Key-path decomposition of $g_{sol}$}
+\WHILE{\textbf{not} $improve$ \textbf{and} $\exists$ \textbf{key-paths not analyzed}}
+\STATE $p \leftarrow(K(g_{sol}))$ /* Path not analyzed yet, with extremes $u$ and $v$ */
+\STATE $\hat{\mu} \leftarrow <NODES(p) \cup S_D\setminus NODES(g_{sol}) > $ /* Induced subgraph $\hat{\mu}$ */
+\STATE $\hat{p} \leftarrow Dijkstra(u,v,\hat{\mu})$
+\IF{$COST(\hat{p}) < COST(p)$}
+\STATE $g_{sol} \leftarrow \{ g_{sol}\setminus p \} \cup \{\hat{p}\}$
+\STATE $improve \leftarrow TRUE$
+\ENDIF
+\ENDWHILE
+\ENDWHILE
+\RETURN $g_{sol}$
+\end{tiny}
+\end{algorithmic}
+\end{algorithm}
+\end{block}
+\end{frame}
+
+\subsection{KeyTreeLocalSearch}
+\begin{frame}\frametitle{}
+\begin{definition}[Estructura de Vecindad para Key-Tree]
+Se considera el key-tree $T_v \in g_{sol}$ con raíz key-node $v$.  
+Un vecino de $g_{sol}$ es $\hat{g}_{sol} = \{ g_{sol}\setminus T_v \} \cup \{T\}$, siendo 
+$T$ otro árbol que reemplaza a $T_v$ con hojas identicas. 
+\end{definition}
+\begin{block}{}
+\begin{algorithm}[H]
+\floatname{algorithm}{Alg}
+\caption{$g_{sol} = KeyTreeLocalSearch(G_B,C,g_{sol})$}
+\begin{algorithmic}[1]
+\begin{scriptsize}
+\STATE $improve \leftarrow TRUE$
+\WHILE {$improve$}
+\STATE $improve \leftarrow FALSE$
+\STATE $ X \leftarrow KeyNodes(g_{sol})$ /* Key-nodes from $g_{sol}$ */
+\STATE $\overline{S} \leftarrow S_D \setminus NODES(g_{sol})$
+\WHILE{\textbf{not} $improve$ \textbf{and} $\exists$ \textbf{key-nodes not analyzed}}
+\STATE $v \leftarrow X$ /* Key-node not analyzed yet */
+\STATE $[g_{sol},improve] \leftarrow GeneralRecConnect(G_B,C,g_{sol},v,\overline{S})$
+\ENDWHILE
+\ENDWHILE
+\RETURN $g_{sol}$
+\end{scriptsize}
+\end{algorithmic}
+\end{algorithm}
+\end{block}
+\end{frame}
+
+\subsection{Confiabilidad}
+\begin{frame}\frametitle{RVR}
+\begin{block}{}
+\begin{small}
+\begin{itemize}
+ \item Metodo Recursivo de Reducción de Varianza.
+ \item Sistema Binario Estocastico Monoto.
+ \item Construye redes pequeñas de forma recursiva.
+\end{itemize} 
+\end{small}
+\end{block}
+\begin{block}{}
+\begin{algorithm}[H]
+\floatname{algorithm}{Alg}
+\caption{$RVR(G,K,p_v,p_e)$}
+\begin{algorithmic}[1]
+\begin{scriptsize}
+\STATE \textbf{If} $terminals$=1, \textbf{return} $0$
+\STATE \textbf{Elseif} $\phi(G,K)=1$, \textbf{return} 1.
+\STATE \textbf{Else} 
+\STATE $D := GetKExtendedCut(G)$
+\STATE $Q_{D} := AllFailedProb(D)$
+\STATE $index := GetRandomItem(D)$
+\STATE $c := D[index]$
+\STATE $remove(G,D, index - 1)$
+\STATE $add(G, c)$
+\STATE $return \, \, Q_{D} + (1 - Q_{D})\times RVR(G)$
+\STATE \textbf{EndIf}
+\end{scriptsize}
+\end{algorithmic}
+\end{algorithm}
+\end{block}
+\end{frame}
+
+%\begin{displaymath}
+%    	X_{i} = 
+%    	\begin{cases}
+%      		1 & \text{si nodo } i \in \mathcal{C}\\
+%      		0 & \text{en otro caso}
+%    	\end{cases} \text{, } \forall i \in V 
+%	\end{displaymath}
+%   	\begin{center}
+%    		\includegraphics[scale=0.5]{figuras/Solucion/representacionSol}
+%    \end{center}
+
+%	$	
+%	|\delta(\mathcal{C})| = \sum_{v \epsilon \mathcal{C}} deg(v) - |\mathcal{C}|\times|\mathcal{C}-1|$  
+%	%\end{equation}	\Delta
 
 \section{Resultados}
 \subsection{Resultados I}
@@ -337,36 +398,6 @@ Por la complejidad inherente al problema, se presenta una solución basada en Al
 \end{table}
 \end{frame}
 
-%\subsection{Resultados II}
-%\begin{frame}\frametitle{Resultados obtenidos}
-%
-%\begin{table}[h!]
-%	\hspace{-1cm}
-%	\scalebox{0.7}{
-%	\begin{tabular}{lrr|r|rrr|r}
-%		\hline
-%		\multicolumn{3}{c}{\textbf{Características}}& \textbf{ILS}  & \multicolumn{3}{l}{\textbf{Algoritmo Genético}}& \textbf{GAP} \\
-%		%\cline{1-3} \cline{5-11} 
-%		Instancias & $|V|$ & Densidad & $|E(C)|$ & Mejor & Prom. & T(s) prom. &(\%)\\
-%		\hline
-%		c-fat200-1 	&200  	&0.071 	&\textbf{81} 	&\textbf{81} 	&81 		&6.4	&0.0\\
-%		c-fat200-2 	&200	&0.163	&\textbf{306} 	&\textbf{306} 	&306 		&7.5	&0.0\\
-%		c-fat200-5 	&200	&0.426	&\textbf{1892} 	&\textbf{1892} 	&1892 		&12.5	&0.0\\
-%		c-fat500-1 	&500	&0.036	&\textbf{110} 	&\textbf{110} 	&110 		&16.15	&0.0\\
-%		c-fat500-2 	&500	&0.073	&\textbf{380} 	&\textbf{380} 	&380 		&14.3	&0.0\\
-%		c-fat500-5 	&500	&0.186	&\textbf{2304} 	&\textbf{2304} 	&2304 		&20.36	&0.0\\
-%		c-fat500-10 &500	&0.374	&\textbf{8930} 	&\textbf{8930} 	&8930 		&32.59	&0.0\\
-%		p\_hat300-2 &300	&0.489	&\textbf{4637} 	&\textbf{4637} 	&4633.40 	&171.9	&0.0\\
-%		p\_hat300-3 &300	&0.744	&\textbf{7740} 	&\textbf{7740} 	&7387.27 	&279.8	&0.0\\
-%		c125\_9 	&125	&0.899	&\textbf{2766} 	&\textbf{2766} 	&2737.2 	&5.0	&0.0\\
-%		keller5 	&776	&0.752	&\textbf{15184} &\textbf{13120} &12382 		&50.57	&0.16\\
-%		MANN\_a27 	&378	&0.990	&\textbf{31284} &\textbf{30570} &30405 		&46.49	&0.02\\		
-%		\hline
-%	\end{tabular}}	
-%	%\caption{Resultados obtenidos para el Máximo Clique-Corte.} \label{table:resultados}
-%\end{table}
-%\end{frame}
-
 \subsection{Resultados II}
 \begin{frame}\frametitle{Resultados obtenidos}
 \begin{table}[h!]
@@ -395,7 +426,6 @@ Por la complejidad inherente al problema, se presenta una solución basada en Al
 \end{table}
 \end{frame}
 
-
 \section{Conclusiones}
 \begin{frame} \frametitle{Conclusiones}
 \begin{block} {Conclusiones}
@@ -407,8 +437,6 @@ Por la complejidad inherente al problema, se presenta una solución basada en Al
 	\end{small} 	
  	\end{itemize} 	
  \end{block}
-% 	\emph{Resumen:\\
-% 	Se cuenta con una solución competitiva con soluciones existentes y con tiempo de ejecución muy buenos.}   
 \end{frame}
 
 \subsection{Trabajo Futuro}
@@ -426,24 +454,4 @@ Por la complejidad inherente al problema, se presenta una solución basada en Al
 \begin{huge}
 Gracias por su atención.
 \end{huge}
-
 \end{frame}
-
-%\section{Conclusiones}
-%\begin{frame} \frametitle{Contributions}
-%    \begin{itemize}
-%    
-%    \item The hardness for the \emph{MCC} was established [2]. 
-%    \item A GRASP/VND heuristic was developed [1]. 
-%    \item A bounding acceleration scheme was proposed [3].  
-%    \item Results are competitive with state-of-the-art solutions [3]. 
-%    \item A weighted version was also proposed [3]. 
-%    
-%%        \item \emph{MCC} belongs to the $\mathcal{NP}$-Complete set.
-%%        \item The search space is reduced using bounds.
-%%%        \item An exact Integer Linear Programming (ILP) formulation is proposed.
-%%        \item A heuristic addressing this problem was developed.
-%%        \item Results confirm that it is competitive with the state-of-the-art solutions.
-%%        \item A further study including weights to each edge was proposed. This problem is known as \emph{Maximum Edge-Weight Neighborhood Clique} (MEWNC).
-%    \end{itemize}
-%\end{frame}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.31)  23 JAN 2021 12:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.31)  25 JAN 2021 23:40
 entering extended mode
 **./mccGF.tex
 (mccGF.tex
@@ -1335,120 +1335,75 @@ Overfull \vbox (7.4289pt too high) detected at line 75
 [1{C:/Users/Sebastian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
-(contenidoGF.tex [2
+(contenidoGF.tex
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 17.
+ [2
 
 ] [3
 
 ] [4
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
 
 
 ("C:\Users\Sebastian\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.
 fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
 
 
 ("C:\Users\Sebastian\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.
 fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 97.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 55.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 97.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 55.
  [5
 
-] [6
+]
+Overfull \hbox (24.38872pt too wide) detected at line 67
+[]
+ []
+
+[6
 
 ] [7
 
 ]
-<figuras/Solucion/grafoHM.png, id=552, 356.83313pt x 257.46187pt>
-File: figuras/Solucion/grafoHM.png Graphic file (type png)
-<use figuras/Solucion/grafoHM.png>
-Package pdftex.def Info: figuras/Solucion/grafoHM.png  used on input line 139.
-(pdftex.def)             Requested size: 178.41612pt x 128.7306pt.
-
-Overfull \vbox (20.2557pt too high) detected at line 139
- []
-
-[8
-
- <./figuras/Solucion/grafoHM.png>]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 180.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 180.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 180.
- [9
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 94.
+ [8
 
-]
-Package epstopdf Info: Source file: <figuras/Solucion/chap5_fig1.eps>
-(epstopdf)                    date: 2019-09-16 15:23:24
-(epstopdf)                    size: 20697 bytes
-(epstopdf)             Output file: <figuras/Solucion/chap5_fig1-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2019-11-27 05:48:04
-(epstopdf)                    size: 7103 bytes
-(epstopdf)             Command: <epstopdf --outfile=figuras/Solucion/chap5_fig1
--eps-converted-to.pdf figuras/Solucion/chap5_fig1.eps>
-(epstopdf)             \includegraphics on input line 199.
-Package epstopdf Info: Output file is already uptodate.
+] [9
 
+] [10
 
-pdfTeX warning: pdflatex (file ./figuras/Solucion/chap5_fig1-eps-converted-to.p
-df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/Solucion/chap5_fig1-eps-converted-to.pdf, id=671, 558.085pt x 351.3125
-pt>
-File: figuras/Solucion/chap5_fig1-eps-converted-to.pdf Graphic file (type pdf)
-<use figuras/Solucion/chap5_fig1-eps-converted-to.pdf>
-Package pdftex.def Info: figuras/Solucion/chap5_fig1-eps-converted-to.pdf  used
- on input line 199.
-(pdftex.def)             Requested size: 195.33267pt x 122.96121pt.
-[10
+] [11
 
- <./figuras/Solucion/chap5_fig1-eps-converted-to.pdf>]
-<figuras/Solucion/representacionSol.png, id=731, 600.74437pt x 194.22563pt>
-File: figuras/Solucion/representacionSol.png Graphic file (type png)
-<use figuras/Solucion/representacionSol.png>
-Package pdftex.def Info: figuras/Solucion/representacionSol.png  used on input 
-line 221.
-(pdftex.def)             Requested size: 300.37144pt x 97.11256pt.
- [11
+] [12
 
- <./figuras/Solucion/representacionSol.png>] [12
+] [13
 
-]
-<figuras/Solucion/cruza2xP3.png, id=850, 630.10406pt x 384.6872pt>
-File: figuras/Solucion/cruza2xP3.png Graphic file (type png)
-<use figuras/Solucion/cruza2xP3.png>
-Package pdftex.def Info: figuras/Solucion/cruza2xP3.png  used on input line 247
-.
-(pdftex.def)             Requested size: 220.53972pt x 134.64253pt.
- [13
+] [14
 
- <./figuras/Solucion/cruza2xP3.png>]
-<figuras/Solucion/mutaSimple.png, id=905, 616.55344pt x 335.00156pt>
-File: figuras/Solucion/mutaSimple.png Graphic file (type png)
-<use figuras/Solucion/mutaSimple.png>
-Package pdftex.def Info: figuras/Solucion/mutaSimple.png  used on input line 25
-7.
-(pdftex.def)             Requested size: 215.79694pt x 117.25229pt.
-
-[14
-
- <./figuras/Solucion/mutaSimple.png>] [15
+] [15
 
 ] [16
 
-] [17
+]
+Overfull \vbox (12.1536pt too high) detected at line 286
+ []
+
+[17
 
 ] [18
 
@@ -1457,6 +1412,12 @@ Package pdftex.def Info: figuras/Solucion/mutaSimple.png  used on input line 25
 ] [20
 
 ] [21
+
+] [22
+
+] [23
+
+] [24
 
 ])
 \tf@nav=\write6
@@ -1470,8 +1431,7 @@ Package pdftex.def Info: figuras/Solucion/mutaSimple.png  used on input line 25
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
-
-(mccGF.aux
+ (mccGF.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
@@ -1481,29 +1441,33 @@ Package rerunfilecheck Info: File `mccGF.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26274 strings out of 480795
- 558170 string characters out of 2893695
- 843877 words of memory out of 3000000
- 41556 multiletter control sequences out of 15000+200000
- 567617 words of font info for 87 fonts, out of 3000000 for 9000
+ 26333 strings out of 480795
+ 559711 string characters out of 2893695
+ 850907 words of memory out of 3000000
+ 41620 multiletter control sequences out of 15000+200000
+ 573444 words of font info for 93 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,20n,71p,774b,853s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 81i,20n,71p,774b,968s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r
 .enc}<C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmex10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Sebastian/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Sebastian/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Use
-rs/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mss8.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Sebastian/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Sebastian/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Sebas
-tian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mccGF.pdf (21 pages, 435134 bytes).
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Sebastian/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/User
+s/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ss10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmss8.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Sebastian/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Sebastian/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/U
+sers/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/ur
+w/helvetic/uhvb8a.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on mccGF.pdf (24 pages, 497261 bytes).
 PDF statistics:
- 1397 PDF objects out of 1440 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
- 572 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1762 PDF objects out of 2073 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 937 words of extra memory for PDF output out of 10000 (max. 10000000)
 
