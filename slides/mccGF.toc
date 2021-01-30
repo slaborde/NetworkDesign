@@ -22,8 +22,18 @@
 \beamer@subsectionintoc {4}{8}{KeyTreeLocalSearch}{18}{0}{4}
 \beamer@subsectionintoc {4}{9}{Confiabilidad}{19}{0}{4}
 \beamer@sectionintoc {5}{Resultados}{20}{0}{5}
-\beamer@subsectionintoc {5}{1}{Resultados I}{20}{0}{5}
+\beamer@subsectionintoc {5}{1}{Resultados}{20}{0}{5}
 \beamer@subsectionintoc {5}{2}{Resultados II}{21}{0}{5}
-\beamer@sectionintoc {6}{Conclusiones}{22}{0}{6}
-\beamer@subsectionintoc {6}{1}{Trabajo Futuro}{23}{0}{6}
-\beamer@subsectionintoc {6}{2}{Gracias}{24}{0}{6}
+\beamer@subsectionintoc {5}{3}{Resultados III}{22}{0}{5}
+\beamer@subsectionintoc {5}{4}{Resultados IV}{23}{0}{5}
+\beamer@subsectionintoc {5}{5}{Resultados V}{24}{0}{5}
+\beamer@subsectionintoc {5}{6}{Resultados VI}{25}{0}{5}
+\beamer@subsectionintoc {5}{7}{Resultados VII}{26}{0}{5}
+\beamer@subsectionintoc {5}{8}{Resultados VIII}{27}{0}{5}
+\beamer@sectionintoc {6}{Conclusiones}{28}{0}{6}
+\beamer@subsectionintoc {6}{1}{Conclusiones I}{28}{0}{6}
+\beamer@subsectionintoc {6}{2}{Conclusiones II}{29}{0}{6}
+\beamer@subsectionintoc {6}{3}{Gracias}{30}{0}{6}
+\beamer@sectionintoc {7}{Anexos}{31}{0}{7}
+\beamer@subsectionintoc {7}{1}{Anexo I}{31}{0}{7}
+\beamer@subsectionintoc {7}{2}{Anexo II}{32}{0}{7}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.31)  26 JAN 2021 00:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.31)  30 JAN 2021 12:55
 entering extended mode
 **./mccGF.tex
 (mccGF.tex
@@ -1337,7 +1337,7 @@ Overfull \vbox (7.4289pt too high) detected at line 75
 ]
 (contenidoGF.tex
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 17.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 14.
  [2
 
 ] [3
@@ -1345,14 +1345,14 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
 ] [4
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
 
 
 ("C:\Users\Sebastian\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.
 fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 
 
 ("C:\Users\Sebastian\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.
@@ -1360,13 +1360,13 @@ fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 55.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 52.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 55.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 52.
  [5
 
 ]
-Overfull \hbox (24.38872pt too wide) detected at line 67
+Overfull \hbox (24.38872pt too wide) detected at line 64
 []
  []
 
@@ -1376,11 +1376,11 @@ Overfull \hbox (24.38872pt too wide) detected at line 67
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 94.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 91.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 94.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 91.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 94.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 91.
  [8
 
 ] [9
@@ -1400,7 +1400,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
 ] [16
 
 ]
-Overfull \vbox (12.1536pt too high) detected at line 286
+Overfull \vbox (12.1536pt too high) detected at line 283
  []
 
 [17
@@ -1408,7 +1408,7 @@ Overfull \vbox (12.1536pt too high) detected at line 286
 ] [18
 
 ]
-Overfull \vbox (7.2736pt too high) detected at line 350
+Overfull \vbox (5.62555pt too high) detected at line 348
  []
 
 [19
@@ -1419,11 +1419,63 @@ Overfull \vbox (7.2736pt too high) detected at line 350
 
 ] [22
 
-] [23
+]
+Overfull \vbox (3.82278pt too high) detected at line 495
+ []
 
-] [24
+[23
 
-])
+]
+Overfull \vbox (3.82278pt too high) detected at line 530
+ []
+
+[24
+
+]
+<figuras/1.jpg, id=1936, 733.99219pt x 423.83344pt>
+File: figuras/1.jpg Graphic file (type jpg)
+<use figuras/1.jpg>
+Package pdftex.def Info: figuras/1.jpg  used on input line 542.
+(pdftex.def)             Requested size: 256.90111pt x 148.34392pt.
+ [25
+
+ <./figuras/1.jpg>]
+<figuras/2.jpg, id=2014, 846.91406pt x 482.55281pt>
+File: figuras/2.jpg Graphic file (type jpg)
+<use figuras/2.jpg>
+Package pdftex.def Info: figuras/2.jpg  used on input line 554.
+(pdftex.def)             Requested size: 296.42436pt x 168.89601pt.
+ [26
+
+ <./figuras/2.jpg>] [27
+
+] [28
+
+] [29
+
+] [30
+
+]
+<figuras/3.jpg, id=2410, 652.68843pt x 468.24937pt>
+File: figuras/3.jpg Graphic file (type jpg)
+<use figuras/3.jpg>
+Package pdftex.def Info: figuras/3.jpg  used on input line 631.
+(pdftex.def)             Requested size: 228.44437pt x 163.88972pt.
+
+Overfull \vbox (0.66267pt too high) detected at line 631
+ []
+
+[31
+
+ <./figuras/3.jpg>]
+<figuras/4.jpg, id=2489, 734.745pt x 408.02437pt>
+File: figuras/4.jpg Graphic file (type jpg)
+<use figuras/4.jpg>
+Package pdftex.def Info: figuras/4.jpg  used on input line 643.
+(pdftex.def)             Requested size: 257.1646pt x 142.81067pt.
+ [32
+
+ <./figuras/4.jpg>])
 \tf@nav=\write6
 \openout6 = `mccGF.nav'.
 
@@ -1445,33 +1497,35 @@ Package rerunfilecheck Info: File `mccGF.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26340 strings out of 480795
- 560020 string characters out of 2893695
- 850905 words of memory out of 3000000
- 41627 multiletter control sequences out of 15000+200000
- 573444 words of font info for 93 fonts, out of 3000000 for 9000
+ 26524 strings out of 480795
+ 564325 string characters out of 2893695
+ 874795 words of memory out of 3000000
+ 41777 multiletter control sequences out of 15000+200000
+ 574598 words of font info for 94 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,20n,71p,774b,968s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r
 .enc}<C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmex10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Sebastian/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Sebastian/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/User
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Sebastian/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/User
 s/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ss10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmss8.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Sebastian/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Sebastian/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/U
+mi8.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmss10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Sebastian/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Sebastian/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/U
 sers/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/ur
-w/helvetic/uhvb8a.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mccGF.pdf (24 pages, 500972 bytes).
+/cmsy6.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy7.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Sebastian/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Sebastian/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Seba
+stian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on mccGF.pdf (32 pages, 1100728 bytes).
 PDF statistics:
- 1774 PDF objects out of 2073 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
- 973 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2637 PDF objects out of 2984 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
+ 1281 words of extra memory for PDF output out of 10000 (max. 10000000)
 

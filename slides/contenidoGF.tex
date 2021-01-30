@@ -11,9 +11,6 @@
     	\item Dado que el despligue de la fibra optica es una importante inversión económica, el diseño topológico de las redes \emph{FTTH} debe continuar considerandose.
 	\end{itemize} 
     \end{block}
-    %\begin{center}
-    %    \includegraphics[scale=0.35]{figuras/martinsMod2}
-    %\end{center}
 \end{frame}
 
 \subsection{Objetivos I}
@@ -366,93 +363,281 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 %	%\end{equation}	\Delta
 
 \section{Resultados}
-\subsection{Resultados I}
-\begin{frame}\frametitle{Instancias de prueba}
-\textbf{Caracterización instancias}
-\begin{table}[h!]
-	\hspace{-1cm}
-	%\centering
-	\scalebox{0.7}{  
-	\begin{tabular}{l|rrrr}
-		\hline
-		{Instancias} & \multicolumn{4}{c}{Características de las instancias} \\
-		%\cline{1-3} \cline{5-11} 
-		 & $|V|$ & $|E|$ & Densidad & $|E(C)|$\\
-		\hline
-		c-fat200-1 	&200 	&1534	&0.071 	&81\\
-		c-fat200-2 	&200 	&3235 	&0.163 	&306\\
-		c-fat200-5 	&200 	&8473 	&0.426 	&1892\\
-		c-fat500-1 	&500 	&4459 	&0.036 	&110\\
-		c-fat500-2 	&500 	&9139 	&0.073 	&380\\
-		c-fat500-5 	&500 	&23191 	&0.186 	&2304\\
-		c-fat500-10 &500 	&46627 	&0.374 	&8930\\
-		%p\_hat300-1	&300 	&10933	&0.244 	&789\\		
-		p\_hat300-2 &300 	&21928 	&0.489 	&4637\\
-		p\_hat300-3 &300 	&33390 	&0.744 	&7740\\
-		%keller4 	&171 	&9435 	&0.649 	&1140\\
-		keller5 	&776 	&225990 &0.752 	&15184\\
-		%MANN\_a9 	&45 	&918 	&0.9273	&412\\
-		MANN\_a27 	&378 	&70551 	&0.990 	&31284\\
-		c125\_9 	&125 	&69632 	&0.899 	&236406\\	
-		\hline
-	\end{tabular}}	
-\end{table}
+\subsection{Resultados}
+\begin{frame}\frametitle{}
+\begin{block}{Conjunto de Casos de Prueba}
+\begin{small}
+\begin{itemize}
+ \item Se realizó un extenso estudio computacional utilizando el algoritmo $NetworkDesign$.
+ \item No hay casos benchmark para nuestro problema específico.
+ \item Adaptamos instancias conocidas de la librería $TSPLIB$ añadiendo probabilidades de falla en nodos y enlaces y los requerimientos de conectividad entre nodos.
+ \item Umbral de confiabilidad $p_{min}=0.8$.
+ \item Probabilidades de nodos y aristas $p_v=0.99$ y $p_e=0.95$ respectivamente.
+ \item Número de iteraciones en $NetworkDesign$ por cada instancia $iter=100$, y número de replicaciones para el método $RVR$ $10^4$.
+ \item Comprender la sensibilidad de la solución a perturbaciones en confiabilidades elementales. Se utilizaron nueve combinaciones para $p_{v},p_{e} \in \{0.99, 0.97,0.95\}$.
+\end{itemize} 
+\end{small}
+\end{block}
 \end{frame}
 
 \subsection{Resultados II}
-\begin{frame}\frametitle{Resultados obtenidos}
-\begin{table}[h!]
-	%\hspace{-1cm}
-	\scalebox{0.7}{ 
-	\begin{tabular}{l|rr|rr|r}
-		\hline
-		\multicolumn{1}{l}{} & \multicolumn{2}{c}{\textbf{GRASP/VND}} & \multicolumn{2}{l}{\textbf{Algoritmo Genético}} & GAP \\
-		%\cline{1-3} \cline{5-11} 
-		Instancias & $|E(C)|$ prom. & $T(s)$ prom. & $|E(C)|$ prom. & $T(s)$ prom. &(\%) \\
-		\hline
-		c-fat200-1 	&81 		&0.37 		&81 		&6.4	&0.0\\
-		c-fat200-2 	&306 		&0.81 		&306 		&7.5	&0.0\\
-		c-fat200-5 	&1892 		&4.94 		&1892 		&12.5	&0.0\\
-		c-fat500-1 	&110 		&2.46 		&110 		&16.15	&0.0\\
-		c-fat500-2 	&380 		&5.83 		&380 		&14.3	&0.0\\
-		c-fat500-5 	&2304 		&10.85 		&2304 		&20.36	&0.0\\
-		c-fat500-10 &8930 		&65.74 		&8930 		&32.59	&0.0\\
-		p\_hat300-2 &4636.2 	&3659.39 	&4633.40 	&171.9	&$\approx$0.0\\
-		p\_hat300-3 &7726.8 	&3992.42 	&7387.27 	&279.8	&0.04\\
-		c125\_9 	&2766 		&253.25	 	&2737.2 	&5.0	&0.01\\
-		keller5 	&15183.24 	&1167.64 	&12382 		&50.57	&0.18\\
-		MANN\_a27 	&31244.10 	&548.54 	&30405 		&46.49	&0.03\\		
-		\hline
-	\end{tabular}}	
+\begin{frame}\frametitle{}
+\begin{table}
+\begin{scriptsize}
+\caption{Conjunto de Casos de Prueba}
+\end{scriptsize}
+\centering
+\scalebox{0.7}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|} % centered columns 
+\hline	$Problem$   &	\% $T$ & \%$Rel$& \% $Req$ & $Iter\_ND$ & $Iter\_RVR$ & \# \\
+\hline	att48	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	$10^4$	&	3	\\
+\hline	berlin52	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	$10^4$	&	3	\\
+\hline	brazil58	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	$10^4$	&	3	\\
+\hline	ch150	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	$10^4$	&	3	\\
+\hline	d198	&	20-35-50	&	99-95	&	100-0-0	&	20-20-20	&	NA	&	3	\\
+\hline	eil51	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	$10^4$	&	3	\\
+%\hline	gr137	&	20-35-50	&	99-95	&	100-0-0	&	100-20-20	&	NA	&	3	\\
+\hline	gr202	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	$10^4$	&	3	\\
+\hline	kroA100	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	NA	&	3	\\
+%\hline	kroA150	&	20-35-50	&	99-95	&	100-0-0	&	100-20-20	&	NA	&	3	\\
+\hline	kroB100	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	NA	&	3	\\
+\hline	kroB150	&	20-35-50	&	99-95	&	100-0-0	&	100-20-20	&	NA	&	3	\\
+\hline	kroB200	&	20-35-50	&	99-95	&	100-0-0	&	20-20-20	&	NA	&	3	\\
+\hline	lin105	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	NA	&	3	\\
+\hline	pr152	&	20-35-50	&	99-95	&	100-0-0	&	20-20-20	&	NA	&	3	\\
+%\hline	rat195	&	20-35-50	&	99-95	&	100-0-0	&	20-20-20	&	NA	&	3	\\
+%\hline	st70	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	$10^4$	&	3	\\
+\hline	tsp225	&	20-35-50	&	99-95	&	100-0-0	&	50-50-50	&	$10^4$	&	3	\\
+%\hline	u159	&	20-35-50	&	99-95	&	100-0-0	&	20-20-20	&	NA	&	3	\\
+%\hline	rd100	&	20-35-50	&	99-95	&	100-0-0	&	100-100-100	&	NA	&	3	\\
+\hline	rd400	&	20-35-50	&	99-95	&	100-0-0	&	50-50-50	&	$10^4$	&	3	\\
+\hline	berlin52(E)	&	20	&	99-90	&	65-25-10	&	100	&	$10^4$	&	1	\\
+%\hline	eil51(E)	&	20	&	99-90	&	65-25-10	&	100	&	$10^4$	&	1	\\
+\hline	att48(E)	&	35	&	99-90	&	65-25-10	&	100	&	$10^4$	&	1	\\
+%\hline	st70(E)	&	35	&	99-90	&	65-25-10	&	100	&	$10^4$	&	1	\\
+\hline	brazil58(E)	&	50	&	99-90	&	65-25-10	&	100	&	$10^4$	&	1	\\
+%\hline	eil51(E)	&	50	&	99-90	&	65-25-10	&	100	&	$10^4$	&	1	\\
+%\hline	kroB100(E)	&	20	&	99-90	&	65-25-10	&	100	&	$10^4$	&	1	\\
+%\hline	lin105(E)	&	20	&	99-90	&	65-25-10	&	100	&	NA	&	1	\\
+%\hline	kroA100(E)	&	35	&	99-90	&	65-25-10	&	20	&	$10^4$	&	1	\\
+\hline	rd100(E)	&	35	&	99-90	&	65-25-10	&	20	&	NA	&	1	\\
+\hline
+\end{tabular}}
 \end{table}
 \end{frame}
 
+\subsection{Resultados III}
+\begin{frame}\frametitle{}
+\begin{table}
+\begin{scriptsize}
+\caption{GRASP/VND Effectiveness}
+\end{scriptsize}
+\centering
+\scalebox{0.7}{
+\begin{tabular}{|c|c|c|c|c|c|c|} % centered columns 
+\hline	$Problem$   &	\% $T$ & \%$IG$& \% $IVNS$ & $CPU(s)$ & $\overline{R}$ & $\overline{Var}$ \\
+\hline	att48	&	20	&	99.27	&	34.61	&	11.466	&	0.967	&	7.608E-07	\\
+\hline	att48	&	35	&	98.6	&	36.83	&	29.769	&	0.943	&	3.448E-06	\\
+\hline	att48	&	50	&	98.22	&	37.1	&	65.904	&	0.927	&	5.322E-06	\\
+\hline	berlin52	&	20	&	98.98	&	30.55	&	30.605	&	0.937	&	3.294E-06	\\
+\hline	berlin52	&	35	&	99.06	&	33.93	&	33.433	&	0.938	&	3.19E-06	\\
+\hline	berlin52	&	50	&	98.02	&	33.48	&	106.945	&	0.907	&	6.487E-06	\\
+\hline	brazil58	&	20	&	98.92	&	31.96	&	62.377	&	0.885	&	6.722E-06	\\
+\hline	brazil58	&	35	&	99.25	&	39.45	&	68.891	&	0.86	&	8.347E-06	\\
+\hline	brazil58	&	50	&	98.75	&	35.26	&	103.553	&	0.91	&	7.093E-06	\\
+\hline	ch150	&	20	&	99.76	&	37.51	&	222.552	&	0.8559	&	1.029E-05	\\
+\hline	ch150	&	35	&	99.72	&	36.65	&	546.652	&	0.8803	&	9.033E-05	\\
+\hline	gr202	&	20	&	99.89	&	32.43	&	100.162	&	0.8231	&	1.224E-05	\\
+\hline	gr202	&	35	&	99.75	&	34.56	&	200.698	&	0.8414	&	1.11E-05	\\
+\hline	gr202	&	50	&	99.74	&	33.36	&	600.629	&	0.8303	&	1.279E-05	\\
+\hline	rd400	&	20	&	99.94	&	35.84	&	88.214	&	0.8094	&	14.22E-05	\\
+\hline	rd400	&	35	&	99.94	&	33.54	&	504.103	&	0.8537	&	11.89E-05	\\
+\hline	rd400	&	50	&	99.93	&	33.16	&	980.701	&	0.8643	&	11.51E-05	\\
+\hline Average     & 35    &   99.28   &  34.72   &    220.980 &  0.884 & 3.28E-05 \\
+\hline
+\end{tabular}}
+\end{table}
+\end{frame}
+
+\subsection{Resultados IV}
+\begin{frame}\frametitle{}
+\begin{table}
+\begin{scriptsize}
+\caption{Soluciones factibles con $R \geq 0.98$,  
+$p_v=0.99$ fijo y confiabilidad de enlaces variable.}
+\end{scriptsize}
+\centering  % used for centering table
+\scalebox{0.7}{
+\begin{tabular}{|c|c|c|c|c|} % centered columns 
+\hline	Instance  &	$p_e=0.99$ & 	$p_e=0.97$ & 	$p_e=0.95$\\
+\hline	att48 T20	&	100	&	90	&	12	\\
+\hline	att48 T35	&	100	&	53	&	0	\\
+\hline	att48 T50	&	100	&	20	&	0	\\
+\hline	berlin52 T20	&	100	&	41	&	0	\\
+\hline	berlin52 T35	&	100	&	50	&	0	\\
+\hline	berlin52 T50	&	100	&	1	&	0	\\
+\hline	brazil58 T20	&	99	&	15	&	0	\\
+\hline	brazil58 T35	&	97	&	0	&	0	\\
+\hline	brazil58 T50	&	100	&	5	&	0	\\
+\hline	ch150 T20	&	100	&	0	&	0	\\
+\hline	ch150 T35	&	100	&	0	&	0	\\
+\hline	ch150 T50	&	100	&	0	&	0	\\
+\hline	gr202 T20	&	99	&	0	&	0	\\
+\hline	gr202 T35	&	100	&	0	&	0	\\
+\hline	gr202 T50	&	100	&	0	&	0	\\
+\hline	rd400 T20	&	100	&	0	&	0	\\
+\hline	rd400 T35	&	100	&	0	&	0	\\
+\hline	rd400 T50	&	100	&	0	&	0	\\
+\hline  Average     & 99.72    &   15.28   &  0.67 \\
+\hline
+\end{tabular}}
+\end{table}
+\end{frame}
+
+\subsection{Resultados V}
+\begin{frame}\frametitle{}
+\begin{table}
+\begin{scriptsize}
+\caption{Soluciones factibles con $R \geq 0.98$, $p_e=0.99$ fijo 
+y confiabilidad de nodos variable.}
+\end{scriptsize}
+\centering  % used for centering table
+\scalebox{0.7}{
+\begin{tabular}{|c|c|c|c|c|} % centered columns 
+\hline	Instance  &	$p_v=0.99$ & 	$p_v=0.97$ & 	$p_v=0.95$\\
+\hline	att48 T20	&	100	&	100	&	99	\\
+\hline	att48 T35	&	100	&	98	&	96	\\
+\hline	att48 T50	&	100	&	100	&	99	\\
+\hline	berlin52 T20	&	100	&	100	&	80	\\
+\hline	berlin52 T35	&	100	&	99	&	93	\\
+\hline	berlin52 T50	&	100	&	100	&	100	\\
+\hline	brazil58 T20	&	99	&	59	&	41	\\
+\hline	brazil58 T35	&	97	&	43	&	9	\\
+\hline	brazil58 T50	&	100	&	99	&	81	\\
+\hline	ch150 T20	&	100	&	60	&	20	\\
+\hline	ch150 T35	&	100	&	98	&	76	\\
+\hline	ch150 T50	&	100	&	100	&	97	\\
+\hline	gr202 T20	&	99	&	80	&	30	\\
+\hline	gr202 T35	&	100	&	69	&	16	\\
+\hline	gr202 T50	&	100	&	100	&	76	\\
+\hline	rd400 T20	&	100	&	16	&	2	\\
+\hline	rd400 T35	&	100	&	98	&	80	\\
+\hline	rd400 T50	&	100	&	100	&	100	\\
+\hline  Average     &   99.72    &   84.39   &  66.39 \\
+\hline
+\end{tabular}}
+\end{table}
+\end{frame}
+
+\subsection{Resultados VI}
+\begin{frame}\frametitle{}
+\begin{block}{Brazil58}
+\begin{scriptsize}
+\%20 de nodos terminales, confiabilidad elemental de nodos de Steiner \%99, confiabilidad de enlaces \%95 y \%100 2 caminos nodo-disjunto. Nodos terminales rojos no fallan, nodos de Steiner naranjas y grises.
+\end{scriptsize}
+\begin{center}
+   \includegraphics[scale=0.35]{figuras/1}
+\end{center}
+\end{block}
+\end{frame}
+
+\subsection{Resultados VII}
+\begin{frame}\frametitle{}
+\begin{block}{Brazil58 NetworkDesign Salida}
+\begin{scriptsize}
+Costo resultado 25106 y confiabilidad 0.917399. 
+\end{scriptsize}
+\begin{center}
+   \includegraphics[scale=0.35]{figuras/2}
+\end{center}
+\end{block}
+\end{frame}
+
+\subsection{Resultados VIII}
+\begin{frame} \frametitle{Preguntas Claves}
+\begin{tiny}
+\begin{block} {1}
+ 	 \begin{itemize}
+ 	 	\item ¿Cuántas redes factibles existen dado el modelo probabilístico completo $(p_{min},P_E,P_{V-T})$?
+ 	 	\item La cantidad de soluciones que cumplen con el umbral de confiabilidad es alta. Alcanza el 100\% en la mayoría de los casos.
+ 	 \end{itemize}  
+ \end{block} 	   
+ \begin{block} {2}
+ 	 \begin{itemize}
+ 	 	\item ¿Cuál es la sensibilidad del modelo con respecto a las confiabilidades elementales? ¿Es mejor aumentar la confiabilidad elemental de los enlaces, o la confiabilidad de los nodos Steiner, para cumplir con un umbral de confiabilidad exigente?
+ 	 	\item El modelo es más sensible a fallas de enlace que a fallas de nodo. Un aumento en la confiabilidad de los enlaces tiene un mejor impacto que un aumento correspondiente en la confiabilidad de los nodos.
+ 	 \end{itemize}  
+ \end{block} 	
+  \begin{block} {3}
+ 	 \begin{itemize}
+ 	 	\item ¿Cuántas redes sobreviven en promedio, para cualquier modelo probabilístico dado? Comprender la sensibilidad del modelo con respecto a los requisitos de conectividad $r_{i,j} \in \{2,3,4\}$?
+ 	 	\item Podemos apreciar que un aumento en los requisitos de conectividad de la red implica necesariamente un aumento correspondiente en el porcentaje de redes que cumplen con el umbral de confiabilidad, y viceversa.
+ 	 \end{itemize}  
+ \end{block} 	
+ \end{tiny}
+\end{frame}
+
 \section{Conclusiones}
-\begin{frame} \frametitle{Conclusiones}
-\begin{block} {Conclusiones}
+\subsection{Conclusiones I}
+\begin{frame} \frametitle{Conlusiones y Aportes de este Trabajo}
+\begin{block} {}
    	\begin{itemize} 
-   	\begin{small}     	
-	\item Aplicaciones diversas en diferentes áreas.
-	\item Se demuestra la $\mathcal{NP}$-Completitud.
-	\item Solución competitiva con las existentes y con tiempos de ejecución muy buenos.   	
-	\end{small} 	
+   	\begin{scriptsize}
+	\item Estudiamos el diseño topológico de redes de alta confiabilidad.
+	\item Nuestro objetivo es combinar aspectos puramente deterministas como la conectividad con modelos probabilísticos provenientes de la confiabilidad de la red.
+	\item Se introduce The Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability (GSPNCHR).
+	\item Probamos formalmente que GSPNCHR pertenece a la clase NP-Hard.
+	\item Como consecuencia se propone una metodología GRASP/VND.
+	\item Dado que la evaluación de confiabilidad para el modelo hostil también pertenece a la clase NP-Hard, Adoptamos una excelente método de estimación de confiabilidad puntual, conocida como Recursive Variance Reduction (RVR).
+	\item Nuestros resultados resaltan que el modelo es más robusto bajo fallas en los nodos que bajo fallas en los enlaces.
+	\item Se logró la publicación: \"A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability\", a publicarse en Volume 12559 of the Lecture Notes in Computer Science series.
+	\end{scriptsize}   	     	
  	\end{itemize} 	
  \end{block}
 \end{frame}
 
-\subsection{Trabajo Futuro}
-\begin{frame} \frametitle{Trabajo Futuro}
-\begin{block} {Trabajo Futuro}
+\subsection{Conclusiones II}
+\begin{frame} \frametitle{Líneas de Trabajo Futuro}
+\begin{block} {}
+   	\begin{scriptsize}
  	 \begin{itemize}
- 	 	\item Aplicaciones reales en grandes superficies.
- 	 	\item Explorar la versión con pesos en las aristas, (WMCC).
+ 	 	\item La interacción entre el diseño de la red topológica y la confiabilidad de la red aún no se comprende bien. Aquí se propusieron algunas búsquedas locales, esencialmente utilizando reemplazos de key-path y key-tree, con el fin de reducir los costos y preservar la factibilidad.
+ 	 	\item Una línea de investigación actual es introducir transformaciones que aumenten la confiabilidad. 
+ 	 	\item El desarrollo de búsquedas locales que aumenten la confiabilidad y reduzcan los costos enriquecería la solución actual.
+ 	 	\item Otra posibilidad para el trabajo futuro es enriquecer el número de búsquedas locales y considerar transiciones probabilísticas entre ellas.
  	 \end{itemize}  
+ 	\end{scriptsize}
  \end{block} 	   
 \end{frame}
 
 \subsection{Gracias}
 \begin{frame} \frametitle{Fin}
 \begin{huge}
-Gracias por su atención.
+Muchas Gracias.
 \end{huge}
+\end{frame}
+
+\section{Anexos}
+\subsection{Anexo I}
+\begin{frame}\frametitle{}
+\begin{block}{Berlin52}
+\begin{scriptsize}
+\%20 de nodos terminales, confiabilidad elemental de nodos de Steiner \%99, confiabilidad de enlaces \%95 y \%100 2 caminos nodo-disjuntos.  Nodos terminales rojos no fallan, nodos de Steiner naranjas y grises.
+\end{scriptsize}
+\begin{center}
+   \includegraphics[scale=0.35]{figuras/3}
+\end{center}
+\end{block}
+\end{frame}
+
+\subsection{Anexo II}
+\begin{frame}\frametitle{}
+\begin{block}{Berlin52 Salida NetworkDesign}
+\begin{scriptsize}
+Costo resultado 4534 y confiabilidad 0.844782.
+\end{scriptsize}
+\begin{center}
+   \includegraphics[scale=0.35]{figuras/4}
+\end{center}
+\end{block}
 \end{frame}
