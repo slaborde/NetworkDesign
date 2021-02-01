@@ -31,9 +31,10 @@
 \beamer@subsectionintoc {5}{7}{Resultados VII}{26}{0}{5}
 \beamer@subsectionintoc {5}{8}{Resultados VIII}{27}{0}{5}
 \beamer@sectionintoc {6}{Conclusiones}{28}{0}{6}
-\beamer@subsectionintoc {6}{1}{Conclusiones I}{28}{0}{6}
+\beamer@subsectionintoc {6}{1}{Conclusiones}{28}{0}{6}
 \beamer@subsectionintoc {6}{2}{Conclusiones II}{29}{0}{6}
-\beamer@subsectionintoc {6}{3}{Gracias}{30}{0}{6}
-\beamer@sectionintoc {7}{Anexos}{31}{0}{7}
-\beamer@subsectionintoc {7}{1}{Anexo I}{31}{0}{7}
-\beamer@subsectionintoc {7}{2}{Anexo II}{32}{0}{7}
+\beamer@subsectionintoc {6}{3}{Conclusiones III}{30}{0}{6}
+\beamer@subsectionintoc {6}{4}{Gracias}{31}{0}{6}
+\beamer@sectionintoc {7}{Anexos}{32}{0}{7}
+\beamer@subsectionintoc {7}{1}{Anexo}{32}{0}{7}
+\beamer@subsectionintoc {7}{2}{Anexo II}{33}{0}{7}

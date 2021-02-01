@@ -1,6 +1,4 @@
 \section{Problema}
-%$\mathcal{G}$
-%\emph{Clique}
 \subsection{Motivación}
 \begin{frame}%\frametitle{Motivación}
     \begin{block}{Motivación}
@@ -14,7 +12,8 @@
 \end{frame}
 
 \subsection{Objetivos I}
-\begin{frame}%\frametitle{Objetivos I}
+\begin{frame}
+	\frametitle{}
     \begin{block}{Objetivos I}
 	\begin{itemize} 
     	\item Problema de optimización combinatoria motivado por el diseño topológico de redes de comunicaciones 
@@ -26,7 +25,8 @@ con restricciones de confiabilidad.
 \end{frame}
 
 \subsection{Objetivos II}
-\begin{frame}%\frametitle{Objetivos II}
+\begin{frame}
+	\frametitle{}
     \begin{block}{Objetivos II}
 	\begin{itemize} 
     	\item Encontrar una solución de costo mínimo que alcance un umbral de confiabilidad, donde tanto los nodos como los enlaces pueden fallar con probabilidades dadas.
@@ -40,14 +40,10 @@ con restricciones de confiabilidad.
 
 \subsection{Definición}
 \begin{frame}\frametitle{Generalized Steiner Problem with Node-Connectivity Constraints and
-Hostile Reliability (GSPNCHR)}
+Hostile Reliability GSPNCHR}
     \begin{definition}[GSPNCHR]
-Consider a simple undirected graph $G=(V,E)$, terminal-set $T \subseteq V$, link-costs $\{c_{i,j}\}_{(i,j) \in E}$ 
-and connectivity requirements $R=\{r_{i,j}\}_{i,j \in T}$. Further, we assume that both links and non-terminal (Steiner) nodes 
-fail with respective probabilities $P_E=\{p_e\}_{e\in E}$ and $P_{V-T}=\{p_v\}_{v\in V-T}$. 
-Given a reliability threshold $p_{min}$, the goal is to build 
-a minimum-cost topology $G_S \subseteq G$ meeting both the connectivity requirements 
-$R$ and the reliability threshold: $R_{K}(G_S) \geq p_{min}$, being $K=T$ the terminal-set.
+Se considera el grafo no dirigido $G=(V,E)$, conjunto de nodos terminales $T \subseteq V$, costo de los enlaces $\{c_{i,j}\}_{(i,j) \in E}$ y requerimientos de conectividad $R=\{r_{i,j}\}_{i,j \in T}$. Además, asumimos que tanto los enlaces como los nodos no terminales (Steiner) fallan con probabilidades $P_E=\{p_e\}_{e\in E}$ y $P_{V-T}=\{p_v\}_{v\in V-T}$. 
+Dado el umbral de confiabilidad $p_{min}$, el objetivo es construir una topologia de costo mínimo $G_S \subseteq G$ cumpliendo con los requerimientos de conectividad $R$ y el umbral de confiabilidad: $R_{K}(G_S) \geq p_{min}$, siendo $K=T$ el conjunto de nodos terminales.
 \end{definition}
 \end{frame}
 
@@ -76,15 +72,16 @@ x_{(i,j)} &\in \{0,1\} \, \forall (i,j)\in E \\
 
 \section{Resultados Teóricos}
 \subsection{Resultados Teóricos}
-\begin{frame}%\frametitle{}
+\begin{frame}
+	\frametitle{}
     \begin{block}{Resultados Teóricos}
     \begin{small}
 		\begin{itemize} 
     		\item Se demuestra la complejidad computacional del problema \emph{(NP-hardness)}.
-			\item Se modela el problema para instancias particulares con $r_{ij} = k, k \geq 2$, tanto para arista conectividad como para nodo conectividad.
+			\item Se modela el problema para instancias particulares con $r_{ij} = k, k \geq 2$, tanto para nodo conectividad como para enlace conectividad.
 			\item Se encuentran cotas inferiores para las formulaciones anteriores aplicando teoría de dualidad y relajación lagrangiana.
 	    	\item Formulación de programación matemática del problema para las versiones $k$ nodo-conectividad y $k$ arista-conectividad aplicando los teoremas de BienStock y Monma.
-    		\item Se proponen algoritmos de orden polinomial para resolución del problema en forma exacta de casos particulares respecto a conectividad y topología de grafos.
+    		\item Se proponen algoritmos de orden polinomial para la resolución del problema en forma exacta de casos particulares respecto a conectividad y topología de grafos.
     	\end{itemize} 
     			\end{small}
     \end{block}
@@ -95,9 +92,9 @@ x_{(i,j)} &\in \{0,1\} \, \forall (i,j)\in E \\
 \begin{frame}\frametitle{}
 \begin{block}{Trabajos Relacionados}
 	\begin{itemize} 
-    	\item Se dedicó un capítulo entero donde se expone el relevamiento del estado del arte de la temática de esta tesis: Confiabilidad en redes, Diseño topologico de redes, GRASP, VNS, RVR y otras como Crude Monte Carlo.
+    	\item Se dedicó un capítulo entero donde se expone el relevamiento del estado del arte de la temática de esta tesis: Confiabilidad en redes, Diseño topológico de redes, GRASP, VND, RVR y otras como Monte Carlo Crudo.
     	\item Son escasos los trabajos que abordan conjuntamente la optimización topológica de la red  bajo restricciones de confiabilidad.
-    	\item VNS y RVR han sido utilizados con gran éxito en problemas de optimización combinatoria.
+    	\item VND y RVR han sido utilizados con gran éxito en problemas de optimización combinatoria.
     \end{itemize} 
 \end{block}
 \end{frame}
@@ -129,7 +126,7 @@ x_{(i,j)} &\in \{0,1\} \, \forall (i,j)\in E \\
 \end{frame}
 
 \subsection{Esquema General}
-\begin{frame}\frametitle{Esquema General}
+\begin{frame}\frametitle{}
     \begin{block}{Network Design}
 \begin{algorithm}[H]
 \floatname{algorithm}{Alg}
@@ -184,15 +181,15 @@ x_{(i,j)} &\in \{0,1\} \, \forall (i,j)\in E \\
 \end{frame}
 
 \subsection{Fase Búsqueda Local}
-\begin{frame}\frametitle{Fase Búsqueda Local}
+\begin{frame}\frametitle{}
 \begin{block}{VND}
 \begin{small}
 El objetivo es combinar una rica diversidad de vecindades para obtener una solución óptima local para cada vecindario. NetworkDesign considera una implementación clásica de VND, ordenando las respectivas búsquedas locales después de la fase de construcción. Se consideran tres estructuras de vecindad para construir VND.
-\begin{itemize}
+\begin{enumerate}
  \item SwapKeyPathLocalSearch
  \item KeyPathLocalSearch
  \item KeyTreeLocalSearch
-\end{itemize} 
+\end{enumerate} 
 \end{small}
 \end{block}
 \end{frame}
@@ -200,15 +197,15 @@ El objetivo es combinar una rica diversidad de vecindades para obtener una soluc
 \subsection{Definiciones}
 \begin{frame}\frametitle{}
 \begin{definition}[key-node]
-Un key-node en una solución factible $v \in g_{sol}$ es un nodo de Steiner (no terminal) con grado mayor o igual a tres.
+Un key-node $v$ en una solución factible $v \in g_{sol}$ es un nodo de Steiner (no terminal) con grado mayor o igual a tres.
 \end{definition}
 \begin{definition}[key-path]
-Un key-path en una solución factible $p \subseteq g_{sol}$ es un camino elemental 
+Un key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un camino elemental 
 donde todos los nodos intermedios no son terminales con grado dos en $g_{sol}$, 
 y los nodos extremos son terminales o key-nodes.
 \end{definition}
 \begin{definition}[key-tree]
-Sea $v \in g_{sol}$ un key-node perteneciente to a una solución factible $g_{sol}$. 
+Sea $v \in g_{sol}$ un key-node perteneciente a una solución factible $g_{sol}$. 
 El key-tree asociado a $v$, denotado como $T_v$, es un árbol compuesto por todos los 
 key-paths que se encuentran en un punto común (i.e., el key-node $v$).
 \end{definition}
@@ -216,11 +213,13 @@ key-paths que se encuentran en un punto común (i.e., el key-node $v$).
 
 \subsection{SwapKeyPathLocalSearch}
 \begin{frame}\frametitle{}
+\begin{small}
 \begin{definition}[Estructura de Vecindad para Swap Key-Paths]
 Dado un key-path $p \subseteq g_{sol}$, una solución vecina para $g_{sol}$ es 
 $\hat{g}_{sol} = \{ g_{sol}\setminus p \}\cup \{m\}$, 
 siendo $m$ el conjunto de nodos y enlaces que serán añadidos preservando la factibilidad de ${\hat{g}}_{sol}$.  
 \end{definition}
+\end{small}
 \begin{block}{}
 \begin{algorithm}[H]
 \floatname{algorithm}{Alg}
@@ -285,9 +284,11 @@ a los posibles miembros pertenecientes a $K_{g_{sol}}$.
 \subsection{KeyTreeLocalSearch}
 \begin{frame}\frametitle{}
 \begin{definition}[Estructura de Vecindad para Key-Tree]
+\begin{small}
 Se considera el key-tree $T_v \in g_{sol}$ con raíz key-node $v$.  
 Un vecino de $g_{sol}$ es $\hat{g}_{sol} = \{ g_{sol}\setminus T_v \} \cup \{T\}$, siendo 
 $T$ otro árbol que reemplaza a $T_v$ con hojas identicas. 
+\end{small}
 \end{definition}
 \begin{block}{}
 \begin{algorithm}[H]
@@ -313,8 +314,8 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 \end{frame}
 
 \subsection{Confiabilidad}
-\begin{frame}\frametitle{RVR}
-\begin{block}{}
+\begin{frame}\frametitle{}
+\begin{block}{RVR}
 \begin{scriptsize}
 \begin{itemize}
  \item Metodo Recursivo de Reducción de Varianza.
@@ -347,21 +348,6 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 \end{block}
 \end{frame}
 
-%\begin{displaymath}
-%    	X_{i} = 
-%    	\begin{cases}
-%      		1 & \text{si nodo } i \in \mathcal{C}\\
-%      		0 & \text{en otro caso}
-%    	\end{cases} \text{, } \forall i \in V 
-%	\end{displaymath}
-%   	\begin{center}
-%    		\includegraphics[scale=0.5]{figuras/Solucion/representacionSol}
-%    \end{center}
-
-%	$	
-%	|\delta(\mathcal{C})| = \sum_{v \epsilon \mathcal{C}} deg(v) - |\mathcal{C}|\times|\mathcal{C}-1|$  
-%	%\end{equation}	\Delta
-
 \section{Resultados}
 \subsection{Resultados}
 \begin{frame}\frametitle{}
@@ -369,8 +355,8 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 \begin{small}
 \begin{itemize}
  \item Se realizó un extenso estudio computacional utilizando el algoritmo $NetworkDesign$.
- \item No hay casos benchmark para nuestro problema específico.
  \item Adaptamos instancias conocidas de la librería $TSPLIB$ añadiendo probabilidades de falla en nodos y enlaces y los requerimientos de conectividad entre nodos.
+  \item No hay casos benchmark para nuestro problema específico.
  \item Umbral de confiabilidad $p_{min}=0.8$.
  \item Probabilidades de nodos y aristas $p_v=0.99$ y $p_e=0.95$ respectivamente.
  \item Número de iteraciones en $NetworkDesign$ por cada instancia $iter=100$, y número de replicaciones para el método $RVR$ $10^4$.
@@ -435,7 +421,7 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 \centering
 \scalebox{0.7}{
 \begin{tabular}{|c|c|c|c|c|c|c|} % centered columns 
-\hline	$Problem$   &	\% $T$ & \%$IG$& \% $IVNS$ & $CPU(s)$ & $\overline{R}$ & $\overline{Var}$ \\
+\hline	$Problem$   &	\% $T$ & \%$IC$& \% $IVND$ & $CPU(s)$ & $\overline{R}$ & $\overline{Var}$ \\
 \hline	att48	&	20	&	99.27	&	34.61	&	11.466	&	0.967	&	7.608E-07	\\
 \hline	att48	&	35	&	98.6	&	36.83	&	29.769	&	0.943	&	3.448E-06	\\
 \hline	att48	&	50	&	98.22	&	37.1	&	65.904	&	0.927	&	5.322E-06	\\
@@ -460,6 +446,30 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 \end{frame}
 
 \subsection{Resultados IV}
+\begin{frame} \frametitle{Preguntas Claves}
+\begin{tiny}
+\begin{block} {1}
+ 	 \begin{itemize}
+ 	 	\item ¿Cuántas redes factibles existen dado el modelo probabilístico completo $(p_{min}:0.98,P_E:0.99,P_{V-T}:0.99)$?
+ 	 	\item La cantidad de soluciones que cumplen con el umbral de confiabilidad es alta. Alcanza el 100\% en la mayoría de los casos.
+ 	 \end{itemize}  
+ \end{block} 	   
+ \begin{block} {2}
+ 	 \begin{itemize}
+ 	 	\item ¿Cuál es la sensibilidad del modelo con respecto a las confiabilidades elementales? ¿Es mejor aumentar la confiabilidad elemental de los enlaces, o la confiabilidad de los nodos Steiner, para cumplir con un umbral de confiabilidad exigente?
+ 	 	\item El modelo es más sensible a fallas de enlace que a fallas de nodo. Un aumento en la confiabilidad de los enlaces tiene un mejor impacto que un aumento correspondiente en la confiabilidad de los nodos.
+ 	 \end{itemize}  
+ \end{block} 	
+  \begin{block} {3}
+ 	 \begin{itemize}
+ 	 	\item ¿Cuántas redes sobreviven en promedio, para cualquier modelo probabilístico dado? Comprender la sensibilidad del modelo con respecto a los requisitos de conectividad $r_{i,j} \in \{2,3,4\}$?
+ 	 	\item Podemos apreciar que un aumento en los requisitos de conectividad de la red implica necesariamente un aumento correspondiente en el porcentaje de redes que cumplen con el umbral de confiabilidad, y viceversa.
+ 	 \end{itemize}  
+ \end{block} 	
+ \end{tiny}
+\end{frame}
+
+\subsection{Resultados V}
 \begin{frame}\frametitle{}
 \begin{table}
 \begin{scriptsize}
@@ -494,7 +504,7 @@ $p_v=0.99$ fijo y confiabilidad de enlaces variable.}
 \end{table}
 \end{frame}
 
-\subsection{Resultados V}
+\subsection{Resultados VI}
 \begin{frame}\frametitle{}
 \begin{table}
 \begin{scriptsize}
@@ -529,7 +539,7 @@ y confiabilidad de nodos variable.}
 \end{table}
 \end{frame}
 
-\subsection{Resultados VI}
+\subsection{Resultados VII}
 \begin{frame}\frametitle{}
 \begin{block}{Brazil58}
 \begin{scriptsize}
@@ -541,11 +551,11 @@ y confiabilidad de nodos variable.}
 \end{block}
 \end{frame}
 
-\subsection{Resultados VII}
+\subsection{Resultados VIII}
 \begin{frame}\frametitle{}
 \begin{block}{Brazil58 NetworkDesign Salida}
 \begin{scriptsize}
-Costo resultado 25106 y confiabilidad 0.917399. 
+Costo resultado 25106 (32\% de mejora con respecto a la de construcción) y confiabilidad 92\%. 
 \end{scriptsize}
 \begin{center}
    \includegraphics[scale=0.35]{figuras/2}
@@ -553,32 +563,8 @@ Costo resultado 25106 y confiabilidad 0.917399.
 \end{block}
 \end{frame}
 
-\subsection{Resultados VIII}
-\begin{frame} \frametitle{Preguntas Claves}
-\begin{tiny}
-\begin{block} {1}
- 	 \begin{itemize}
- 	 	\item ¿Cuántas redes factibles existen dado el modelo probabilístico completo $(p_{min},P_E,P_{V-T})$?
- 	 	\item La cantidad de soluciones que cumplen con el umbral de confiabilidad es alta. Alcanza el 100\% en la mayoría de los casos.
- 	 \end{itemize}  
- \end{block} 	   
- \begin{block} {2}
- 	 \begin{itemize}
- 	 	\item ¿Cuál es la sensibilidad del modelo con respecto a las confiabilidades elementales? ¿Es mejor aumentar la confiabilidad elemental de los enlaces, o la confiabilidad de los nodos Steiner, para cumplir con un umbral de confiabilidad exigente?
- 	 	\item El modelo es más sensible a fallas de enlace que a fallas de nodo. Un aumento en la confiabilidad de los enlaces tiene un mejor impacto que un aumento correspondiente en la confiabilidad de los nodos.
- 	 \end{itemize}  
- \end{block} 	
-  \begin{block} {3}
- 	 \begin{itemize}
- 	 	\item ¿Cuántas redes sobreviven en promedio, para cualquier modelo probabilístico dado? Comprender la sensibilidad del modelo con respecto a los requisitos de conectividad $r_{i,j} \in \{2,3,4\}$?
- 	 	\item Podemos apreciar que un aumento en los requisitos de conectividad de la red implica necesariamente un aumento correspondiente en el porcentaje de redes que cumplen con el umbral de confiabilidad, y viceversa.
- 	 \end{itemize}  
- \end{block} 	
- \end{tiny}
-\end{frame}
-
 \section{Conclusiones}
-\subsection{Conclusiones I}
+\subsection{Conclusiones}
 \begin{frame} \frametitle{Conlusiones y Aportes de este Trabajo}
 \begin{block} {}
    	\begin{itemize} 
@@ -588,15 +574,27 @@ Costo resultado 25106 y confiabilidad 0.917399.
 	\item Se introduce The Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability (GSPNCHR).
 	\item Probamos formalmente que GSPNCHR pertenece a la clase NP-Hard.
 	\item Como consecuencia se propone una metodología GRASP/VND.
-	\item Dado que la evaluación de confiabilidad para el modelo hostil también pertenece a la clase NP-Hard, Adoptamos una excelente método de estimación de confiabilidad puntual, conocida como Recursive Variance Reduction (RVR).
-	\item Nuestros resultados resaltan que el modelo es más robusto bajo fallas en los nodos que bajo fallas en los enlaces.
-	\item Se logró la publicación: \"A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability\", a publicarse en Volume 12559 of the Lecture Notes in Computer Science series.
 	\end{scriptsize}   	     	
  	\end{itemize} 	
  \end{block}
 \end{frame}
 
 \subsection{Conclusiones II}
+\begin{frame} \frametitle{Conlusiones y Aportes de este Trabajo}
+\begin{block} {}
+   	\begin{itemize} 
+   	\begin{scriptsize}
+	\item Dado que la evaluación de confiabilidad para el modelo hostil también pertenece a la clase NP-Hard, Adoptamos una excelente método de estimación de confiabilidad puntual, conocida como Recursive Variance Reduction (RVR).
+	\item La mejora proporcionada por la fase VNS después de la fase de Construcción oscila entre el 25,25\% y el 39,84\%.
+	\item La confiabilidad promedio para todas las redes varía entre 82.31\% y 99.87\%.
+	\item Nuestros resultados resaltan que el modelo es más robusto bajo fallas en los nodos que bajo fallas en los enlaces.
+	\item Se logró la publicación: A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability, a publicarse en Volume 12559 of the Lecture Notes in Computer Science series.
+	\end{scriptsize}   	     	
+ 	\end{itemize} 	
+ \end{block}
+\end{frame}
+
+\subsection{Conclusiones III}
 \begin{frame} \frametitle{Líneas de Trabajo Futuro}
 \begin{block} {}
    	\begin{scriptsize}
@@ -605,6 +603,7 @@ Costo resultado 25106 y confiabilidad 0.917399.
  	 	\item Una línea de investigación actual es introducir transformaciones que aumenten la confiabilidad. 
  	 	\item El desarrollo de búsquedas locales que aumenten la confiabilidad y reduzcan los costos enriquecería la solución actual.
  	 	\item Otra posibilidad para el trabajo futuro es enriquecer el número de búsquedas locales y considerar transiciones probabilísticas entre ellas.
+ 	 	\item Mejorar en lo posible la algoritmia, apta para computación de alta performance y reducir los tiempos de cómputo.
  	 \end{itemize}  
  	\end{scriptsize}
  \end{block} 	   
@@ -618,7 +617,7 @@ Muchas Gracias.
 \end{frame}
 
 \section{Anexos}
-\subsection{Anexo I}
+\subsection{Anexo}
 \begin{frame}\frametitle{}
 \begin{block}{Berlin52}
 \begin{scriptsize}
@@ -634,7 +633,7 @@ Muchas Gracias.
 \begin{frame}\frametitle{}
 \begin{block}{Berlin52 Salida NetworkDesign}
 \begin{scriptsize}
-Costo resultado 4534 y confiabilidad 0.844782.
+Costo resultado 4534 (31\% de mejora con respecto a la de construcción) y confiabilidad 84\%.
 \end{scriptsize}
 \begin{center}
    \includegraphics[scale=0.35]{figuras/4}
