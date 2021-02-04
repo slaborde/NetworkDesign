@@ -19,7 +19,7 @@
     	\item Problema de optimización combinatoria motivado por el diseño topológico de redes de comunicaciones 
 con restricciones de confiabilidad.
 		\item El objetivo es interconectar nodos distinguidos, llamados terminales, utilizando un nivel adecuado de redundancia y de forma simultanea, satisfacer las restricciones de confiabilidad.
-	\item En el análisis de confiabilidad nos enfrentamos a fallas aleatorias en los componentes del sistema. Se considera el modelo como realista hostil, donde tanto nodos como aristas pueden fallar.
+	\item En el análisis de confiabilidad nos enfrentamos a fallas aleatorias en los componentes del sistema. Se considera el modelo como realista hostil, donde tanto nodos como enlaces pueden fallar.
 	\end{itemize} 
     \end{block}
 \end{frame}
@@ -81,7 +81,7 @@ x_{(i,j)} &\in \{0,1\} \, \forall (i,j)\in E \\
 			\item Se modela el problema para instancias particulares con $r_{ij} = k, k \geq 2$, tanto para nodo conectividad como para enlace conectividad.
 			\item Se encuentran cotas inferiores para las formulaciones anteriores aplicando teoría de dualidad y relajación lagrangiana.
 	    	\item Formulación de programación matemática del problema para las versiones $k$ nodo-conectividad y $k$ arista-conectividad aplicando los teoremas de BienStock y Monma.
-    		\item Se proponen algoritmos de orden polinomial para la resolución del problema en forma exacta de casos particulares respecto a conectividad y topología de grafos.
+    		\item Se proponen algoritmos de orden polinomial para la resolución del problema en forma exacta de casos particulares, respecto a conectividad y topología de grafos.
     	\end{itemize} 
     			\end{small}
     \end{block}
@@ -94,7 +94,7 @@ x_{(i,j)} &\in \{0,1\} \, \forall (i,j)\in E \\
 	\begin{itemize} 
     	\item Se dedicó un capítulo entero donde se expone el relevamiento del estado del arte de la temática de esta tesis: Confiabilidad en redes, Diseño topológico de redes, GRASP, VND, RVR y otras como Monte Carlo Crudo.
     	\item Son escasos los trabajos que abordan conjuntamente la optimización topológica de la red  bajo restricciones de confiabilidad.
-    	\item VND y RVR han sido utilizados con gran éxito en problemas de optimización combinatoria.
+    	\item GRASP, VND y RVR han sido utilizados con gran éxito en problemas de optimización combinatoria.
     \end{itemize} 
 \end{block}
 \end{frame}
@@ -184,7 +184,7 @@ x_{(i,j)} &\in \{0,1\} \, \forall (i,j)\in E \\
 \begin{frame}\frametitle{}
 \begin{block}{VND}
 \begin{small}
-El objetivo es combinar una rica diversidad de vecindades para obtener una solución óptima local para cada vecindario. NetworkDesign considera una implementación clásica de VND, ordenando las respectivas búsquedas locales después de la fase de construcción. Se consideran tres estructuras de vecindad para construir VND.
+El objetivo es combinar una rica diversidad de vecindades para obtener una solución óptima local para cada vecindario. Se considera una implementación clásica de VND, ordenando las respectivas búsquedas locales después de la fase de construcción. Se consideran tres estructuras de vecindad para construir VND.
 \begin{enumerate}
  \item SwapKeyPathLocalSearch
  \item KeyPathLocalSearch
@@ -320,7 +320,7 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 \begin{itemize}
  \item Metodo Recursivo de Reducción de Varianza.
  \item Objetivo reducir la red original en varias redes mas pequeñas de forma recursiva.
- \item Construir estimador de confiabilidad insesgado con menos varianza que Monte Carlo Crudo.
+ \item Construir un estimador insesgado de la confiabilidad, con menor varianza que el Monte Carlo crudo.
  %Sistema Binario Estocastico Monoto. 
 \end{itemize} 
 \end{scriptsize}
@@ -457,7 +457,7 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
  \begin{block} {2}
  	 \begin{itemize}
  	 	\item ¿Cuál es la sensibilidad del modelo con respecto a las confiabilidades elementales? ¿Es mejor aumentar la confiabilidad elemental de los enlaces, o la confiabilidad de los nodos Steiner, para cumplir con un umbral de confiabilidad exigente?
- 	 	\item El modelo es más sensible a fallas de enlace que a fallas de nodo. Un aumento en la confiabilidad de los enlaces tiene un mejor impacto que un aumento correspondiente en la confiabilidad de los nodos.
+ 	 	\item El modelo es más sensible a fallas de enlaces que a fallas de nodos. Un aumento en la confiabilidad de los enlaces tiene un mejor impacto que un aumento correspondiente en la confiabilidad de los nodos.
  	 \end{itemize}  
  \end{block} 	
   \begin{block} {3}
@@ -541,6 +541,37 @@ y confiabilidad de nodos variable.}
 
 \subsection{Resultados VII}
 \begin{frame}\frametitle{}
+\begin{table}
+\begin{scriptsize}
+\caption{Solutions such that $R \geq 0.98$ (case \%99-\%97)} % title of Table
+\end{scriptsize}
+\centering  % used for centering table
+\scalebox{0.7}{
+\begin{tabular}{|c|c|c|} % centered columns 
+\hline	Rel \%99-\%97   &	\% Feasible solutions with $R \geq 0.98$ \\
+\hline	att48 T20 (100-0-0)	&	90	\\
+\hline	att48 T20 (65-25-10)	&	100	\\
+\hline	att48 T20 (0-100-0)	&	100	\\
+\hline	att48 T20 (0-0-100)	&	100	\\
+\hline	eil51 T20 (100-0-0)	&	76	\\
+\hline	eil51 T20 (65-25-10)	&	100	\\
+\hline	eil51 T50 (100-0-0)	&	54	\\
+\hline	eil51 T50 (65-25-10)	&	100	\\
+\hline	berlin52 T20 (100-0-0)	&	41	\\
+\hline	berlin52 T20 (65-25-10)	&	100	\\
+\hline	brazil58 T50 (100-0-0)	&	5	\\
+\hline	brazil58 T50 (65-25-10)	&	100	\\
+\hline	kroA100 T35 (100-0-0)	&	0	\\
+\hline	kroA100 T35 (65-25-10)	&	100	\\
+\hline	kroB100 T20 (100-0-0)	&	3	\\
+\hline	kroB100 T20 (65-25-10)	&	100	\\
+\hline
+\end{tabular}}
+\end{table}
+\end{frame}
+
+\subsection{Resultados VIII}
+\begin{frame}\frametitle{}
 \begin{block}{Brazil58}
 \begin{scriptsize}
 \%20 de nodos terminales, confiabilidad elemental de nodos de Steiner \%99, confiabilidad de enlaces \%95 y \%100 2 caminos nodo-disjunto. Nodos terminales rojos no fallan, nodos de Steiner naranjas y grises.
@@ -551,7 +582,7 @@ y confiabilidad de nodos variable.}
 \end{block}
 \end{frame}
 
-\subsection{Resultados VIII}
+\subsection{Resultados IX}
 \begin{frame}\frametitle{}
 \begin{block}{Brazil58 NetworkDesign Salida}
 \begin{scriptsize}
@@ -571,9 +602,9 @@ Costo resultado 25106 (32\% de mejora con respecto a la de construcción) y conf
    	\begin{scriptsize}
 	\item Estudiamos el diseño topológico de redes de alta confiabilidad.
 	\item Nuestro objetivo es combinar aspectos puramente deterministas como la conectividad con modelos probabilísticos provenientes de la confiabilidad de la red.
-	\item Se introduce The Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability (GSPNCHR).
-	\item Probamos formalmente que GSPNCHR pertenece a la clase NP-Hard.
-	\item Como consecuencia se propone una metodología GRASP/VND.
+	\item \emph{Se introduce The Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability (GSPNCHR)}.
+	\item \emph{Probamos formalmente que GSPNCHR pertenece a la clase NP-Hard}.
+	\item \emph{Como consecuencia se propone una metodología GRASP/VND}.
 	\end{scriptsize}   	     	
  	\end{itemize} 	
  \end{block}
@@ -587,8 +618,8 @@ Costo resultado 25106 (32\% de mejora con respecto a la de construcción) y conf
 	\item Dado que la evaluación de confiabilidad para el modelo hostil también pertenece a la clase NP-Hard, Adoptamos una excelente método de estimación de confiabilidad puntual, conocida como Recursive Variance Reduction (RVR).
 	\item La mejora proporcionada por la fase VNS después de la fase de Construcción oscila entre el 25,25\% y el 39,84\%.
 	\item La confiabilidad promedio para todas las redes varía entre 82.31\% y 99.87\%.
-	\item Nuestros resultados resaltan que el modelo es más robusto bajo fallas en los nodos que bajo fallas en los enlaces.
-	\item Se logró la publicación: A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability, a publicarse en Volume 12559 of the Lecture Notes in Computer Science series.
+	\item \emph{Nuestros resultados resaltan que el modelo es más robusto bajo fallas en los nodos que bajo fallas en los enlaces}.
+	\item \emph{Se logró la publicación: A GRASP/VND Heuristic for the Generalized Steiner Problem with Node-Connectivity Constraints and Hostile Reliability, a publicarse en Volume 12559 of the Lecture Notes in Computer Science series}.
 	\end{scriptsize}   	     	
  	\end{itemize} 	
  \end{block}
@@ -612,7 +643,7 @@ Costo resultado 25106 (32\% de mejora con respecto a la de construcción) y conf
 \subsection{Gracias}
 \begin{frame} \frametitle{Fin}
 \begin{huge}
-Muchas Gracias.
+\begin{center}Muchas Gracias.\end{center}
 \end{huge}
 \end{frame}
 
@@ -621,7 +652,7 @@ Muchas Gracias.
 \begin{frame}\frametitle{}
 \begin{block}{Berlin52}
 \begin{scriptsize}
-\%20 de nodos terminales, confiabilidad elemental de nodos de Steiner \%99, confiabilidad de enlaces \%95 y \%100 2 caminos nodo-disjuntos.  Nodos terminales rojos no fallan, nodos de Steiner naranjas y grises.
+20\% de nodos terminales, confiabilidad elemental de nodos de Steiner 99\%, confiabilidad de enlaces 95\% y 100\% 2 caminos nodo-disjuntos.  Nodos terminales rojos no fallan, nodos de Steiner naranjas y grises.
 \end{scriptsize}
 \begin{center}
    \includegraphics[scale=0.35]{figuras/3}
