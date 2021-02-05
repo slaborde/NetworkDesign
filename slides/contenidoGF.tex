@@ -31,7 +31,7 @@ con restricciones de confiabilidad.
 	\begin{itemize} 
     	\item Encontrar una solución de costo mínimo que alcance un umbral de confiabilidad, donde tanto los nodos como los enlaces pueden fallar con probabilidades dadas.
 		\item Entender el trade-off entre costo-confiabilidad, y como la confiabilidad aumenta naturalmente agregando niveles de redundancia entre los nodos terminales.
-		\item Entender el impacto en la confiabilidad de las redes solución al aumentar o disminuir las probabilidades de falla elementales tanto en nodos como enlaces.
+		\item Entender el impacto en la confiabilidad de las redes solución, al aumentar o disminuir las confiabilidades elementales tanto en nodos como enlaces. %probabilidades de falla
     	\item Pertenece a la clase de problemas \emph{NP-Hard}.
     	\item Se propone una solución que resuelve el problema de forma apróximada con una metodología \emph{GRASP/VND} para el problema de optimización y para el análisis de la confiabilidad el método \emph{RVR}.
 	\end{itemize} 
@@ -40,7 +40,7 @@ con restricciones de confiabilidad.
 
 \subsection{Definición}
 \begin{frame}\frametitle{Generalized Steiner Problem with Node-Connectivity Constraints and
-Hostile Reliability GSPNCHR}
+Hostile Reliability (GSPNCHR)}
     \begin{definition}[GSPNCHR]
 Se considera el grafo no dirigido $G=(V,E)$, conjunto de nodos terminales $T \subseteq V$, costo de los enlaces $\{c_{i,j}\}_{(i,j) \in E}$ y requerimientos de conectividad $R=\{r_{i,j}\}_{i,j \in T}$. Además, asumimos que tanto los enlaces como los nodos no terminales (Steiner) fallan con probabilidades $P_E=\{p_e\}_{e\in E}$ y $P_{V-T}=\{p_v\}_{v\in V-T}$. 
 Dado el umbral de confiabilidad $p_{min}$, el objetivo es construir una topologia de costo mínimo $G_S \subseteq G$ cumpliendo con los requerimientos de conectividad $R$ y el umbral de confiabilidad: $R_{K}(G_S) \geq p_{min}$, siendo $K=T$ el conjunto de nodos terminales.
@@ -358,7 +358,7 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
  \item Adaptamos instancias conocidas de la librería $TSPLIB$ añadiendo probabilidades de falla en nodos y enlaces y los requerimientos de conectividad entre nodos.
   \item No hay casos benchmark para nuestro problema específico.
  \item Umbral de confiabilidad $p_{min}=0.8$.
- \item Probabilidades de nodos y aristas $p_v=0.99$ y $p_e=0.95$ respectivamente.
+ \item Confiabilidades de nodos y aristas $p_v=0.99$ y $p_e=0.95$ respectivamente.
  \item Número de iteraciones en $NetworkDesign$ por cada instancia $iter=100$, y número de replicaciones para el método $RVR$ $10^4$.
  \item Comprender la sensibilidad de la solución a perturbaciones en confiabilidades elementales. Se utilizaron nueve combinaciones para $p_{v},p_{e} \in \{0.99, 0.97,0.95\}$.
 \end{itemize} 
@@ -450,14 +450,14 @@ $T$ otro árbol que reemplaza a $T_v$ con hojas identicas.
 \begin{tiny}
 \begin{block} {1}
  	 \begin{itemize}
- 	 	\item ¿Cuántas redes factibles existen dado el modelo probabilístico completo $(p_{min}:0.98,P_E:0.99,P_{V-T}:0.99)$?
+ 	 	\item ¿Cuántas redes factibles superan el umbral de confiabilidad, dado el modelo probabilístico completo $(p_{min}:0.98,P_E:0.99,P_{V-T}:0.99)$?
  	 	\item La cantidad de soluciones que cumplen con el umbral de confiabilidad es alta. Alcanza el 100\% en la mayoría de los casos.
  	 \end{itemize}  
  \end{block} 	   
  \begin{block} {2}
  	 \begin{itemize}
  	 	\item ¿Cuál es la sensibilidad del modelo con respecto a las confiabilidades elementales? ¿Es mejor aumentar la confiabilidad elemental de los enlaces, o la confiabilidad de los nodos Steiner, para cumplir con un umbral de confiabilidad exigente?
- 	 	\item El modelo es más sensible a fallas de enlaces que a fallas de nodos. Un aumento en la confiabilidad de los enlaces tiene un mejor impacto que un aumento correspondiente en la confiabilidad de los nodos.
+ 	 	\item El modelo es más sensible a fallas de enlaces que a fallas de nodos. Un aumento en la confiabilidad de los enlaces tiene un mayor impacto que un aumento correspondiente en la confiabilidad de los nodos.
  	 \end{itemize}  
  \end{block} 	
   \begin{block} {3}
@@ -543,7 +543,7 @@ y confiabilidad de nodos variable.}
 \begin{frame}\frametitle{}
 \begin{table}
 \begin{scriptsize}
-\caption{Solutions such that $R \geq 0.98$ (case \%99-\%97)} % title of Table
+\caption{Soluciones con $R \geq 0.98$ ($p_v=0.99$ - $p_e=0.97$)}
 \end{scriptsize}
 \centering  % used for centering table
 \scalebox{0.7}{
@@ -574,7 +574,7 @@ y confiabilidad de nodos variable.}
 \begin{frame}\frametitle{}
 \begin{block}{Brazil58}
 \begin{scriptsize}
-\%20 de nodos terminales, confiabilidad elemental de nodos de Steiner \%99, confiabilidad de enlaces \%95 y \%100 2 caminos nodo-disjunto. Nodos terminales rojos no fallan, nodos de Steiner naranjas y grises.
+20\% de nodos terminales, confiabilidad elemental de nodos de Steiner 99\%, confiabilidad de enlaces 95\% y 100\% 2 caminos nodo-disjunto. Nodos terminales rojos no fallan, nodos de Steiner naranjas y grises.
 \end{scriptsize}
 \begin{center}
    \includegraphics[scale=0.35]{figuras/1}
@@ -634,7 +634,7 @@ Costo resultado 25106 (32\% de mejora con respecto a la de construcción) y conf
  	 	\item Una línea de investigación actual es introducir transformaciones que aumenten la confiabilidad. 
  	 	\item El desarrollo de búsquedas locales que aumenten la confiabilidad y reduzcan los costos enriquecería la solución actual.
  	 	\item Otra posibilidad para el trabajo futuro es enriquecer el número de búsquedas locales y considerar transiciones probabilísticas entre ellas.
- 	 	\item Mejorar en lo posible la algoritmia, apta para computación de alta performance y reducir los tiempos de cómputo.
+ 	 	\item Mejorar en lo posible la algoritmia, apta para computación de alta performance y así reducir los tiempos de cómputo.
  	 \end{itemize}  
  	\end{scriptsize}
  \end{block} 	   
