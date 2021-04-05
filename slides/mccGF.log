@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.31)  4 FEB 2021 22:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.5.31)  22 MAR 2021 21:26
 entering extended mode
 **./mccGF.tex
 (mccGF.tex
@@ -1329,7 +1329,7 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 62.
 
 
-Overfull \vbox (7.51651pt too high) detected at line 75
+Overfull \vbox (7.4289pt too high) detected at line 75
  []
 
 [1{C:/Users/Sebastian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
@@ -1342,17 +1342,112 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
 
 ] [3
 
-] [4
-
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+! Extra \endgroup.
+\color@endgroup ->\endgraf \endgroup 
+                                     
+l.39     \end{block}
+                    
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.39     \end{block}
+                    
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.39     \end{block}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   S
+l.46 Se
+        considera el grafo no dirigido $G=(V,E)$, conjunto de nodos terminal...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   S
+l.46 Se
+        considera el grafo no dirigido $G=(V,E)$, conjunto de nodos terminal...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (6.08812pt too wide) in paragraph at lines 46--46
+[]\OT1/phv/m/n/10.95 e 
+ []
+
+Runaway argument?
+{\@checkend {minipage}\expandafter \endgroup \if@endpe \@doendpe \fi \ETC.
+! Paragraph ended before \setlength was complete.
+<to be read again> 
+                   \par 
+l.46 Se
+        considera el grafo no dirigido $G=(V,E)$, conjunto de nodos terminal...
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Argument of \frame has an extra }.
+<inserted text> 
+                \par 
+l.46 Se
+        considera el grafo no dirigido $G=(V,E)$, conjunto de nodos terminal...
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\frametitle {Generalized Steiner Problem with Node-Connectivity Const\ETC.
+! Paragraph ended before \frame was complete.
+<to be read again> 
+                   \par 
+l.46 Se
+        considera el grafo no dirigido $G=(V,E)$, conjunto de nodos terminal...
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.46 Se
+        considera el grafo no dirigido $G=(V,E)$, conjunto de nodos terminal...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
 
 
 ("C:\Users\Sebastian\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.
 fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
 
 
 ("C:\Users\Sebastian\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.
@@ -1360,48 +1455,1714 @@ fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 48.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 46.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 48.
- [5
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 46.
 
-]
-Overfull \hbox (24.38872pt too wide) detected at line 60
+! Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.48 \end{definition}
+                     
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.48 \end{definition}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \relax 
+l.133 \floatname{algorithm}
+                           {Alg}
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \def 
+l.133 \floatname{algorithm}
+                           {Alg}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \def 
+l.133 \floatname{algorithm}
+                           {Alg}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (45.18994pt too wide) in paragraph at lines 133--133
+[]\OT1/phv/m/n/10.95 algorithm 
+ []
+
+Runaway argument?
+{\@checkend {minipage}\expandafter \endgroup \if@endpe \@doendpe \fi \ETC.
+! Paragraph ended before \setlength was complete.
+<to be read again> 
+                   \par 
+l.133 \floatname{algorithm}
+                           {Alg}
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Overfull \hbox (24.38872pt too wide) detected at line 133
 []
  []
 
-[6
 
-] [7
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4
+
+]
+Overfull \vbox (14.43634pt too high) has occurred while \output is active []
+
+
+[5] [6
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 88.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 133.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 88.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 133.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 88.
- [8
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 133.
+ [7
+
+] [8
 
 ] [9
 
 ] [10
 
-] [11
+]
+! Argument of \frame has an extra }.
+<inserted text> 
+                \par 
+l.133 \floatname{algorithm}
+                           {Alg}
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
 
-] [12
+Runaway argument?
+\frametitle {} \begin {block}{Network Design} \begin {algorithm}
+! Paragraph ended before \frame was complete.
+<to be read again> 
+                   \par 
+l.133 \floatname{algorithm}
+                           {Alg}
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
 
-] [13
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.133 \floatname{algorithm}
+                           {Alg}
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-] [14
 
-] [15
+! LaTeX Error: \caption outside float.
 
-] [16
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 \caption
+              {$sol = NetworkDesign(G_B,iter,k,p_{min},P_E,P_{V-T},simiter)$}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\caption ... \endcsname \fi \fi \@dblarg {\@tempf 
+                                                  \@captype }
+l.134 \caption
+              {$sol = NetworkDesign(G_B,iter,k,p_{min},P_E,P_{V-T},simiter)$}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\caption ...e \fi \fi \@dblarg {\@tempf \@captype 
+                                                  }
+l.134 \caption
+              {$sol = NetworkDesign(G_B,iter,k,p_{min},P_E,P_{V-T},simiter)$}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.149 \end{algorithm}
+                     
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.149 \end{algorithm}
+                     
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+\endalgorithm ...oatbox \global \setbox \@currbox 
+                                                  \float@makebox \columnwidt...
+l.149 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.149 \end{algorithm}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\float@makebox ...ze =#1 \@parboxrestore \@fs@pre 
+                                                  \@fs@iftopcapt \ifvoid \@f...
+l.149 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\float@makebox ...restore \@fs@pre \@fs@iftopcapt 
+                                                  \ifvoid \@floatcapt \else ...
+l.149 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\float@makebox ... \@fs@mid \fi \unvbox \@currbox 
+                                                  \else \unvbox \@currbox \i...
+l.149 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra \else.
+\float@makebox ...mid \fi \unvbox \@currbox \else 
+                                                  \unvbox \@currbox \ifvoid ...
+l.149 \end{algorithm}
+                     
+I'm ignoring this; it doesn't match any \if.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unvbox 
+l.149 \end{algorithm}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\float@makebox ...currbox \else \unvbox \@currbox 
+                                                  \ifvoid \@floatcapt \else ...
+l.149 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra \fi.
+\float@makebox ...mid \unvbox \@floatcapt \fi \fi 
+                                                  \par \@fs@post \vskip \z@ }
+l.149 \end{algorithm}
+                     
+I'm ignoring this; it doesn't match any \if.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \par 
+l.149 \end{algorithm}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\float@makebox ...loatcapt \fi \fi \par \@fs@post 
+                                                  \vskip \z@ }
+l.149 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{algorithm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149 \end{algorithm}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! You can't use `\unskip' in vertical mode.
+\endminipage ->\par \unskip 
+                            \ifvoid \@mpfootins \else \vskip \skip \@mpfooti...
+l.150     \end{block}
+                     
+Sorry...I usually can't take things from the current page.
+Try `I\vskip-\lastskip' instead.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \endgroup 
+                                     
+l.150     \end{block}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.150     \end{block}
+                     
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.150     \end{block}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \relax 
+l.157 \floatname{algorithm}
+                           {Alg}
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \def 
+l.157 \floatname{algorithm}
+                           {Alg}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \def 
+l.157 \floatname{algorithm}
+                           {Alg}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (45.18994pt too wide) in paragraph at lines 157--157
+[]\OT1/phv/m/n/10.95 algorithm 
+ []
+
+Runaway argument?
+{\@checkend {minipage}\expandafter \endgroup \if@endpe \@doendpe \fi \ETC.
+! Paragraph ended before \setlength was complete.
+<to be read again> 
+                   \par 
+l.157 \floatname{algorithm}
+                           {Alg}
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Argument of \frame has an extra }.
+<inserted text> 
+                \par 
+l.157 \floatname{algorithm}
+                           {Alg}
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\frametitle {} \begin {block}{} \begin {algorithm}
+! Paragraph ended before \frame was complete.
+<to be read again> 
+                   \par 
+l.157 \floatname{algorithm}
+                           {Alg}
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.157 \floatname{algorithm}
+                           {Alg}
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 \caption
+              {$(sol,P) = Construction(G_B,C,R,k)$}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\caption ... \endcsname \fi \fi \@dblarg {\@tempf 
+                                                  \@captype }
+l.158 \caption
+              {$(sol,P) = Construction(G_B,C,R,k)$}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\caption ...e \fi \fi \@dblarg {\@tempf \@captype 
+                                                  }
+l.158 \caption
+              {$(sol,P) = Construction(G_B,C,R,k)$}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11
 
 ]
-Overfull \vbox (12.1536pt too high) detected at line 282
+! Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.180 \end{algorithm}
+                     
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.180 \end{algorithm}
+                     
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Undefined control sequence.
+\endalgorithm ...oatbox \global \setbox \@currbox 
+                                                  \float@makebox \columnwidt...
+l.180 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.180 \end{algorithm}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\float@makebox ...ze =#1 \@parboxrestore \@fs@pre 
+                                                  \@fs@iftopcapt \ifvoid \@f...
+l.180 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\float@makebox ...restore \@fs@pre \@fs@iftopcapt 
+                                                  \ifvoid \@floatcapt \else ...
+l.180 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\float@makebox ... \@fs@mid \fi \unvbox \@currbox 
+                                                  \else \unvbox \@currbox \i...
+l.180 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra \else.
+\float@makebox ...mid \fi \unvbox \@currbox \else 
+                                                  \unvbox \@currbox \ifvoid ...
+l.180 \end{algorithm}
+                     
+I'm ignoring this; it doesn't match any \if.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unvbox 
+l.180 \end{algorithm}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\float@makebox ...currbox \else \unvbox \@currbox 
+                                                  \ifvoid \@floatcapt \else ...
+l.180 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra \fi.
+\float@makebox ...mid \unvbox \@floatcapt \fi \fi 
+                                                  \par \@fs@post \vskip \z@ }
+l.180 \end{algorithm}
+                     
+I'm ignoring this; it doesn't match any \if.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \par 
+l.180 \end{algorithm}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\float@makebox ...loatcapt \fi \fi \par \@fs@post 
+                                                  \vskip \z@ }
+l.180 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{algorithm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.180 \end{algorithm}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.180 \end{algorithm}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+! You can't use `\unskip' in vertical mode.
+\endminipage ->\par \unskip 
+                            \ifvoid \@mpfootins \else \vskip \skip \@mpfooti...
+l.181 \end{block}
+                 
+Sorry...I usually can't take things from the current page.
+Try `I\vskip-\lastskip' instead.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \endgroup 
+                                     
+l.181 \end{block}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.181 \end{block}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.181 \end{block}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   U
+l.201 Un
+         key-node $v$ en una solución factible $v \in g_{sol}$ es un nodo d...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   U
+l.201 Un
+         key-node $v$ en una solución factible $v \in g_{sol}$ es un nodo d...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (6.08812pt too wide) in paragraph at lines 201--201
+[]\OT1/phv/m/n/10.95 n 
  []
+
+Runaway argument?
+{\@checkend {minipage}\expandafter \endgroup \if@endpe \@doendpe \fi \ETC.
+! Paragraph ended before \setlength was complete.
+<to be read again> 
+                   \par 
+l.201 Un
+         key-node $v$ en una solución factible $v \in g_{sol}$ es un nodo d...
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+Overfull \vbox (12.18057pt too high) has occurred while \output is active []
+
+
+[13]
+! Argument of \frame has an extra }.
+<inserted text> 
+                \par 
+l.201 Un
+         key-node $v$ en una solución factible $v \in g_{sol}$ es un nodo d...
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\frametitle {} \begin {definition}
+! Paragraph ended before \frame was complete.
+<to be read again> 
+                   \par 
+l.201 Un
+         key-node $v$ en una solución factible $v \in g_{sol}$ es un nodo d...
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.201 Un
+         key-node $v$ en una solución factible $v \in g_{sol}$ es un nodo d...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.202 \end{definition}
+                      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.202 \end{definition}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   U
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   U
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (6.08812pt too wide) in paragraph at lines 204--204
+[]\OT1/phv/m/n/10.95 n 
+ []
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \def 
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \def 
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! LaTeX Error: \begin{document} ended by \end{minipage}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten \endgroup.
+<argument> ...norefalse \ignorespaces \fi \egroup 
+                                                  \bmb@temp =\dp \bmb@box \a...
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+<argument> ...b@box =0pt\bmb@boxwidth =\bmb@width 
+                                                  \bmb@boxheight =\ht \bmb@b...
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+<argument> ...picture} }\fi \bmb@temp =\bmb@width 
+                                                  \bmb@dima =\bmb@temp \adva...
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Extra }, or forgotten \endgroup.
+<recently read> \egroup 
+                        
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: \begin{document} ended by \end{beamerboxesrounded}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+\endactionenv ->\beamer@todoend 
+                                
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{actionenv}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{block}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.204 Un
+         key-path $p$ en una solución factible $p \subseteq g_{sol}$ es un ...
+Things are pretty mixed up, but I think the worst is over.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.207 \end{definition}
+                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.207 \end{definition}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   S
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   S
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (6.08812pt too wide) in paragraph at lines 209--209
+[]\OT1/phv/m/n/10.95 e 
+ []
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \def 
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \def 
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! LaTeX Error: \begin{beamerboxesrounded} on input line 204 ended by \end{minip
+age}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+<argument> ...b@box =0pt\bmb@boxwidth =\bmb@width 
+                                                  \bmb@boxheight =\ht \bmb@b...
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+<argument> ...picture} }\fi \bmb@temp =\bmb@width 
+                                                  \bmb@dima =\bmb@temp \adva...
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Extra }, or forgotten \endgroup.
+<recently read> \egroup 
+                        
+l.209 Se
+        a $v \in g_{sol}$ un key-node perteneciente a una solución factible...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.212 \end{definition}
+                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.212 \end{definition}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   D
+l.219 Da
+        do un key-path $p \subseteq g_{sol}$, una solución vecina para $g_{...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   D
+l.219 Da
+        do un key-path $p \subseteq g_{sol}$, una solución vecina para $g_{...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (6.08812pt too wide) in paragraph at lines 219--219
+[]\OT1/phv/m/n/10.95 a 
+ []
+
+Runaway argument?
+{\@checkend {minipage}\expandafter \endgroup \if@endpe \@doendpe \fi \ETC.
+! Paragraph ended before \setlength was complete.
+<to be read again> 
+                   \par 
+l.219 Da
+        do un key-path $p \subseteq g_{sol}$, una solución vecina para $g_{...
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Argument of \frame has an extra }.
+<inserted text> 
+                \par 
+l.219 Da
+        do un key-path $p \subseteq g_{sol}$, una solución vecina para $g_{...
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\frametitle {} \begin {small} \begin {definition}
+! Paragraph ended before \frame was complete.
+<to be read again> 
+                   \par 
+l.219 Da
+        do un key-path $p \subseteq g_{sol}$, una solución vecina para $g_{...
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.219 Da
+        do un key-path $p \subseteq g_{sol}$, una solución vecina para $g_{...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.222 \end{definition}
+                      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.222 \end{definition}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \relax 
+l.226 \floatname{algorithm}
+                           {Alg}
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \def 
+l.226 \floatname{algorithm}
+                           {Alg}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \def 
+l.226 \floatname{algorithm}
+                           {Alg}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (45.18994pt too wide) in paragraph at lines 226--226
+[]\OT1/phv/m/n/10.95 algorithm 
+ []
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \def 
+l.226 \floatname{algorithm}
+                           {Alg}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \def 
+l.226 \floatname{algorithm}
+                           {Alg}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! LaTeX Error: \begin{beamerboxesrounded} on input line 209 ended by \end{minip
+age}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.226 \floatname{algorithm}
+                           {Alg}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+<argument> ...b@box =0pt\bmb@boxwidth =\bmb@width 
+                                                  \bmb@boxheight =\ht \bmb@b...
+l.226 \floatname{algorithm}
+                           {Alg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.226 \floatname{algorithm}
+                           {Alg}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.226 \floatname{algorithm}
+                           {Alg}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+<argument> ...picture} }\fi \bmb@temp =\bmb@width 
+                                                  \bmb@dima =\bmb@temp \adva...
+l.226 \floatname{algorithm}
+                           {Alg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.226 \floatname{algorithm}
+                           {Alg}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \advance 
+l.226 \floatname{algorithm}
+                           {Alg}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Extra }, or forgotten \endgroup.
+<recently read> \egroup 
+                        
+l.226 \floatname{algorithm}
+                           {Alg}
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: \begin{document} ended by \end{small}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.226 \floatname{algorithm}
+                           {Alg}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.226 \floatname{algorithm}
+                           {Alg}
+Things are pretty mixed up, but I think the worst is over.
+
+
+! LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.226 \floatname{algorithm}
+                           {Alg}
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@float@Hx ...ltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.226 \floatname{algorithm}
+                           {Alg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.226 \floatname{algorithm}
+                           {Alg}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.226 \floatname{algorithm}
+                           {Alg}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Undefined control sequence.
+\endalgorithm ...oatbox \global \setbox \@currbox 
+                                                  \float@makebox \columnwidt...
+l.242 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.242 \end{algorithm}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\float@makebox ... \@fs@mid \fi \unvbox \@currbox 
+                                                  \else \unvbox \@currbox \i...
+l.242 \end{algorithm}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \par 
+l.242 \end{algorithm}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.242 \end{algorithm}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \vbox (4.00749pt too high) detected at line 243
+ []
+
+! Too many }'s.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.244 \end{frame}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.283 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.283 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.283 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Overfull \vbox (4.50749pt too high) detected at line 283
+ []
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.283 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.283 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[14
+
+] [15]
+! Missing } inserted.
+<inserted text> 
+                }
+l.315 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.315 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.315 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Overfull \vbox (4.50749pt too high) detected at line 315
+ []
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.315 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.315 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[16
+
+]
+! Missing } inserted.
+<inserted text> 
+                }
+l.350 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.350 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.350 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Overfull \vbox (4.50749pt too high) detected at line 350
+ []
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.350 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.350 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
 [17
 
@@ -1413,67 +3174,63 @@ Overfull \vbox (12.1536pt too high) detected at line 282
 
 ] [21
 
-] [22
-
-] [23
-
 ]
-Overfull \vbox (3.82278pt too high) detected at line 505
+Overfull \vbox (3.82278pt too high) detected at line 506
  []
 
-[24
+[22
 
 ]
-Overfull \vbox (3.82278pt too high) detected at line 540
+Overfull \vbox (3.82278pt too high) detected at line 541
  []
 
-[25
+[23
 
-] [26
+] [24
 
 ]
-<figuras/1.jpg, id=2159, 733.99219pt x 423.83344pt>
+<figuras/1.jpg, id=1931, 733.99219pt x 423.83344pt>
 File: figuras/1.jpg Graphic file (type jpg)
 <use figuras/1.jpg>
-Package pdftex.def Info: figuras/1.jpg  used on input line 583.
+Package pdftex.def Info: figuras/1.jpg  used on input line 584.
 (pdftex.def)             Requested size: 256.90111pt x 148.34392pt.
- [27
+ [25
 
  <./figuras/1.jpg>]
-<figuras/2.jpg, id=2238, 846.91406pt x 482.55281pt>
+<figuras/2.jpg, id=2011, 846.91406pt x 482.55281pt>
 File: figuras/2.jpg Graphic file (type jpg)
 <use figuras/2.jpg>
-Package pdftex.def Info: figuras/2.jpg  used on input line 595.
+Package pdftex.def Info: figuras/2.jpg  used on input line 596.
 (pdftex.def)             Requested size: 296.42436pt x 168.89601pt.
- [28
+ [26
 
- <./figuras/2.jpg>] [29
+ <./figuras/2.jpg>] [27
+
+] [28
+
+] [29
 
 ] [30
 
-] [31
-
-] [32
-
 ]
-<figuras/3.jpg, id=2619, 652.68843pt x 468.24937pt>
+<figuras/3.jpg, id=2391, 652.68843pt x 468.24937pt>
 File: figuras/3.jpg Graphic file (type jpg)
 <use figuras/3.jpg>
-Package pdftex.def Info: figuras/3.jpg  used on input line 661.
+Package pdftex.def Info: figuras/3.jpg  used on input line 662.
 (pdftex.def)             Requested size: 228.44437pt x 163.88972pt.
 
-Overfull \vbox (0.66267pt too high) detected at line 661
+Overfull \vbox (0.66267pt too high) detected at line 662
  []
 
-[33
+[31
 
  <./figuras/3.jpg>]
-<figuras/4.jpg, id=2699, 734.745pt x 408.02437pt>
+<figuras/4.jpg, id=2472, 734.745pt x 408.02437pt>
 File: figuras/4.jpg Graphic file (type jpg)
 <use figuras/4.jpg>
-Package pdftex.def Info: figuras/4.jpg  used on input line 673.
+Package pdftex.def Info: figuras/4.jpg  used on input line 674.
 (pdftex.def)             Requested size: 257.1646pt x 142.81067pt.
- [34
+ [32
 
  <./figuras/4.jpg>])
 \tf@nav=\write6
@@ -1497,35 +3254,41 @@ Package rerunfilecheck Info: File `mccGF.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26544 strings out of 480795
- 564773 string characters out of 2893695
- 875975 words of memory out of 3000000
- 41791 multiletter control sequences out of 15000+200000
- 574598 words of font info for 94 fonts, out of 3000000 for 9000
+ 26484 strings out of 480795
+ 561985 string characters out of 2893695
+ 878318 words of memory out of 3000000
+ 41735 multiletter control sequences out of 15000+200000
+ 573444 words of font info for 93 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,20n,71p,774b,968s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r
-.enc}<C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmex10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Sebastian/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Sebastian/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/User
-s/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-mi8.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmss10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Sebastian/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Sebastian/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/U
-sers/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy6.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmsy7.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Sebastian/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Sebastian/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Seba
-stian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mccGF.pdf (34 pages, 1146417 bytes).
+ 81i,21n,71p,774b,1154s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Navigation33} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Navigation34} has been referenced but does not exis
+t, replaced by a fixed one
+
+{C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.e
+nc}<C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Sebastian/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Sebastian/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/
+Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmss10.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Sebastian/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Sebastian/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Use
+rs/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+msy6.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy7.pfb><C:/Users/Sebastian/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Sebastian/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Sebastian/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Sebast
+ian/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on mccGF.pdf (32 pages, 1085580 bytes).
 PDF statistics:
- 2851 PDF objects out of 2984 (max. 8388607)
- 109 named destinations out of 1000 (max. 500000)
- 1317 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2622 PDF objects out of 2984 (max. 8388607)
+ 106 named destinations out of 1000 (max. 500000)
+ 1029 words of extra memory for PDF output out of 10000 (max. 10000000)
 

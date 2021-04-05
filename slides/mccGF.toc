@@ -1,41 +1,40 @@
 \babel@toc {spanish}{}
-\beamer@sectionintoc {1}{Problema}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Motivación}{2}{0}{1}
-\beamer@subsectionintoc {1}{2}{Objetivos I}{3}{0}{1}
-\beamer@subsectionintoc {1}{3}{Objetivos II}{4}{0}{1}
-\beamer@subsectionintoc {1}{4}{Definición}{5}{0}{1}
+\beamer@sectionintoc {1}{Problem}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Motivation}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Objetives}{3}{0}{1}
+\beamer@subsectionintoc {1}{3}{Definition}{4}{0}{1}
+\beamer@subsectionintoc {1}{4}{Formulación como problema de programación matematica}{4}{0}{1}
 \beamer@subsectionintoc {1}{5}{Formulación como problema de programación matematica}{6}{0}{1}
-\beamer@subsectionintoc {1}{6}{Formulación como problema de programación matematica}{7}{0}{1}
-\beamer@sectionintoc {2}{Resultados Teóricos}{8}{0}{2}
-\beamer@subsectionintoc {2}{1}{Resultados Teóricos}{8}{0}{2}
-\beamer@sectionintoc {3}{Estado del arte}{9}{0}{3}
-\beamer@subsectionintoc {3}{1}{Trabajos Relacionados}{9}{0}{3}
-\beamer@subsectionintoc {3}{2}{Publicación}{10}{0}{3}
-\beamer@sectionintoc {4}{Solución}{11}{0}{4}
-\beamer@subsectionintoc {4}{1}{Metodología}{11}{0}{4}
-\beamer@subsectionintoc {4}{2}{Esquema General}{12}{0}{4}
-\beamer@subsectionintoc {4}{3}{GRASP - Fase Construcción}{13}{0}{4}
-\beamer@subsectionintoc {4}{4}{Fase Búsqueda Local}{14}{0}{4}
-\beamer@subsectionintoc {4}{5}{Definiciones}{15}{0}{4}
-\beamer@subsectionintoc {4}{6}{SwapKeyPathLocalSearch}{16}{0}{4}
-\beamer@subsectionintoc {4}{7}{KeyPathLocalSearch}{17}{0}{4}
-\beamer@subsectionintoc {4}{8}{KeyTreeLocalSearch}{18}{0}{4}
-\beamer@subsectionintoc {4}{9}{Confiabilidad}{19}{0}{4}
-\beamer@sectionintoc {5}{Resultados}{20}{0}{5}
-\beamer@subsectionintoc {5}{1}{Resultados}{20}{0}{5}
-\beamer@subsectionintoc {5}{2}{Resultados II}{21}{0}{5}
-\beamer@subsectionintoc {5}{3}{Resultados III}{22}{0}{5}
-\beamer@subsectionintoc {5}{4}{Resultados IV}{23}{0}{5}
-\beamer@subsectionintoc {5}{5}{Resultados V}{24}{0}{5}
-\beamer@subsectionintoc {5}{6}{Resultados VI}{25}{0}{5}
-\beamer@subsectionintoc {5}{7}{Resultados VII}{26}{0}{5}
-\beamer@subsectionintoc {5}{8}{Resultados VIII}{27}{0}{5}
-\beamer@subsectionintoc {5}{9}{Resultados IX}{28}{0}{5}
-\beamer@sectionintoc {6}{Conclusiones}{29}{0}{6}
-\beamer@subsectionintoc {6}{1}{Conclusiones}{29}{0}{6}
-\beamer@subsectionintoc {6}{2}{Conclusiones II}{30}{0}{6}
-\beamer@subsectionintoc {6}{3}{Conclusiones III}{31}{0}{6}
-\beamer@subsectionintoc {6}{4}{Gracias}{32}{0}{6}
-\beamer@sectionintoc {7}{Anexos}{33}{0}{7}
-\beamer@subsectionintoc {7}{1}{Anexo}{33}{0}{7}
-\beamer@subsectionintoc {7}{2}{Anexo II}{34}{0}{7}
+\beamer@sectionintoc {2}{Resultados Teóricos}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{Resultados Teóricos}{7}{0}{2}
+\beamer@sectionintoc {3}{Estado del arte}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{Trabajos Relacionados}{8}{0}{3}
+\beamer@subsectionintoc {3}{2}{Publicación}{9}{0}{3}
+\beamer@sectionintoc {4}{Solución}{10}{0}{4}
+\beamer@subsectionintoc {4}{1}{Metodología}{10}{0}{4}
+\beamer@subsectionintoc {4}{2}{Esquema General}{11}{0}{4}
+\beamer@subsectionintoc {4}{3}{GRASP - Fase Construcción}{11}{0}{4}
+\beamer@subsectionintoc {4}{4}{Fase Búsqueda Local}{12}{0}{4}
+\beamer@subsectionintoc {4}{5}{Definiciones}{14}{0}{4}
+\beamer@subsectionintoc {4}{6}{SwapKeyPathLocalSearch}{14}{0}{4}
+\beamer@subsectionintoc {4}{7}{KeyPathLocalSearch}{14}{0}{4}
+\beamer@subsectionintoc {4}{8}{KeyTreeLocalSearch}{16}{0}{4}
+\beamer@subsectionintoc {4}{9}{Confiabilidad}{17}{0}{4}
+\beamer@sectionintoc {5}{Resultados}{18}{0}{5}
+\beamer@subsectionintoc {5}{1}{Resultados}{18}{0}{5}
+\beamer@subsectionintoc {5}{2}{Resultados II}{19}{0}{5}
+\beamer@subsectionintoc {5}{3}{Resultados III}{20}{0}{5}
+\beamer@subsectionintoc {5}{4}{Resultados IV}{21}{0}{5}
+\beamer@subsectionintoc {5}{5}{Resultados V}{22}{0}{5}
+\beamer@subsectionintoc {5}{6}{Resultados VI}{23}{0}{5}
+\beamer@subsectionintoc {5}{7}{Resultados VII}{24}{0}{5}
+\beamer@subsectionintoc {5}{8}{Resultados VIII}{25}{0}{5}
+\beamer@subsectionintoc {5}{9}{Resultados IX}{26}{0}{5}
+\beamer@sectionintoc {6}{Conclusiones}{27}{0}{6}
+\beamer@subsectionintoc {6}{1}{Conclusiones}{27}{0}{6}
+\beamer@subsectionintoc {6}{2}{Conclusiones II}{28}{0}{6}
+\beamer@subsectionintoc {6}{3}{Conclusiones III}{29}{0}{6}
+\beamer@subsectionintoc {6}{4}{Gracias}{30}{0}{6}
+\beamer@sectionintoc {7}{Anexos}{31}{0}{7}
+\beamer@subsectionintoc {7}{1}{Anexo}{31}{0}{7}
+\beamer@subsectionintoc {7}{2}{Anexo II}{32}{0}{7}
